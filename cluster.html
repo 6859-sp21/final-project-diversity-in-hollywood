@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="#">
+Adapted from: https://www.d3-graph-gallery.com/graph/circularpacking_basic.html, 4/3/2021
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<div id="main"></div>
+
+<script>
+
+var width = 1000
+var height = 1000
+
+var svg = d3.select("#main")
+  .append("svg")
+    .attr("width", 1000)
+    .attr("height", 1000)
+
+var data = []
+// range of years to include, inclusive
+var startYear = 1950
+var endYear = 1980
+d3.csv("oscar_nominees_with_race.csv", function(csv_data) {
+    for (var i = 0; i < csv_data.length; i++) {
+        // push all datapoints, both nominees and winners
+        var year = csv_data[i].year_ceremony;
+        if (year >= startYear && year <= endYear) {
+          data.push(csv_data[i]);
+        }
+    }
+
+
+
+color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.race));
+
+var numDataPoints = data.length;
+var nomineeData = data.filter(d => d.winner === "FALSE");
+var numNominees = nomineeData.length;
+
+var winnerData = data.filter(d => d.winner === "TRUE");
+var numWinners = winnerData.length;
+
+let numNomineesSeen = 0;
+let numWinnersSeen = 0;
+// we position the winners/nominees in a 1 layer ring, and the physics
+// simulation will take care of repelling the overlaps
+let nomineeRadius = Math.sqrt(numWinners*245)
+for (let i = 0; i < numDataPoints; i++) {
+  // if we're looking at a nominee
+  if (data[i].winner === "FALSE") {
+    // calculate angle of the dot
+    var theta = numNomineesSeen * 2 * Math.PI / numNominees
+    // calculate coordinates relative to center of canvas
+    data[i].x = nomineeRadius * Math.cos(theta) + width / 2;
+    data[i].y = nomineeRadius * Math.sin(theta) + height / 2;
+
+    numNomineesSeen += 1;
+  }
+}
+
+var tooltip = d3.select("#main")
+    .append("div")
+    .style("position", "absolute")
+    .style("visibility", "hidden")
+    .style("background-color", "black")
+    .style("color", "white")
+
+var node = svg.append("g")
+  .selectAll("circle")
+  .data(data)
+  .enter()
+  .append("circle")
+    .attr("r", 2)
+    .attr("cx", width / 2)
+    .attr("cy", height / 2)
+    .style("fill", d => color(d.race))
+    .style("fill-opacity", 1)
+    .attr("stroke", d => color(d.race))
+    .style("stroke-width", 4)
+    .on("mouseover", function(){
+        tooltip
+        .style("visibility", "visible")
+        })
+    .on("mousemove", function(d){
+        tooltip
+        .style("top", (d3.event.pageY + 5) + "px")
+        .style("left", (d3.event.pageX + 5) + "px")
+        .html("Name: " + d.name + "<br>Film: " + d.film + "<br>Award: " + d.category + "<br>Race: " + d.race)
+        })
+    .on("mouseout", function(){
+        tooltip
+        .style("visibility", "hidden")
+        })
+
+
+
+var simulationCircle = d3.forceSimulation()
+    .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+    .force("charge", d3.forceManyBody().strength(0.4)) // Nodes are attracted one each other of value is > 0
+    .force("collide", d3.forceCollide().strength(2.2).radius(7).iterations(2)) // Force that avoids circle overlapping
+
+simulationCircle
+    .nodes(winnerData)
+    .on("tick", function(d){
+      node
+          .attr("cx", function(d){ return d.x; })
+          .attr("cy", function(d){ return d.y; })
+    });
+
+var simulationRing = d3.forceSimulation()
+    .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+    .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
+    .force("collide", d3.forceCollide().strength(0.2).radius(6).iterations(1)) // Force that avoids circle overlapping
+
+simulationRing
+    .nodes(nomineeData)
+    .on("tick", function(d){
+      node
+          .attr("cx", function(d){ return d.x; })
+          .attr("cy", function(d){ return d.y; })
+    });
+});
+
+// Adapted from: https://www.d3-graph-gallery.com/graph/circularpacking_basic.html, 4/3/2021
+
+</script>

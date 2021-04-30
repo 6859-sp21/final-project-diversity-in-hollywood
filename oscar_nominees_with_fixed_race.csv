@@ -1,0 +1,2198 @@
+id,year_film,year_ceremony,ceremony,category,name,film,winner,race,fixed_race
+0,1927,1928,1,ACTOR IN A LEADING ROLE,Richard Barthelmess,The Noose,FALSE,white,white
+1,1927,1928,1,ACTOR IN A LEADING ROLE,Emil Jannings,The Last Command,TRUE,white,white
+2,1928,1929,2,ACTOR IN A LEADING ROLE,George Bancroft,Thunderbolt,FALSE,white,white
+3,1928,1929,2,ACTOR IN A LEADING ROLE,Warner Baxter,In Old Arizona,TRUE,white,white
+4,1928,1929,2,ACTOR IN A LEADING ROLE,Chester Morris,Alibi,FALSE,white,white
+5,1928,1929,2,ACTOR IN A LEADING ROLE,Paul Muni,The Valiant,FALSE,white,white
+6,1928,1929,2,ACTOR IN A LEADING ROLE,Lewis Stone,The Patriot,FALSE,white,white
+7,1929,1930,3,ACTOR IN A LEADING ROLE,George Arliss,Disraeli,TRUE,white,white
+8,1929,1930,3,ACTOR IN A LEADING ROLE,George Arliss,The Green Goddess,FALSE,white,white
+9,1929,1930,3,ACTOR IN A LEADING ROLE,Wallace Beery,The Big House,FALSE,white,white
+10,1929,1930,3,ACTOR IN A LEADING ROLE,Maurice Chevalier,The Big Pond,FALSE,white,white
+11,1929,1930,3,ACTOR IN A LEADING ROLE,Ronald Colman,Bulldog Drummond,FALSE,white,white
+12,1929,1930,3,ACTOR IN A LEADING ROLE,Lawrence Tibbett,The Rogue Song,FALSE,white,white
+13,1930,1931,4,ACTOR IN A LEADING ROLE,Lionel Barrymore,A Free Soul,TRUE,white,white
+14,1930,1931,4,ACTOR IN A LEADING ROLE,Jackie Cooper,Skippy,FALSE,white,white
+15,1930,1931,4,ACTOR IN A LEADING ROLE,Richard Dix,Cimarron,FALSE,white,white
+16,1930,1931,4,ACTOR IN A LEADING ROLE,Fredric March,The Royal Family of Broadway,FALSE,white,white
+17,1930,1931,4,ACTOR IN A LEADING ROLE,Adolphe Menjou,The Front Page,FALSE,white,white
+18,1931,1932,5,ACTOR IN A LEADING ROLE,Wallace Beery,The Champ,TRUE,white,white
+19,1931,1932,5,ACTOR IN A LEADING ROLE,Alfred Lunt,The Guardsman,FALSE,white,white
+20,1931,1932,5,ACTOR IN A LEADING ROLE,Fredric March,Dr. Jekyll and Mr. Hyde,TRUE,white,white
+21,1932,1933,6,ACTOR IN A LEADING ROLE,Leslie Howard,Berkeley Square,FALSE,white,white
+22,1932,1933,6,ACTOR IN A LEADING ROLE,Charles Laughton,The Private Life of Henry VIII,TRUE,white,white
+23,1932,1933,6,ACTOR IN A LEADING ROLE,Paul Muni,I Am a Fugitive from a Chain Gang,FALSE,white,white
+24,1934,1935,7,ACTOR IN A LEADING ROLE,Clark Gable,It Happened One Night,TRUE,white,white
+25,1934,1935,7,ACTOR IN A LEADING ROLE,Frank Morgan,The Affairs of Cellini,FALSE,white,white
+26,1934,1935,7,ACTOR IN A LEADING ROLE,William Powell,The Thin Man,FALSE,white,white
+27,1935,1936,8,ACTOR IN A LEADING ROLE,Clark Gable,Mutiny on the Bounty,FALSE,white,white
+28,1935,1936,8,ACTOR IN A LEADING ROLE,Charles Laughton,Mutiny on the Bounty,FALSE,white,white
+29,1935,1936,8,ACTOR IN A LEADING ROLE,Victor McLaglen,The Informer,TRUE,white,white
+30,1935,1936,8,ACTOR IN A LEADING ROLE,Paul Muni,Black Fury,FALSE,white,white
+31,1935,1936,8,ACTOR IN A LEADING ROLE,Franchot Tone,Mutiny on the Bounty,FALSE,white,white
+32,1936,1937,9,ACTOR IN A LEADING ROLE,Gary Cooper,Mr. Deeds Goes to Town,FALSE,white,white
+33,1936,1937,9,ACTOR IN A LEADING ROLE,Walter Huston,Dodsworth,FALSE,white,white
+34,1936,1937,9,ACTOR IN A LEADING ROLE,Paul Muni,The Story of Louis Pasteur,TRUE,white,white
+35,1936,1937,9,ACTOR IN A LEADING ROLE,William Powell,My Man Godfrey,FALSE,white,white
+36,1936,1937,9,ACTOR IN A LEADING ROLE,Spencer Tracy,San Francisco,FALSE,white,white
+37,1937,1938,10,ACTOR IN A LEADING ROLE,Charles Boyer,Conquest,FALSE,white,white
+38,1937,1938,10,ACTOR IN A LEADING ROLE,Fredric March,A Star Is Born,FALSE,white,white
+39,1937,1938,10,ACTOR IN A LEADING ROLE,Robert Montgomery,Night Must Fall,FALSE,white,white
+40,1937,1938,10,ACTOR IN A LEADING ROLE,Paul Muni,The Life of Emile Zola,FALSE,white,white
+41,1937,1938,10,ACTOR IN A LEADING ROLE,Spencer Tracy,Captains Courageous,TRUE,white,white
+42,1938,1939,11,ACTOR IN A LEADING ROLE,Charles Boyer,Algiers,FALSE,white,white
+43,1938,1939,11,ACTOR IN A LEADING ROLE,James Cagney,Angels with Dirty Faces,FALSE,white,white
+44,1938,1939,11,ACTOR IN A LEADING ROLE,Robert Donat,The Citadel,FALSE,white,white
+45,1938,1939,11,ACTOR IN A LEADING ROLE,Leslie Howard,Pygmalion,FALSE,white,white
+46,1938,1939,11,ACTOR IN A LEADING ROLE,Spencer Tracy,Boys Town,TRUE,white,white
+47,1939,1940,12,ACTOR IN A LEADING ROLE,Robert Donat,"Goodbye, Mr. Chips",TRUE,white,white
+48,1939,1940,12,ACTOR IN A LEADING ROLE,Clark Gable,Gone with the Wind,FALSE,white,white
+49,1939,1940,12,ACTOR IN A LEADING ROLE,Laurence Olivier,Wuthering Heights,FALSE,white,white
+50,1939,1940,12,ACTOR IN A LEADING ROLE,Mickey Rooney,Babes in Arms,FALSE,white,white
+51,1939,1940,12,ACTOR IN A LEADING ROLE,James Stewart,Mr. Smith Goes to Washington,FALSE,white,white
+52,1940,1941,13,ACTOR IN A LEADING ROLE,Charles Chaplin,The Great Dictator,FALSE,white,white
+53,1940,1941,13,ACTOR IN A LEADING ROLE,Henry Fonda,The Grapes of Wrath,FALSE,white,white
+54,1940,1941,13,ACTOR IN A LEADING ROLE,Raymond Massey,Abe Lincoln in Illinois,FALSE,white,white
+55,1940,1941,13,ACTOR IN A LEADING ROLE,Laurence Olivier,Rebecca,FALSE,white,white
+56,1940,1941,13,ACTOR IN A LEADING ROLE,James Stewart,The Philadelphia Story,TRUE,white,white
+57,1941,1942,14,ACTOR IN A LEADING ROLE,Gary Cooper,Sergeant York,TRUE,white,white
+58,1941,1942,14,ACTOR IN A LEADING ROLE,Cary Grant,Penny Serenade,FALSE,white,white
+59,1941,1942,14,ACTOR IN A LEADING ROLE,Walter Huston,All That Money Can Buy,FALSE,white,white
+60,1941,1942,14,ACTOR IN A LEADING ROLE,Robert Montgomery,Here Comes Mr. Jordan,FALSE,white,white
+61,1941,1942,14,ACTOR IN A LEADING ROLE,Orson Welles,Citizen Kane,FALSE,white,white
+62,1942,1943,15,ACTOR IN A LEADING ROLE,James Cagney,Yankee Doodle Dandy,TRUE,white,white
+63,1942,1943,15,ACTOR IN A LEADING ROLE,Ronald Colman,Random Harvest,FALSE,white,white
+64,1942,1943,15,ACTOR IN A LEADING ROLE,Gary Cooper,The Pride of the Yankees,FALSE,white,white
+65,1942,1943,15,ACTOR IN A LEADING ROLE,Walter Pidgeon,Mrs. Miniver,FALSE,white,white
+66,1942,1943,15,ACTOR IN A LEADING ROLE,Monty Woolley,The Pied Piper,FALSE,white,white
+67,1943,1944,16,ACTOR IN A LEADING ROLE,Humphrey Bogart,Casablanca,FALSE,white,white
+68,1943,1944,16,ACTOR IN A LEADING ROLE,Gary Cooper,For Whom the Bell Tolls,FALSE,white,white
+69,1943,1944,16,ACTOR IN A LEADING ROLE,Paul Lukas,Watch on the Rhine,TRUE,white,white
+70,1943,1944,16,ACTOR IN A LEADING ROLE,Walter Pidgeon,Madame Curie,FALSE,white,white
+71,1943,1944,16,ACTOR IN A LEADING ROLE,Mickey Rooney,The Human Comedy,FALSE,white,white
+72,1944,1945,17,ACTOR IN A LEADING ROLE,Charles Boyer,Gaslight,FALSE,white,white
+73,1944,1945,17,ACTOR IN A LEADING ROLE,Bing Crosby,Going My Way,TRUE,white,white
+74,1944,1945,17,ACTOR IN A LEADING ROLE,Barry Fitzgerald,Going My Way,FALSE,white,white
+75,1944,1945,17,ACTOR IN A LEADING ROLE,Cary Grant,None but the Lonely Heart,FALSE,white,white
+76,1944,1945,17,ACTOR IN A LEADING ROLE,Alexander Knox,Wilson,FALSE,white,white
+77,1945,1946,18,ACTOR IN A LEADING ROLE,Bing Crosby,The Bells of St. Mary's,FALSE,white,white
+78,1945,1946,18,ACTOR IN A LEADING ROLE,Gene Kelly,Anchors Aweigh,FALSE,white,white
+79,1945,1946,18,ACTOR IN A LEADING ROLE,Ray Milland,The Lost Weekend,TRUE,white,white
+80,1945,1946,18,ACTOR IN A LEADING ROLE,Gregory Peck,The Keys of the Kingdom,FALSE,white,white
+81,1945,1946,18,ACTOR IN A LEADING ROLE,Cornel Wilde,A Song to Remember,FALSE,white,white
+82,1946,1947,19,ACTOR IN A LEADING ROLE,Fredric March,The Best Years of Our Lives,TRUE,white,white
+83,1946,1947,19,ACTOR IN A LEADING ROLE,Laurence Olivier,Henry V,FALSE,white,white
+84,1946,1947,19,ACTOR IN A LEADING ROLE,Larry Parks,The Jolson Story,FALSE,white,white
+85,1946,1947,19,ACTOR IN A LEADING ROLE,Gregory Peck,The Yearling,FALSE,white,white
+86,1946,1947,19,ACTOR IN A LEADING ROLE,James Stewart,It's a Wonderful Life,FALSE,white,white
+87,1947,1948,20,ACTOR IN A LEADING ROLE,Ronald Colman,A Double Life,TRUE,white,white
+88,1947,1948,20,ACTOR IN A LEADING ROLE,John Garfield,Body and Soul,FALSE,white,white
+89,1947,1948,20,ACTOR IN A LEADING ROLE,Gregory Peck,Gentleman's Agreement,FALSE,white,white
+90,1947,1948,20,ACTOR IN A LEADING ROLE,William Powell,Life with Father,FALSE,white,white
+91,1947,1948,20,ACTOR IN A LEADING ROLE,Michael Redgrave,Mourning Becomes Electra,FALSE,white,white
+92,1948,1949,21,ACTOR IN A LEADING ROLE,Lew Ayres,Johnny Belinda,FALSE,white,white
+93,1948,1949,21,ACTOR IN A LEADING ROLE,Montgomery Clift,The Search,FALSE,white,white
+94,1948,1949,21,ACTOR IN A LEADING ROLE,Dan Dailey,When My Baby Smiles at Me,FALSE,white,white
+95,1948,1949,21,ACTOR IN A LEADING ROLE,Laurence Olivier,Hamlet,TRUE,white,white
+96,1948,1949,21,ACTOR IN A LEADING ROLE,Clifton Webb,Sitting Pretty,FALSE,white,white
+97,1949,1950,22,ACTOR IN A LEADING ROLE,Broderick Crawford,All the King's Men,TRUE,white,white
+98,1949,1950,22,ACTOR IN A LEADING ROLE,Kirk Douglas,Champion,FALSE,white,white
+99,1949,1950,22,ACTOR IN A LEADING ROLE,Gregory Peck,Twelve O'Clock High,FALSE,white,white
+100,1949,1950,22,ACTOR IN A LEADING ROLE,Richard Todd,The Hasty Heart,FALSE,white,white
+101,1949,1950,22,ACTOR IN A LEADING ROLE,John Wayne,Sands of Iwo Jima,FALSE,white,white
+102,1950,1951,23,ACTOR IN A LEADING ROLE,Louis Calhern,The Magnificent Yankee,FALSE,white,white
+103,1950,1951,23,ACTOR IN A LEADING ROLE,José Ferrer,Cyrano de Bergerac,TRUE,hispanic,hispanic
+104,1950,1951,23,ACTOR IN A LEADING ROLE,William Holden,Sunset Blvd.,FALSE,white,white
+105,1950,1951,23,ACTOR IN A LEADING ROLE,James Stewart,Harvey,FALSE,white,white
+106,1950,1951,23,ACTOR IN A LEADING ROLE,Spencer Tracy,Father of the Bride,FALSE,white,white
+107,1951,1952,24,ACTOR IN A LEADING ROLE,Humphrey Bogart,The African Queen,TRUE,white,white
+108,1951,1952,24,ACTOR IN A LEADING ROLE,Marlon Brando,A Streetcar Named Desire,FALSE,white,white
+109,1951,1952,24,ACTOR IN A LEADING ROLE,Montgomery Clift,A Place in the Sun,FALSE,white,white
+110,1951,1952,24,ACTOR IN A LEADING ROLE,Arthur Kennedy,Bright Victory,FALSE,white,white
+111,1951,1952,24,ACTOR IN A LEADING ROLE,Fredric March,Death of a Salesman,FALSE,white,white
+112,1952,1953,25,ACTOR IN A LEADING ROLE,Marlon Brando,Viva Zapata!,FALSE,white,white
+113,1952,1953,25,ACTOR IN A LEADING ROLE,Gary Cooper,High Noon,TRUE,white,white
+114,1952,1953,25,ACTOR IN A LEADING ROLE,Kirk Douglas,The Bad and the Beautiful,FALSE,white,white
+115,1952,1953,25,ACTOR IN A LEADING ROLE,José Ferrer,Moulin Rouge,FALSE,hispanic,hispanic
+116,1952,1953,25,ACTOR IN A LEADING ROLE,Alec Guinness,The Lavender Hill Mob,FALSE,white,white
+117,1953,1954,26,ACTOR IN A LEADING ROLE,Marlon Brando,Julius Caesar,FALSE,white,white
+118,1953,1954,26,ACTOR IN A LEADING ROLE,Richard Burton,The Robe,FALSE,white,white
+119,1953,1954,26,ACTOR IN A LEADING ROLE,Montgomery Clift,From Here to Eternity,FALSE,white,white
+120,1953,1954,26,ACTOR IN A LEADING ROLE,William Holden,Stalag 17,TRUE,white,white
+121,1953,1954,26,ACTOR IN A LEADING ROLE,Burt Lancaster,From Here to Eternity,FALSE,white,white
+122,1954,1955,27,ACTOR IN A LEADING ROLE,Humphrey Bogart,The Caine Mutiny,FALSE,white,white
+123,1954,1955,27,ACTOR IN A LEADING ROLE,Marlon Brando,On the Waterfront,TRUE,white,white
+124,1954,1955,27,ACTOR IN A LEADING ROLE,Bing Crosby,The Country Girl,FALSE,white,white
+125,1954,1955,27,ACTOR IN A LEADING ROLE,James Mason,A Star Is Born,FALSE,white,white
+126,1954,1955,27,ACTOR IN A LEADING ROLE,Dan O'Herlihy,Adventures of Robinson Crusoe,FALSE,white,white
+127,1955,1956,28,ACTOR IN A LEADING ROLE,Ernest Borgnine,Marty,TRUE,white,white
+128,1955,1956,28,ACTOR IN A LEADING ROLE,James Cagney,Love Me or Leave Me,FALSE,white,white
+129,1955,1956,28,ACTOR IN A LEADING ROLE,James Dean,East of Eden,FALSE,white,white
+130,1955,1956,28,ACTOR IN A LEADING ROLE,Frank Sinatra,The Man with the Golden Arm,FALSE,white,white
+131,1955,1956,28,ACTOR IN A LEADING ROLE,Spencer Tracy,Bad Day at Black Rock,FALSE,white,white
+132,1956,1957,29,ACTOR IN A LEADING ROLE,Yul Brynner,The King and I,TRUE,asian,asian
+133,1956,1957,29,ACTOR IN A LEADING ROLE,James Dean,Giant,FALSE,white,white
+134,1956,1957,29,ACTOR IN A LEADING ROLE,Kirk Douglas,Lust for Life,FALSE,white,white
+135,1956,1957,29,ACTOR IN A LEADING ROLE,Rock Hudson,Giant,FALSE,white,white
+136,1956,1957,29,ACTOR IN A LEADING ROLE,Sir Laurence Olivier,Richard III,FALSE,white,white
+137,1957,1958,30,ACTOR IN A LEADING ROLE,Marlon Brando,Sayonara,FALSE,white,white
+138,1957,1958,30,ACTOR IN A LEADING ROLE,Anthony Franciosa,A Hatful of Rain,FALSE,white,white
+139,1957,1958,30,ACTOR IN A LEADING ROLE,Alec Guinness,The Bridge on the River Kwai,TRUE,white,white
+140,1957,1958,30,ACTOR IN A LEADING ROLE,Charles Laughton,Witness for the Prosecution,FALSE,white,white
+141,1957,1958,30,ACTOR IN A LEADING ROLE,Anthony Quinn,Wild Is the Wind,FALSE,hispanic,hispanic
+142,1958,1959,31,ACTOR IN A LEADING ROLE,Tony Curtis,The Defiant Ones,FALSE,white,white
+143,1958,1959,31,ACTOR IN A LEADING ROLE,Paul Newman,Cat on a Hot Tin Roof,FALSE,white,white
+144,1958,1959,31,ACTOR IN A LEADING ROLE,David Niven,Separate Tables,TRUE,white,white
+145,1958,1959,31,ACTOR IN A LEADING ROLE,Sidney Poitier,The Defiant Ones,FALSE,black,black
+146,1958,1959,31,ACTOR IN A LEADING ROLE,Spencer Tracy,The Old Man and the Sea,FALSE,white,white
+147,1959,1960,32,ACTOR IN A LEADING ROLE,Laurence Harvey,Room at the Top,FALSE,white,white
+148,1959,1960,32,ACTOR IN A LEADING ROLE,Charlton Heston,Ben-Hur,TRUE,white,white
+149,1959,1960,32,ACTOR IN A LEADING ROLE,Jack Lemmon,Some Like It Hot,FALSE,white,white
+150,1959,1960,32,ACTOR IN A LEADING ROLE,Paul Muni,The Last Angry Man,FALSE,white,white
+151,1959,1960,32,ACTOR IN A LEADING ROLE,James Stewart,Anatomy of a Murder,FALSE,white,white
+152,1960,1961,33,ACTOR IN A LEADING ROLE,Trevor Howard,Sons and Lovers,FALSE,white,white
+153,1960,1961,33,ACTOR IN A LEADING ROLE,Burt Lancaster,Elmer Gantry,TRUE,white,white
+154,1960,1961,33,ACTOR IN A LEADING ROLE,Jack Lemmon,The Apartment,FALSE,white,white
+155,1960,1961,33,ACTOR IN A LEADING ROLE,Laurence Olivier,The Entertainer,FALSE,white,white
+156,1960,1961,33,ACTOR IN A LEADING ROLE,Spencer Tracy,Inherit the Wind,FALSE,white,white
+157,1961,1962,34,ACTOR IN A LEADING ROLE,Charles Boyer,Fanny,FALSE,white,white
+158,1961,1962,34,ACTOR IN A LEADING ROLE,Paul Newman,The Hustler,FALSE,white,white
+159,1961,1962,34,ACTOR IN A LEADING ROLE,Maximilian Schell,Judgment at Nuremberg,TRUE,white,white
+160,1961,1962,34,ACTOR IN A LEADING ROLE,Spencer Tracy,Judgment at Nuremberg,FALSE,white,white
+161,1961,1962,34,ACTOR IN A LEADING ROLE,Stuart Whitman,The Mark,FALSE,white,white
+162,1962,1963,35,ACTOR IN A LEADING ROLE,Burt Lancaster,Birdman of Alcatraz,FALSE,white,white
+163,1962,1963,35,ACTOR IN A LEADING ROLE,Jack Lemmon,Days of Wine and Roses,FALSE,white,white
+164,1962,1963,35,ACTOR IN A LEADING ROLE,Marcello Mastroianni,Divorce--Italian Style,FALSE,white,white
+165,1962,1963,35,ACTOR IN A LEADING ROLE,Peter O'Toole,Lawrence of Arabia,FALSE,white,white
+166,1962,1963,35,ACTOR IN A LEADING ROLE,Gregory Peck,To Kill a Mockingbird,TRUE,white,white
+167,1963,1964,36,ACTOR IN A LEADING ROLE,Albert Finney,Tom Jones,FALSE,white,white
+168,1963,1964,36,ACTOR IN A LEADING ROLE,Richard Harris,This Sporting Life,FALSE,white,white
+169,1963,1964,36,ACTOR IN A LEADING ROLE,Rex Harrison,Cleopatra,FALSE,white,white
+170,1963,1964,36,ACTOR IN A LEADING ROLE,Paul Newman,Hud,FALSE,white,white
+171,1963,1964,36,ACTOR IN A LEADING ROLE,Sidney Poitier,Lilies of the Field,TRUE,black,black
+172,1964,1965,37,ACTOR IN A LEADING ROLE,Richard Burton,Becket,FALSE,white,white
+173,1964,1965,37,ACTOR IN A LEADING ROLE,Rex Harrison,My Fair Lady,TRUE,white,white
+174,1964,1965,37,ACTOR IN A LEADING ROLE,Peter O'Toole,Becket,FALSE,white,white
+175,1964,1965,37,ACTOR IN A LEADING ROLE,Anthony Quinn,Zorba the Greek,FALSE,hispanic,hispanic
+176,1964,1965,37,ACTOR IN A LEADING ROLE,Peter Sellers,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,FALSE,white,white
+177,1965,1966,38,ACTOR IN A LEADING ROLE,Richard Burton,The Spy Who Came In from the Cold,FALSE,white,white
+178,1965,1966,38,ACTOR IN A LEADING ROLE,Lee Marvin,Cat Ballou,TRUE,white,white
+179,1965,1966,38,ACTOR IN A LEADING ROLE,Laurence Olivier,Othello,FALSE,white,white
+180,1965,1966,38,ACTOR IN A LEADING ROLE,Rod Steiger,The Pawnbroker,FALSE,white,white
+181,1965,1966,38,ACTOR IN A LEADING ROLE,Oskar Werner,Ship of Fools,FALSE,white,white
+182,1966,1967,39,ACTOR IN A LEADING ROLE,Alan Arkin,The Russians Are Coming The Russians Are Coming,FALSE,white,white
+183,1966,1967,39,ACTOR IN A LEADING ROLE,Richard Burton,Who's Afraid of Virginia Woolf?,FALSE,white,white
+184,1966,1967,39,ACTOR IN A LEADING ROLE,Michael Caine,Alfie,FALSE,white,white
+185,1966,1967,39,ACTOR IN A LEADING ROLE,Steve McQueen,The Sand Pebbles,FALSE,black,black
+186,1966,1967,39,ACTOR IN A LEADING ROLE,Paul Scofield,A Man for All Seasons,TRUE,white,white
+187,1967,1968,40,ACTOR IN A LEADING ROLE,Warren Beatty,Bonnie and Clyde,FALSE,white,white
+188,1967,1968,40,ACTOR IN A LEADING ROLE,Dustin Hoffman,The Graduate,FALSE,white,white
+189,1967,1968,40,ACTOR IN A LEADING ROLE,Paul Newman,Cool Hand Luke,FALSE,white,white
+190,1967,1968,40,ACTOR IN A LEADING ROLE,Rod Steiger,In the Heat of the Night,TRUE,white,white
+191,1967,1968,40,ACTOR IN A LEADING ROLE,Spencer Tracy,Guess Who's Coming to Dinner,FALSE,white,white
+192,1968,1969,41,ACTOR IN A LEADING ROLE,Alan Arkin,The Heart Is a Lonely Hunter,FALSE,white,white
+193,1968,1969,41,ACTOR IN A LEADING ROLE,Alan Bates,The Fixer,FALSE,white,white
+194,1968,1969,41,ACTOR IN A LEADING ROLE,Ron Moody,Oliver!,FALSE,white,white
+195,1968,1969,41,ACTOR IN A LEADING ROLE,Peter O'Toole,The Lion in Winter,FALSE,white,white
+196,1968,1969,41,ACTOR IN A LEADING ROLE,Cliff Robertson,Charly,TRUE,white,white
+197,1969,1970,42,ACTOR IN A LEADING ROLE,Richard Burton,Anne of the Thousand Days,FALSE,white,white
+198,1969,1970,42,ACTOR IN A LEADING ROLE,Dustin Hoffman,Midnight Cowboy,FALSE,white,white
+199,1969,1970,42,ACTOR IN A LEADING ROLE,Peter O'Toole,"Goodbye, Mr. Chips",FALSE,white,white
+200,1969,1970,42,ACTOR IN A LEADING ROLE,Jon Voight,Midnight Cowboy,FALSE,white,white
+201,1969,1970,42,ACTOR IN A LEADING ROLE,John Wayne,True Grit,TRUE,white,white
+202,1970,1971,43,ACTOR IN A LEADING ROLE,Melvyn Douglas,I Never Sang for My Father,FALSE,white,white
+203,1970,1971,43,ACTOR IN A LEADING ROLE,James Earl Jones,The Great White Hope,FALSE,black,black
+204,1970,1971,43,ACTOR IN A LEADING ROLE,Jack Nicholson,Five Easy Pieces,FALSE,white,white
+205,1970,1971,43,ACTOR IN A LEADING ROLE,Ryan O'Neal,Love Story,FALSE,white,white
+206,1970,1971,43,ACTOR IN A LEADING ROLE,George C. Scott,Patton,TRUE,white,white
+207,1971,1972,44,ACTOR IN A LEADING ROLE,Peter Finch,Sunday Bloody Sunday,FALSE,white,white
+208,1971,1972,44,ACTOR IN A LEADING ROLE,Gene Hackman,The French Connection,TRUE,white,white
+209,1971,1972,44,ACTOR IN A LEADING ROLE,Walter Matthau,Kotch,FALSE,white,white
+210,1971,1972,44,ACTOR IN A LEADING ROLE,George C. Scott,The Hospital,FALSE,white,white
+211,1971,1972,44,ACTOR IN A LEADING ROLE,Topol,Fiddler on the Roof,FALSE,white,white
+212,1972,1973,45,ACTOR IN A LEADING ROLE,Marlon Brando,The Godfather,TRUE,white,white
+213,1972,1973,45,ACTOR IN A LEADING ROLE,Michael Caine,Sleuth,FALSE,white,white
+214,1972,1973,45,ACTOR IN A LEADING ROLE,Laurence Olivier,Sleuth,FALSE,white,white
+215,1972,1973,45,ACTOR IN A LEADING ROLE,Peter O'Toole,The Ruling Class,FALSE,white,white
+216,1972,1973,45,ACTOR IN A LEADING ROLE,Paul Winfield,Sounder,FALSE,black,black
+217,1973,1974,46,ACTOR IN A LEADING ROLE,Marlon Brando,Last Tango in Paris,FALSE,white,white
+218,1973,1974,46,ACTOR IN A LEADING ROLE,Jack Lemmon,Save the Tiger,TRUE,white,white
+219,1973,1974,46,ACTOR IN A LEADING ROLE,Jack Nicholson,The Last Detail,FALSE,white,white
+220,1973,1974,46,ACTOR IN A LEADING ROLE,Al Pacino,Serpico,FALSE,white,white
+221,1973,1974,46,ACTOR IN A LEADING ROLE,Robert Redford,The Sting,FALSE,white,white
+222,1974,1975,47,ACTOR IN A LEADING ROLE,Art Carney,Harry and Tonto,TRUE,white,white
+223,1974,1975,47,ACTOR IN A LEADING ROLE,Albert Finney,Murder on the Orient Express,FALSE,white,white
+224,1974,1975,47,ACTOR IN A LEADING ROLE,Dustin Hoffman,Lenny,FALSE,white,white
+225,1974,1975,47,ACTOR IN A LEADING ROLE,Jack Nicholson,Chinatown,FALSE,white,white
+226,1974,1975,47,ACTOR IN A LEADING ROLE,Al Pacino,The Godfather Part II,FALSE,white,white
+227,1975,1976,48,ACTOR IN A LEADING ROLE,Walter Matthau,The Sunshine Boys,FALSE,white,white
+228,1975,1976,48,ACTOR IN A LEADING ROLE,Jack Nicholson,One Flew over the Cuckoo's Nest,TRUE,white,white
+229,1975,1976,48,ACTOR IN A LEADING ROLE,Al Pacino,Dog Day Afternoon,FALSE,white,white
+230,1975,1976,48,ACTOR IN A LEADING ROLE,Maximilian Schell,The Man in the Glass Booth,FALSE,white,white
+231,1975,1976,48,ACTOR IN A LEADING ROLE,James Whitmore,"Give 'em Hell, Harry!",FALSE,white,white
+232,1976,1977,49,ACTOR IN A LEADING ROLE,Robert De Niro,Taxi Driver,FALSE,white,white
+233,1976,1977,49,ACTOR IN A LEADING ROLE,Peter Finch,Network,TRUE,white,white
+234,1976,1977,49,ACTOR IN A LEADING ROLE,Giancarlo Giannini,Seven Beauties,FALSE,white,white
+235,1976,1977,49,ACTOR IN A LEADING ROLE,William Holden,Network,FALSE,white,white
+236,1976,1977,49,ACTOR IN A LEADING ROLE,Sylvester Stallone,Rocky,FALSE,white,white
+237,1977,1978,50,ACTOR IN A LEADING ROLE,Woody Allen,Annie Hall,FALSE,white,white
+238,1977,1978,50,ACTOR IN A LEADING ROLE,Richard Burton,Equus,FALSE,white,white
+239,1977,1978,50,ACTOR IN A LEADING ROLE,Richard Dreyfuss,The Goodbye Girl,TRUE,white,white
+240,1977,1978,50,ACTOR IN A LEADING ROLE,Marcello Mastroianni,A Special Day,FALSE,white,white
+241,1977,1978,50,ACTOR IN A LEADING ROLE,John Travolta,Saturday Night Fever,FALSE,white,white
+242,1978,1979,51,ACTOR IN A LEADING ROLE,Warren Beatty,Heaven Can Wait,FALSE,white,white
+243,1978,1979,51,ACTOR IN A LEADING ROLE,Gary Busey,The Buddy Holly Story,FALSE,white,white
+244,1978,1979,51,ACTOR IN A LEADING ROLE,Robert De Niro,The Deer Hunter,FALSE,white,white
+245,1978,1979,51,ACTOR IN A LEADING ROLE,Laurence Olivier,The Boys from Brazil,FALSE,white,white
+246,1978,1979,51,ACTOR IN A LEADING ROLE,Jon Voight,Coming Home,TRUE,white,white
+247,1979,1980,52,ACTOR IN A LEADING ROLE,Dustin Hoffman,Kramer vs. Kramer,TRUE,white,white
+248,1979,1980,52,ACTOR IN A LEADING ROLE,Jack Lemmon,The China Syndrome,FALSE,white,white
+249,1979,1980,52,ACTOR IN A LEADING ROLE,Al Pacino,...And Justice for All,FALSE,white,white
+250,1979,1980,52,ACTOR IN A LEADING ROLE,Roy Scheider,All That Jazz,FALSE,white,white
+251,1979,1980,52,ACTOR IN A LEADING ROLE,Peter Sellers,Being There,FALSE,white,white
+252,1980,1981,53,ACTOR IN A LEADING ROLE,Robert De Niro,Raging Bull,TRUE,white,white
+253,1980,1981,53,ACTOR IN A LEADING ROLE,Robert Duvall,The Great Santini,FALSE,white,white
+254,1980,1981,53,ACTOR IN A LEADING ROLE,John Hurt,The Elephant Man,FALSE,white,white
+255,1980,1981,53,ACTOR IN A LEADING ROLE,Jack Lemmon,Tribute,FALSE,white,white
+256,1980,1981,53,ACTOR IN A LEADING ROLE,Peter O'Toole,The Stunt Man,FALSE,white,white
+257,1981,1982,54,ACTOR IN A LEADING ROLE,Warren Beatty,Reds,FALSE,white,white
+258,1981,1982,54,ACTOR IN A LEADING ROLE,Henry Fonda,On Golden Pond,TRUE,white,white
+259,1981,1982,54,ACTOR IN A LEADING ROLE,Burt Lancaster,Atlantic City,FALSE,white,white
+260,1981,1982,54,ACTOR IN A LEADING ROLE,Dudley Moore,Arthur,FALSE,white,white
+261,1981,1982,54,ACTOR IN A LEADING ROLE,Paul Newman,Absence of Malice,FALSE,white,white
+262,1982,1983,55,ACTOR IN A LEADING ROLE,Dustin Hoffman,Tootsie,FALSE,white,white
+263,1982,1983,55,ACTOR IN A LEADING ROLE,Ben Kingsley,Gandhi,TRUE,asian,asian
+264,1982,1983,55,ACTOR IN A LEADING ROLE,Jack Lemmon,Missing,FALSE,white,white
+265,1982,1983,55,ACTOR IN A LEADING ROLE,Paul Newman,The Verdict,FALSE,white,white
+266,1982,1983,55,ACTOR IN A LEADING ROLE,Peter O'Toole,My Favorite Year,FALSE,white,white
+267,1983,1984,56,ACTOR IN A LEADING ROLE,Michael Caine,Educating Rita,FALSE,white,white
+268,1983,1984,56,ACTOR IN A LEADING ROLE,Tom Conti,"Reuben, Reuben",FALSE,white,white
+269,1983,1984,56,ACTOR IN A LEADING ROLE,Tom Courtenay,The Dresser,FALSE,white,white
+270,1983,1984,56,ACTOR IN A LEADING ROLE,Robert Duvall,Tender Mercies,TRUE,white,white
+271,1983,1984,56,ACTOR IN A LEADING ROLE,Albert Finney,The Dresser,FALSE,white,white
+272,1984,1985,57,ACTOR IN A LEADING ROLE,F. Murray Abraham,Amadeus,TRUE,Assyrian,other
+273,1984,1985,57,ACTOR IN A LEADING ROLE,Jeff Bridges,Starman,FALSE,white,white
+274,1984,1985,57,ACTOR IN A LEADING ROLE,Albert Finney,Under the Volcano,FALSE,white,white
+275,1984,1985,57,ACTOR IN A LEADING ROLE,Tom Hulce,Amadeus,FALSE,white,white
+276,1984,1985,57,ACTOR IN A LEADING ROLE,Sam Waterston,The Killing Fields,FALSE,white,white
+277,1985,1986,58,ACTOR IN A LEADING ROLE,Harrison Ford,Witness,FALSE,white,white
+278,1985,1986,58,ACTOR IN A LEADING ROLE,James Garner,Murphy's Romance,FALSE,white,white
+279,1985,1986,58,ACTOR IN A LEADING ROLE,William Hurt,Kiss of the Spider Woman,TRUE,white,white
+280,1985,1986,58,ACTOR IN A LEADING ROLE,Jack Nicholson,Prizzi's Honor,FALSE,white,white
+281,1985,1986,58,ACTOR IN A LEADING ROLE,Jon Voight,Runaway Train,FALSE,white,white
+282,1986,1987,59,ACTOR IN A LEADING ROLE,Dexter Gordon,'Round Midnight,FALSE,black,black
+283,1986,1987,59,ACTOR IN A LEADING ROLE,Bob Hoskins,Mona Lisa,FALSE,white,white
+284,1986,1987,59,ACTOR IN A LEADING ROLE,William Hurt,Children of a Lesser God,FALSE,white,white
+285,1986,1987,59,ACTOR IN A LEADING ROLE,Paul Newman,The Color of Money,TRUE,white,white
+286,1986,1987,59,ACTOR IN A LEADING ROLE,James Woods,Salvador,FALSE,white,white
+287,1987,1988,60,ACTOR IN A LEADING ROLE,Michael Douglas,Wall Street,TRUE,white,white
+288,1987,1988,60,ACTOR IN A LEADING ROLE,William Hurt,Broadcast News,FALSE,white,white
+289,1987,1988,60,ACTOR IN A LEADING ROLE,Marcello Mastroianni,Dark Eyes,FALSE,white,white
+290,1987,1988,60,ACTOR IN A LEADING ROLE,Jack Nicholson,Ironweed,FALSE,white,white
+291,1987,1988,60,ACTOR IN A LEADING ROLE,Robin Williams,"Good Morning, Vietnam",FALSE,white,white
+292,1988,1989,61,ACTOR IN A LEADING ROLE,Gene Hackman,Mississippi Burning,FALSE,white,white
+293,1988,1989,61,ACTOR IN A LEADING ROLE,Tom Hanks,Big,FALSE,white,white
+294,1988,1989,61,ACTOR IN A LEADING ROLE,Dustin Hoffman,Rain Man,TRUE,white,white
+295,1988,1989,61,ACTOR IN A LEADING ROLE,Edward James Olmos,Stand and Deliver,FALSE,white,white
+296,1988,1989,61,ACTOR IN A LEADING ROLE,Max von Sydow,Pelle the Conqueror,FALSE,white,white
+297,1989,1990,62,ACTOR IN A LEADING ROLE,Kenneth Branagh,Henry V,FALSE,white,white
+298,1989,1990,62,ACTOR IN A LEADING ROLE,Tom Cruise,Born on the Fourth of July,FALSE,white,white
+299,1989,1990,62,ACTOR IN A LEADING ROLE,Daniel Day Lewis,My Left Foot,TRUE,white,white
+300,1989,1990,62,ACTOR IN A LEADING ROLE,Morgan Freeman,Driving Miss Daisy,FALSE,black,black
+301,1989,1990,62,ACTOR IN A LEADING ROLE,Robin Williams,Dead Poets Society,FALSE,white,white
+302,1990,1991,63,ACTOR IN A LEADING ROLE,Kevin Costner,Dances With Wolves,FALSE,white,white
+303,1990,1991,63,ACTOR IN A LEADING ROLE,Robert De Niro,Awakenings,FALSE,white,white
+304,1990,1991,63,ACTOR IN A LEADING ROLE,Gerard Depardieu,Cyrano de Bergerac,FALSE,white,white
+305,1990,1991,63,ACTOR IN A LEADING ROLE,Richard Harris,The Field,FALSE,white,white
+306,1990,1991,63,ACTOR IN A LEADING ROLE,Jeremy Irons,Reversal of Fortune,TRUE,white,white
+307,1991,1992,64,ACTOR IN A LEADING ROLE,Warren Beatty,Bugsy,FALSE,white,white
+308,1991,1992,64,ACTOR IN A LEADING ROLE,Robert De Niro,Cape Fear,FALSE,white,white
+309,1991,1992,64,ACTOR IN A LEADING ROLE,Anthony Hopkins,The Silence of the Lambs,TRUE,white,white
+310,1991,1992,64,ACTOR IN A LEADING ROLE,Nick Nolte,The Prince of Tides,FALSE,white,white
+311,1991,1992,64,ACTOR IN A LEADING ROLE,Robin Williams,The Fisher King,FALSE,white,white
+312,1992,1993,65,ACTOR IN A LEADING ROLE,Robert Downey Jr.,Chaplin,FALSE,white,white
+313,1992,1993,65,ACTOR IN A LEADING ROLE,Clint Eastwood,Unforgiven,FALSE,white,white
+314,1992,1993,65,ACTOR IN A LEADING ROLE,Al Pacino,Scent of a Woman,TRUE,white,white
+315,1992,1993,65,ACTOR IN A LEADING ROLE,Stephen Rea,The Crying Game,FALSE,white,white
+316,1992,1993,65,ACTOR IN A LEADING ROLE,Denzel Washington,Malcolm X,FALSE,black,black
+317,1993,1994,66,ACTOR IN A LEADING ROLE,Daniel Day-Lewis,In the Name of the Father,FALSE,white,white
+318,1993,1994,66,ACTOR IN A LEADING ROLE,Laurence Fishburne,What's Love Got to Do with It,FALSE,black,black
+319,1993,1994,66,ACTOR IN A LEADING ROLE,Tom Hanks,Philadelphia,TRUE,white,white
+320,1993,1994,66,ACTOR IN A LEADING ROLE,Anthony Hopkins,The Remains of the Day,FALSE,white,white
+321,1993,1994,66,ACTOR IN A LEADING ROLE,Liam Neeson,Schindler's List,FALSE,white,white
+322,1994,1995,67,ACTOR IN A LEADING ROLE,Morgan Freeman,The Shawshank Redemption,FALSE,black,black
+323,1994,1995,67,ACTOR IN A LEADING ROLE,Tom Hanks,Forrest Gump,TRUE,white,white
+324,1994,1995,67,ACTOR IN A LEADING ROLE,Nigel Hawthorne,The Madness of King George,FALSE,white,white
+325,1994,1995,67,ACTOR IN A LEADING ROLE,Paul Newman,Nobody's Fool,FALSE,white,white
+326,1994,1995,67,ACTOR IN A LEADING ROLE,John Travolta,Pulp Fiction,FALSE,white,white
+327,1995,1996,68,ACTOR IN A LEADING ROLE,Nicolas Cage,Leaving Las Vegas,TRUE,white,white
+328,1995,1996,68,ACTOR IN A LEADING ROLE,Richard Dreyfuss,Mr. Holland's Opus,FALSE,white,white
+329,1995,1996,68,ACTOR IN A LEADING ROLE,Anthony Hopkins,Nixon,FALSE,white,white
+330,1995,1996,68,ACTOR IN A LEADING ROLE,Sean Penn,Dead Man Walking,FALSE,white,white
+331,1995,1996,68,ACTOR IN A LEADING ROLE,Massimo Troisi,The Postman (Il Postino),FALSE,white,white
+332,1996,1997,69,ACTOR IN A LEADING ROLE,Tom Cruise,Jerry Maguire,FALSE,white,white
+333,1996,1997,69,ACTOR IN A LEADING ROLE,Ralph Fiennes,The English Patient,FALSE,white,white
+334,1996,1997,69,ACTOR IN A LEADING ROLE,Woody Harrelson,The People vs. Larry Flynt,FALSE,white,white
+335,1996,1997,69,ACTOR IN A LEADING ROLE,Geoffrey Rush,Shine,TRUE,white,white
+336,1996,1997,69,ACTOR IN A LEADING ROLE,Billy Bob Thornton,Sling Blade,FALSE,white,white
+337,1997,1998,70,ACTOR IN A LEADING ROLE,Matt Damon,Good Will Hunting,FALSE,white,white
+338,1997,1998,70,ACTOR IN A LEADING ROLE,Robert Duvall,The Apostle,FALSE,white,white
+339,1997,1998,70,ACTOR IN A LEADING ROLE,Peter Fonda,Ulee's Gold,FALSE,white,white
+340,1997,1998,70,ACTOR IN A LEADING ROLE,Dustin Hoffman,Wag the Dog,FALSE,white,white
+341,1997,1998,70,ACTOR IN A LEADING ROLE,Jack Nicholson,As Good as It Gets,TRUE,white,white
+342,1998,1999,71,ACTOR IN A LEADING ROLE,Roberto Benigni,Life Is Beautiful,TRUE,white,white
+343,1998,1999,71,ACTOR IN A LEADING ROLE,Tom Hanks,Saving Private Ryan,FALSE,white,white
+344,1998,1999,71,ACTOR IN A LEADING ROLE,Ian McKellen,Gods and Monsters,FALSE,white,white
+345,1998,1999,71,ACTOR IN A LEADING ROLE,Nick Nolte,Affliction,FALSE,white,white
+346,1998,1999,71,ACTOR IN A LEADING ROLE,Edward Norton,American History X,FALSE,white,white
+347,1999,2000,72,ACTOR IN A LEADING ROLE,Russell Crowe,The Insider,FALSE,white,white
+348,1999,2000,72,ACTOR IN A LEADING ROLE,Richard Farnsworth,The Straight Story,FALSE,white,white
+349,1999,2000,72,ACTOR IN A LEADING ROLE,Sean Penn,Sweet and Lowdown,FALSE,white,white
+350,1999,2000,72,ACTOR IN A LEADING ROLE,Kevin Spacey,American Beauty,TRUE,white,white
+351,1999,2000,72,ACTOR IN A LEADING ROLE,Denzel Washington,The Hurricane,FALSE,black,black
+352,2000,2001,73,ACTOR IN A LEADING ROLE,Javier Bardem,Before Night Falls,FALSE,white,white
+353,2000,2001,73,ACTOR IN A LEADING ROLE,Russell Crowe,Gladiator,TRUE,white,white
+354,2000,2001,73,ACTOR IN A LEADING ROLE,Tom Hanks,Cast Away,FALSE,white,white
+355,2000,2001,73,ACTOR IN A LEADING ROLE,Ed Harris,Pollock,FALSE,white,white
+356,2000,2001,73,ACTOR IN A LEADING ROLE,Geoffrey Rush,Quills,FALSE,white,white
+357,2001,2002,74,ACTOR IN A LEADING ROLE,Russell Crowe,A Beautiful Mind,FALSE,white,white
+358,2001,2002,74,ACTOR IN A LEADING ROLE,Sean Penn,I Am Sam,FALSE,white,white
+359,2001,2002,74,ACTOR IN A LEADING ROLE,Will Smith,Ali,FALSE,black,black
+360,2001,2002,74,ACTOR IN A LEADING ROLE,Denzel Washington,Training Day,TRUE,black,black
+361,2001,2002,74,ACTOR IN A LEADING ROLE,Tom Wilkinson,In the Bedroom,FALSE,white,white
+362,2002,2003,75,ACTOR IN A LEADING ROLE,Adrien Brody,The Pianist,TRUE,white,white
+363,2002,2003,75,ACTOR IN A LEADING ROLE,Nicolas Cage,Adaptation,FALSE,white,white
+364,2002,2003,75,ACTOR IN A LEADING ROLE,Michael Caine,The Quiet American,FALSE,white,white
+365,2002,2003,75,ACTOR IN A LEADING ROLE,Daniel Day-Lewis,Gangs of New York,FALSE,white,white
+366,2002,2003,75,ACTOR IN A LEADING ROLE,Jack Nicholson,About Schmidt,FALSE,white,white
+367,2003,2004,76,ACTOR IN A LEADING ROLE,Johnny Depp,Pirates of the Caribbean: The Curse of the Black Pearl,FALSE,white,white
+368,2003,2004,76,ACTOR IN A LEADING ROLE,Ben Kingsley,House of Sand and Fog,FALSE,asian,asian
+369,2003,2004,76,ACTOR IN A LEADING ROLE,Jude Law,Cold Mountain,FALSE,white,white
+370,2003,2004,76,ACTOR IN A LEADING ROLE,Bill Murray,Lost in Translation,FALSE,white,white
+371,2003,2004,76,ACTOR IN A LEADING ROLE,Sean Penn,Mystic River,TRUE,white,white
+372,2004,2005,77,ACTOR IN A LEADING ROLE,Don Cheadle,Hotel Rwanda,FALSE,black,black
+373,2004,2005,77,ACTOR IN A LEADING ROLE,Johnny Depp,Finding Neverland,FALSE,white,white
+374,2004,2005,77,ACTOR IN A LEADING ROLE,Leonardo DiCaprio,The Aviator,FALSE,white,white
+375,2004,2005,77,ACTOR IN A LEADING ROLE,Clint Eastwood,Million Dollar Baby,FALSE,white,white
+376,2004,2005,77,ACTOR IN A LEADING ROLE,Jamie Foxx,Ray,TRUE,black,black
+377,2005,2006,78,ACTOR IN A LEADING ROLE,Philip Seymour Hoffman,Capote,TRUE,white,white
+378,2005,2006,78,ACTOR IN A LEADING ROLE,Terrence Howard,Hustle & Flow,FALSE,black,black
+379,2005,2006,78,ACTOR IN A LEADING ROLE,Heath Ledger,Brokeback Mountain,FALSE,white,white
+380,2005,2006,78,ACTOR IN A LEADING ROLE,Joaquin Phoenix,Walk the Line,FALSE,white,white
+381,2005,2006,78,ACTOR IN A LEADING ROLE,David Strathairn,"Good Night, and Good Luck.",FALSE,white,white
+382,2006,2007,79,ACTOR IN A LEADING ROLE,Leonardo DiCaprio,Blood Diamond,FALSE,white,white
+383,2006,2007,79,ACTOR IN A LEADING ROLE,Ryan Gosling,Half Nelson,FALSE,white,white
+384,2006,2007,79,ACTOR IN A LEADING ROLE,Peter O'Toole,Venus,FALSE,white,white
+385,2006,2007,79,ACTOR IN A LEADING ROLE,Will Smith,The Pursuit of Happyness,FALSE,black,black
+386,2006,2007,79,ACTOR IN A LEADING ROLE,Forest Whitaker,The Last King of Scotland,TRUE,black,black
+387,2007,2008,80,ACTOR IN A LEADING ROLE,George Clooney,Michael Clayton,FALSE,white,white
+388,2007,2008,80,ACTOR IN A LEADING ROLE,Daniel Day-Lewis,There Will Be Blood,TRUE,white,white
+389,2007,2008,80,ACTOR IN A LEADING ROLE,Johnny Depp,Sweeney Todd The Demon Barber of Fleet Street,FALSE,white,white
+390,2007,2008,80,ACTOR IN A LEADING ROLE,Tommy Lee Jones,In the Valley of Elah,FALSE,white,white
+391,2007,2008,80,ACTOR IN A LEADING ROLE,Viggo Mortensen,Eastern Promises,FALSE,white,white
+392,2008,2009,81,ACTOR IN A LEADING ROLE,Richard Jenkins,The Visitor,FALSE,white,white
+393,2008,2009,81,ACTOR IN A LEADING ROLE,Frank Langella,Frost/Nixon,FALSE,white,white
+394,2008,2009,81,ACTOR IN A LEADING ROLE,Sean Penn,Milk,TRUE,white,white
+395,2008,2009,81,ACTOR IN A LEADING ROLE,Brad Pitt,The Curious Case of Benjamin Button,FALSE,white,white
+396,2008,2009,81,ACTOR IN A LEADING ROLE,Mickey Rourke,The Wrestler,FALSE,white,white
+397,2009,2010,82,ACTOR IN A LEADING ROLE,Jeff Bridges,Crazy Heart,TRUE,white,white
+398,2009,2010,82,ACTOR IN A LEADING ROLE,George Clooney,Up in the Air,FALSE,white,white
+399,2009,2010,82,ACTOR IN A LEADING ROLE,Colin Firth,A Single Man,FALSE,white,white
+400,2009,2010,82,ACTOR IN A LEADING ROLE,Morgan Freeman,Invictus,FALSE,black,black
+401,2009,2010,82,ACTOR IN A LEADING ROLE,Jeremy Renner,The Hurt Locker,FALSE,white,white
+402,2010,2011,83,ACTOR IN A LEADING ROLE,Javier Bardem,Biutiful,FALSE,white,white
+403,2010,2011,83,ACTOR IN A LEADING ROLE,Jeff Bridges,True Grit,FALSE,white,white
+404,2010,2011,83,ACTOR IN A LEADING ROLE,Jesse Eisenberg,The Social Network,FALSE,white,white
+405,2010,2011,83,ACTOR IN A LEADING ROLE,Colin Firth,The King's Speech,TRUE,white,white
+406,2010,2011,83,ACTOR IN A LEADING ROLE,James Franco,127 Hours,FALSE,white,white
+407,2011,2012,84,ACTOR IN A LEADING ROLE,Demián Bichir,A Better Life,FALSE,hispanic,hispanic
+408,2011,2012,84,ACTOR IN A LEADING ROLE,George Clooney,The Descendants,FALSE,white,white
+409,2011,2012,84,ACTOR IN A LEADING ROLE,Jean Dujardin,The Artist,TRUE,white,white
+410,2011,2012,84,ACTOR IN A LEADING ROLE,Gary Oldman,Tinker Tailor Soldier Spy,FALSE,white,white
+411,2011,2012,84,ACTOR IN A LEADING ROLE,Brad Pitt,Moneyball,FALSE,white,white
+412,2012,2013,85,ACTOR IN A LEADING ROLE,Bradley Cooper,Silver Linings Playbook,FALSE,white,white
+413,2012,2013,85,ACTOR IN A LEADING ROLE,Daniel Day-Lewis,Lincoln,TRUE,white,white
+414,2012,2013,85,ACTOR IN A LEADING ROLE,Hugh Jackman,Les Misérables,FALSE,white,white
+415,2012,2013,85,ACTOR IN A LEADING ROLE,Joaquin Phoenix,The Master,FALSE,white,white
+416,2012,2013,85,ACTOR IN A LEADING ROLE,Denzel Washington,Flight,FALSE,black,black
+417,2013,2014,86,ACTOR IN A LEADING ROLE,Christian Bale,American Hustle,FALSE,white,white
+418,2013,2014,86,ACTOR IN A LEADING ROLE,Bruce Dern,Nebraska,FALSE,white,white
+419,2013,2014,86,ACTOR IN A LEADING ROLE,Leonardo DiCaprio,The Wolf of Wall Street,FALSE,white,white
+420,2013,2014,86,ACTOR IN A LEADING ROLE,Chiwetel Ejiofor,12 Years a Slave,FALSE,black,black
+421,2013,2014,86,ACTOR IN A LEADING ROLE,Matthew McConaughey,Dallas Buyers Club,TRUE,white,white
+422,2014,2015,87,ACTOR IN A LEADING ROLE,Steve Carell,Foxcatcher,FALSE,white,white
+423,2014,2015,87,ACTOR IN A LEADING ROLE,Bradley Cooper,American Sniper,FALSE,white,white
+424,2014,2015,87,ACTOR IN A LEADING ROLE,Benedict Cumberbatch,The Imitation Game,FALSE,white,white
+425,2014,2015,87,ACTOR IN A LEADING ROLE,Michael Keaton,Birdman or (The Unexpected Virtue of Ignorance),FALSE,white,white
+426,2014,2015,87,ACTOR IN A LEADING ROLE,Eddie Redmayne,The Theory of Everything,TRUE,white,white
+427,2015,2016,88,ACTOR IN A LEADING ROLE,Bryan Cranston,Trumbo,FALSE,white,white
+428,2015,2016,88,ACTOR IN A LEADING ROLE,Matt Damon,The Martian,FALSE,white,white
+429,2015,2016,88,ACTOR IN A LEADING ROLE,Leonardo DiCaprio,The Revenant,TRUE,white,white
+430,2015,2016,88,ACTOR IN A LEADING ROLE,Michael Fassbender,Steve Jobs,FALSE,white,white
+431,2015,2016,88,ACTOR IN A LEADING ROLE,Eddie Redmayne,The Danish Girl,FALSE,white,white
+432,2016,2017,89,ACTOR IN A LEADING ROLE,Casey Affleck,Manchester by the Sea,TRUE,white,white
+433,2016,2017,89,ACTOR IN A LEADING ROLE,Andrew Garfield,Hacksaw Ridge,FALSE,white,white
+434,2016,2017,89,ACTOR IN A LEADING ROLE,Ryan Gosling,La La Land,FALSE,white,white
+435,2016,2017,89,ACTOR IN A LEADING ROLE,Viggo Mortensen,Captain Fantastic,FALSE,white,white
+436,2016,2017,89,ACTOR IN A LEADING ROLE,Denzel Washington,Fences,FALSE,black,black
+437,2017,2018,90,ACTOR IN A LEADING ROLE,Timothée Chalamet,Call Me by Your Name,FALSE,white,white
+438,2017,2018,90,ACTOR IN A LEADING ROLE,Daniel Day-Lewis,Phantom Thread,FALSE,white,white
+439,2017,2018,90,ACTOR IN A LEADING ROLE,Daniel Kaluuya,Get Out,FALSE,black,black
+440,2017,2018,90,ACTOR IN A LEADING ROLE,Gary Oldman,Darkest Hour,TRUE,white,white
+441,2017,2018,90,ACTOR IN A LEADING ROLE,Denzel Washington,"Roman J. Israel, Esq.",FALSE,black,black
+442,2018,2019,91,ACTOR IN A LEADING ROLE,Christian Bale,Vice,FALSE,white,white
+443,2018,2019,91,ACTOR IN A LEADING ROLE,Bradley Cooper,A Star Is Born,FALSE,white,white
+444,2018,2019,91,ACTOR IN A LEADING ROLE,Willem Dafoe,At Eternity's Gate,FALSE,white,white
+445,2018,2019,91,ACTOR IN A LEADING ROLE,Rami Malek,Bohemian Rhapsody,TRUE,white,white
+446,2018,2019,91,ACTOR IN A LEADING ROLE,Viggo Mortensen,Green Book,FALSE,white,white
+447,2019,2020,92,ACTOR IN A LEADING ROLE,Antonio Banderas,Pain and Glory,FALSE,white,white
+448,2019,2020,92,ACTOR IN A LEADING ROLE,Leonardo DiCaprio,Once upon a Time...in Hollywood,FALSE,white,white
+449,2019,2020,92,ACTOR IN A LEADING ROLE,Adam Driver,Marriage Story,FALSE,white,white
+450,2019,2020,92,ACTOR IN A LEADING ROLE,Joaquin Phoenix,Joker,TRUE,white,white
+451,2019,2020,92,ACTOR IN A LEADING ROLE,Jonathan Pryce,The Two Popes,FALSE,white,white
+452,1936,1937,9,ACTOR IN A SUPPORTING ROLE,Mischa Auer,My Man Godfrey,FALSE,white,white
+453,1936,1937,9,ACTOR IN A SUPPORTING ROLE,Walter Brennan,Come and Get It,TRUE,white,white
+454,1936,1937,9,ACTOR IN A SUPPORTING ROLE,Stuart Erwin,Pigskin Parade,FALSE,white,white
+455,1936,1937,9,ACTOR IN A SUPPORTING ROLE,Basil Rathbone,Romeo and Juliet,FALSE,white,white
+456,1936,1937,9,ACTOR IN A SUPPORTING ROLE,Akim Tamiroff,The General Died at Dawn,FALSE,white,white
+457,1937,1938,10,ACTOR IN A SUPPORTING ROLE,Ralph Bellamy,The Awful Truth,FALSE,white,white
+458,1937,1938,10,ACTOR IN A SUPPORTING ROLE,Thomas Mitchell,The Hurricane,FALSE,white,white
+459,1937,1938,10,ACTOR IN A SUPPORTING ROLE,Joseph Schildkraut,The Life of Emile Zola,TRUE,white,white
+460,1937,1938,10,ACTOR IN A SUPPORTING ROLE,H. B. Warner,Lost Horizon,FALSE,white,white
+461,1937,1938,10,ACTOR IN A SUPPORTING ROLE,Roland Young,Topper,FALSE,white,white
+462,1938,1939,11,ACTOR IN A SUPPORTING ROLE,Walter Brennan,Kentucky,TRUE,white,white
+463,1938,1939,11,ACTOR IN A SUPPORTING ROLE,John Garfield,Four Daughters,FALSE,white,white
+464,1938,1939,11,ACTOR IN A SUPPORTING ROLE,Gene Lockhart,Algiers,FALSE,white,white
+465,1938,1939,11,ACTOR IN A SUPPORTING ROLE,Robert Morley,Marie Antoinette,FALSE,white,white
+466,1938,1939,11,ACTOR IN A SUPPORTING ROLE,Basil Rathbone,If I Were King,FALSE,white,white
+467,1939,1940,12,ACTOR IN A SUPPORTING ROLE,Brian Aherne,Juarez,FALSE,white,white
+468,1939,1940,12,ACTOR IN A SUPPORTING ROLE,Harry Carey,Mr. Smith Goes to Washington,FALSE,white,white
+469,1939,1940,12,ACTOR IN A SUPPORTING ROLE,Brian Donlevy,Beau Geste,FALSE,white,white
+470,1939,1940,12,ACTOR IN A SUPPORTING ROLE,Thomas Mitchell,Stagecoach,TRUE,white,white
+471,1939,1940,12,ACTOR IN A SUPPORTING ROLE,Claude Rains,Mr. Smith Goes to Washington,FALSE,white,white
+472,1940,1941,13,ACTOR IN A SUPPORTING ROLE,Albert Basserman,Foreign Correspondent,FALSE,white,white
+473,1940,1941,13,ACTOR IN A SUPPORTING ROLE,Walter Brennan,The Westerner,TRUE,white,white
+474,1940,1941,13,ACTOR IN A SUPPORTING ROLE,William Gargan,They Knew What They Wanted,FALSE,white,white
+475,1940,1941,13,ACTOR IN A SUPPORTING ROLE,Jack Oakie,The Great Dictator,FALSE,white,white
+476,1940,1941,13,ACTOR IN A SUPPORTING ROLE,James Stephenson,The Letter,FALSE,white,white
+477,1941,1942,14,ACTOR IN A SUPPORTING ROLE,Walter Brennan,Sergeant York,FALSE,white,white
+478,1941,1942,14,ACTOR IN A SUPPORTING ROLE,Charles Coburn,The Devil and Miss Jones,FALSE,white,white
+479,1941,1942,14,ACTOR IN A SUPPORTING ROLE,Donald Crisp,How Green Was My Valley,TRUE,white,white
+480,1941,1942,14,ACTOR IN A SUPPORTING ROLE,James Gleason,Here Comes Mr. Jordan,FALSE,white,white
+481,1941,1942,14,ACTOR IN A SUPPORTING ROLE,Sydney Greenstreet,The Maltese Falcon,FALSE,white,white
+482,1942,1943,15,ACTOR IN A SUPPORTING ROLE,William Bendix,Wake Island,FALSE,white,white
+483,1942,1943,15,ACTOR IN A SUPPORTING ROLE,Van Heflin,Johnny Eager,TRUE,white,white
+484,1942,1943,15,ACTOR IN A SUPPORTING ROLE,Walter Huston,Yankee Doodle Dandy,FALSE,white,white
+485,1942,1943,15,ACTOR IN A SUPPORTING ROLE,Frank Morgan,Tortilla Flat,FALSE,white,white
+486,1942,1943,15,ACTOR IN A SUPPORTING ROLE,Henry Travers,Mrs. Miniver,FALSE,white,white
+487,1943,1944,16,ACTOR IN A SUPPORTING ROLE,Charles Bickford,The Song of Bernadette,FALSE,white,white
+488,1943,1944,16,ACTOR IN A SUPPORTING ROLE,Charles Coburn,The More the Merrier,TRUE,white,white
+489,1943,1944,16,ACTOR IN A SUPPORTING ROLE,J. Carrol Naish,Sahara,FALSE,white,white
+490,1943,1944,16,ACTOR IN A SUPPORTING ROLE,Claude Rains,Casablanca,FALSE,white,white
+491,1943,1944,16,ACTOR IN A SUPPORTING ROLE,Akim Tamiroff,For Whom the Bell Tolls,FALSE,white,white
+492,1944,1945,17,ACTOR IN A SUPPORTING ROLE,Hume Cronyn,The Seventh Cross,FALSE,white,white
+493,1944,1945,17,ACTOR IN A SUPPORTING ROLE,Barry Fitzgerald,Going My Way,TRUE,white,white
+494,1944,1945,17,ACTOR IN A SUPPORTING ROLE,Claude Rains,Mr. Skeffington,FALSE,white,white
+495,1944,1945,17,ACTOR IN A SUPPORTING ROLE,Clifton Webb,Laura,FALSE,white,white
+496,1944,1945,17,ACTOR IN A SUPPORTING ROLE,Monty Woolley,Since You Went Away,FALSE,white,white
+497,1945,1946,18,ACTOR IN A SUPPORTING ROLE,Michael Chekhov,Spellbound,FALSE,white,white
+498,1945,1946,18,ACTOR IN A SUPPORTING ROLE,John Dall,The Corn Is Green,FALSE,white,white
+499,1945,1946,18,ACTOR IN A SUPPORTING ROLE,James Dunn,A Tree Grows in Brooklyn,TRUE,white,white
+500,1945,1946,18,ACTOR IN A SUPPORTING ROLE,Robert Mitchum,G. I. Joe,FALSE,white,white
+501,1945,1946,18,ACTOR IN A SUPPORTING ROLE,J. Carrol Naish,A Medal for Benny,FALSE,white,white
+502,1946,1947,19,ACTOR IN A SUPPORTING ROLE,Charles Coburn,The Green Years,FALSE,white,white
+503,1946,1947,19,ACTOR IN A SUPPORTING ROLE,William Demarest,The Jolson Story,FALSE,white,white
+504,1946,1947,19,ACTOR IN A SUPPORTING ROLE,Claude Rains,Notorious,FALSE,white,white
+505,1946,1947,19,ACTOR IN A SUPPORTING ROLE,Harold Russell,The Best Years of Our Lives,TRUE,white,white
+506,1946,1947,19,ACTOR IN A SUPPORTING ROLE,Clifton Webb,The Razor's Edge,FALSE,white,white
+507,1947,1948,20,ACTOR IN A SUPPORTING ROLE,Charles Bickford,The Farmer's Daughter,FALSE,white,white
+508,1947,1948,20,ACTOR IN A SUPPORTING ROLE,Thomas Gomez,Ride the Pink Horse,FALSE,white,white
+509,1947,1948,20,ACTOR IN A SUPPORTING ROLE,Edmund Gwenn,Miracle on 34th Street,TRUE,white,white
+510,1947,1948,20,ACTOR IN A SUPPORTING ROLE,Robert Ryan,Crossfire,FALSE,white,white
+511,1947,1948,20,ACTOR IN A SUPPORTING ROLE,Richard Widmark,Kiss of Death,FALSE,white,white
+512,1948,1949,21,ACTOR IN A SUPPORTING ROLE,Charles Bickford,Johnny Belinda,FALSE,white,white
+513,1948,1949,21,ACTOR IN A SUPPORTING ROLE,José Ferrer,Joan of Arc,FALSE,white,white
+514,1948,1949,21,ACTOR IN A SUPPORTING ROLE,Oscar Homolka,I Remember Mama,FALSE,white,white
+515,1948,1949,21,ACTOR IN A SUPPORTING ROLE,Walter Huston,The Treasure of the Sierra Madre,TRUE,white,white
+516,1948,1949,21,ACTOR IN A SUPPORTING ROLE,Cecil Kellaway,The Luck of the Irish,FALSE,white,white
+517,1949,1950,22,ACTOR IN A SUPPORTING ROLE,John Ireland,All the King's Men,FALSE,white,white
+518,1949,1950,22,ACTOR IN A SUPPORTING ROLE,Dean Jagger,Twelve O'Clock High,TRUE,white,white
+519,1949,1950,22,ACTOR IN A SUPPORTING ROLE,Arthur Kennedy,Champion,FALSE,white,white
+520,1949,1950,22,ACTOR IN A SUPPORTING ROLE,Ralph Richardson,The Heiress,FALSE,white,white
+521,1949,1950,22,ACTOR IN A SUPPORTING ROLE,James Whitmore,Battleground,FALSE,white,white
+522,1950,1951,23,ACTOR IN A SUPPORTING ROLE,Jeff Chandler,Broken Arrow,FALSE,white,white
+523,1950,1951,23,ACTOR IN A SUPPORTING ROLE,Edmund Gwenn,Mister 880,FALSE,white,white
+524,1950,1951,23,ACTOR IN A SUPPORTING ROLE,Sam Jaffe,The Asphalt Jungle,FALSE,white,white
+525,1950,1951,23,ACTOR IN A SUPPORTING ROLE,George Sanders,All about Eve,TRUE,white,white
+526,1950,1951,23,ACTOR IN A SUPPORTING ROLE,Erich von Stroheim,Sunset Blvd.,FALSE,white,white
+527,1951,1952,24,ACTOR IN A SUPPORTING ROLE,Leo Genn,Quo Vadis,FALSE,white,white
+528,1951,1952,24,ACTOR IN A SUPPORTING ROLE,Kevin McCarthy,Death of a Salesman,FALSE,white,white
+529,1951,1952,24,ACTOR IN A SUPPORTING ROLE,Karl Malden,A Streetcar Named Desire,TRUE,white,white
+530,1951,1952,24,ACTOR IN A SUPPORTING ROLE,Peter Ustinov,Quo Vadis,FALSE,white,white
+531,1951,1952,24,ACTOR IN A SUPPORTING ROLE,Gig Young,Come Fill the Cup,FALSE,white,white
+532,1952,1953,25,ACTOR IN A SUPPORTING ROLE,Richard Burton,My Cousin Rachel,FALSE,white,white
+533,1952,1953,25,ACTOR IN A SUPPORTING ROLE,Arthur Hunnicutt,The Big Sky,FALSE,white,white
+534,1952,1953,25,ACTOR IN A SUPPORTING ROLE,Victor McLaglen,The Quiet Man,FALSE,white,white
+535,1952,1953,25,ACTOR IN A SUPPORTING ROLE,Jack Palance,Sudden Fear,FALSE,white,white
+536,1952,1953,25,ACTOR IN A SUPPORTING ROLE,Anthony Quinn,Viva Zapata!,TRUE,white,white
+537,1953,1954,26,ACTOR IN A SUPPORTING ROLE,Eddie Albert,Roman Holiday,FALSE,white,white
+538,1953,1954,26,ACTOR IN A SUPPORTING ROLE,Brandon De Wilde,Shane,FALSE,white,white
+539,1953,1954,26,ACTOR IN A SUPPORTING ROLE,Jack Palance,Shane,FALSE,white,white
+540,1953,1954,26,ACTOR IN A SUPPORTING ROLE,Frank Sinatra,From Here to Eternity,TRUE,white,white
+541,1953,1954,26,ACTOR IN A SUPPORTING ROLE,Robert Strauss,Stalag 17,FALSE,white,white
+542,1954,1955,27,ACTOR IN A SUPPORTING ROLE,Lee J. Cobb,On the Waterfront,FALSE,white,white
+543,1954,1955,27,ACTOR IN A SUPPORTING ROLE,Karl Malden,On the Waterfront,FALSE,white,white
+544,1954,1955,27,ACTOR IN A SUPPORTING ROLE,Edmond O'Brien,The Barefoot Contessa,TRUE,white,white
+545,1954,1955,27,ACTOR IN A SUPPORTING ROLE,Rod Steiger,On the Waterfront,FALSE,white,white
+546,1954,1955,27,ACTOR IN A SUPPORTING ROLE,Tom Tully,The Caine Mutiny,FALSE,white,white
+547,1955,1956,28,ACTOR IN A SUPPORTING ROLE,Arthur Kennedy,Trial,FALSE,white,white
+548,1955,1956,28,ACTOR IN A SUPPORTING ROLE,Jack Lemmon,Mister Roberts,TRUE,white,white
+549,1955,1956,28,ACTOR IN A SUPPORTING ROLE,Joe Mantell,Marty,FALSE,white,white
+550,1955,1956,28,ACTOR IN A SUPPORTING ROLE,Sal Mineo,Rebel without a Cause,FALSE,white,white
+551,1955,1956,28,ACTOR IN A SUPPORTING ROLE,Arthur O'Connell,Picnic,FALSE,white,white
+552,1956,1957,29,ACTOR IN A SUPPORTING ROLE,Don Murray,Bus Stop,FALSE,white,white
+553,1956,1957,29,ACTOR IN A SUPPORTING ROLE,Anthony Perkins,Friendly Persuasion,FALSE,white,white
+554,1956,1957,29,ACTOR IN A SUPPORTING ROLE,Anthony Quinn,Lust for Life,TRUE,white,white
+555,1956,1957,29,ACTOR IN A SUPPORTING ROLE,Mickey Rooney,The Bold and the Brave,FALSE,white,white
+556,1956,1957,29,ACTOR IN A SUPPORTING ROLE,Robert Stack,Written on the Wind,FALSE,white,white
+557,1957,1958,30,ACTOR IN A SUPPORTING ROLE,Red Buttons,Sayonara,TRUE,white,white
+558,1957,1958,30,ACTOR IN A SUPPORTING ROLE,Vittorio De Sica,A Farewell to Arms,FALSE,white,white
+559,1957,1958,30,ACTOR IN A SUPPORTING ROLE,Sessue Hayakawa,The Bridge on the River Kwai,FALSE,asian,asian
+560,1957,1958,30,ACTOR IN A SUPPORTING ROLE,Arthur Kennedy,Peyton Place,FALSE,white,white
+561,1957,1958,30,ACTOR IN A SUPPORTING ROLE,Russ Tamblyn,Peyton Place,FALSE,white,white
+562,1958,1959,31,ACTOR IN A SUPPORTING ROLE,Theodore Bikel,The Defiant Ones,FALSE,white,white
+563,1958,1959,31,ACTOR IN A SUPPORTING ROLE,Lee J. Cobb,The Brothers Karamazov,FALSE,white,white
+564,1958,1959,31,ACTOR IN A SUPPORTING ROLE,Burl Ives,The Big Country,TRUE,white,white
+565,1958,1959,31,ACTOR IN A SUPPORTING ROLE,Arthur Kennedy,Some Came Running,FALSE,white,white
+566,1958,1959,31,ACTOR IN A SUPPORTING ROLE,Gig Young,Teacher's Pet,FALSE,white,white
+567,1959,1960,32,ACTOR IN A SUPPORTING ROLE,Hugh Griffith,Ben-Hur,TRUE,white,white
+568,1959,1960,32,ACTOR IN A SUPPORTING ROLE,Arthur O'Connell,Anatomy of a Murder,FALSE,white,white
+569,1959,1960,32,ACTOR IN A SUPPORTING ROLE,George C. Scott,Anatomy of a Murder,FALSE,white,white
+570,1959,1960,32,ACTOR IN A SUPPORTING ROLE,Robert Vaughn,The Young Philadelphians,FALSE,white,white
+571,1959,1960,32,ACTOR IN A SUPPORTING ROLE,Ed Wynn,The Diary of Anne Frank,FALSE,white,white
+572,1960,1961,33,ACTOR IN A SUPPORTING ROLE,Peter Falk,"Murder, Inc.",FALSE,white,white
+573,1960,1961,33,ACTOR IN A SUPPORTING ROLE,Jack Kruschen,The Apartment,FALSE,white,white
+574,1960,1961,33,ACTOR IN A SUPPORTING ROLE,Sal Mineo,Exodus,FALSE,white,white
+575,1960,1961,33,ACTOR IN A SUPPORTING ROLE,Peter Ustinov,Spartacus,TRUE,white,white
+576,1960,1961,33,ACTOR IN A SUPPORTING ROLE,Chill Wills,The Alamo,FALSE,white,white
+577,1961,1962,34,ACTOR IN A SUPPORTING ROLE,George Chakiris,West Side Story,TRUE,white,white
+578,1961,1962,34,ACTOR IN A SUPPORTING ROLE,Montgomery Clift,Judgment at Nuremberg,FALSE,white,white
+579,1961,1962,34,ACTOR IN A SUPPORTING ROLE,Peter Falk,Pocketful of Miracles,FALSE,white,white
+580,1961,1962,34,ACTOR IN A SUPPORTING ROLE,Jackie Gleason,The Hustler,FALSE,white,white
+581,1961,1962,34,ACTOR IN A SUPPORTING ROLE,George C. Scott,The Hustler,FALSE,white,white
+582,1962,1963,35,ACTOR IN A SUPPORTING ROLE,Ed Begley,Sweet Bird of Youth,TRUE,white,white
+583,1962,1963,35,ACTOR IN A SUPPORTING ROLE,Victor Buono,What Ever Happened to Baby Jane?,FALSE,white,white
+584,1962,1963,35,ACTOR IN A SUPPORTING ROLE,Telly Savalas,Birdman of Alcatraz,FALSE,white,white
+585,1962,1963,35,ACTOR IN A SUPPORTING ROLE,Omar Sharif,Lawrence of Arabia,FALSE,Middle-Eastern,other
+586,1962,1963,35,ACTOR IN A SUPPORTING ROLE,Terence Stamp,Billy Budd,FALSE,white,white
+587,1963,1964,36,ACTOR IN A SUPPORTING ROLE,Nick Adams,Twilight of Honor,FALSE,white,white
+588,1963,1964,36,ACTOR IN A SUPPORTING ROLE,Bobby Darin,"Captain Newman, M.D.",FALSE,white,white
+589,1963,1964,36,ACTOR IN A SUPPORTING ROLE,Melvyn Douglas,Hud,TRUE,white,white
+590,1963,1964,36,ACTOR IN A SUPPORTING ROLE,Hugh Griffith,Tom Jones,FALSE,white,white
+591,1963,1964,36,ACTOR IN A SUPPORTING ROLE,John Huston,The Cardinal,FALSE,white,white
+592,1964,1965,37,ACTOR IN A SUPPORTING ROLE,John Gielgud,Becket,FALSE,white,white
+593,1964,1965,37,ACTOR IN A SUPPORTING ROLE,Stanley Holloway,My Fair Lady,FALSE,white,white
+594,1964,1965,37,ACTOR IN A SUPPORTING ROLE,Edmond O'Brien,Seven Days in May,FALSE,white,white
+595,1964,1965,37,ACTOR IN A SUPPORTING ROLE,Lee Tracy,The Best Man,FALSE,white,white
+596,1964,1965,37,ACTOR IN A SUPPORTING ROLE,Peter Ustinov,Topkapi,TRUE,white,white
+597,1965,1966,38,ACTOR IN A SUPPORTING ROLE,Martin Balsam,A Thousand Clowns,TRUE,white,white
+598,1965,1966,38,ACTOR IN A SUPPORTING ROLE,Ian Bannen,The Flight of the Phoenix,FALSE,white,white
+599,1965,1966,38,ACTOR IN A SUPPORTING ROLE,Tom Courtenay,Doctor Zhivago,FALSE,white,white
+600,1965,1966,38,ACTOR IN A SUPPORTING ROLE,Michael Dunn,Ship of Fools,FALSE,white,white
+601,1965,1966,38,ACTOR IN A SUPPORTING ROLE,Frank Finlay,Othello,FALSE,white,white
+602,1966,1967,39,ACTOR IN A SUPPORTING ROLE,Mako,The Sand Pebbles,FALSE,asian,asian
+603,1966,1967,39,ACTOR IN A SUPPORTING ROLE,James Mason,Georgy Girl,FALSE,white,white
+604,1966,1967,39,ACTOR IN A SUPPORTING ROLE,Walter Matthau,The Fortune Cookie,TRUE,white,white
+605,1966,1967,39,ACTOR IN A SUPPORTING ROLE,George Segal,Who's Afraid of Virginia Woolf?,FALSE,white,white
+606,1966,1967,39,ACTOR IN A SUPPORTING ROLE,Robert Shaw,A Man for All Seasons,FALSE,white,white
+607,1967,1968,40,ACTOR IN A SUPPORTING ROLE,John Cassavetes,The Dirty Dozen,FALSE,white,white
+608,1967,1968,40,ACTOR IN A SUPPORTING ROLE,Gene Hackman,Bonnie and Clyde,FALSE,white,white
+609,1967,1968,40,ACTOR IN A SUPPORTING ROLE,Cecil Kellaway,Guess Who's Coming to Dinner,FALSE,white,white
+610,1967,1968,40,ACTOR IN A SUPPORTING ROLE,George Kennedy,Cool Hand Luke,TRUE,white,white
+611,1967,1968,40,ACTOR IN A SUPPORTING ROLE,Michael J. Pollard,Bonnie and Clyde,FALSE,white,white
+612,1968,1969,41,ACTOR IN A SUPPORTING ROLE,Jack Albertson,The Subject Was Roses,TRUE,white,white
+613,1968,1969,41,ACTOR IN A SUPPORTING ROLE,Seymour Cassel,Faces,FALSE,white,white
+614,1968,1969,41,ACTOR IN A SUPPORTING ROLE,Daniel Massey,Star!,FALSE,white,white
+615,1968,1969,41,ACTOR IN A SUPPORTING ROLE,Jack Wild,Oliver!,FALSE,white,white
+616,1968,1969,41,ACTOR IN A SUPPORTING ROLE,Gene Wilder,The Producers,FALSE,white,white
+617,1969,1970,42,ACTOR IN A SUPPORTING ROLE,Rupert Crosse,The Reivers,FALSE,black,black
+618,1969,1970,42,ACTOR IN A SUPPORTING ROLE,Elliott Gould,Bob & Carol & Ted & Alice,FALSE,white,white
+619,1969,1970,42,ACTOR IN A SUPPORTING ROLE,Jack Nicholson,Easy Rider,FALSE,white,white
+620,1969,1970,42,ACTOR IN A SUPPORTING ROLE,Anthony Quayle,Anne of the Thousand Days,FALSE,white,white
+621,1969,1970,42,ACTOR IN A SUPPORTING ROLE,Gig Young,"They Shoot Horses, Don't They?",TRUE,white,white
+622,1970,1971,43,ACTOR IN A SUPPORTING ROLE,Richard Castellano,Lovers and Other Strangers,FALSE,white,white
+623,1970,1971,43,ACTOR IN A SUPPORTING ROLE,Chief Dan George,Little Big Man,FALSE,Indigenous Canadian,other
+624,1970,1971,43,ACTOR IN A SUPPORTING ROLE,Gene Hackman,I Never Sang for My Father,FALSE,white,white
+625,1970,1971,43,ACTOR IN A SUPPORTING ROLE,John Marley,Love Story,FALSE,white,white
+626,1970,1971,43,ACTOR IN A SUPPORTING ROLE,John Mills,Ryan's Daughter,TRUE,white,white
+627,1971,1972,44,ACTOR IN A SUPPORTING ROLE,Jeff Bridges,The Last Picture Show,FALSE,white,white
+628,1971,1972,44,ACTOR IN A SUPPORTING ROLE,Leonard Frey,Fiddler on the Roof,FALSE,white,white
+629,1971,1972,44,ACTOR IN A SUPPORTING ROLE,Richard Jaeckel,Sometimes a Great Notion,FALSE,white,white
+630,1971,1972,44,ACTOR IN A SUPPORTING ROLE,Ben Johnson,The Last Picture Show,TRUE,white,white
+631,1971,1972,44,ACTOR IN A SUPPORTING ROLE,Roy Scheider,The French Connection,FALSE,white,white
+632,1972,1973,45,ACTOR IN A SUPPORTING ROLE,Eddie Albert,The Heartbreak Kid,FALSE,white,white
+633,1972,1973,45,ACTOR IN A SUPPORTING ROLE,James Caan,The Godfather,FALSE,white,white
+634,1972,1973,45,ACTOR IN A SUPPORTING ROLE,Robert Duvall,The Godfather,FALSE,white,white
+635,1972,1973,45,ACTOR IN A SUPPORTING ROLE,Joel Grey,Cabaret,TRUE,white,white
+636,1972,1973,45,ACTOR IN A SUPPORTING ROLE,Al Pacino,The Godfather,FALSE,white,white
+637,1973,1974,46,ACTOR IN A SUPPORTING ROLE,Vincent Gardenia,Bang the Drum Slowly,FALSE,white,white
+638,1973,1974,46,ACTOR IN A SUPPORTING ROLE,Jack Gilford,Save the Tiger,FALSE,white,white
+639,1973,1974,46,ACTOR IN A SUPPORTING ROLE,John Houseman,The Paper Chase,TRUE,white,white
+640,1973,1974,46,ACTOR IN A SUPPORTING ROLE,Jason Miller,The Exorcist,FALSE,white,white
+641,1973,1974,46,ACTOR IN A SUPPORTING ROLE,Randy Quaid,The Last Detail,FALSE,white,white
+642,1974,1975,47,ACTOR IN A SUPPORTING ROLE,Fred Astaire,The Towering Inferno,FALSE,white,white
+643,1974,1975,47,ACTOR IN A SUPPORTING ROLE,Jeff Bridges,Thunderbolt and Lightfoot,FALSE,white,white
+644,1974,1975,47,ACTOR IN A SUPPORTING ROLE,Robert De Niro,The Godfather Part II,TRUE,white,white
+645,1974,1975,47,ACTOR IN A SUPPORTING ROLE,Michael V. Gazzo,The Godfather Part II,FALSE,white,white
+646,1974,1975,47,ACTOR IN A SUPPORTING ROLE,Lee Strasberg,The Godfather Part II,FALSE,white,white
+647,1975,1976,48,ACTOR IN A SUPPORTING ROLE,George Burns,The Sunshine Boys,TRUE,white,white
+648,1975,1976,48,ACTOR IN A SUPPORTING ROLE,Brad Dourif,One Flew over the Cuckoo's Nest,FALSE,white,white
+649,1975,1976,48,ACTOR IN A SUPPORTING ROLE,Burgess Meredith,The Day of the Locust,FALSE,white,white
+650,1975,1976,48,ACTOR IN A SUPPORTING ROLE,Chris Sarandon,Dog Day Afternoon,FALSE,white,white
+651,1975,1976,48,ACTOR IN A SUPPORTING ROLE,Jack Warden,Shampoo,FALSE,white,white
+652,1976,1977,49,ACTOR IN A SUPPORTING ROLE,Ned Beatty,Network,FALSE,white,white
+653,1976,1977,49,ACTOR IN A SUPPORTING ROLE,Burgess Meredith,Rocky,FALSE,white,white
+654,1976,1977,49,ACTOR IN A SUPPORTING ROLE,Laurence Olivier,Marathon Man,FALSE,white,white
+655,1976,1977,49,ACTOR IN A SUPPORTING ROLE,Jason Robards,All the President's Men,TRUE,white,white
+656,1976,1977,49,ACTOR IN A SUPPORTING ROLE,Burt Young,Rocky,FALSE,white,white
+657,1977,1978,50,ACTOR IN A SUPPORTING ROLE,Mikhail Baryshnikov,The Turning Point,FALSE,white,white
+658,1977,1978,50,ACTOR IN A SUPPORTING ROLE,Peter Firth,Equus,FALSE,white,white
+659,1977,1978,50,ACTOR IN A SUPPORTING ROLE,Alec Guinness,Star Wars,FALSE,white,white
+660,1977,1978,50,ACTOR IN A SUPPORTING ROLE,Jason Robards,Julia,TRUE,white,white
+661,1977,1978,50,ACTOR IN A SUPPORTING ROLE,Maximilian Schell,Julia,FALSE,white,white
+662,1978,1979,51,ACTOR IN A SUPPORTING ROLE,Bruce Dern,Coming Home,FALSE,white,white
+663,1978,1979,51,ACTOR IN A SUPPORTING ROLE,Richard Farnsworth,Comes a Horseman,FALSE,white,white
+664,1978,1979,51,ACTOR IN A SUPPORTING ROLE,John Hurt,Midnight Express,FALSE,white,white
+665,1978,1979,51,ACTOR IN A SUPPORTING ROLE,Christopher Walken,The Deer Hunter,TRUE,white,white
+666,1978,1979,51,ACTOR IN A SUPPORTING ROLE,Jack Warden,Heaven Can Wait,FALSE,white,white
+667,1979,1980,52,ACTOR IN A SUPPORTING ROLE,Melvyn Douglas,Being There,TRUE,white,white
+668,1979,1980,52,ACTOR IN A SUPPORTING ROLE,Robert Duvall,Apocalypse Now,FALSE,white,white
+669,1979,1980,52,ACTOR IN A SUPPORTING ROLE,Frederic Forrest,The Rose,FALSE,white,white
+670,1979,1980,52,ACTOR IN A SUPPORTING ROLE,Justin Henry,Kramer vs. Kramer,FALSE,white,white
+671,1979,1980,52,ACTOR IN A SUPPORTING ROLE,Mickey Rooney,The Black Stallion,FALSE,white,white
+672,1980,1981,53,ACTOR IN A SUPPORTING ROLE,Judd Hirsch,Ordinary People,FALSE,white,white
+673,1980,1981,53,ACTOR IN A SUPPORTING ROLE,Timothy Hutton,Ordinary People,TRUE,white,white
+674,1980,1981,53,ACTOR IN A SUPPORTING ROLE,Michael O'Keefe,The Great Santini,FALSE,white,white
+675,1980,1981,53,ACTOR IN A SUPPORTING ROLE,Joe Pesci,Raging Bull,FALSE,white,white
+676,1980,1981,53,ACTOR IN A SUPPORTING ROLE,Jason Robards,Melvin and Howard,FALSE,white,white
+677,1981,1982,54,ACTOR IN A SUPPORTING ROLE,James Coco,Only When I Laugh,FALSE,white,white
+678,1981,1982,54,ACTOR IN A SUPPORTING ROLE,John Gielgud,Arthur,TRUE,white,white
+679,1981,1982,54,ACTOR IN A SUPPORTING ROLE,Ian Holm,Chariots of Fire,FALSE,white,white
+680,1981,1982,54,ACTOR IN A SUPPORTING ROLE,Jack Nicholson,Reds,FALSE,white,white
+681,1981,1982,54,ACTOR IN A SUPPORTING ROLE,"Howard E. Rollins, Jr.",Ragtime,FALSE,white,white
+682,1982,1983,55,ACTOR IN A SUPPORTING ROLE,Charles Durning,The Best Little Whorehouse in Texas,FALSE,white,white
+683,1982,1983,55,ACTOR IN A SUPPORTING ROLE,"Louis Gossett, Jr.",An Officer and a Gentleman,TRUE,black,black
+684,1982,1983,55,ACTOR IN A SUPPORTING ROLE,John Lithgow,The World According to Garp,FALSE,white,white
+685,1982,1983,55,ACTOR IN A SUPPORTING ROLE,James Mason,The Verdict,FALSE,white,white
+686,1982,1983,55,ACTOR IN A SUPPORTING ROLE,Robert Preston,Victor/Victoria,FALSE,white,white
+687,1983,1984,56,ACTOR IN A SUPPORTING ROLE,Charles Durning,To Be or Not to Be,FALSE,white,white
+688,1983,1984,56,ACTOR IN A SUPPORTING ROLE,John Lithgow,Terms of Endearment,FALSE,white,white
+689,1983,1984,56,ACTOR IN A SUPPORTING ROLE,Jack Nicholson,Terms of Endearment,TRUE,white,white
+690,1983,1984,56,ACTOR IN A SUPPORTING ROLE,Sam Shepard,The Right Stuff,FALSE,white,white
+691,1983,1984,56,ACTOR IN A SUPPORTING ROLE,Rip Torn,Cross Creek,FALSE,white,white
+692,1984,1985,57,ACTOR IN A SUPPORTING ROLE,Adolph Caesar,A Soldier's Story,FALSE,black,black
+693,1984,1985,57,ACTOR IN A SUPPORTING ROLE,John Malkovich,Places in the Heart,FALSE,white,white
+694,1984,1985,57,ACTOR IN A SUPPORTING ROLE,Noriyuki 'Pat' Morita,The Karate Kid,FALSE,asian,asian
+695,1984,1985,57,ACTOR IN A SUPPORTING ROLE,Haing S. Ngor,The Killing Fields,TRUE,asian,asian
+696,1984,1985,57,ACTOR IN A SUPPORTING ROLE,Ralph Richardson,"Greystoke: The Legend of Tarzan, Lord of the Apes",FALSE,white,white
+697,1985,1986,58,ACTOR IN A SUPPORTING ROLE,Don Ameche,Cocoon,TRUE,white,white
+698,1985,1986,58,ACTOR IN A SUPPORTING ROLE,Klaus Maria Brandauer,Out of Africa,FALSE,white,white
+699,1985,1986,58,ACTOR IN A SUPPORTING ROLE,William Hickey,Prizzi's Honor,FALSE,white,white
+700,1985,1986,58,ACTOR IN A SUPPORTING ROLE,Robert Loggia,Jagged Edge,FALSE,white,white
+701,1985,1986,58,ACTOR IN A SUPPORTING ROLE,Eric Roberts,Runaway Train,FALSE,white,white
+702,1986,1987,59,ACTOR IN A SUPPORTING ROLE,Tom Berenger,Platoon,FALSE,white,white
+703,1986,1987,59,ACTOR IN A SUPPORTING ROLE,Michael Caine,Hannah and Her Sisters,TRUE,white,white
+704,1986,1987,59,ACTOR IN A SUPPORTING ROLE,Willem Dafoe,Platoon,FALSE,white,white
+705,1986,1987,59,ACTOR IN A SUPPORTING ROLE,Denholm Elliott,A Room with a View,FALSE,white,white
+706,1986,1987,59,ACTOR IN A SUPPORTING ROLE,Dennis Hopper,Hoosiers,FALSE,white,white
+707,1987,1988,60,ACTOR IN A SUPPORTING ROLE,Albert Brooks,Broadcast News,FALSE,white,white
+708,1987,1988,60,ACTOR IN A SUPPORTING ROLE,Sean Connery,The Untouchables,TRUE,white,white
+709,1987,1988,60,ACTOR IN A SUPPORTING ROLE,Morgan Freeman,Street Smart,FALSE,black,black
+710,1987,1988,60,ACTOR IN A SUPPORTING ROLE,Vincent Gardenia,Moonstruck,FALSE,white,white
+711,1987,1988,60,ACTOR IN A SUPPORTING ROLE,Denzel Washington,Cry Freedom,FALSE,black,black
+712,1988,1989,61,ACTOR IN A SUPPORTING ROLE,Alec Guinness,Little Dorrit,FALSE,white,white
+713,1988,1989,61,ACTOR IN A SUPPORTING ROLE,Kevin Kline,A Fish Called Wanda,TRUE,white,white
+714,1988,1989,61,ACTOR IN A SUPPORTING ROLE,Martin Landau,Tucker The Man and His Dream,FALSE,white,white
+715,1988,1989,61,ACTOR IN A SUPPORTING ROLE,River Phoenix,Running on Empty,FALSE,white,white
+716,1988,1989,61,ACTOR IN A SUPPORTING ROLE,Dean Stockwell,Married to the Mob,FALSE,white,white
+717,1989,1990,62,ACTOR IN A SUPPORTING ROLE,Danny Aiello,Do the Right Thing,FALSE,white,white
+718,1989,1990,62,ACTOR IN A SUPPORTING ROLE,Dan Aykroyd,Driving Miss Daisy,FALSE,white,white
+719,1989,1990,62,ACTOR IN A SUPPORTING ROLE,Marlon Brando,A Dry White Season,FALSE,white,white
+720,1989,1990,62,ACTOR IN A SUPPORTING ROLE,Martin Landau,Crimes and Misdemeanors,FALSE,white,white
+721,1989,1990,62,ACTOR IN A SUPPORTING ROLE,Denzel Washington,Glory,TRUE,black,black
+722,1990,1991,63,ACTOR IN A SUPPORTING ROLE,Bruce Davison,Longtime Companion,FALSE,white,white
+723,1990,1991,63,ACTOR IN A SUPPORTING ROLE,Andy Garcia,"The Godfather, Part III",FALSE,hispanic,hispanic
+724,1990,1991,63,ACTOR IN A SUPPORTING ROLE,Graham Greene,Dances With Wolves,FALSE,Indigenous Canadian,other
+725,1990,1991,63,ACTOR IN A SUPPORTING ROLE,Al Pacino,Dick Tracy,FALSE,white,white
+726,1990,1991,63,ACTOR IN A SUPPORTING ROLE,Joe Pesci,Good Fellas,TRUE,white,white
+727,1991,1992,64,ACTOR IN A SUPPORTING ROLE,Tommy Lee Jones,JFK,FALSE,white,white
+728,1991,1992,64,ACTOR IN A SUPPORTING ROLE,Harvey Keitel,Bugsy,FALSE,white,white
+729,1991,1992,64,ACTOR IN A SUPPORTING ROLE,Ben Kingsley,Bugsy,FALSE,asian,asian
+730,1991,1992,64,ACTOR IN A SUPPORTING ROLE,Michael Lerner,Barton Fink,FALSE,white,white
+731,1991,1992,64,ACTOR IN A SUPPORTING ROLE,Jack Palance,City Slickers,TRUE,white,white
+732,1992,1993,65,ACTOR IN A SUPPORTING ROLE,Jaye Davidson,The Crying Game,FALSE,black,black
+733,1992,1993,65,ACTOR IN A SUPPORTING ROLE,Gene Hackman,Unforgiven,TRUE,white,white
+734,1992,1993,65,ACTOR IN A SUPPORTING ROLE,Jack Nicholson,A Few Good Men,FALSE,white,white
+735,1992,1993,65,ACTOR IN A SUPPORTING ROLE,Al Pacino,Glengarry Glen Ross,FALSE,white,white
+736,1992,1993,65,ACTOR IN A SUPPORTING ROLE,David Paymer,Mr. Saturday Night,FALSE,white,white
+737,1993,1994,66,ACTOR IN A SUPPORTING ROLE,Leonardo DiCaprio,What's Eating Gilbert Grape,FALSE,white,white
+738,1993,1994,66,ACTOR IN A SUPPORTING ROLE,Ralph Fiennes,Schindler's List,FALSE,white,white
+739,1993,1994,66,ACTOR IN A SUPPORTING ROLE,Tommy Lee Jones,The Fugitive,TRUE,white,white
+740,1993,1994,66,ACTOR IN A SUPPORTING ROLE,John Malkovich,In the Line of Fire,FALSE,white,white
+741,1993,1994,66,ACTOR IN A SUPPORTING ROLE,Pete Postlethwaite,In the Name of the Father,FALSE,white,white
+742,1994,1995,67,ACTOR IN A SUPPORTING ROLE,Samuel L. Jackson,Pulp Fiction,FALSE,black,black
+743,1994,1995,67,ACTOR IN A SUPPORTING ROLE,Martin Landau,Ed Wood,TRUE,white,white
+744,1994,1995,67,ACTOR IN A SUPPORTING ROLE,Chazz Palminteri,Bullets over Broadway,FALSE,white,white
+745,1994,1995,67,ACTOR IN A SUPPORTING ROLE,Paul Scofield,Quiz Show,FALSE,white,white
+746,1994,1995,67,ACTOR IN A SUPPORTING ROLE,Gary Sinise,Forrest Gump,FALSE,white,white
+747,1995,1996,68,ACTOR IN A SUPPORTING ROLE,James Cromwell,Babe,FALSE,white,white
+748,1995,1996,68,ACTOR IN A SUPPORTING ROLE,Ed Harris,Apollo 13,FALSE,white,white
+749,1995,1996,68,ACTOR IN A SUPPORTING ROLE,Brad Pitt,12 Monkeys,FALSE,white,white
+750,1995,1996,68,ACTOR IN A SUPPORTING ROLE,Tim Roth,Rob Roy,FALSE,white,white
+751,1995,1996,68,ACTOR IN A SUPPORTING ROLE,Kevin Spacey,The Usual Suspects,TRUE,white,white
+752,1996,1997,69,ACTOR IN A SUPPORTING ROLE,"Cuba Gooding, Jr.",Jerry Maguire,TRUE,black,black
+753,1996,1997,69,ACTOR IN A SUPPORTING ROLE,William H. Macy,Fargo,FALSE,white,white
+754,1996,1997,69,ACTOR IN A SUPPORTING ROLE,Armin Mueller-Stahl,Shine,FALSE,white,white
+755,1996,1997,69,ACTOR IN A SUPPORTING ROLE,Edward Norton,Primal Fear,FALSE,white,white
+756,1996,1997,69,ACTOR IN A SUPPORTING ROLE,James Woods,Ghosts of Mississippi,FALSE,white,white
+757,1997,1998,70,ACTOR IN A SUPPORTING ROLE,Robert Forster,Jackie Brown,FALSE,white,white
+758,1997,1998,70,ACTOR IN A SUPPORTING ROLE,Anthony Hopkins,Amistad,FALSE,white,white
+759,1997,1998,70,ACTOR IN A SUPPORTING ROLE,Greg Kinnear,As Good as It Gets,FALSE,white,white
+760,1997,1998,70,ACTOR IN A SUPPORTING ROLE,Burt Reynolds,Boogie Nights,FALSE,white,white
+761,1997,1998,70,ACTOR IN A SUPPORTING ROLE,Robin Williams,Good Will Hunting,TRUE,white,white
+762,1998,1999,71,ACTOR IN A SUPPORTING ROLE,James Coburn,Affliction,TRUE,white,white
+763,1998,1999,71,ACTOR IN A SUPPORTING ROLE,Robert Duvall,A Civil Action,FALSE,white,white
+764,1998,1999,71,ACTOR IN A SUPPORTING ROLE,Ed Harris,The Truman Show,FALSE,white,white
+765,1998,1999,71,ACTOR IN A SUPPORTING ROLE,Geoffrey Rush,Shakespeare in Love,FALSE,white,white
+766,1998,1999,71,ACTOR IN A SUPPORTING ROLE,Billy Bob Thornton,A Simple Plan,FALSE,white,white
+767,1999,2000,72,ACTOR IN A SUPPORTING ROLE,Michael Caine,The Cider House Rules,TRUE,white,white
+768,1999,2000,72,ACTOR IN A SUPPORTING ROLE,Tom Cruise,Magnolia,FALSE,white,white
+769,1999,2000,72,ACTOR IN A SUPPORTING ROLE,Michael Clarke Duncan,The Green Mile,FALSE,black,black
+770,1999,2000,72,ACTOR IN A SUPPORTING ROLE,Jude Law,The Talented Mr. Ripley,FALSE,white,white
+771,1999,2000,72,ACTOR IN A SUPPORTING ROLE,Haley Joel Osment,The Sixth Sense,FALSE,white,white
+772,2000,2001,73,ACTOR IN A SUPPORTING ROLE,Jeff Bridges,The Contender,FALSE,white,white
+773,2000,2001,73,ACTOR IN A SUPPORTING ROLE,Willem Dafoe,Shadow of the Vampire,FALSE,white,white
+774,2000,2001,73,ACTOR IN A SUPPORTING ROLE,Benicio Del Toro,Traffic,TRUE,hispanic,hispanic
+775,2000,2001,73,ACTOR IN A SUPPORTING ROLE,Albert Finney,Erin Brockovich,FALSE,white,white
+776,2000,2001,73,ACTOR IN A SUPPORTING ROLE,Joaquin Phoenix,Gladiator,FALSE,white,white
+777,2001,2002,74,ACTOR IN A SUPPORTING ROLE,Jim Broadbent,Iris,TRUE,white,white
+778,2001,2002,74,ACTOR IN A SUPPORTING ROLE,Ethan Hawke,Training Day,FALSE,white,white
+779,2001,2002,74,ACTOR IN A SUPPORTING ROLE,Ben Kingsley,Sexy Beast,FALSE,asian,asian
+780,2001,2002,74,ACTOR IN A SUPPORTING ROLE,Ian McKellen,The Lord of the Rings: The Fellowship of the Ring,FALSE,white,white
+781,2001,2002,74,ACTOR IN A SUPPORTING ROLE,Jon Voight,Ali,FALSE,white,white
+782,2002,2003,75,ACTOR IN A SUPPORTING ROLE,Chris Cooper,Adaptation,TRUE,white,white
+783,2002,2003,75,ACTOR IN A SUPPORTING ROLE,Ed Harris,The Hours,FALSE,white,white
+784,2002,2003,75,ACTOR IN A SUPPORTING ROLE,Paul Newman,Road to Perdition,FALSE,white,white
+785,2002,2003,75,ACTOR IN A SUPPORTING ROLE,John C. Reilly,Chicago,FALSE,white,white
+786,2002,2003,75,ACTOR IN A SUPPORTING ROLE,Christopher Walken,Catch Me If You Can,FALSE,white,white
+787,2003,2004,76,ACTOR IN A SUPPORTING ROLE,Alec Baldwin,The Cooler,FALSE,white,white
+788,2003,2004,76,ACTOR IN A SUPPORTING ROLE,Benicio Del Toro,21 Grams,FALSE,white,white
+789,2003,2004,76,ACTOR IN A SUPPORTING ROLE,Djimon Hounsou,In America,FALSE,black,black
+790,2003,2004,76,ACTOR IN A SUPPORTING ROLE,Tim Robbins,Mystic River,TRUE,white,white
+791,2003,2004,76,ACTOR IN A SUPPORTING ROLE,Ken Watanabe,The Last Samurai,FALSE,asian,asian
+792,2004,2005,77,ACTOR IN A SUPPORTING ROLE,Alan Alda,The Aviator,FALSE,white,white
+793,2004,2005,77,ACTOR IN A SUPPORTING ROLE,Thomas Haden Church,Sideways,FALSE,white,white
+794,2004,2005,77,ACTOR IN A SUPPORTING ROLE,Jamie Foxx,Collateral,FALSE,black,black
+795,2004,2005,77,ACTOR IN A SUPPORTING ROLE,Morgan Freeman,Million Dollar Baby,TRUE,black,black
+796,2004,2005,77,ACTOR IN A SUPPORTING ROLE,Clive Owen,Closer,FALSE,white,white
+797,2005,2006,78,ACTOR IN A SUPPORTING ROLE,George Clooney,Syriana,TRUE,white,white
+798,2005,2006,78,ACTOR IN A SUPPORTING ROLE,Matt Dillon,Crash,FALSE,white,white
+799,2005,2006,78,ACTOR IN A SUPPORTING ROLE,Paul Giamatti,Cinderella Man,FALSE,white,white
+800,2005,2006,78,ACTOR IN A SUPPORTING ROLE,Jake Gyllenhaal,Brokeback Mountain,FALSE,white,white
+801,2005,2006,78,ACTOR IN A SUPPORTING ROLE,William Hurt,A History of Violence,FALSE,white,white
+802,2006,2007,79,ACTOR IN A SUPPORTING ROLE,Alan Arkin,Little Miss Sunshine,TRUE,white,white
+803,2006,2007,79,ACTOR IN A SUPPORTING ROLE,Jackie Earle Haley,Little Children,FALSE,white,white
+804,2006,2007,79,ACTOR IN A SUPPORTING ROLE,Djimon Hounsou,Blood Diamond,FALSE,black,black
+805,2006,2007,79,ACTOR IN A SUPPORTING ROLE,Eddie Murphy,Dreamgirls,FALSE,black,black
+806,2006,2007,79,ACTOR IN A SUPPORTING ROLE,Mark Wahlberg,The Departed,FALSE,white,white
+807,2007,2008,80,ACTOR IN A SUPPORTING ROLE,Casey Affleck,The Assassination of Jesse James by the Coward Robert Ford,FALSE,white,white
+808,2007,2008,80,ACTOR IN A SUPPORTING ROLE,Javier Bardem,No Country for Old Men,TRUE,white,white
+809,2007,2008,80,ACTOR IN A SUPPORTING ROLE,Philip Seymour Hoffman,Charlie Wilson's War,FALSE,white,white
+810,2007,2008,80,ACTOR IN A SUPPORTING ROLE,Hal Holbrook,Into the Wild,FALSE,white,white
+811,2007,2008,80,ACTOR IN A SUPPORTING ROLE,Tom Wilkinson,Michael Clayton,FALSE,white,white
+812,2008,2009,81,ACTOR IN A SUPPORTING ROLE,Josh Brolin,Milk,FALSE,white,white
+813,2008,2009,81,ACTOR IN A SUPPORTING ROLE,Robert Downey Jr.,Tropic Thunder,FALSE,white,white
+814,2008,2009,81,ACTOR IN A SUPPORTING ROLE,Philip Seymour Hoffman,Doubt,FALSE,white,white
+815,2008,2009,81,ACTOR IN A SUPPORTING ROLE,Heath Ledger,The Dark Knight,TRUE,white,white
+816,2008,2009,81,ACTOR IN A SUPPORTING ROLE,Michael Shannon,Revolutionary Road,FALSE,white,white
+817,2009,2010,82,ACTOR IN A SUPPORTING ROLE,Matt Damon,Invictus,FALSE,white,white
+818,2009,2010,82,ACTOR IN A SUPPORTING ROLE,Woody Harrelson,The Messenger,FALSE,white,white
+819,2009,2010,82,ACTOR IN A SUPPORTING ROLE,Christopher Plummer,The Last Station,FALSE,white,white
+820,2009,2010,82,ACTOR IN A SUPPORTING ROLE,Stanley Tucci,The Lovely Bones,FALSE,white,white
+821,2009,2010,82,ACTOR IN A SUPPORTING ROLE,Christoph Waltz,Inglourious Basterds,TRUE,white,white
+822,2010,2011,83,ACTOR IN A SUPPORTING ROLE,Christian Bale,The Fighter,TRUE,white,white
+823,2010,2011,83,ACTOR IN A SUPPORTING ROLE,John Hawkes,Winter's Bone,FALSE,white,white
+824,2010,2011,83,ACTOR IN A SUPPORTING ROLE,Jeremy Renner,The Town,FALSE,white,white
+825,2010,2011,83,ACTOR IN A SUPPORTING ROLE,Mark Ruffalo,The Kids Are All Right,FALSE,white,white
+826,2010,2011,83,ACTOR IN A SUPPORTING ROLE,Geoffrey Rush,The King's Speech,FALSE,white,white
+827,2011,2012,84,ACTOR IN A SUPPORTING ROLE,Kenneth Branagh,My Week with Marilyn,FALSE,white,white
+828,2011,2012,84,ACTOR IN A SUPPORTING ROLE,Jonah Hill,Moneyball,FALSE,white,white
+829,2011,2012,84,ACTOR IN A SUPPORTING ROLE,Nick Nolte,Warrior,FALSE,white,white
+830,2011,2012,84,ACTOR IN A SUPPORTING ROLE,Christopher Plummer,Beginners,TRUE,white,white
+831,2011,2012,84,ACTOR IN A SUPPORTING ROLE,Max von Sydow,Extremely Loud & Incredibly Close,FALSE,white,white
+832,2012,2013,85,ACTOR IN A SUPPORTING ROLE,Alan Arkin,Argo,FALSE,white,white
+833,2012,2013,85,ACTOR IN A SUPPORTING ROLE,Robert De Niro,Silver Linings Playbook,FALSE,white,white
+834,2012,2013,85,ACTOR IN A SUPPORTING ROLE,Philip Seymour Hoffman,The Master,FALSE,white,white
+835,2012,2013,85,ACTOR IN A SUPPORTING ROLE,Tommy Lee Jones,Lincoln,FALSE,white,white
+836,2012,2013,85,ACTOR IN A SUPPORTING ROLE,Christoph Waltz,Django Unchained,TRUE,white,white
+837,2013,2014,86,ACTOR IN A SUPPORTING ROLE,Barkhad Abdi,Captain Phillips,FALSE,black,black
+838,2013,2014,86,ACTOR IN A SUPPORTING ROLE,Bradley Cooper,American Hustle,FALSE,white,white
+839,2013,2014,86,ACTOR IN A SUPPORTING ROLE,Michael Fassbender,12 Years a Slave,FALSE,white,white
+840,2013,2014,86,ACTOR IN A SUPPORTING ROLE,Jonah Hill,The Wolf of Wall Street,FALSE,white,white
+841,2013,2014,86,ACTOR IN A SUPPORTING ROLE,Jared Leto,Dallas Buyers Club,TRUE,white,white
+842,2014,2015,87,ACTOR IN A SUPPORTING ROLE,Robert Duvall,The Judge,FALSE,white,white
+843,2014,2015,87,ACTOR IN A SUPPORTING ROLE,Ethan Hawke,Boyhood,FALSE,white,white
+844,2014,2015,87,ACTOR IN A SUPPORTING ROLE,Edward Norton,Birdman or (The Unexpected Virtue of Ignorance),FALSE,white,white
+845,2014,2015,87,ACTOR IN A SUPPORTING ROLE,Mark Ruffalo,Foxcatcher,FALSE,white,white
+846,2014,2015,87,ACTOR IN A SUPPORTING ROLE,J.K. Simmons,Whiplash,TRUE,white,white
+847,2015,2016,88,ACTOR IN A SUPPORTING ROLE,Christian Bale,The Big Short,FALSE,white,white
+848,2015,2016,88,ACTOR IN A SUPPORTING ROLE,Tom Hardy,The Revenant,FALSE,white,white
+849,2015,2016,88,ACTOR IN A SUPPORTING ROLE,Mark Ruffalo,Spotlight,FALSE,white,white
+850,2015,2016,88,ACTOR IN A SUPPORTING ROLE,Mark Rylance,Bridge of Spies,TRUE,white,white
+851,2015,2016,88,ACTOR IN A SUPPORTING ROLE,Sylvester Stallone,Creed,FALSE,white,white
+852,2016,2017,89,ACTOR IN A SUPPORTING ROLE,Mahershala Ali,Moonlight,TRUE,black,black
+853,2016,2017,89,ACTOR IN A SUPPORTING ROLE,Jeff Bridges,Hell or High Water,FALSE,white,white
+854,2016,2017,89,ACTOR IN A SUPPORTING ROLE,Lucas Hedges,Manchester by the Sea,FALSE,white,white
+855,2016,2017,89,ACTOR IN A SUPPORTING ROLE,Dev Patel,Lion,FALSE,asian,asian
+856,2016,2017,89,ACTOR IN A SUPPORTING ROLE,Michael Shannon,Nocturnal Animals,FALSE,white,white
+857,2017,2018,90,ACTOR IN A SUPPORTING ROLE,Willem Dafoe,The Florida Project,FALSE,white,white
+858,2017,2018,90,ACTOR IN A SUPPORTING ROLE,Woody Harrelson,"Three Billboards outside Ebbing, Missouri",FALSE,white,white
+859,2017,2018,90,ACTOR IN A SUPPORTING ROLE,Richard Jenkins,The Shape of Water,FALSE,white,white
+860,2017,2018,90,ACTOR IN A SUPPORTING ROLE,Christopher Plummer,All the Money in the World,FALSE,white,white
+861,2017,2018,90,ACTOR IN A SUPPORTING ROLE,Sam Rockwell,"Three Billboards outside Ebbing, Missouri",TRUE,white,white
+862,2018,2019,91,ACTOR IN A SUPPORTING ROLE,Mahershala Ali,Green Book,TRUE,black,black
+863,2018,2019,91,ACTOR IN A SUPPORTING ROLE,Adam Driver,BlacKkKlansman,FALSE,white,white
+864,2018,2019,91,ACTOR IN A SUPPORTING ROLE,Sam Elliott,A Star Is Born,FALSE,white,white
+865,2018,2019,91,ACTOR IN A SUPPORTING ROLE,Richard E. Grant,Can You Ever Forgive Me?,FALSE,white,white
+866,2018,2019,91,ACTOR IN A SUPPORTING ROLE,Sam Rockwell,Vice,FALSE,white,white
+867,2019,2020,92,ACTOR IN A SUPPORTING ROLE,Tom Hanks,A Beautiful Day in the Neighborhood,FALSE,white,white
+868,2019,2020,92,ACTOR IN A SUPPORTING ROLE,Anthony Hopkins,The Two Popes,FALSE,white,white
+869,2019,2020,92,ACTOR IN A SUPPORTING ROLE,Al Pacino,The Irishman,FALSE,white,white
+870,2019,2020,92,ACTOR IN A SUPPORTING ROLE,Joe Pesci,The Irishman,FALSE,white,white
+871,2019,2020,92,ACTOR IN A SUPPORTING ROLE,Brad Pitt,Once upon a Time...in Hollywood,TRUE,white,white
+872,1927,1928,1,ACTRESS IN A LEADING ROLE,Louise Dresser,A Ship Comes In,FALSE,white,white
+873,1927,1928,1,ACTRESS IN A LEADING ROLE,Janet Gaynor,7th Heaven,TRUE,white,white
+874,1927,1928,1,ACTRESS IN A LEADING ROLE,Gloria Swanson,Sadie Thompson,FALSE,white,white
+875,1928,1929,2,ACTRESS IN A LEADING ROLE,Ruth Chatterton,Madame X,FALSE,white,white
+876,1928,1929,2,ACTRESS IN A LEADING ROLE,Betty Compson,The Barker,FALSE,white,white
+877,1928,1929,2,ACTRESS IN A LEADING ROLE,Jeanne Eagels,The Letter,FALSE,white,white
+878,1928,1929,2,ACTRESS IN A LEADING ROLE,Corinne Griffith,The Divine Lady,FALSE,white,white
+879,1928,1929,2,ACTRESS IN A LEADING ROLE,Bessie Love,The Broadway Melody,FALSE,white,white
+880,1928,1929,2,ACTRESS IN A LEADING ROLE,Mary Pickford,Coquette,TRUE,white,white
+881,1929,1930,3,ACTRESS IN A LEADING ROLE,Nancy Carroll,The Devil's Holiday,FALSE,white,white
+882,1929,1930,3,ACTRESS IN A LEADING ROLE,Ruth Chatterton,Sarah and Son,FALSE,white,white
+883,1929,1930,3,ACTRESS IN A LEADING ROLE,Greta Garbo,Anna Christie,FALSE,white,white
+884,1929,1930,3,ACTRESS IN A LEADING ROLE,Norma Shearer,The Divorcee,TRUE,white,white
+885,1929,1930,3,ACTRESS IN A LEADING ROLE,Norma Shearer,Their Own Desire,FALSE,white,white
+886,1929,1930,3,ACTRESS IN A LEADING ROLE,Gloria Swanson,The Trespasser,FALSE,white,white
+887,1930,1931,4,ACTRESS IN A LEADING ROLE,Marlene Dietrich,Morocco,FALSE,white,white
+888,1930,1931,4,ACTRESS IN A LEADING ROLE,Marie Dressler,Min and Bill,TRUE,white,white
+889,1930,1931,4,ACTRESS IN A LEADING ROLE,Irene Dunne,Cimarron,FALSE,white,white
+890,1930,1931,4,ACTRESS IN A LEADING ROLE,Ann Harding,Holiday,FALSE,white,white
+891,1930,1931,4,ACTRESS IN A LEADING ROLE,Norma Shearer,A Free Soul,FALSE,white,white
+892,1931,1932,5,ACTRESS IN A LEADING ROLE,Marie Dressler,Emma,FALSE,white,white
+893,1931,1932,5,ACTRESS IN A LEADING ROLE,Lynn Fontanne,The Guardsman,FALSE,white,white
+894,1931,1932,5,ACTRESS IN A LEADING ROLE,Helen Hayes,The Sin of Madelon Claudet,TRUE,white,white
+895,1932,1933,6,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Morning Glory,TRUE,white,white
+896,1932,1933,6,ACTRESS IN A LEADING ROLE,May Robson,Lady for a Day,FALSE,white,white
+897,1932,1933,6,ACTRESS IN A LEADING ROLE,Diana Wynyard,Cavalcade,FALSE,white,white
+898,1934,1935,7,ACTRESS IN A LEADING ROLE,Claudette Colbert,It Happened One Night,TRUE,white,white
+899,1934,1935,7,ACTRESS IN A LEADING ROLE,Bette Davis,Of Human Bondage,FALSE,white,white
+900,1934,1935,7,ACTRESS IN A LEADING ROLE,Grace Moore,One Night of Love,FALSE,white,white
+901,1934,1935,7,ACTRESS IN A LEADING ROLE,Norma Shearer,The Barretts of Wimpole Street,FALSE,white,white
+902,1935,1936,8,ACTRESS IN A LEADING ROLE,Elisabeth Bergner,Escape Me Never,FALSE,white,white
+903,1935,1936,8,ACTRESS IN A LEADING ROLE,Claudette Colbert,Private Worlds,FALSE,white,white
+904,1935,1936,8,ACTRESS IN A LEADING ROLE,Bette Davis,Dangerous,TRUE,white,white
+905,1935,1936,8,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Alice Adams,FALSE,white,white
+906,1935,1936,8,ACTRESS IN A LEADING ROLE,Miriam Hopkins,Becky Sharp,FALSE,white,white
+907,1935,1936,8,ACTRESS IN A LEADING ROLE,Merle Oberon,The Dark Angel,FALSE,asian,asian
+908,1936,1937,9,ACTRESS IN A LEADING ROLE,Irene Dunne,Theodora Goes Wild,FALSE,white,white
+909,1936,1937,9,ACTRESS IN A LEADING ROLE,Gladys George,Valiant Is the Word for Carrie,FALSE,white,white
+910,1936,1937,9,ACTRESS IN A LEADING ROLE,Carole Lombard,My Man Godfrey,FALSE,white,white
+911,1936,1937,9,ACTRESS IN A LEADING ROLE,Luise Rainer,The Great Ziegfeld,TRUE,white,white
+912,1936,1937,9,ACTRESS IN A LEADING ROLE,Norma Shearer,Romeo and Juliet,FALSE,white,white
+913,1937,1938,10,ACTRESS IN A LEADING ROLE,Irene Dunne,The Awful Truth,FALSE,white,white
+914,1937,1938,10,ACTRESS IN A LEADING ROLE,Greta Garbo,Camille,FALSE,white,white
+915,1937,1938,10,ACTRESS IN A LEADING ROLE,Janet Gaynor,A Star Is Born,FALSE,white,white
+916,1937,1938,10,ACTRESS IN A LEADING ROLE,Luise Rainer,The Good Earth,TRUE,white,white
+917,1937,1938,10,ACTRESS IN A LEADING ROLE,Barbara Stanwyck,Stella Dallas,FALSE,white,white
+918,1938,1939,11,ACTRESS IN A LEADING ROLE,Fay Bainter,White Banners,FALSE,white,white
+919,1938,1939,11,ACTRESS IN A LEADING ROLE,Bette Davis,Jezebel,TRUE,white,white
+920,1938,1939,11,ACTRESS IN A LEADING ROLE,Wendy Hiller,Pygmalion,FALSE,white,white
+921,1938,1939,11,ACTRESS IN A LEADING ROLE,Norma Shearer,Marie Antoinette,FALSE,white,white
+922,1938,1939,11,ACTRESS IN A LEADING ROLE,Margaret Sullavan,Three Comrades,FALSE,white,white
+923,1939,1940,12,ACTRESS IN A LEADING ROLE,Bette Davis,Dark Victory,FALSE,white,white
+924,1939,1940,12,ACTRESS IN A LEADING ROLE,Irene Dunne,Love Affair,FALSE,white,white
+925,1939,1940,12,ACTRESS IN A LEADING ROLE,Greta Garbo,Ninotchka,FALSE,white,white
+926,1939,1940,12,ACTRESS IN A LEADING ROLE,Greer Garson,"Goodbye, Mr. Chips",FALSE,white,white
+927,1939,1940,12,ACTRESS IN A LEADING ROLE,Vivien Leigh,Gone with the Wind,TRUE,white,white
+928,1940,1941,13,ACTRESS IN A LEADING ROLE,Bette Davis,The Letter,FALSE,white,white
+929,1940,1941,13,ACTRESS IN A LEADING ROLE,Joan Fontaine,Rebecca,FALSE,white,white
+930,1940,1941,13,ACTRESS IN A LEADING ROLE,Katharine Hepburn,The Philadelphia Story,FALSE,white,white
+931,1940,1941,13,ACTRESS IN A LEADING ROLE,Ginger Rogers,Kitty Foyle,TRUE,white,white
+932,1940,1941,13,ACTRESS IN A LEADING ROLE,Martha Scott,Our Town,FALSE,white,white
+933,1941,1942,14,ACTRESS IN A LEADING ROLE,Bette Davis,The Little Foxes,FALSE,white,white
+934,1941,1942,14,ACTRESS IN A LEADING ROLE,Olivia de Havilland,Hold Back the Dawn,FALSE,white,white
+935,1941,1942,14,ACTRESS IN A LEADING ROLE,Joan Fontaine,Suspicion,TRUE,white,white
+936,1941,1942,14,ACTRESS IN A LEADING ROLE,Greer Garson,Blossoms in the Dust,FALSE,white,white
+937,1941,1942,14,ACTRESS IN A LEADING ROLE,Barbara Stanwyck,Ball of Fire,FALSE,white,white
+938,1942,1943,15,ACTRESS IN A LEADING ROLE,Bette Davis,"Now, Voyager",FALSE,white,white
+939,1942,1943,15,ACTRESS IN A LEADING ROLE,Greer Garson,Mrs. Miniver,TRUE,white,white
+940,1942,1943,15,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Woman of the Year,FALSE,white,white
+941,1942,1943,15,ACTRESS IN A LEADING ROLE,Rosalind Russell,My Sister Eileen,FALSE,white,white
+942,1942,1943,15,ACTRESS IN A LEADING ROLE,Teresa Wright,The Pride of the Yankees,FALSE,white,white
+943,1943,1944,16,ACTRESS IN A LEADING ROLE,Jean Arthur,The More the Merrier,FALSE,white,white
+944,1943,1944,16,ACTRESS IN A LEADING ROLE,Ingrid Bergman,For Whom the Bell Tolls,FALSE,white,white
+945,1943,1944,16,ACTRESS IN A LEADING ROLE,Joan Fontaine,The Constant Nymph,FALSE,white,white
+946,1943,1944,16,ACTRESS IN A LEADING ROLE,Greer Garson,Madame Curie,FALSE,white,white
+947,1943,1944,16,ACTRESS IN A LEADING ROLE,Jennifer Jones,The Song of Bernadette,TRUE,white,white
+948,1944,1945,17,ACTRESS IN A LEADING ROLE,Ingrid Bergman,Gaslight,TRUE,white,white
+949,1944,1945,17,ACTRESS IN A LEADING ROLE,Claudette Colbert,Since You Went Away,FALSE,white,white
+950,1944,1945,17,ACTRESS IN A LEADING ROLE,Bette Davis,Mr. Skeffington,FALSE,white,white
+951,1944,1945,17,ACTRESS IN A LEADING ROLE,Greer Garson,Mrs. Parkington,FALSE,white,white
+952,1944,1945,17,ACTRESS IN A LEADING ROLE,Barbara Stanwyck,Double Indemnity,FALSE,white,white
+953,1945,1946,18,ACTRESS IN A LEADING ROLE,Ingrid Bergman,The Bells of St. Mary's,FALSE,white,white
+954,1945,1946,18,ACTRESS IN A LEADING ROLE,Joan Crawford,Mildred Pierce,TRUE,white,white
+955,1945,1946,18,ACTRESS IN A LEADING ROLE,Greer Garson,The Valley of Decision,FALSE,white,white
+956,1945,1946,18,ACTRESS IN A LEADING ROLE,Jennifer Jones,Love Letters,FALSE,white,white
+957,1945,1946,18,ACTRESS IN A LEADING ROLE,Gene Tierney,Leave Her to Heaven,FALSE,white,white
+958,1946,1947,19,ACTRESS IN A LEADING ROLE,Olivia de Havilland,To Each His Own,TRUE,white,white
+959,1946,1947,19,ACTRESS IN A LEADING ROLE,Celia Johnson,Brief Encounter,FALSE,white,white
+960,1946,1947,19,ACTRESS IN A LEADING ROLE,Jennifer Jones,Duel in the Sun,FALSE,white,white
+961,1946,1947,19,ACTRESS IN A LEADING ROLE,Rosalind Russell,Sister Kenny,FALSE,white,white
+962,1946,1947,19,ACTRESS IN A LEADING ROLE,Jane Wyman,The Yearling,FALSE,white,white
+963,1947,1948,20,ACTRESS IN A LEADING ROLE,Joan Crawford,Possessed,FALSE,white,white
+964,1947,1948,20,ACTRESS IN A LEADING ROLE,Susan Hayward,Smash-Up--The Story of a Woman,FALSE,white,white
+965,1947,1948,20,ACTRESS IN A LEADING ROLE,Dorothy McGuire,Gentleman's Agreement,FALSE,white,white
+966,1947,1948,20,ACTRESS IN A LEADING ROLE,Rosalind Russell,Mourning Becomes Electra,FALSE,white,white
+967,1947,1948,20,ACTRESS IN A LEADING ROLE,Loretta Young,The Farmer's Daughter,TRUE,white,white
+968,1948,1949,21,ACTRESS IN A LEADING ROLE,Ingrid Bergman,Joan of Arc,FALSE,white,white
+969,1948,1949,21,ACTRESS IN A LEADING ROLE,Olivia de Havilland,The Snake Pit,FALSE,white,white
+970,1948,1949,21,ACTRESS IN A LEADING ROLE,Irene Dunne,I Remember Mama,FALSE,white,white
+971,1948,1949,21,ACTRESS IN A LEADING ROLE,Barbara Stanwyck,"Sorry, Wrong Number",FALSE,white,white
+972,1948,1949,21,ACTRESS IN A LEADING ROLE,Jane Wyman,Johnny Belinda,TRUE,white,white
+973,1949,1950,22,ACTRESS IN A LEADING ROLE,Jeanne Crain,Pinky,FALSE,white,white
+974,1949,1950,22,ACTRESS IN A LEADING ROLE,Olivia de Havilland,The Heiress,TRUE,white,white
+975,1949,1950,22,ACTRESS IN A LEADING ROLE,Susan Hayward,My Foolish Heart,FALSE,white,white
+976,1949,1950,22,ACTRESS IN A LEADING ROLE,Deborah Kerr,"Edward, My Son",FALSE,white,white
+977,1949,1950,22,ACTRESS IN A LEADING ROLE,Loretta Young,Come to the Stable,FALSE,white,white
+978,1950,1951,23,ACTRESS IN A LEADING ROLE,Anne Baxter,All about Eve,FALSE,white,white
+979,1950,1951,23,ACTRESS IN A LEADING ROLE,Bette Davis,All about Eve,FALSE,white,white
+980,1950,1951,23,ACTRESS IN A LEADING ROLE,Judy Holliday,Born Yesterday,TRUE,white,white
+981,1950,1951,23,ACTRESS IN A LEADING ROLE,Eleanor Parker,Caged,FALSE,white,white
+982,1950,1951,23,ACTRESS IN A LEADING ROLE,Gloria Swanson,Sunset Blvd.,FALSE,white,white
+983,1951,1952,24,ACTRESS IN A LEADING ROLE,Katharine Hepburn,The African Queen,FALSE,white,white
+984,1951,1952,24,ACTRESS IN A LEADING ROLE,Vivien Leigh,A Streetcar Named Desire,TRUE,white,white
+985,1951,1952,24,ACTRESS IN A LEADING ROLE,Eleanor Parker,Detective Story,FALSE,white,white
+986,1951,1952,24,ACTRESS IN A LEADING ROLE,Shelley Winters,A Place in the Sun,FALSE,white,white
+987,1951,1952,24,ACTRESS IN A LEADING ROLE,Jane Wyman,The Blue Veil,FALSE,white,white
+988,1952,1953,25,ACTRESS IN A LEADING ROLE,Shirley Booth,"Come Back, Little Sheba",TRUE,white,white
+989,1952,1953,25,ACTRESS IN A LEADING ROLE,Joan Crawford,Sudden Fear,FALSE,white,white
+990,1952,1953,25,ACTRESS IN A LEADING ROLE,Bette Davis,The Star,FALSE,white,white
+991,1952,1953,25,ACTRESS IN A LEADING ROLE,Julie Harris,The Member of the Wedding,FALSE,white,white
+992,1952,1953,25,ACTRESS IN A LEADING ROLE,Susan Hayward,With a Song in My Heart,FALSE,white,white
+993,1953,1954,26,ACTRESS IN A LEADING ROLE,Leslie Caron,Lili,FALSE,white,white
+994,1953,1954,26,ACTRESS IN A LEADING ROLE,Ava Gardner,Mogambo,FALSE,white,white
+995,1953,1954,26,ACTRESS IN A LEADING ROLE,Audrey Hepburn,Roman Holiday,TRUE,white,white
+996,1953,1954,26,ACTRESS IN A LEADING ROLE,Deborah Kerr,From Here to Eternity,FALSE,white,white
+997,1953,1954,26,ACTRESS IN A LEADING ROLE,Maggie McNamara,The Moon Is Blue,FALSE,white,white
+998,1954,1955,27,ACTRESS IN A LEADING ROLE,Dorothy Dandridge,Carmen Jones,FALSE,black,black
+999,1954,1955,27,ACTRESS IN A LEADING ROLE,Judy Garland,A Star Is Born,FALSE,white,white
+1000,1954,1955,27,ACTRESS IN A LEADING ROLE,Audrey Hepburn,Sabrina,FALSE,white,white
+1001,1954,1955,27,ACTRESS IN A LEADING ROLE,Grace Kelly,The Country Girl,TRUE,white,white
+1002,1954,1955,27,ACTRESS IN A LEADING ROLE,Jane Wyman,Magnificent Obsession,FALSE,white,white
+1003,1955,1956,28,ACTRESS IN A LEADING ROLE,Susan Hayward,I'll Cry Tomorrow,FALSE,white,white
+1004,1955,1956,28,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Summertime,FALSE,white,white
+1005,1955,1956,28,ACTRESS IN A LEADING ROLE,Jennifer Jones,Love Is a Many-Splendored Thing,FALSE,white,white
+1006,1955,1956,28,ACTRESS IN A LEADING ROLE,Anna Magnani,The Rose Tattoo,TRUE,white,white
+1007,1955,1956,28,ACTRESS IN A LEADING ROLE,Eleanor Parker,Interrupted Melody,FALSE,white,white
+1008,1956,1957,29,ACTRESS IN A LEADING ROLE,Carroll Baker,Baby Doll,FALSE,white,white
+1009,1956,1957,29,ACTRESS IN A LEADING ROLE,Ingrid Bergman,Anastasia,TRUE,white,white
+1010,1956,1957,29,ACTRESS IN A LEADING ROLE,Katharine Hepburn,The Rainmaker,FALSE,white,white
+1011,1956,1957,29,ACTRESS IN A LEADING ROLE,Nancy Kelly,The Bad Seed,FALSE,white,white
+1012,1956,1957,29,ACTRESS IN A LEADING ROLE,Deborah Kerr,The King and I,FALSE,white,white
+1013,1957,1958,30,ACTRESS IN A LEADING ROLE,Deborah Kerr,"Heaven Knows, Mr. Allison",FALSE,white,white
+1014,1957,1958,30,ACTRESS IN A LEADING ROLE,Anna Magnani,Wild Is the Wind,FALSE,white,white
+1015,1957,1958,30,ACTRESS IN A LEADING ROLE,Elizabeth Taylor,Raintree County,FALSE,white,white
+1016,1957,1958,30,ACTRESS IN A LEADING ROLE,Lana Turner,Peyton Place,FALSE,white,white
+1017,1957,1958,30,ACTRESS IN A LEADING ROLE,Joanne Woodward,The Three Faces of Eve,TRUE,white,white
+1018,1958,1959,31,ACTRESS IN A LEADING ROLE,Susan Hayward,I Want to Live!,TRUE,white,white
+1019,1958,1959,31,ACTRESS IN A LEADING ROLE,Deborah Kerr,Separate Tables,FALSE,white,white
+1020,1958,1959,31,ACTRESS IN A LEADING ROLE,Shirley MacLaine,Some Came Running,FALSE,white,white
+1021,1958,1959,31,ACTRESS IN A LEADING ROLE,Rosalind Russell,Auntie Mame,FALSE,white,white
+1022,1958,1959,31,ACTRESS IN A LEADING ROLE,Elizabeth Taylor,Cat on a Hot Tin Roof,FALSE,white,white
+1023,1959,1960,32,ACTRESS IN A LEADING ROLE,Doris Day,Pillow Talk,FALSE,white,white
+1024,1959,1960,32,ACTRESS IN A LEADING ROLE,Audrey Hepburn,The Nun's Story,FALSE,white,white
+1025,1959,1960,32,ACTRESS IN A LEADING ROLE,Katharine Hepburn,"Suddenly, Last Summer",FALSE,white,white
+1026,1959,1960,32,ACTRESS IN A LEADING ROLE,Simone Signoret,Room at the Top,TRUE,white,white
+1027,1959,1960,32,ACTRESS IN A LEADING ROLE,Elizabeth Taylor,"Suddenly, Last Summer",FALSE,white,white
+1028,1960,1961,33,ACTRESS IN A LEADING ROLE,Greer Garson,Sunrise at Campobello,FALSE,white,white
+1029,1960,1961,33,ACTRESS IN A LEADING ROLE,Deborah Kerr,The Sundowners,FALSE,white,white
+1030,1960,1961,33,ACTRESS IN A LEADING ROLE,Shirley MacLaine,The Apartment,FALSE,white,white
+1031,1960,1961,33,ACTRESS IN A LEADING ROLE,Melina Mercouri,Never on Sunday,FALSE,white,white
+1032,1960,1961,33,ACTRESS IN A LEADING ROLE,Elizabeth Taylor,Butterfield 8,TRUE,white,white
+1033,1961,1962,34,ACTRESS IN A LEADING ROLE,Audrey Hepburn,Breakfast at Tiffany's,FALSE,white,white
+1034,1961,1962,34,ACTRESS IN A LEADING ROLE,Piper Laurie,The Hustler,FALSE,white,white
+1035,1961,1962,34,ACTRESS IN A LEADING ROLE,Sophia Loren,Two Women,TRUE,white,white
+1036,1961,1962,34,ACTRESS IN A LEADING ROLE,Geraldine Page,Summer and Smoke,FALSE,white,white
+1037,1961,1962,34,ACTRESS IN A LEADING ROLE,Natalie Wood,Splendor in the Grass,FALSE,white,white
+1038,1962,1963,35,ACTRESS IN A LEADING ROLE,Anne Bancroft,The Miracle Worker,TRUE,white,white
+1039,1962,1963,35,ACTRESS IN A LEADING ROLE,Bette Davis,What Ever Happened to Baby Jane?,FALSE,white,white
+1040,1962,1963,35,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Long Day's Journey into Night,FALSE,white,white
+1041,1962,1963,35,ACTRESS IN A LEADING ROLE,Geraldine Page,Sweet Bird of Youth,FALSE,white,white
+1042,1962,1963,35,ACTRESS IN A LEADING ROLE,Lee Remick,Days of Wine and Roses,FALSE,white,white
+1043,1963,1964,36,ACTRESS IN A LEADING ROLE,Leslie Caron,The L-Shaped Room,FALSE,white,white
+1044,1963,1964,36,ACTRESS IN A LEADING ROLE,Shirley MacLaine,Irma La Douce,FALSE,white,white
+1045,1963,1964,36,ACTRESS IN A LEADING ROLE,Patricia Neal,Hud,TRUE,white,white
+1046,1963,1964,36,ACTRESS IN A LEADING ROLE,Rachel Roberts,This Sporting Life,FALSE,white,white
+1047,1963,1964,36,ACTRESS IN A LEADING ROLE,Natalie Wood,Love with the Proper Stranger,FALSE,white,white
+1048,1964,1965,37,ACTRESS IN A LEADING ROLE,Julie Andrews,Mary Poppins,TRUE,white,white
+1049,1964,1965,37,ACTRESS IN A LEADING ROLE,Anne Bancroft,The Pumpkin Eater,FALSE,white,white
+1050,1964,1965,37,ACTRESS IN A LEADING ROLE,Sophia Loren,Marriage Italian Style,FALSE,white,white
+1051,1964,1965,37,ACTRESS IN A LEADING ROLE,Debbie Reynolds,The Unsinkable Molly Brown,FALSE,white,white
+1052,1964,1965,37,ACTRESS IN A LEADING ROLE,Kim Stanley,Seance on a Wet Afternoon,FALSE,white,white
+1053,1965,1966,38,ACTRESS IN A LEADING ROLE,Julie Andrews,The Sound of Music,FALSE,white,white
+1054,1965,1966,38,ACTRESS IN A LEADING ROLE,Julie Christie,Darling,TRUE,white,white
+1055,1965,1966,38,ACTRESS IN A LEADING ROLE,Samantha Eggar,The Collector,FALSE,white,white
+1056,1965,1966,38,ACTRESS IN A LEADING ROLE,Elizabeth Hartman,A Patch of Blue,FALSE,white,white
+1057,1965,1966,38,ACTRESS IN A LEADING ROLE,Simone Signoret,Ship of Fools,FALSE,white,white
+1058,1966,1967,39,ACTRESS IN A LEADING ROLE,Anouk Aimee,A Man and a Woman,FALSE,white,white
+1059,1966,1967,39,ACTRESS IN A LEADING ROLE,Ida Kaminska,The Shop on Main Street,FALSE,white,white
+1060,1966,1967,39,ACTRESS IN A LEADING ROLE,Lynn Redgrave,Georgy Girl,FALSE,white,white
+1061,1966,1967,39,ACTRESS IN A LEADING ROLE,Vanessa Redgrave,Morgan!,FALSE,white,white
+1062,1966,1967,39,ACTRESS IN A LEADING ROLE,Elizabeth Taylor,Who's Afraid of Virginia Woolf?,TRUE,white,white
+1063,1967,1968,40,ACTRESS IN A LEADING ROLE,Anne Bancroft,The Graduate,FALSE,white,white
+1064,1967,1968,40,ACTRESS IN A LEADING ROLE,Faye Dunaway,Bonnie and Clyde,FALSE,white,white
+1065,1967,1968,40,ACTRESS IN A LEADING ROLE,Dame Edith Evans,The Whisperers,FALSE,white,white
+1066,1967,1968,40,ACTRESS IN A LEADING ROLE,Audrey Hepburn,Wait until Dark,FALSE,white,white
+1067,1967,1968,40,ACTRESS IN A LEADING ROLE,Katharine Hepburn,Guess Who's Coming to Dinner,TRUE,white,white
+1068,1968,1969,41,ACTRESS IN A LEADING ROLE,Katharine Hepburn,The Lion in Winter,TRUE,white,white
+1069,1968,1969,41,ACTRESS IN A LEADING ROLE,Patricia Neal,The Subject Was Roses,FALSE,white,white
+1070,1968,1969,41,ACTRESS IN A LEADING ROLE,Vanessa Redgrave,Isadora,FALSE,white,white
+1071,1968,1969,41,ACTRESS IN A LEADING ROLE,Barbra Streisand,Funny Girl,TRUE,white,white
+1072,1968,1969,41,ACTRESS IN A LEADING ROLE,Joanne Woodward,"Rachel, Rachel",FALSE,white,white
+1073,1969,1970,42,ACTRESS IN A LEADING ROLE,Genevieve Bujold,Anne of the Thousand Days,FALSE,white,white
+1074,1969,1970,42,ACTRESS IN A LEADING ROLE,Jane Fonda,"They Shoot Horses, Don't They?",FALSE,white,white
+1075,1969,1970,42,ACTRESS IN A LEADING ROLE,Liza Minnelli,The Sterile Cuckoo,FALSE,white,white
+1076,1969,1970,42,ACTRESS IN A LEADING ROLE,Jean Simmons,The Happy Ending,FALSE,white,white
+1077,1969,1970,42,ACTRESS IN A LEADING ROLE,Maggie Smith,The Prime of Miss Jean Brodie,TRUE,white,white
+1078,1970,1971,43,ACTRESS IN A LEADING ROLE,Jane Alexander,The Great White Hope,FALSE,white,white
+1079,1970,1971,43,ACTRESS IN A LEADING ROLE,Glenda Jackson,Women in Love,TRUE,white,white
+1080,1970,1971,43,ACTRESS IN A LEADING ROLE,Ali MacGraw,Love Story,FALSE,white,white
+1081,1970,1971,43,ACTRESS IN A LEADING ROLE,Sarah Miles,Ryan's Daughter,FALSE,white,white
+1082,1970,1971,43,ACTRESS IN A LEADING ROLE,Carrie Snodgress,Diary of a Mad Housewife,FALSE,white,white
+1083,1971,1972,44,ACTRESS IN A LEADING ROLE,Julie Christie,McCabe & Mrs. Miller,FALSE,white,white
+1084,1971,1972,44,ACTRESS IN A LEADING ROLE,Jane Fonda,Klute,TRUE,white,white
+1085,1971,1972,44,ACTRESS IN A LEADING ROLE,Glenda Jackson,Sunday Bloody Sunday,FALSE,white,white
+1086,1971,1972,44,ACTRESS IN A LEADING ROLE,Vanessa Redgrave,"Mary, Queen of Scots",FALSE,white,white
+1087,1971,1972,44,ACTRESS IN A LEADING ROLE,Janet Suzman,Nicholas and Alexandra,FALSE,white,white
+1088,1972,1973,45,ACTRESS IN A LEADING ROLE,Liza Minnelli,Cabaret,TRUE,white,white
+1089,1972,1973,45,ACTRESS IN A LEADING ROLE,Diana Ross,Lady Sings the Blues,FALSE,black,black
+1090,1972,1973,45,ACTRESS IN A LEADING ROLE,Maggie Smith,Travels with My Aunt,FALSE,white,white
+1091,1972,1973,45,ACTRESS IN A LEADING ROLE,Cicely Tyson,Sounder,FALSE,black,black
+1092,1972,1973,45,ACTRESS IN A LEADING ROLE,Liv Ullmann,The Emigrants,FALSE,white,white
+1093,1973,1974,46,ACTRESS IN A LEADING ROLE,Ellen Burstyn,The Exorcist,FALSE,white,white
+1094,1973,1974,46,ACTRESS IN A LEADING ROLE,Glenda Jackson,A Touch of Class,TRUE,white,white
+1095,1973,1974,46,ACTRESS IN A LEADING ROLE,Marsha Mason,Cinderella Liberty,FALSE,white,white
+1096,1973,1974,46,ACTRESS IN A LEADING ROLE,Barbra Streisand,The Way We Were,FALSE,white,white
+1097,1973,1974,46,ACTRESS IN A LEADING ROLE,Joanne Woodward,"Summer Wishes, Winter Dreams",FALSE,white,white
+1098,1974,1975,47,ACTRESS IN A LEADING ROLE,Ellen Burstyn,Alice Doesn't Live Here Anymore,TRUE,white,white
+1099,1974,1975,47,ACTRESS IN A LEADING ROLE,Diahann Carroll,Claudine,FALSE,black,black
+1100,1974,1975,47,ACTRESS IN A LEADING ROLE,Faye Dunaway,Chinatown,FALSE,white,white
+1101,1974,1975,47,ACTRESS IN A LEADING ROLE,Valerie Perrine,Lenny,FALSE,white,white
+1102,1974,1975,47,ACTRESS IN A LEADING ROLE,Gena Rowlands,A Woman under the Influence,FALSE,white,white
+1103,1975,1976,48,ACTRESS IN A LEADING ROLE,Isabelle Adjani,The Story of Adele H.,FALSE,white,white
+1104,1975,1976,48,ACTRESS IN A LEADING ROLE,Ann-Margret,Tommy,FALSE,white,white
+1105,1975,1976,48,ACTRESS IN A LEADING ROLE,Louise Fletcher,One Flew over the Cuckoo's Nest,TRUE,white,white
+1106,1975,1976,48,ACTRESS IN A LEADING ROLE,Glenda Jackson,Hedda,FALSE,white,white
+1107,1975,1976,48,ACTRESS IN A LEADING ROLE,Carol Kane,Hester Street,FALSE,white,white
+1108,1976,1977,49,ACTRESS IN A LEADING ROLE,Marie-Christine Barrault,"Cousin, Cousine",FALSE,white,white
+1109,1976,1977,49,ACTRESS IN A LEADING ROLE,Faye Dunaway,Network,TRUE,white,white
+1110,1976,1977,49,ACTRESS IN A LEADING ROLE,Talia Shire,Rocky,FALSE,white,white
+1111,1976,1977,49,ACTRESS IN A LEADING ROLE,Sissy Spacek,Carrie,FALSE,white,white
+1112,1976,1977,49,ACTRESS IN A LEADING ROLE,Liv Ullmann,Face to Face,FALSE,white,white
+1113,1977,1978,50,ACTRESS IN A LEADING ROLE,Anne Bancroft,The Turning Point,FALSE,white,white
+1114,1977,1978,50,ACTRESS IN A LEADING ROLE,Jane Fonda,Julia,FALSE,white,white
+1115,1977,1978,50,ACTRESS IN A LEADING ROLE,Diane Keaton,Annie Hall,TRUE,white,white
+1116,1977,1978,50,ACTRESS IN A LEADING ROLE,Shirley MacLaine,The Turning Point,FALSE,white,white
+1117,1977,1978,50,ACTRESS IN A LEADING ROLE,Marsha Mason,The Goodbye Girl,FALSE,white,white
+1118,1978,1979,51,ACTRESS IN A LEADING ROLE,Ingrid Bergman,Autumn Sonata,FALSE,white,white
+1119,1978,1979,51,ACTRESS IN A LEADING ROLE,Ellen Burstyn,"Same Time, Next Year",FALSE,white,white
+1120,1978,1979,51,ACTRESS IN A LEADING ROLE,Jill Clayburgh,An Unmarried Woman,FALSE,white,white
+1121,1978,1979,51,ACTRESS IN A LEADING ROLE,Jane Fonda,Coming Home,TRUE,white,white
+1122,1978,1979,51,ACTRESS IN A LEADING ROLE,Geraldine Page,Interiors,FALSE,white,white
+1123,1979,1980,52,ACTRESS IN A LEADING ROLE,Jill Clayburgh,Starting Over,FALSE,white,white
+1124,1979,1980,52,ACTRESS IN A LEADING ROLE,Sally Field,Norma Rae,TRUE,white,white
+1125,1979,1980,52,ACTRESS IN A LEADING ROLE,Jane Fonda,The China Syndrome,FALSE,white,white
+1126,1979,1980,52,ACTRESS IN A LEADING ROLE,Marsha Mason,Chapter Two,FALSE,white,white
+1127,1979,1980,52,ACTRESS IN A LEADING ROLE,Bette Midler,The Rose,FALSE,white,white
+1128,1980,1981,53,ACTRESS IN A LEADING ROLE,Ellen Burstyn,Resurrection,FALSE,white,white
+1129,1980,1981,53,ACTRESS IN A LEADING ROLE,Goldie Hawn,Private Benjamin,FALSE,white,white
+1130,1980,1981,53,ACTRESS IN A LEADING ROLE,Mary Tyler Moore,Ordinary People,FALSE,white,white
+1131,1980,1981,53,ACTRESS IN A LEADING ROLE,Gena Rowlands,Gloria,FALSE,white,white
+1132,1980,1981,53,ACTRESS IN A LEADING ROLE,Sissy Spacek,Coal Miner's Daughter,TRUE,white,white
+1133,1981,1982,54,ACTRESS IN A LEADING ROLE,Katharine Hepburn,On Golden Pond,TRUE,white,white
+1134,1981,1982,54,ACTRESS IN A LEADING ROLE,Diane Keaton,Reds,FALSE,white,white
+1135,1981,1982,54,ACTRESS IN A LEADING ROLE,Marsha Mason,Only When I Laugh,FALSE,white,white
+1136,1981,1982,54,ACTRESS IN A LEADING ROLE,Susan Sarandon,Atlantic City,FALSE,white,white
+1137,1981,1982,54,ACTRESS IN A LEADING ROLE,Meryl Streep,The French Lieutenant's Woman,FALSE,white,white
+1138,1982,1983,55,ACTRESS IN A LEADING ROLE,Julie Andrews,Victor/Victoria,FALSE,white,white
+1139,1982,1983,55,ACTRESS IN A LEADING ROLE,Jessica Lange,Frances,FALSE,white,white
+1140,1982,1983,55,ACTRESS IN A LEADING ROLE,Sissy Spacek,Missing,FALSE,white,white
+1141,1982,1983,55,ACTRESS IN A LEADING ROLE,Meryl Streep,Sophie's Choice,TRUE,white,white
+1142,1982,1983,55,ACTRESS IN A LEADING ROLE,Debra Winger,An Officer and a Gentleman,FALSE,white,white
+1143,1983,1984,56,ACTRESS IN A LEADING ROLE,Jane Alexander,Testament,FALSE,white,white
+1144,1983,1984,56,ACTRESS IN A LEADING ROLE,Shirley MacLaine,Terms of Endearment,TRUE,white,white
+1145,1983,1984,56,ACTRESS IN A LEADING ROLE,Meryl Streep,Silkwood,FALSE,white,white
+1146,1983,1984,56,ACTRESS IN A LEADING ROLE,Julie Walters,Educating Rita,FALSE,white,white
+1147,1983,1984,56,ACTRESS IN A LEADING ROLE,Debra Winger,Terms of Endearment,FALSE,white,white
+1148,1984,1985,57,ACTRESS IN A LEADING ROLE,Judy Davis,A Passage to India,FALSE,white,white
+1149,1984,1985,57,ACTRESS IN A LEADING ROLE,Sally Field,Places in the Heart,TRUE,white,white
+1150,1984,1985,57,ACTRESS IN A LEADING ROLE,Jessica Lange,Country,FALSE,white,white
+1151,1984,1985,57,ACTRESS IN A LEADING ROLE,Vanessa Redgrave,The Bostonians,FALSE,white,white
+1152,1984,1985,57,ACTRESS IN A LEADING ROLE,Sissy Spacek,The River,FALSE,white,white
+1153,1985,1986,58,ACTRESS IN A LEADING ROLE,Anne Bancroft,Agnes of God,FALSE,white,white
+1154,1985,1986,58,ACTRESS IN A LEADING ROLE,Whoopi Goldberg,The Color Purple,FALSE,black,black
+1155,1985,1986,58,ACTRESS IN A LEADING ROLE,Jessica Lange,Sweet Dreams,FALSE,white,white
+1156,1985,1986,58,ACTRESS IN A LEADING ROLE,Geraldine Page,The Trip to Bountiful,TRUE,white,white
+1157,1985,1986,58,ACTRESS IN A LEADING ROLE,Meryl Streep,Out of Africa,FALSE,white,white
+1158,1986,1987,59,ACTRESS IN A LEADING ROLE,Jane Fonda,The Morning After,FALSE,white,white
+1159,1986,1987,59,ACTRESS IN A LEADING ROLE,Marlee Matlin,Children of a Lesser God,TRUE,white,white
+1160,1986,1987,59,ACTRESS IN A LEADING ROLE,Sissy Spacek,Crimes of the Heart,FALSE,white,white
+1161,1986,1987,59,ACTRESS IN A LEADING ROLE,Kathleen Turner,Peggy Sue Got Married,FALSE,white,white
+1162,1986,1987,59,ACTRESS IN A LEADING ROLE,Sigourney Weaver,Aliens,FALSE,white,white
+1163,1987,1988,60,ACTRESS IN A LEADING ROLE,Cher,Moonstruck,TRUE,white,white
+1164,1987,1988,60,ACTRESS IN A LEADING ROLE,Glenn Close,Fatal Attraction,FALSE,white,white
+1165,1987,1988,60,ACTRESS IN A LEADING ROLE,Holly Hunter,Broadcast News,FALSE,white,white
+1166,1987,1988,60,ACTRESS IN A LEADING ROLE,Sally Kirkland,Anna,FALSE,white,white
+1167,1987,1988,60,ACTRESS IN A LEADING ROLE,Meryl Streep,Ironweed,FALSE,white,white
+1168,1988,1989,61,ACTRESS IN A LEADING ROLE,Glenn Close,Dangerous Liaisons,FALSE,white,white
+1169,1988,1989,61,ACTRESS IN A LEADING ROLE,Jodie Foster,The Accused,TRUE,white,white
+1170,1988,1989,61,ACTRESS IN A LEADING ROLE,Melanie Griffith,Working Girl,FALSE,white,white
+1171,1988,1989,61,ACTRESS IN A LEADING ROLE,Meryl Streep,A Cry in the Dark,FALSE,white,white
+1172,1988,1989,61,ACTRESS IN A LEADING ROLE,Sigourney Weaver,Gorillas in the Mist,FALSE,white,white
+1173,1989,1990,62,ACTRESS IN A LEADING ROLE,Isabelle Adjani,Camille Claudel,FALSE,white,white
+1174,1989,1990,62,ACTRESS IN A LEADING ROLE,Pauline Collins,Shirley Valentine,FALSE,white,white
+1175,1989,1990,62,ACTRESS IN A LEADING ROLE,Jessica Lange,Music Box,FALSE,white,white
+1176,1989,1990,62,ACTRESS IN A LEADING ROLE,Michelle Pfeiffer,The Fabulous Baker Boys,FALSE,white,white
+1177,1989,1990,62,ACTRESS IN A LEADING ROLE,Jessica Tandy,Driving Miss Daisy,TRUE,white,white
+1178,1990,1991,63,ACTRESS IN A LEADING ROLE,Kathy Bates,Misery,TRUE,white,white
+1179,1990,1991,63,ACTRESS IN A LEADING ROLE,Anjelica Huston,The Grifters,FALSE,white,white
+1180,1990,1991,63,ACTRESS IN A LEADING ROLE,Julia Roberts,Pretty Woman,FALSE,white,white
+1181,1990,1991,63,ACTRESS IN A LEADING ROLE,Meryl Streep,Postcards from the Edge,FALSE,white,white
+1182,1990,1991,63,ACTRESS IN A LEADING ROLE,Joanne Woodward,Mr. & Mrs. Bridge,FALSE,white,white
+1183,1991,1992,64,ACTRESS IN A LEADING ROLE,Geena Davis,Thelma & Louise,FALSE,white,white
+1184,1991,1992,64,ACTRESS IN A LEADING ROLE,Laura Dern,Rambling Rose,FALSE,white,white
+1185,1991,1992,64,ACTRESS IN A LEADING ROLE,Jodie Foster,The Silence of the Lambs,TRUE,white,white
+1186,1991,1992,64,ACTRESS IN A LEADING ROLE,Bette Midler,For the Boys,FALSE,white,white
+1187,1991,1992,64,ACTRESS IN A LEADING ROLE,Susan Sarandon,Thelma & Louise,FALSE,white,white
+1188,1992,1993,65,ACTRESS IN A LEADING ROLE,Catherine Deneuve,Indochine,FALSE,white,white
+1189,1992,1993,65,ACTRESS IN A LEADING ROLE,Mary McDonnell,Passion Fish,FALSE,white,white
+1190,1992,1993,65,ACTRESS IN A LEADING ROLE,Michelle Pfeiffer,Love Field,FALSE,white,white
+1191,1992,1993,65,ACTRESS IN A LEADING ROLE,Susan Sarandon,Lorenzo's Oil,FALSE,white,white
+1192,1992,1993,65,ACTRESS IN A LEADING ROLE,Emma Thompson,Howards End,TRUE,white,white
+1193,1993,1994,66,ACTRESS IN A LEADING ROLE,Angela Bassett,What's Love Got to Do with It,FALSE,black,black
+1194,1993,1994,66,ACTRESS IN A LEADING ROLE,Stockard Channing,Six Degrees of Separation,FALSE,white,white
+1195,1993,1994,66,ACTRESS IN A LEADING ROLE,Holly Hunter,The Piano,TRUE,white,white
+1196,1993,1994,66,ACTRESS IN A LEADING ROLE,Emma Thompson,The Remains of the Day,FALSE,white,white
+1197,1993,1994,66,ACTRESS IN A LEADING ROLE,Debra Winger,Shadowlands,FALSE,white,white
+1198,1994,1995,67,ACTRESS IN A LEADING ROLE,Jodie Foster,Nell,FALSE,white,white
+1199,1994,1995,67,ACTRESS IN A LEADING ROLE,Jessica Lange,Blue Sky,TRUE,white,white
+1200,1994,1995,67,ACTRESS IN A LEADING ROLE,Miranda Richardson,Tom & Viv,FALSE,white,white
+1201,1994,1995,67,ACTRESS IN A LEADING ROLE,Winona Ryder,Little Women,FALSE,white,white
+1202,1994,1995,67,ACTRESS IN A LEADING ROLE,Susan Sarandon,The Client,FALSE,white,white
+1203,1995,1996,68,ACTRESS IN A LEADING ROLE,Susan Sarandon,Dead Man Walking,TRUE,white,white
+1204,1995,1996,68,ACTRESS IN A LEADING ROLE,Elisabeth Shue,Leaving Las Vegas,FALSE,white,white
+1205,1995,1996,68,ACTRESS IN A LEADING ROLE,Sharon Stone,Casino,FALSE,white,white
+1206,1995,1996,68,ACTRESS IN A LEADING ROLE,Meryl Streep,The Bridges of Madison County,FALSE,white,white
+1207,1995,1996,68,ACTRESS IN A LEADING ROLE,Emma Thompson,Sense and Sensibility,FALSE,white,white
+1208,1996,1997,69,ACTRESS IN A LEADING ROLE,Brenda Blethyn,Secrets & Lies,FALSE,white,white
+1209,1996,1997,69,ACTRESS IN A LEADING ROLE,Diane Keaton,Marvin's Room,FALSE,white,white
+1210,1996,1997,69,ACTRESS IN A LEADING ROLE,Frances McDormand,Fargo,TRUE,white,white
+1211,1996,1997,69,ACTRESS IN A LEADING ROLE,Kristin Scott Thomas,The English Patient,FALSE,white,white
+1212,1996,1997,69,ACTRESS IN A LEADING ROLE,Emily Watson,Breaking the Waves,FALSE,white,white
+1213,1997,1998,70,ACTRESS IN A LEADING ROLE,Helena Bonham Carter,The Wings of the Dove,FALSE,white,white
+1214,1997,1998,70,ACTRESS IN A LEADING ROLE,Julie Christie,Afterglow,FALSE,white,white
+1215,1997,1998,70,ACTRESS IN A LEADING ROLE,Judi Dench,Mrs. Brown,FALSE,white,white
+1216,1997,1998,70,ACTRESS IN A LEADING ROLE,Helen Hunt,As Good as It Gets,TRUE,white,white
+1217,1997,1998,70,ACTRESS IN A LEADING ROLE,Kate Winslet,Titanic,FALSE,white,white
+1218,1998,1999,71,ACTRESS IN A LEADING ROLE,Cate Blanchett,Elizabeth,FALSE,white,white
+1219,1998,1999,71,ACTRESS IN A LEADING ROLE,Fernanda Montenegro,Central Station,FALSE,hispanic,hispanic
+1220,1998,1999,71,ACTRESS IN A LEADING ROLE,Gwyneth Paltrow,Shakespeare in Love,TRUE,white,white
+1221,1998,1999,71,ACTRESS IN A LEADING ROLE,Meryl Streep,One True Thing,FALSE,white,white
+1222,1998,1999,71,ACTRESS IN A LEADING ROLE,Emily Watson,Hilary and Jackie,FALSE,white,white
+1223,1999,2000,72,ACTRESS IN A LEADING ROLE,Annette Bening,American Beauty,FALSE,white,white
+1224,1999,2000,72,ACTRESS IN A LEADING ROLE,Janet McTeer,Tumbleweeds,FALSE,white,white
+1225,1999,2000,72,ACTRESS IN A LEADING ROLE,Julianne Moore,The End of the Affair,FALSE,white,white
+1226,1999,2000,72,ACTRESS IN A LEADING ROLE,Meryl Streep,Music of the Heart,FALSE,white,white
+1227,1999,2000,72,ACTRESS IN A LEADING ROLE,Hilary Swank,Boys Don't Cry,TRUE,white,white
+1228,2000,2001,73,ACTRESS IN A LEADING ROLE,Joan Allen,The Contender,FALSE,white,white
+1229,2000,2001,73,ACTRESS IN A LEADING ROLE,Juliette Binoche,Chocolat,FALSE,white,white
+1230,2000,2001,73,ACTRESS IN A LEADING ROLE,Ellen Burstyn,Requiem for a Dream,FALSE,white,white
+1231,2000,2001,73,ACTRESS IN A LEADING ROLE,Laura Linney,You Can Count on Me,FALSE,white,white
+1232,2000,2001,73,ACTRESS IN A LEADING ROLE,Julia Roberts,Erin Brockovich,TRUE,white,white
+1233,2001,2002,74,ACTRESS IN A LEADING ROLE,Halle Berry,Monster's Ball,TRUE,black,black
+1234,2001,2002,74,ACTRESS IN A LEADING ROLE,Judi Dench,Iris,FALSE,white,white
+1235,2001,2002,74,ACTRESS IN A LEADING ROLE,Nicole Kidman,Moulin Rouge,FALSE,white,white
+1236,2001,2002,74,ACTRESS IN A LEADING ROLE,Sissy Spacek,In the Bedroom,FALSE,white,white
+1237,2001,2002,74,ACTRESS IN A LEADING ROLE,Renée Zellweger,Bridget Jones's Diary,FALSE,white,white
+1238,2002,2003,75,ACTRESS IN A LEADING ROLE,Salma Hayek,Frida,FALSE,hispanic,hispanic
+1239,2002,2003,75,ACTRESS IN A LEADING ROLE,Nicole Kidman,The Hours,TRUE,white,white
+1240,2002,2003,75,ACTRESS IN A LEADING ROLE,Diane Lane,Unfaithful,FALSE,white,white
+1241,2002,2003,75,ACTRESS IN A LEADING ROLE,Julianne Moore,Far from Heaven,FALSE,white,white
+1242,2002,2003,75,ACTRESS IN A LEADING ROLE,Renée Zellweger,Chicago,FALSE,white,white
+1243,2003,2004,76,ACTRESS IN A LEADING ROLE,Keisha Castle-Hughes,Whale Rider,FALSE,Maori,other
+1244,2003,2004,76,ACTRESS IN A LEADING ROLE,Diane Keaton,Something's Gotta Give,FALSE,white,white
+1245,2003,2004,76,ACTRESS IN A LEADING ROLE,Samantha Morton,In America,FALSE,white,white
+1246,2003,2004,76,ACTRESS IN A LEADING ROLE,Charlize Theron,Monster,TRUE,white,white
+1247,2003,2004,76,ACTRESS IN A LEADING ROLE,Naomi Watts,21 Grams,FALSE,white,white
+1248,2004,2005,77,ACTRESS IN A LEADING ROLE,Annette Bening,Being Julia,FALSE,white,white
+1249,2004,2005,77,ACTRESS IN A LEADING ROLE,Catalina Sandino Moreno,Maria Full of Grace,FALSE,hispanic,hispanic
+1250,2004,2005,77,ACTRESS IN A LEADING ROLE,Imelda Staunton,Vera Drake,FALSE,white,white
+1251,2004,2005,77,ACTRESS IN A LEADING ROLE,Hilary Swank,Million Dollar Baby,TRUE,white,white
+1252,2004,2005,77,ACTRESS IN A LEADING ROLE,Kate Winslet,Eternal Sunshine of the Spotless Mind,FALSE,white,white
+1253,2005,2006,78,ACTRESS IN A LEADING ROLE,Judi Dench,Mrs. Henderson Presents,FALSE,white,white
+1254,2005,2006,78,ACTRESS IN A LEADING ROLE,Felicity Huffman,Transamerica,FALSE,white,white
+1255,2005,2006,78,ACTRESS IN A LEADING ROLE,Keira Knightley,Pride & Prejudice,FALSE,white,white
+1256,2005,2006,78,ACTRESS IN A LEADING ROLE,Charlize Theron,North Country,FALSE,white,white
+1257,2005,2006,78,ACTRESS IN A LEADING ROLE,Reese Witherspoon,Walk the Line,TRUE,white,white
+1258,2006,2007,79,ACTRESS IN A LEADING ROLE,Penélope Cruz,Volver,FALSE,white,white
+1259,2006,2007,79,ACTRESS IN A LEADING ROLE,Judi Dench,Notes on a Scandal,FALSE,white,white
+1260,2006,2007,79,ACTRESS IN A LEADING ROLE,Helen Mirren,The Queen,TRUE,white,white
+1261,2006,2007,79,ACTRESS IN A LEADING ROLE,Meryl Streep,The Devil Wears Prada,FALSE,white,white
+1262,2006,2007,79,ACTRESS IN A LEADING ROLE,Kate Winslet,Little Children,FALSE,white,white
+1263,2007,2008,80,ACTRESS IN A LEADING ROLE,Cate Blanchett,Elizabeth: The Golden Age,FALSE,white,white
+1264,2007,2008,80,ACTRESS IN A LEADING ROLE,Julie Christie,Away from Her,FALSE,white,white
+1265,2007,2008,80,ACTRESS IN A LEADING ROLE,Marion Cotillard,La Vie en Rose,TRUE,white,white
+1266,2007,2008,80,ACTRESS IN A LEADING ROLE,Laura Linney,The Savages,FALSE,white,white
+1267,2007,2008,80,ACTRESS IN A LEADING ROLE,Ellen Page,Juno,FALSE,white,white
+1268,2008,2009,81,ACTRESS IN A LEADING ROLE,Anne Hathaway,Rachel Getting Married,FALSE,white,white
+1269,2008,2009,81,ACTRESS IN A LEADING ROLE,Angelina Jolie,Changeling,FALSE,white,white
+1270,2008,2009,81,ACTRESS IN A LEADING ROLE,Melissa Leo,Frozen River,FALSE,white,white
+1271,2008,2009,81,ACTRESS IN A LEADING ROLE,Meryl Streep,Doubt,FALSE,white,white
+1272,2008,2009,81,ACTRESS IN A LEADING ROLE,Kate Winslet,The Reader,TRUE,white,white
+1273,2009,2010,82,ACTRESS IN A LEADING ROLE,Sandra Bullock,The Blind Side,TRUE,white,white
+1274,2009,2010,82,ACTRESS IN A LEADING ROLE,Helen Mirren,The Last Station,FALSE,white,white
+1275,2009,2010,82,ACTRESS IN A LEADING ROLE,Carey Mulligan,An Education,FALSE,white,white
+1276,2009,2010,82,ACTRESS IN A LEADING ROLE,Gabourey Sidibe,Precious: Based on the Novel 'Push' by Sapphire,FALSE,black,black
+1277,2009,2010,82,ACTRESS IN A LEADING ROLE,Meryl Streep,Julie & Julia,FALSE,white,white
+1278,2010,2011,83,ACTRESS IN A LEADING ROLE,Annette Bening,The Kids Are All Right,FALSE,white,white
+1279,2010,2011,83,ACTRESS IN A LEADING ROLE,Nicole Kidman,Rabbit Hole,FALSE,white,white
+1280,2010,2011,83,ACTRESS IN A LEADING ROLE,Jennifer Lawrence,Winter's Bone,FALSE,white,white
+1281,2010,2011,83,ACTRESS IN A LEADING ROLE,Natalie Portman,Black Swan,TRUE,white,white
+1282,2010,2011,83,ACTRESS IN A LEADING ROLE,Michelle Williams,Blue Valentine,FALSE,white,white
+1283,2011,2012,84,ACTRESS IN A LEADING ROLE,Glenn Close,Albert Nobbs,FALSE,white,white
+1284,2011,2012,84,ACTRESS IN A LEADING ROLE,Viola Davis,The Help,FALSE,black,black
+1285,2011,2012,84,ACTRESS IN A LEADING ROLE,Rooney Mara,The Girl with the Dragon Tattoo,FALSE,white,white
+1286,2011,2012,84,ACTRESS IN A LEADING ROLE,Meryl Streep,The Iron Lady,TRUE,white,white
+1287,2011,2012,84,ACTRESS IN A LEADING ROLE,Michelle Williams,My Week with Marilyn,FALSE,white,white
+1288,2012,2013,85,ACTRESS IN A LEADING ROLE,Jessica Chastain,Zero Dark Thirty,FALSE,white,white
+1289,2012,2013,85,ACTRESS IN A LEADING ROLE,Jennifer Lawrence,Silver Linings Playbook,TRUE,white,white
+1290,2012,2013,85,ACTRESS IN A LEADING ROLE,Emmanuelle Riva,Amour,FALSE,white,white
+1291,2012,2013,85,ACTRESS IN A LEADING ROLE,Quvenzhané Wallis,Beasts of the Southern Wild,FALSE,black,black
+1292,2012,2013,85,ACTRESS IN A LEADING ROLE,Naomi Watts,The Impossible,FALSE,white,white
+1293,2013,2014,86,ACTRESS IN A LEADING ROLE,Amy Adams,American Hustle,FALSE,white,white
+1294,2013,2014,86,ACTRESS IN A LEADING ROLE,Cate Blanchett,Blue Jasmine,TRUE,white,white
+1295,2013,2014,86,ACTRESS IN A LEADING ROLE,Sandra Bullock,Gravity,FALSE,white,white
+1296,2013,2014,86,ACTRESS IN A LEADING ROLE,Judi Dench,Philomena,FALSE,white,white
+1297,2013,2014,86,ACTRESS IN A LEADING ROLE,Meryl Streep,August: Osage County,FALSE,white,white
+1298,2014,2015,87,ACTRESS IN A LEADING ROLE,Marion Cotillard,"Two Days, One Night",FALSE,white,white
+1299,2014,2015,87,ACTRESS IN A LEADING ROLE,Felicity Jones,The Theory of Everything,FALSE,white,white
+1300,2014,2015,87,ACTRESS IN A LEADING ROLE,Julianne Moore,Still Alice,TRUE,white,white
+1301,2014,2015,87,ACTRESS IN A LEADING ROLE,Rosamund Pike,Gone Girl,FALSE,white,white
+1302,2014,2015,87,ACTRESS IN A LEADING ROLE,Reese Witherspoon,Wild,FALSE,white,white
+1303,2015,2016,88,ACTRESS IN A LEADING ROLE,Cate Blanchett,Carol,FALSE,white,white
+1304,2015,2016,88,ACTRESS IN A LEADING ROLE,Brie Larson,Room,TRUE,white,white
+1305,2015,2016,88,ACTRESS IN A LEADING ROLE,Jennifer Lawrence,Joy,FALSE,white,white
+1306,2015,2016,88,ACTRESS IN A LEADING ROLE,Charlotte Rampling,45 Years,FALSE,white,white
+1307,2015,2016,88,ACTRESS IN A LEADING ROLE,Saoirse Ronan,Brooklyn,FALSE,white,white
+1308,2016,2017,89,ACTRESS IN A LEADING ROLE,Isabelle Huppert,Elle,FALSE,white,white
+1309,2016,2017,89,ACTRESS IN A LEADING ROLE,Ruth Negga,Loving,FALSE,black,black
+1310,2016,2017,89,ACTRESS IN A LEADING ROLE,Natalie Portman,Jackie,FALSE,white,white
+1311,2016,2017,89,ACTRESS IN A LEADING ROLE,Emma Stone,La La Land,TRUE,white,white
+1312,2016,2017,89,ACTRESS IN A LEADING ROLE,Meryl Streep,Florence Foster Jenkins,FALSE,white,white
+1313,2017,2018,90,ACTRESS IN A LEADING ROLE,Sally Hawkins,The Shape of Water,FALSE,white,white
+1314,2017,2018,90,ACTRESS IN A LEADING ROLE,Frances McDormand,"Three Billboards outside Ebbing, Missouri",TRUE,white,white
+1315,2017,2018,90,ACTRESS IN A LEADING ROLE,Margot Robbie,"I, Tonya",FALSE,white,white
+1316,2017,2018,90,ACTRESS IN A LEADING ROLE,Saoirse Ronan,Lady Bird,FALSE,white,white
+1317,2017,2018,90,ACTRESS IN A LEADING ROLE,Meryl Streep,The Post,FALSE,white,white
+1318,2018,2019,91,ACTRESS IN A LEADING ROLE,Yalitza Aparicio,Roma,FALSE,Native Mexican,other
+1319,2018,2019,91,ACTRESS IN A LEADING ROLE,Glenn Close,The Wife,FALSE,white,white
+1320,2018,2019,91,ACTRESS IN A LEADING ROLE,Olivia Colman,The Favourite,TRUE,white,white
+1321,2018,2019,91,ACTRESS IN A LEADING ROLE,Lady Gaga,A Star Is Born,FALSE,white,white
+1322,2018,2019,91,ACTRESS IN A LEADING ROLE,Melissa McCarthy,Can You Ever Forgive Me?,FALSE,white,white
+1323,2019,2020,92,ACTRESS IN A LEADING ROLE,Cynthia Erivo,Harriet,FALSE,black,black
+1324,2019,2020,92,ACTRESS IN A LEADING ROLE,Scarlett Johansson,Marriage Story,FALSE,white,white
+1325,2019,2020,92,ACTRESS IN A LEADING ROLE,Saoirse Ronan,Little Women,FALSE,white,white
+1326,2019,2020,92,ACTRESS IN A LEADING ROLE,Charlize Theron,Bombshell,FALSE,white,white
+1327,2019,2020,92,ACTRESS IN A LEADING ROLE,Renée Zellweger,Judy,TRUE,white,white
+1328,1936,1937,9,ACTRESS IN A SUPPORTING ROLE,Beulah Bondi,The Gorgeous Hussy,FALSE,white,white
+1329,1936,1937,9,ACTRESS IN A SUPPORTING ROLE,Alice Brady,My Man Godfrey,FALSE,white,white
+1330,1936,1937,9,ACTRESS IN A SUPPORTING ROLE,Bonita Granville,These Three,FALSE,white,white
+1331,1936,1937,9,ACTRESS IN A SUPPORTING ROLE,Maria Ouspenskaya,Dodsworth,FALSE,white,white
+1332,1936,1937,9,ACTRESS IN A SUPPORTING ROLE,Gale Sondergaard,Anthony Adverse,TRUE,white,white
+1333,1937,1938,10,ACTRESS IN A SUPPORTING ROLE,Alice Brady,In Old Chicago,TRUE,white,white
+1334,1937,1938,10,ACTRESS IN A SUPPORTING ROLE,Andrea Leeds,Stage Door,FALSE,white,white
+1335,1937,1938,10,ACTRESS IN A SUPPORTING ROLE,Anne Shirley,Stella Dallas,FALSE,white,white
+1336,1937,1938,10,ACTRESS IN A SUPPORTING ROLE,Claire Trevor,Dead End,FALSE,white,white
+1337,1937,1938,10,ACTRESS IN A SUPPORTING ROLE,Dame May Whitty,Night Must Fall,FALSE,white,white
+1338,1938,1939,11,ACTRESS IN A SUPPORTING ROLE,Fay Bainter,Jezebel,TRUE,white,white
+1339,1938,1939,11,ACTRESS IN A SUPPORTING ROLE,Beulah Bondi,Of Human Hearts,FALSE,white,white
+1340,1938,1939,11,ACTRESS IN A SUPPORTING ROLE,Billie Burke,Merrily We Live,FALSE,white,white
+1341,1938,1939,11,ACTRESS IN A SUPPORTING ROLE,Spring Byington,You Can't Take It with You,FALSE,white,white
+1342,1938,1939,11,ACTRESS IN A SUPPORTING ROLE,Miliza Korjus,The Great Waltz,FALSE,white,white
+1343,1939,1940,12,ACTRESS IN A SUPPORTING ROLE,Olivia de Havilland,Gone with the Wind,FALSE,white,white
+1344,1939,1940,12,ACTRESS IN A SUPPORTING ROLE,Geraldine Fitzgerald,Wuthering Heights,FALSE,white,white
+1345,1939,1940,12,ACTRESS IN A SUPPORTING ROLE,Hattie McDaniel,Gone with the Wind,TRUE,black,black
+1346,1939,1940,12,ACTRESS IN A SUPPORTING ROLE,Edna May Oliver,Drums along the Mohawk,FALSE,white,white
+1347,1939,1940,12,ACTRESS IN A SUPPORTING ROLE,Maria Ouspenskaya,Love Affair,FALSE,white,white
+1348,1940,1941,13,ACTRESS IN A SUPPORTING ROLE,Judith Anderson,Rebecca,FALSE,white,white
+1349,1940,1941,13,ACTRESS IN A SUPPORTING ROLE,Jane Darwell,The Grapes of Wrath,TRUE,white,white
+1350,1940,1941,13,ACTRESS IN A SUPPORTING ROLE,Ruth Hussey,The Philadelphia Story,FALSE,white,white
+1351,1940,1941,13,ACTRESS IN A SUPPORTING ROLE,Barbara O'Neil,"All This, and Heaven Too",FALSE,white,white
+1352,1940,1941,13,ACTRESS IN A SUPPORTING ROLE,Marjorie Rambeau,Primrose Path,FALSE,white,white
+1353,1941,1942,14,ACTRESS IN A SUPPORTING ROLE,Sara Allgood,How Green Was My Valley,FALSE,white,white
+1354,1941,1942,14,ACTRESS IN A SUPPORTING ROLE,Mary Astor,The Great Lie,TRUE,white,white
+1355,1941,1942,14,ACTRESS IN A SUPPORTING ROLE,Patricia Collinge,The Little Foxes,FALSE,white,white
+1356,1941,1942,14,ACTRESS IN A SUPPORTING ROLE,Teresa Wright,The Little Foxes,FALSE,white,white
+1357,1941,1942,14,ACTRESS IN A SUPPORTING ROLE,Margaret Wycherly,Sergeant York,FALSE,white,white
+1358,1942,1943,15,ACTRESS IN A SUPPORTING ROLE,Gladys Cooper,"Now, Voyager",FALSE,white,white
+1359,1942,1943,15,ACTRESS IN A SUPPORTING ROLE,Agnes Moorehead,The Magnificent Ambersons,FALSE,white,white
+1360,1942,1943,15,ACTRESS IN A SUPPORTING ROLE,Susan Peters,Random Harvest,FALSE,white,white
+1361,1942,1943,15,ACTRESS IN A SUPPORTING ROLE,Dame May Whitty,Mrs. Miniver,FALSE,white,white
+1362,1942,1943,15,ACTRESS IN A SUPPORTING ROLE,Teresa Wright,Mrs. Miniver,TRUE,white,white
+1363,1943,1944,16,ACTRESS IN A SUPPORTING ROLE,Gladys Cooper,The Song of Bernadette,FALSE,white,white
+1364,1943,1944,16,ACTRESS IN A SUPPORTING ROLE,Paulette Goddard,So Proudly We Hail!,FALSE,white,white
+1365,1943,1944,16,ACTRESS IN A SUPPORTING ROLE,Katina Paxinou,For Whom the Bell Tolls,TRUE,white,white
+1366,1943,1944,16,ACTRESS IN A SUPPORTING ROLE,Anne Revere,The Song of Bernadette,FALSE,white,white
+1367,1943,1944,16,ACTRESS IN A SUPPORTING ROLE,Lucile Watson,Watch on the Rhine,FALSE,white,white
+1368,1944,1945,17,ACTRESS IN A SUPPORTING ROLE,Ethel Barrymore,None but the Lonely Heart,TRUE,white,white
+1369,1944,1945,17,ACTRESS IN A SUPPORTING ROLE,Jennifer Jones,Since You Went Away,FALSE,white,white
+1370,1944,1945,17,ACTRESS IN A SUPPORTING ROLE,Angela Lansbury,Gaslight,FALSE,white,white
+1371,1944,1945,17,ACTRESS IN A SUPPORTING ROLE,Aline MacMahon,Dragon Seed,FALSE,white,white
+1372,1944,1945,17,ACTRESS IN A SUPPORTING ROLE,Agnes Moorehead,Mrs. Parkington,FALSE,white,white
+1373,1945,1946,18,ACTRESS IN A SUPPORTING ROLE,Eve Arden,Mildred Pierce,FALSE,white,white
+1374,1945,1946,18,ACTRESS IN A SUPPORTING ROLE,Ann Blyth,Mildred Pierce,FALSE,white,white
+1375,1945,1946,18,ACTRESS IN A SUPPORTING ROLE,Angela Lansbury,The Picture of Dorian Gray,FALSE,white,white
+1376,1945,1946,18,ACTRESS IN A SUPPORTING ROLE,Joan Lorring,The Corn Is Green,FALSE,white,white
+1377,1945,1946,18,ACTRESS IN A SUPPORTING ROLE,Anne Revere,National Velvet,TRUE,white,white
+1378,1946,1947,19,ACTRESS IN A SUPPORTING ROLE,Ethel Barrymore,The Spiral Staircase,FALSE,white,white
+1379,1946,1947,19,ACTRESS IN A SUPPORTING ROLE,Anne Baxter,The Razor's Edge,TRUE,white,white
+1380,1946,1947,19,ACTRESS IN A SUPPORTING ROLE,Lillian Gish,Duel in the Sun,FALSE,white,white
+1381,1946,1947,19,ACTRESS IN A SUPPORTING ROLE,Flora Robson,Saratoga Trunk,FALSE,white,white
+1382,1946,1947,19,ACTRESS IN A SUPPORTING ROLE,Gale Sondergaard,Anna and the King of Siam,FALSE,white,white
+1383,1947,1948,20,ACTRESS IN A SUPPORTING ROLE,Ethel Barrymore,The Paradine Case,FALSE,white,white
+1384,1947,1948,20,ACTRESS IN A SUPPORTING ROLE,Gloria Grahame,Crossfire,FALSE,white,white
+1385,1947,1948,20,ACTRESS IN A SUPPORTING ROLE,Celeste Holm,Gentleman's Agreement,TRUE,white,white
+1386,1947,1948,20,ACTRESS IN A SUPPORTING ROLE,Marjorie Main,The Egg and I,FALSE,white,white
+1387,1947,1948,20,ACTRESS IN A SUPPORTING ROLE,Anne Revere,Gentleman's Agreement,FALSE,white,white
+1388,1948,1949,21,ACTRESS IN A SUPPORTING ROLE,Barbara Bel Geddes,I Remember Mama,FALSE,white,white
+1389,1948,1949,21,ACTRESS IN A SUPPORTING ROLE,Ellen Corby,I Remember Mama,FALSE,white,white
+1390,1948,1949,21,ACTRESS IN A SUPPORTING ROLE,Agnes Moorehead,Johnny Belinda,FALSE,white,white
+1391,1948,1949,21,ACTRESS IN A SUPPORTING ROLE,Jean Simmons,Hamlet,FALSE,white,white
+1392,1948,1949,21,ACTRESS IN A SUPPORTING ROLE,Claire Trevor,Key Largo,TRUE,white,white
+1393,1949,1950,22,ACTRESS IN A SUPPORTING ROLE,Ethel Barrymore,Pinky,FALSE,white,white
+1394,1949,1950,22,ACTRESS IN A SUPPORTING ROLE,Celeste Holm,Come to the Stable,FALSE,white,white
+1395,1949,1950,22,ACTRESS IN A SUPPORTING ROLE,Elsa Lanchester,Come to the Stable,FALSE,white,white
+1396,1949,1950,22,ACTRESS IN A SUPPORTING ROLE,Mercedes McCambridge,All the King's Men,TRUE,white,white
+1397,1949,1950,22,ACTRESS IN A SUPPORTING ROLE,Ethel Waters,Pinky,FALSE,black,black
+1398,1950,1951,23,ACTRESS IN A SUPPORTING ROLE,Hope Emerson,Caged,FALSE,white,white
+1399,1950,1951,23,ACTRESS IN A SUPPORTING ROLE,Celeste Holm,All about Eve,FALSE,white,white
+1400,1950,1951,23,ACTRESS IN A SUPPORTING ROLE,Josephine Hull,Harvey,TRUE,white,white
+1401,1950,1951,23,ACTRESS IN A SUPPORTING ROLE,Nancy Olson,Sunset Blvd.,FALSE,white,white
+1402,1950,1951,23,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,All about Eve,FALSE,white,white
+1403,1951,1952,24,ACTRESS IN A SUPPORTING ROLE,Joan Blondell,The Blue Veil,FALSE,white,white
+1404,1951,1952,24,ACTRESS IN A SUPPORTING ROLE,Mildred Dunnock,Death of a Salesman,FALSE,white,white
+1405,1951,1952,24,ACTRESS IN A SUPPORTING ROLE,Lee Grant,Detective Story,FALSE,white,white
+1406,1951,1952,24,ACTRESS IN A SUPPORTING ROLE,Kim Hunter,A Streetcar Named Desire,TRUE,white,white
+1407,1951,1952,24,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,The Mating Season,FALSE,white,white
+1408,1952,1953,25,ACTRESS IN A SUPPORTING ROLE,Gloria Grahame,The Bad and the Beautiful,TRUE,white,white
+1409,1952,1953,25,ACTRESS IN A SUPPORTING ROLE,Jean Hagen,Singin' in the Rain,FALSE,white,white
+1410,1952,1953,25,ACTRESS IN A SUPPORTING ROLE,Colette Marchand,Moulin Rouge,FALSE,white,white
+1411,1952,1953,25,ACTRESS IN A SUPPORTING ROLE,Terry Moore,"Come Back, Little Sheba",FALSE,white,white
+1412,1952,1953,25,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,With a Song in My Heart,FALSE,white,white
+1413,1953,1954,26,ACTRESS IN A SUPPORTING ROLE,Grace Kelly,Mogambo,FALSE,white,white
+1414,1953,1954,26,ACTRESS IN A SUPPORTING ROLE,Geraldine Page,Hondo,FALSE,white,white
+1415,1953,1954,26,ACTRESS IN A SUPPORTING ROLE,Marjorie Rambeau,Torch Song,FALSE,white,white
+1416,1953,1954,26,ACTRESS IN A SUPPORTING ROLE,Donna Reed,From Here to Eternity,TRUE,white,white
+1417,1953,1954,26,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,Pickup on South Street,FALSE,white,white
+1418,1954,1955,27,ACTRESS IN A SUPPORTING ROLE,Nina Foch,Executive Suite,FALSE,white,white
+1419,1954,1955,27,ACTRESS IN A SUPPORTING ROLE,Katy Jurado,Broken Lance,FALSE,hispanic,hispanic
+1420,1954,1955,27,ACTRESS IN A SUPPORTING ROLE,Eva Marie Saint,On the Waterfront,TRUE,white,white
+1421,1954,1955,27,ACTRESS IN A SUPPORTING ROLE,Jan Sterling,The High and the Mighty,FALSE,white,white
+1422,1954,1955,27,ACTRESS IN A SUPPORTING ROLE,Claire Trevor,The High and the Mighty,FALSE,white,white
+1423,1955,1956,28,ACTRESS IN A SUPPORTING ROLE,Betsy Blair,Marty,FALSE,white,white
+1424,1955,1956,28,ACTRESS IN A SUPPORTING ROLE,Peggy Lee,Pete Kelly's Blues,FALSE,white,white
+1425,1955,1956,28,ACTRESS IN A SUPPORTING ROLE,Marisa Pavan,The Rose Tattoo,FALSE,white,white
+1426,1955,1956,28,ACTRESS IN A SUPPORTING ROLE,Jo Van Fleet,East of Eden,TRUE,white,white
+1427,1955,1956,28,ACTRESS IN A SUPPORTING ROLE,Natalie Wood,Rebel without a Cause,FALSE,white,white
+1428,1956,1957,29,ACTRESS IN A SUPPORTING ROLE,Mildred Dunnock,Baby Doll,FALSE,white,white
+1429,1956,1957,29,ACTRESS IN A SUPPORTING ROLE,Eileen Heckart,The Bad Seed,FALSE,white,white
+1430,1956,1957,29,ACTRESS IN A SUPPORTING ROLE,Mercedes McCambridge,Giant,FALSE,white,white
+1431,1956,1957,29,ACTRESS IN A SUPPORTING ROLE,Patty McCormack,The Bad Seed,FALSE,white,white
+1432,1956,1957,29,ACTRESS IN A SUPPORTING ROLE,Dorothy Malone,Written on the Wind,TRUE,white,white
+1433,1957,1958,30,ACTRESS IN A SUPPORTING ROLE,Carolyn Jones,The Bachelor Party,FALSE,white,white
+1434,1957,1958,30,ACTRESS IN A SUPPORTING ROLE,Elsa Lanchester,Witness for the Prosecution,FALSE,white,white
+1435,1957,1958,30,ACTRESS IN A SUPPORTING ROLE,Hope Lange,Peyton Place,FALSE,white,white
+1436,1957,1958,30,ACTRESS IN A SUPPORTING ROLE,Miyoshi Umeki,Sayonara,TRUE,asian,asian
+1437,1957,1958,30,ACTRESS IN A SUPPORTING ROLE,Diane Varsi,Peyton Place,FALSE,white,white
+1438,1958,1959,31,ACTRESS IN A SUPPORTING ROLE,Peggy Cass,Auntie Mame,FALSE,white,white
+1439,1958,1959,31,ACTRESS IN A SUPPORTING ROLE,Wendy Hiller,Separate Tables,TRUE,white,white
+1440,1958,1959,31,ACTRESS IN A SUPPORTING ROLE,Martha Hyer,Some Came Running,FALSE,white,white
+1441,1958,1959,31,ACTRESS IN A SUPPORTING ROLE,Maureen Stapleton,Lonelyhearts,FALSE,white,white
+1442,1958,1959,31,ACTRESS IN A SUPPORTING ROLE,Cara Williams,The Defiant Ones,FALSE,white,white
+1443,1959,1960,32,ACTRESS IN A SUPPORTING ROLE,Hermione Baddeley,Room at the Top,FALSE,white,white
+1444,1959,1960,32,ACTRESS IN A SUPPORTING ROLE,Susan Kohner,Imitation of Life,FALSE,white,white
+1445,1959,1960,32,ACTRESS IN A SUPPORTING ROLE,Juanita Moore,Imitation of Life,FALSE,black,black
+1446,1959,1960,32,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,Pillow Talk,FALSE,white,white
+1447,1959,1960,32,ACTRESS IN A SUPPORTING ROLE,Shelley Winters,The Diary of Anne Frank,TRUE,white,white
+1448,1960,1961,33,ACTRESS IN A SUPPORTING ROLE,Glynis Johns,The Sundowners,FALSE,white,white
+1449,1960,1961,33,ACTRESS IN A SUPPORTING ROLE,Shirley Jones,Elmer Gantry,TRUE,white,white
+1450,1960,1961,33,ACTRESS IN A SUPPORTING ROLE,Shirley Knight,The Dark at the Top of the Stairs,FALSE,white,white
+1451,1960,1961,33,ACTRESS IN A SUPPORTING ROLE,Janet Leigh,Psycho,FALSE,white,white
+1452,1960,1961,33,ACTRESS IN A SUPPORTING ROLE,Mary Ure,Sons and Lovers,FALSE,white,white
+1453,1961,1962,34,ACTRESS IN A SUPPORTING ROLE,Fay Bainter,The Children's Hour,FALSE,white,white
+1454,1961,1962,34,ACTRESS IN A SUPPORTING ROLE,Judy Garland,Judgment at Nuremberg,FALSE,white,white
+1455,1961,1962,34,ACTRESS IN A SUPPORTING ROLE,Lotte Lenya,The Roman Spring of Mrs. Stone,FALSE,white,white
+1456,1961,1962,34,ACTRESS IN A SUPPORTING ROLE,Una Merkel,Summer and Smoke,FALSE,white,white
+1457,1961,1962,34,ACTRESS IN A SUPPORTING ROLE,Rita Moreno,West Side Story,TRUE,hispanic,hispanic
+1458,1962,1963,35,ACTRESS IN A SUPPORTING ROLE,Mary Badham,To Kill a Mockingbird,FALSE,white,white
+1459,1962,1963,35,ACTRESS IN A SUPPORTING ROLE,Patty Duke,The Miracle Worker,TRUE,white,white
+1460,1962,1963,35,ACTRESS IN A SUPPORTING ROLE,Shirley Knight,Sweet Bird of Youth,FALSE,white,white
+1461,1962,1963,35,ACTRESS IN A SUPPORTING ROLE,Angela Lansbury,The Manchurian Candidate,FALSE,white,white
+1462,1962,1963,35,ACTRESS IN A SUPPORTING ROLE,Thelma Ritter,Birdman of Alcatraz,FALSE,white,white
+1463,1963,1964,36,ACTRESS IN A SUPPORTING ROLE,Diane Cilento,Tom Jones,FALSE,white,white
+1464,1963,1964,36,ACTRESS IN A SUPPORTING ROLE,Dame Edith Evans,Tom Jones,FALSE,white,white
+1465,1963,1964,36,ACTRESS IN A SUPPORTING ROLE,Joyce Redman,Tom Jones,FALSE,white,white
+1466,1963,1964,36,ACTRESS IN A SUPPORTING ROLE,Margaret Rutherford,The V.I.P.s,TRUE,white,white
+1467,1963,1964,36,ACTRESS IN A SUPPORTING ROLE,Lilia Skala,Lilies of the Field,FALSE,white,white
+1468,1964,1965,37,ACTRESS IN A SUPPORTING ROLE,Gladys Cooper,My Fair Lady,FALSE,white,white
+1469,1964,1965,37,ACTRESS IN A SUPPORTING ROLE,Dame Edith Evans,The Chalk Garden,FALSE,white,white
+1470,1964,1965,37,ACTRESS IN A SUPPORTING ROLE,Grayson Hall,The Night of the Iguana,FALSE,white,white
+1471,1964,1965,37,ACTRESS IN A SUPPORTING ROLE,Lila Kedrova,Zorba the Greek,TRUE,white,white
+1472,1964,1965,37,ACTRESS IN A SUPPORTING ROLE,Agnes Moorehead,"Hush...Hush, Sweet Charlotte",FALSE,white,white
+1473,1965,1966,38,ACTRESS IN A SUPPORTING ROLE,Ruth Gordon,Inside Daisy Clover,FALSE,white,white
+1474,1965,1966,38,ACTRESS IN A SUPPORTING ROLE,Joyce Redman,Othello,FALSE,white,white
+1475,1965,1966,38,ACTRESS IN A SUPPORTING ROLE,Maggie Smith,Othello,FALSE,white,white
+1476,1965,1966,38,ACTRESS IN A SUPPORTING ROLE,Shelley Winters,A Patch of Blue,TRUE,white,white
+1477,1965,1966,38,ACTRESS IN A SUPPORTING ROLE,Peggy Wood,The Sound of Music,FALSE,white,white
+1478,1966,1967,39,ACTRESS IN A SUPPORTING ROLE,Sandy Dennis,Who's Afraid of Virginia Woolf?,TRUE,white,white
+1479,1966,1967,39,ACTRESS IN A SUPPORTING ROLE,Wendy Hiller,A Man for All Seasons,FALSE,white,white
+1480,1966,1967,39,ACTRESS IN A SUPPORTING ROLE,Jocelyne Lagarde,Hawaii,FALSE,Tahitian,other
+1481,1966,1967,39,ACTRESS IN A SUPPORTING ROLE,Vivien Merchant,Alfie,FALSE,white,white
+1482,1966,1967,39,ACTRESS IN A SUPPORTING ROLE,Geraldine Page,You're a Big Boy Now,FALSE,white,white
+1483,1967,1968,40,ACTRESS IN A SUPPORTING ROLE,Carol Channing,Thoroughly Modern Millie,FALSE,white,white
+1484,1967,1968,40,ACTRESS IN A SUPPORTING ROLE,Mildred Natwick,Barefoot in the Park,FALSE,white,white
+1485,1967,1968,40,ACTRESS IN A SUPPORTING ROLE,Estelle Parsons,Bonnie and Clyde,TRUE,white,white
+1486,1967,1968,40,ACTRESS IN A SUPPORTING ROLE,Beah Richards,Guess Who's Coming to Dinner,FALSE,black,black
+1487,1967,1968,40,ACTRESS IN A SUPPORTING ROLE,Katharine Ross,The Graduate,FALSE,white,white
+1488,1968,1969,41,ACTRESS IN A SUPPORTING ROLE,Lynn Carlin,Faces,FALSE,white,white
+1489,1968,1969,41,ACTRESS IN A SUPPORTING ROLE,Ruth Gordon,Rosemary's Baby,TRUE,white,white
+1490,1968,1969,41,ACTRESS IN A SUPPORTING ROLE,Sondra Locke,The Heart Is a Lonely Hunter,FALSE,white,white
+1491,1968,1969,41,ACTRESS IN A SUPPORTING ROLE,Kay Medford,Funny Girl,FALSE,white,white
+1492,1968,1969,41,ACTRESS IN A SUPPORTING ROLE,Estelle Parsons,"Rachel, Rachel",FALSE,white,white
+1493,1969,1970,42,ACTRESS IN A SUPPORTING ROLE,Catherine Burns,Last Summer,FALSE,white,white
+1494,1969,1970,42,ACTRESS IN A SUPPORTING ROLE,Dyan Cannon,Bob & Carol & Ted & Alice,FALSE,white,white
+1495,1969,1970,42,ACTRESS IN A SUPPORTING ROLE,Goldie Hawn,Cactus Flower,TRUE,white,white
+1496,1969,1970,42,ACTRESS IN A SUPPORTING ROLE,Sylvia Miles,Midnight Cowboy,FALSE,white,white
+1497,1969,1970,42,ACTRESS IN A SUPPORTING ROLE,Susannah York,"They Shoot Horses, Don't They?",FALSE,white,white
+1498,1970,1971,43,ACTRESS IN A SUPPORTING ROLE,Karen Black,Five Easy Pieces,FALSE,white,white
+1499,1970,1971,43,ACTRESS IN A SUPPORTING ROLE,Lee Grant,The Landlord,FALSE,white,white
+1500,1970,1971,43,ACTRESS IN A SUPPORTING ROLE,Helen Hayes,Airport,TRUE,white,white
+1501,1970,1971,43,ACTRESS IN A SUPPORTING ROLE,Sally Kellerman,M*A*S*H,FALSE,white,white
+1502,1970,1971,43,ACTRESS IN A SUPPORTING ROLE,Maureen Stapleton,Airport,FALSE,white,white
+1503,1971,1972,44,ACTRESS IN A SUPPORTING ROLE,Ann-Margret,Carnal Knowledge,FALSE,white,white
+1504,1971,1972,44,ACTRESS IN A SUPPORTING ROLE,Ellen Burstyn,The Last Picture Show,FALSE,white,white
+1505,1971,1972,44,ACTRESS IN A SUPPORTING ROLE,Barbara Harris,Who Is Harry Kellerman and Why Is He Saying Those Terrible Things about Me?,FALSE,white,white
+1506,1971,1972,44,ACTRESS IN A SUPPORTING ROLE,Cloris Leachman,The Last Picture Show,TRUE,white,white
+1507,1971,1972,44,ACTRESS IN A SUPPORTING ROLE,Margaret Leighton,The Go-Between,FALSE,white,white
+1508,1972,1973,45,ACTRESS IN A SUPPORTING ROLE,Jeannie Berlin,The Heartbreak Kid,FALSE,white,white
+1509,1972,1973,45,ACTRESS IN A SUPPORTING ROLE,Eileen Heckart,Butterflies Are Free,TRUE,white,white
+1510,1972,1973,45,ACTRESS IN A SUPPORTING ROLE,Geraldine Page,Pete 'n' Tillie,FALSE,white,white
+1511,1972,1973,45,ACTRESS IN A SUPPORTING ROLE,Susan Tyrrell,Fat City,FALSE,white,white
+1512,1972,1973,45,ACTRESS IN A SUPPORTING ROLE,Shelley Winters,The Poseidon Adventure,FALSE,white,white
+1513,1973,1974,46,ACTRESS IN A SUPPORTING ROLE,Linda Blair,The Exorcist,FALSE,white,white
+1514,1973,1974,46,ACTRESS IN A SUPPORTING ROLE,Candy Clark,American Graffiti,FALSE,white,white
+1515,1973,1974,46,ACTRESS IN A SUPPORTING ROLE,Madeline Kahn,Paper Moon,FALSE,white,white
+1516,1973,1974,46,ACTRESS IN A SUPPORTING ROLE,Tatum O'Neal,Paper Moon,TRUE,white,white
+1517,1973,1974,46,ACTRESS IN A SUPPORTING ROLE,Sylvia Sidney,"Summer Wishes, Winter Dreams",FALSE,white,white
+1518,1974,1975,47,ACTRESS IN A SUPPORTING ROLE,Ingrid Bergman,Murder on the Orient Express,TRUE,white,white
+1519,1974,1975,47,ACTRESS IN A SUPPORTING ROLE,Valentina Cortese,Day for Night,FALSE,white,white
+1520,1974,1975,47,ACTRESS IN A SUPPORTING ROLE,Madeline Kahn,Blazing Saddles,FALSE,white,white
+1521,1974,1975,47,ACTRESS IN A SUPPORTING ROLE,Diane Ladd,Alice Doesn't Live Here Anymore,FALSE,white,white
+1522,1974,1975,47,ACTRESS IN A SUPPORTING ROLE,Talia Shire,The Godfather Part II,FALSE,white,white
+1523,1975,1976,48,ACTRESS IN A SUPPORTING ROLE,Ronee Blakley,Nashville,FALSE,white,white
+1524,1975,1976,48,ACTRESS IN A SUPPORTING ROLE,Lee Grant,Shampoo,TRUE,white,white
+1525,1975,1976,48,ACTRESS IN A SUPPORTING ROLE,Sylvia Miles,"Farewell, My Lovely",FALSE,white,white
+1526,1975,1976,48,ACTRESS IN A SUPPORTING ROLE,Lily Tomlin,Nashville,FALSE,white,white
+1527,1975,1976,48,ACTRESS IN A SUPPORTING ROLE,Brenda Vaccaro,Jacqueline Susann's Once Is Not Enough,FALSE,white,white
+1528,1976,1977,49,ACTRESS IN A SUPPORTING ROLE,Jane Alexander,All the President's Men,FALSE,white,white
+1529,1976,1977,49,ACTRESS IN A SUPPORTING ROLE,Jodie Foster,Taxi Driver,FALSE,white,white
+1530,1976,1977,49,ACTRESS IN A SUPPORTING ROLE,Lee Grant,Voyage of the Damned,FALSE,white,white
+1531,1976,1977,49,ACTRESS IN A SUPPORTING ROLE,Piper Laurie,Carrie,FALSE,white,white
+1532,1976,1977,49,ACTRESS IN A SUPPORTING ROLE,Beatrice Straight,Network,TRUE,white,white
+1533,1977,1978,50,ACTRESS IN A SUPPORTING ROLE,Leslie Browne,The Turning Point,FALSE,white,white
+1534,1977,1978,50,ACTRESS IN A SUPPORTING ROLE,Quinn Cummings,The Goodbye Girl,FALSE,white,white
+1535,1977,1978,50,ACTRESS IN A SUPPORTING ROLE,Melinda Dillon,Close Encounters of the Third Kind,FALSE,white,white
+1536,1977,1978,50,ACTRESS IN A SUPPORTING ROLE,Vanessa Redgrave,Julia,TRUE,white,white
+1537,1977,1978,50,ACTRESS IN A SUPPORTING ROLE,Tuesday Weld,Looking for Mr. Goodbar,FALSE,white,white
+1538,1978,1979,51,ACTRESS IN A SUPPORTING ROLE,Dyan Cannon,Heaven Can Wait,FALSE,white,white
+1539,1978,1979,51,ACTRESS IN A SUPPORTING ROLE,Penelope Milford,Coming Home,FALSE,white,white
+1540,1978,1979,51,ACTRESS IN A SUPPORTING ROLE,Maggie Smith,California Suite,TRUE,white,white
+1541,1978,1979,51,ACTRESS IN A SUPPORTING ROLE,Maureen Stapleton,Interiors,FALSE,white,white
+1542,1978,1979,51,ACTRESS IN A SUPPORTING ROLE,Meryl Streep,The Deer Hunter,FALSE,white,white
+1543,1979,1980,52,ACTRESS IN A SUPPORTING ROLE,Jane Alexander,Kramer vs. Kramer,FALSE,white,white
+1544,1979,1980,52,ACTRESS IN A SUPPORTING ROLE,Barbara Barrie,Breaking Away,FALSE,white,white
+1545,1979,1980,52,ACTRESS IN A SUPPORTING ROLE,Candice Bergen,Starting Over,FALSE,white,white
+1546,1979,1980,52,ACTRESS IN A SUPPORTING ROLE,Mariel Hemingway,Manhattan,FALSE,white,white
+1547,1979,1980,52,ACTRESS IN A SUPPORTING ROLE,Meryl Streep,Kramer vs. Kramer,TRUE,white,white
+1548,1980,1981,53,ACTRESS IN A SUPPORTING ROLE,Eileen Brennan,Private Benjamin,FALSE,white,white
+1549,1980,1981,53,ACTRESS IN A SUPPORTING ROLE,Eva Le Gallienne,Resurrection,FALSE,white,white
+1550,1980,1981,53,ACTRESS IN A SUPPORTING ROLE,Cathy Moriarty,Raging Bull,FALSE,white,white
+1551,1980,1981,53,ACTRESS IN A SUPPORTING ROLE,Diana Scarwid,Inside Moves,FALSE,white,white
+1552,1980,1981,53,ACTRESS IN A SUPPORTING ROLE,Mary Steenburgen,Melvin and Howard,TRUE,white,white
+1553,1981,1982,54,ACTRESS IN A SUPPORTING ROLE,Melinda Dillon,Absence of Malice,FALSE,white,white
+1554,1981,1982,54,ACTRESS IN A SUPPORTING ROLE,Jane Fonda,On Golden Pond,FALSE,white,white
+1555,1981,1982,54,ACTRESS IN A SUPPORTING ROLE,Joan Hackett,Only When I Laugh,FALSE,white,white
+1556,1981,1982,54,ACTRESS IN A SUPPORTING ROLE,Elizabeth McGovern,Ragtime,FALSE,white,white
+1557,1981,1982,54,ACTRESS IN A SUPPORTING ROLE,Maureen Stapleton,Reds,TRUE,white,white
+1558,1982,1983,55,ACTRESS IN A SUPPORTING ROLE,Glenn Close,The World According to Garp,FALSE,white,white
+1559,1982,1983,55,ACTRESS IN A SUPPORTING ROLE,Teri Garr,Tootsie,FALSE,white,white
+1560,1982,1983,55,ACTRESS IN A SUPPORTING ROLE,Jessica Lange,Tootsie,TRUE,white,white
+1561,1982,1983,55,ACTRESS IN A SUPPORTING ROLE,Kim Stanley,Frances,FALSE,white,white
+1562,1982,1983,55,ACTRESS IN A SUPPORTING ROLE,Lesley Ann Warren,Victor/Victoria,FALSE,white,white
+1563,1983,1984,56,ACTRESS IN A SUPPORTING ROLE,Cher,Silkwood,FALSE,white,white
+1564,1983,1984,56,ACTRESS IN A SUPPORTING ROLE,Glenn Close,The Big Chill,FALSE,white,white
+1565,1983,1984,56,ACTRESS IN A SUPPORTING ROLE,Linda Hunt,The Year of Living Dangerously,TRUE,white,white
+1566,1983,1984,56,ACTRESS IN A SUPPORTING ROLE,Amy Irving,Yentl,FALSE,white,white
+1567,1983,1984,56,ACTRESS IN A SUPPORTING ROLE,Alfre Woodard,Cross Creek,FALSE,black,black
+1568,1984,1985,57,ACTRESS IN A SUPPORTING ROLE,Peggy Ashcroft,A Passage to India,TRUE,white,white
+1569,1984,1985,57,ACTRESS IN A SUPPORTING ROLE,Glenn Close,The Natural,FALSE,white,white
+1570,1984,1985,57,ACTRESS IN A SUPPORTING ROLE,Lindsay Crouse,Places in the Heart,FALSE,white,white
+1571,1984,1985,57,ACTRESS IN A SUPPORTING ROLE,Christine Lahti,Swing Shift,FALSE,white,white
+1572,1984,1985,57,ACTRESS IN A SUPPORTING ROLE,Geraldine Page,The Pope of Greenwich Village,FALSE,white,white
+1573,1985,1986,58,ACTRESS IN A SUPPORTING ROLE,Margaret Avery,The Color Purple,FALSE,black,black
+1574,1985,1986,58,ACTRESS IN A SUPPORTING ROLE,Anjelica Huston,Prizzi's Honor,TRUE,white,white
+1575,1985,1986,58,ACTRESS IN A SUPPORTING ROLE,Amy Madigan,Twice in a Lifetime,FALSE,white,white
+1576,1985,1986,58,ACTRESS IN A SUPPORTING ROLE,Meg Tilly,Agnes of God,FALSE,white,white
+1577,1985,1986,58,ACTRESS IN A SUPPORTING ROLE,Oprah Winfrey,The Color Purple,FALSE,black,black
+1578,1986,1987,59,ACTRESS IN A SUPPORTING ROLE,Tess Harper,Crimes of the Heart,FALSE,white,white
+1579,1986,1987,59,ACTRESS IN A SUPPORTING ROLE,Piper Laurie,Children of a Lesser God,FALSE,white,white
+1580,1986,1987,59,ACTRESS IN A SUPPORTING ROLE,Mary Elizabeth Mastrantonio,The Color of Money,FALSE,white,white
+1581,1986,1987,59,ACTRESS IN A SUPPORTING ROLE,Maggie Smith,A Room with a View,FALSE,white,white
+1582,1986,1987,59,ACTRESS IN A SUPPORTING ROLE,Dianne Wiest,Hannah and Her Sisters,TRUE,white,white
+1583,1987,1988,60,ACTRESS IN A SUPPORTING ROLE,Norma Aleandro,Gaby - A True Story,FALSE,hispanic,hispanic
+1584,1987,1988,60,ACTRESS IN A SUPPORTING ROLE,Anne Archer,Fatal Attraction,FALSE,white,white
+1585,1987,1988,60,ACTRESS IN A SUPPORTING ROLE,Olympia Dukakis,Moonstruck,TRUE,white,white
+1586,1987,1988,60,ACTRESS IN A SUPPORTING ROLE,Anne Ramsey,Throw Momma from the Train,FALSE,white,white
+1587,1987,1988,60,ACTRESS IN A SUPPORTING ROLE,Ann Sothern,The Whales of August,FALSE,white,white
+1588,1988,1989,61,ACTRESS IN A SUPPORTING ROLE,Joan Cusack,Working Girl,FALSE,white,white
+1589,1988,1989,61,ACTRESS IN A SUPPORTING ROLE,Geena Davis,The Accidental Tourist,TRUE,white,white
+1590,1988,1989,61,ACTRESS IN A SUPPORTING ROLE,Frances McDormand,Mississippi Burning,FALSE,white,white
+1591,1988,1989,61,ACTRESS IN A SUPPORTING ROLE,Michelle Pfeiffer,Dangerous Liaisons,FALSE,white,white
+1592,1988,1989,61,ACTRESS IN A SUPPORTING ROLE,Sigourney Weaver,Working Girl,FALSE,white,white
+1593,1989,1990,62,ACTRESS IN A SUPPORTING ROLE,Brenda Fricker,My Left Foot,TRUE,white,white
+1594,1989,1990,62,ACTRESS IN A SUPPORTING ROLE,Anjelica Huston,"Enemies, A Love Story",FALSE,white,white
+1595,1989,1990,62,ACTRESS IN A SUPPORTING ROLE,Lena Olin,"Enemies, A Love Story",FALSE,white,white
+1596,1989,1990,62,ACTRESS IN A SUPPORTING ROLE,Julia Roberts,Steel Magnolias,FALSE,white,white
+1597,1989,1990,62,ACTRESS IN A SUPPORTING ROLE,Dianne Wiest,Parenthood,FALSE,white,white
+1598,1990,1991,63,ACTRESS IN A SUPPORTING ROLE,Annette Bening,The Grifters,FALSE,white,white
+1599,1990,1991,63,ACTRESS IN A SUPPORTING ROLE,Lorraine Bracco,Good Fellas,FALSE,white,white
+1600,1990,1991,63,ACTRESS IN A SUPPORTING ROLE,Whoopi Goldberg,Ghost,TRUE,black,black
+1601,1990,1991,63,ACTRESS IN A SUPPORTING ROLE,Diane Ladd,Wild at Heart,FALSE,white,white
+1602,1990,1991,63,ACTRESS IN A SUPPORTING ROLE,Mary McDonnell,Dances With Wolves,FALSE,white,white
+1603,1991,1992,64,ACTRESS IN A SUPPORTING ROLE,Diane Ladd,Rambling Rose,FALSE,white,white
+1604,1991,1992,64,ACTRESS IN A SUPPORTING ROLE,Juliette Lewis,Cape Fear,FALSE,white,white
+1605,1991,1992,64,ACTRESS IN A SUPPORTING ROLE,Kate Nelligan,The Prince of Tides,FALSE,white,white
+1606,1991,1992,64,ACTRESS IN A SUPPORTING ROLE,Mercedes Ruehl,The Fisher King,TRUE,white,white
+1607,1991,1992,64,ACTRESS IN A SUPPORTING ROLE,Jessica Tandy,Fried Green Tomatoes,FALSE,white,white
+1608,1992,1993,65,ACTRESS IN A SUPPORTING ROLE,Judy Davis,Husbands and Wives,FALSE,white,white
+1609,1992,1993,65,ACTRESS IN A SUPPORTING ROLE,Joan Plowright,Enchanted April,FALSE,white,white
+1610,1992,1993,65,ACTRESS IN A SUPPORTING ROLE,Vanessa Redgrave,Howards End,FALSE,white,white
+1611,1992,1993,65,ACTRESS IN A SUPPORTING ROLE,Miranda Richardson,Damage,FALSE,white,white
+1612,1992,1993,65,ACTRESS IN A SUPPORTING ROLE,Marisa Tomei,My Cousin Vinny,TRUE,white,white
+1613,1993,1994,66,ACTRESS IN A SUPPORTING ROLE,Holly Hunter,The Firm,FALSE,white,white
+1614,1993,1994,66,ACTRESS IN A SUPPORTING ROLE,Anna Paquin,The Piano,TRUE,white,white
+1615,1993,1994,66,ACTRESS IN A SUPPORTING ROLE,Rosie Perez,Fearless,FALSE,white,white
+1616,1993,1994,66,ACTRESS IN A SUPPORTING ROLE,Winona Ryder,The Age of Innocence,FALSE,white,white
+1617,1993,1994,66,ACTRESS IN A SUPPORTING ROLE,Emma Thompson,In the Name of the Father,FALSE,white,white
+1618,1994,1995,67,ACTRESS IN A SUPPORTING ROLE,Rosemary Harris,Tom & Viv,FALSE,white,white
+1619,1994,1995,67,ACTRESS IN A SUPPORTING ROLE,Helen Mirren,The Madness of King George,FALSE,white,white
+1620,1994,1995,67,ACTRESS IN A SUPPORTING ROLE,Uma Thurman,Pulp Fiction,FALSE,white,white
+1621,1994,1995,67,ACTRESS IN A SUPPORTING ROLE,Jennifer Tilly,Bullets over Broadway,FALSE,white,white
+1622,1994,1995,67,ACTRESS IN A SUPPORTING ROLE,Dianne Wiest,Bullets over Broadway,TRUE,white,white
+1623,1995,1996,68,ACTRESS IN A SUPPORTING ROLE,Joan Allen,Nixon,FALSE,white,white
+1624,1995,1996,68,ACTRESS IN A SUPPORTING ROLE,Kathleen Quinlan,Apollo 13,FALSE,white,white
+1625,1995,1996,68,ACTRESS IN A SUPPORTING ROLE,Mira Sorvino,Mighty Aphrodite,TRUE,white,white
+1626,1995,1996,68,ACTRESS IN A SUPPORTING ROLE,Mare Winningham,Georgia,FALSE,white,white
+1627,1995,1996,68,ACTRESS IN A SUPPORTING ROLE,Kate Winslet,Sense and Sensibility,FALSE,white,white
+1628,1996,1997,69,ACTRESS IN A SUPPORTING ROLE,Joan Allen,The Crucible,FALSE,white,white
+1629,1996,1997,69,ACTRESS IN A SUPPORTING ROLE,Lauren Bacall,The Mirror Has Two Faces,FALSE,white,white
+1630,1996,1997,69,ACTRESS IN A SUPPORTING ROLE,Juliette Binoche,The English Patient,TRUE,white,white
+1631,1996,1997,69,ACTRESS IN A SUPPORTING ROLE,Barbara Hershey,The Portrait of a Lady,FALSE,white,white
+1632,1996,1997,69,ACTRESS IN A SUPPORTING ROLE,Marianne Jean-Baptiste,Secrets & Lies,FALSE,black,black
+1633,1997,1998,70,ACTRESS IN A SUPPORTING ROLE,Kim Basinger,L.A. Confidential,TRUE,white,white
+1634,1997,1998,70,ACTRESS IN A SUPPORTING ROLE,Joan Cusack,In & Out,FALSE,white,white
+1635,1997,1998,70,ACTRESS IN A SUPPORTING ROLE,Minnie Driver,Good Will Hunting,FALSE,white,white
+1636,1997,1998,70,ACTRESS IN A SUPPORTING ROLE,Julianne Moore,Boogie Nights,FALSE,white,white
+1637,1997,1998,70,ACTRESS IN A SUPPORTING ROLE,Gloria Stuart,Titanic,FALSE,white,white
+1638,1998,1999,71,ACTRESS IN A SUPPORTING ROLE,Kathy Bates,Primary Colors,FALSE,white,white
+1639,1998,1999,71,ACTRESS IN A SUPPORTING ROLE,Brenda Blethyn,Little Voice,FALSE,white,white
+1640,1998,1999,71,ACTRESS IN A SUPPORTING ROLE,Judi Dench,Shakespeare in Love,TRUE,white,white
+1641,1998,1999,71,ACTRESS IN A SUPPORTING ROLE,Rachel Griffiths,Hilary and Jackie,FALSE,white,white
+1642,1998,1999,71,ACTRESS IN A SUPPORTING ROLE,Lynn Redgrave,Gods and Monsters,FALSE,white,white
+1643,1999,2000,72,ACTRESS IN A SUPPORTING ROLE,Toni Collette,The Sixth Sense,FALSE,white,white
+1644,1999,2000,72,ACTRESS IN A SUPPORTING ROLE,Angelina Jolie,"Girl, Interrupted",TRUE,white,white
+1645,1999,2000,72,ACTRESS IN A SUPPORTING ROLE,Catherine Keener,Being John Malkovich,FALSE,white,white
+1646,1999,2000,72,ACTRESS IN A SUPPORTING ROLE,Samantha Morton,Sweet and Lowdown,FALSE,white,white
+1647,1999,2000,72,ACTRESS IN A SUPPORTING ROLE,Chloë Sevigny,Boys Don't Cry,FALSE,white,white
+1648,2000,2001,73,ACTRESS IN A SUPPORTING ROLE,Judi Dench,Chocolat,FALSE,white,white
+1649,2000,2001,73,ACTRESS IN A SUPPORTING ROLE,Marcia Gay Harden,Pollock,TRUE,white,white
+1650,2000,2001,73,ACTRESS IN A SUPPORTING ROLE,Kate Hudson,Almost Famous,FALSE,white,white
+1651,2000,2001,73,ACTRESS IN A SUPPORTING ROLE,Frances McDormand,Almost Famous,FALSE,white,white
+1652,2000,2001,73,ACTRESS IN A SUPPORTING ROLE,Julie Walters,Billy Elliot,FALSE,white,white
+1653,2001,2002,74,ACTRESS IN A SUPPORTING ROLE,Jennifer Connelly,A Beautiful Mind,TRUE,white,white
+1654,2001,2002,74,ACTRESS IN A SUPPORTING ROLE,Helen Mirren,Gosford Park,FALSE,white,white
+1655,2001,2002,74,ACTRESS IN A SUPPORTING ROLE,Maggie Smith,Gosford Park,FALSE,white,white
+1656,2001,2002,74,ACTRESS IN A SUPPORTING ROLE,Marisa Tomei,In the Bedroom,FALSE,white,white
+1657,2001,2002,74,ACTRESS IN A SUPPORTING ROLE,Kate Winslet,Iris,FALSE,white,white
+1658,2002,2003,75,ACTRESS IN A SUPPORTING ROLE,Kathy Bates,About Schmidt,FALSE,white,white
+1659,2002,2003,75,ACTRESS IN A SUPPORTING ROLE,Julianne Moore,The Hours,FALSE,white,white
+1660,2002,2003,75,ACTRESS IN A SUPPORTING ROLE,Queen Latifah,Chicago,FALSE,black,black
+1661,2002,2003,75,ACTRESS IN A SUPPORTING ROLE,Meryl Streep,Adaptation,FALSE,white,white
+1662,2002,2003,75,ACTRESS IN A SUPPORTING ROLE,Catherine Zeta-Jones,Chicago,TRUE,white,white
+1663,2003,2004,76,ACTRESS IN A SUPPORTING ROLE,Shohreh Aghdashloo,House of Sand and Fog,FALSE,Middle-Eastern,other
+1664,2003,2004,76,ACTRESS IN A SUPPORTING ROLE,Patricia Clarkson,Pieces of April,FALSE,white,white
+1665,2003,2004,76,ACTRESS IN A SUPPORTING ROLE,Marcia Gay Harden,Mystic River,FALSE,white,white
+1666,2003,2004,76,ACTRESS IN A SUPPORTING ROLE,Holly Hunter,Thirteen,FALSE,white,white
+1667,2003,2004,76,ACTRESS IN A SUPPORTING ROLE,Renée Zellweger,Cold Mountain,TRUE,white,white
+1668,2004,2005,77,ACTRESS IN A SUPPORTING ROLE,Cate Blanchett,The Aviator,TRUE,white,white
+1669,2004,2005,77,ACTRESS IN A SUPPORTING ROLE,Laura Linney,Kinsey,FALSE,white,white
+1670,2004,2005,77,ACTRESS IN A SUPPORTING ROLE,Virginia Madsen,Sideways,FALSE,white,white
+1671,2004,2005,77,ACTRESS IN A SUPPORTING ROLE,Sophie Okonedo,Hotel Rwanda,FALSE,black,black
+1672,2004,2005,77,ACTRESS IN A SUPPORTING ROLE,Natalie Portman,Closer,FALSE,white,white
+1673,2005,2006,78,ACTRESS IN A SUPPORTING ROLE,Amy Adams,Junebug,FALSE,white,white
+1674,2005,2006,78,ACTRESS IN A SUPPORTING ROLE,Catherine Keener,Capote,FALSE,white,white
+1675,2005,2006,78,ACTRESS IN A SUPPORTING ROLE,Frances McDormand,North Country,FALSE,white,white
+1676,2005,2006,78,ACTRESS IN A SUPPORTING ROLE,Rachel Weisz,The Constant Gardener,TRUE,white,white
+1677,2005,2006,78,ACTRESS IN A SUPPORTING ROLE,Michelle Williams,Brokeback Mountain,FALSE,white,white
+1678,2006,2007,79,ACTRESS IN A SUPPORTING ROLE,Adriana Barraza,Babel,FALSE,hispanic,hispanic
+1679,2006,2007,79,ACTRESS IN A SUPPORTING ROLE,Cate Blanchett,Notes on a Scandal,FALSE,white,white
+1680,2006,2007,79,ACTRESS IN A SUPPORTING ROLE,Abigail Breslin,Little Miss Sunshine,FALSE,white,white
+1681,2006,2007,79,ACTRESS IN A SUPPORTING ROLE,Jennifer Hudson,Dreamgirls,TRUE,black,black
+1682,2006,2007,79,ACTRESS IN A SUPPORTING ROLE,Rinko Kikuchi,Babel,FALSE,asian,asian
+1683,2007,2008,80,ACTRESS IN A SUPPORTING ROLE,Cate Blanchett,I'm Not There,FALSE,white,white
+1684,2007,2008,80,ACTRESS IN A SUPPORTING ROLE,Ruby Dee,American Gangster,FALSE,black,black
+1685,2007,2008,80,ACTRESS IN A SUPPORTING ROLE,Saoirse Ronan,Atonement,FALSE,white,white
+1686,2007,2008,80,ACTRESS IN A SUPPORTING ROLE,Amy Ryan,Gone Baby Gone,FALSE,white,white
+1687,2007,2008,80,ACTRESS IN A SUPPORTING ROLE,Tilda Swinton,Michael Clayton,TRUE,white,white
+1688,2008,2009,81,ACTRESS IN A SUPPORTING ROLE,Amy Adams,Doubt,FALSE,white,white
+1689,2008,2009,81,ACTRESS IN A SUPPORTING ROLE,Penélope Cruz,Vicky Cristina Barcelona,TRUE,white,white
+1690,2008,2009,81,ACTRESS IN A SUPPORTING ROLE,Viola Davis,Doubt,FALSE,black,black
+1691,2008,2009,81,ACTRESS IN A SUPPORTING ROLE,Taraji P. Henson,The Curious Case of Benjamin Button,FALSE,black,black
+1692,2008,2009,81,ACTRESS IN A SUPPORTING ROLE,Marisa Tomei,The Wrestler,FALSE,white,white
+1693,2009,2010,82,ACTRESS IN A SUPPORTING ROLE,Penélope Cruz,Nine,FALSE,white,white
+1694,2009,2010,82,ACTRESS IN A SUPPORTING ROLE,Vera Farmiga,Up in the Air,FALSE,white,white
+1695,2009,2010,82,ACTRESS IN A SUPPORTING ROLE,Maggie Gyllenhaal,Crazy Heart,FALSE,white,white
+1696,2009,2010,82,ACTRESS IN A SUPPORTING ROLE,Anna Kendrick,Up in the Air,FALSE,white,white
+1697,2009,2010,82,ACTRESS IN A SUPPORTING ROLE,Mo'Nique,Precious: Based on the Novel 'Push' by Sapphire,TRUE,black,black
+1698,2010,2011,83,ACTRESS IN A SUPPORTING ROLE,Amy Adams,The Fighter,FALSE,white,white
+1699,2010,2011,83,ACTRESS IN A SUPPORTING ROLE,Helena Bonham Carter,The King's Speech,FALSE,white,white
+1700,2010,2011,83,ACTRESS IN A SUPPORTING ROLE,Melissa Leo,The Fighter,TRUE,white,white
+1701,2010,2011,83,ACTRESS IN A SUPPORTING ROLE,Hailee Steinfeld,True Grit,FALSE,white,white
+1702,2010,2011,83,ACTRESS IN A SUPPORTING ROLE,Jacki Weaver,Animal Kingdom,FALSE,white,white
+1703,2011,2012,84,ACTRESS IN A SUPPORTING ROLE,Bérénice Bejo,The Artist,FALSE,hispanic,hispanic
+1704,2011,2012,84,ACTRESS IN A SUPPORTING ROLE,Jessica Chastain,The Help,FALSE,white,white
+1705,2011,2012,84,ACTRESS IN A SUPPORTING ROLE,Melissa McCarthy,Bridesmaids,FALSE,white,white
+1706,2011,2012,84,ACTRESS IN A SUPPORTING ROLE,Janet McTeer,Albert Nobbs,FALSE,white,white
+1707,2011,2012,84,ACTRESS IN A SUPPORTING ROLE,Octavia Spencer,The Help,TRUE,black,black
+1708,2012,2013,85,ACTRESS IN A SUPPORTING ROLE,Amy Adams,The Master,FALSE,white,white
+1709,2012,2013,85,ACTRESS IN A SUPPORTING ROLE,Sally Field,Lincoln,FALSE,white,white
+1710,2012,2013,85,ACTRESS IN A SUPPORTING ROLE,Anne Hathaway,Les Misérables,TRUE,white,white
+1711,2012,2013,85,ACTRESS IN A SUPPORTING ROLE,Helen Hunt,The Sessions,FALSE,white,white
+1712,2012,2013,85,ACTRESS IN A SUPPORTING ROLE,Jacki Weaver,Silver Linings Playbook,FALSE,white,white
+1713,2013,2014,86,ACTRESS IN A SUPPORTING ROLE,Sally Hawkins,Blue Jasmine,FALSE,white,white
+1714,2013,2014,86,ACTRESS IN A SUPPORTING ROLE,Jennifer Lawrence,American Hustle,FALSE,white,white
+1715,2013,2014,86,ACTRESS IN A SUPPORTING ROLE,Lupita Nyong'o,12 Years a Slave,TRUE,black,black
+1716,2013,2014,86,ACTRESS IN A SUPPORTING ROLE,Julia Roberts,August: Osage County,FALSE,white,white
+1717,2013,2014,86,ACTRESS IN A SUPPORTING ROLE,June Squibb,Nebraska,FALSE,white,white
+1718,2014,2015,87,ACTRESS IN A SUPPORTING ROLE,Patricia Arquette,Boyhood,TRUE,white,white
+1719,2014,2015,87,ACTRESS IN A SUPPORTING ROLE,Laura Dern,Wild,FALSE,white,white
+1720,2014,2015,87,ACTRESS IN A SUPPORTING ROLE,Keira Knightley,The Imitation Game,FALSE,white,white
+1721,2014,2015,87,ACTRESS IN A SUPPORTING ROLE,Emma Stone,Birdman or (The Unexpected Virtue of Ignorance),FALSE,white,white
+1722,2014,2015,87,ACTRESS IN A SUPPORTING ROLE,Meryl Streep,Into the Woods,FALSE,white,white
+1723,2015,2016,88,ACTRESS IN A SUPPORTING ROLE,Jennifer Jason Leigh,The Hateful Eight,FALSE,white,white
+1724,2015,2016,88,ACTRESS IN A SUPPORTING ROLE,Rooney Mara,Carol,FALSE,white,white
+1725,2015,2016,88,ACTRESS IN A SUPPORTING ROLE,Rachel McAdams,Spotlight,FALSE,white,white
+1726,2015,2016,88,ACTRESS IN A SUPPORTING ROLE,Alicia Vikander,The Danish Girl,TRUE,white,white
+1727,2015,2016,88,ACTRESS IN A SUPPORTING ROLE,Kate Winslet,Steve Jobs,FALSE,white,white
+1728,2016,2017,89,ACTRESS IN A SUPPORTING ROLE,Viola Davis,Fences,TRUE,black,black
+1729,2016,2017,89,ACTRESS IN A SUPPORTING ROLE,Naomie Harris,Moonlight,FALSE,black,black
+1730,2016,2017,89,ACTRESS IN A SUPPORTING ROLE,Nicole Kidman,Lion,FALSE,white,white
+1731,2016,2017,89,ACTRESS IN A SUPPORTING ROLE,Octavia Spencer,Hidden Figures,FALSE,black,black
+1732,2016,2017,89,ACTRESS IN A SUPPORTING ROLE,Michelle Williams,Manchester by the Sea,FALSE,white,white
+1733,2017,2018,90,ACTRESS IN A SUPPORTING ROLE,Mary J. Blige,Mudbound,FALSE,black,black
+1734,2017,2018,90,ACTRESS IN A SUPPORTING ROLE,Allison Janney,"I, Tonya",TRUE,white,white
+1735,2017,2018,90,ACTRESS IN A SUPPORTING ROLE,Lesley Manville,Phantom Thread,FALSE,white,white
+1736,2017,2018,90,ACTRESS IN A SUPPORTING ROLE,Laurie Metcalf,Lady Bird,FALSE,white,white
+1737,2017,2018,90,ACTRESS IN A SUPPORTING ROLE,Octavia Spencer,The Shape of Water,FALSE,black,black
+1738,2018,2019,91,ACTRESS IN A SUPPORTING ROLE,Amy Adams,Vice,FALSE,white,white
+1739,2018,2019,91,ACTRESS IN A SUPPORTING ROLE,Marina de Tavira,Roma,FALSE,hispanic,hispanic
+1740,2018,2019,91,ACTRESS IN A SUPPORTING ROLE,Regina King,If Beale Street Could Talk,TRUE,black,black
+1741,2018,2019,91,ACTRESS IN A SUPPORTING ROLE,Emma Stone,The Favourite,FALSE,white,white
+1742,2018,2019,91,ACTRESS IN A SUPPORTING ROLE,Rachel Weisz,The Favourite,FALSE,white,white
+1743,2019,2020,92,ACTRESS IN A SUPPORTING ROLE,Kathy Bates,Richard Jewell,FALSE,white,white
+1744,2019,2020,92,ACTRESS IN A SUPPORTING ROLE,Laura Dern,Marriage Story,TRUE,white,white
+1745,2019,2020,92,ACTRESS IN A SUPPORTING ROLE,Scarlett Johansson,Jojo Rabbit,FALSE,white,white
+1746,2019,2020,92,ACTRESS IN A SUPPORTING ROLE,Florence Pugh,Little Women,FALSE,white,white
+1747,2019,2020,92,ACTRESS IN A SUPPORTING ROLE,Margot Robbie,Bombshell,FALSE,white,white
+1748,1928,1929,2,DIRECTING,Lionel Barrymore,Madame X,FALSE,white,white
+1749,1928,1929,2,DIRECTING,Harry Beaumont,The Broadway Melody,FALSE,white,white
+1750,1928,1929,2,DIRECTING,Irving Cummings,In Old Arizona,FALSE,white,white
+1751,1928,1929,2,DIRECTING,Frank Lloyd,The Divine Lady,TRUE,white,white
+1752,1928,1929,2,DIRECTING,Frank Lloyd,Drag;,FALSE,white,white
+1753,1928,1929,2,DIRECTING,Ernst Lubitsch,The Patriot,FALSE,white,white
+1754,1929,1930,3,DIRECTING,Clarence Brown,Anna Christie;,FALSE,white,white
+1755,1929,1930,3,DIRECTING,Robert Leonard,The Divorcee,FALSE,white,white
+1756,1929,1930,3,DIRECTING,Ernst Lubitsch,The Love Parade,FALSE,white,white
+1757,1929,1930,3,DIRECTING,Lewis Milestone,All Quiet on the Western Front,TRUE,white,white
+1758,1929,1930,3,DIRECTING,King Vidor,Hallelujah,FALSE,white,white
+1759,1930,1931,4,DIRECTING,Wesley Ruggles,Cimarron,FALSE,white,white
+1760,1930,1931,4,DIRECTING,Clarence Brown,A Free Soul,FALSE,white,white
+1761,1930,1931,4,DIRECTING,Lewis Milestone,The Front Page,FALSE,white,white
+1762,1930,1931,4,DIRECTING,Josef Von Sternberg,Morocco,FALSE,white,white
+1763,1930,1931,4,DIRECTING,Norman Taurog,Skippy,TRUE,white,white
+1764,1931,1932,5,DIRECTING,Frank Borzage,Bad Girl,TRUE,white,white
+1765,1931,1932,5,DIRECTING,King Vidor,The Champ,FALSE,white,white
+1766,1931,1932,5,DIRECTING,Josef Von Sternberg,Shanghai Express,FALSE,white,white
+1767,1932,1933,6,DIRECTING,Frank Lloyd,Cavalcade,TRUE,white,white
+1768,1932,1933,6,DIRECTING,Frank Capra,Lady for a Day,FALSE,white,white
+1769,1932,1933,6,DIRECTING,George Cukor,Little Women,FALSE,white,white
+1770,1934,1935,7,DIRECTING,Frank Capra,It Happened One Night,TRUE,white,white
+1771,1934,1935,7,DIRECTING,Victor Schertzinger,One Night of Love,FALSE,white,white
+1772,1934,1935,7,DIRECTING,W. S. Van Dyke,The Thin Man,FALSE,white,white
+1773,1935,1936,8,DIRECTING,Michael Curtiz,Captain Blood,FALSE,white,white
+1774,1935,1936,8,DIRECTING,John Ford,The Informer,TRUE,white,white
+1775,1935,1936,8,DIRECTING,Henry Hathaway,The Lives of a Bengal Lancer,FALSE,white,white
+1776,1935,1936,8,DIRECTING,Frank Lloyd,Mutiny on the Bounty,FALSE,white,white
+1777,1936,1937,9,DIRECTING,William Wyler,Dodsworth,FALSE,white,white
+1778,1936,1937,9,DIRECTING,Robert Z. Leonard,The Great Ziegfeld,FALSE,white,white
+1779,1936,1937,9,DIRECTING,Frank Capra,Mr. Deeds Goes to Town,TRUE,white,white
+1780,1936,1937,9,DIRECTING,Gregory La Cava,My Man Godfrey,FALSE,white,white
+1781,1936,1937,9,DIRECTING,W. S. Van Dyke,San Francisco,FALSE,white,white
+1782,1937,1938,10,DIRECTING,Leo McCarey,The Awful Truth,TRUE,white,white
+1783,1937,1938,10,DIRECTING,Sidney Franklin,The Good Earth,FALSE,white,white
+1784,1937,1938,10,DIRECTING,William Dieterle,The Life of Emile Zola,FALSE,white,white
+1785,1937,1938,10,DIRECTING,Gregory La Cava,Stage Door,FALSE,white,white
+1786,1937,1938,10,DIRECTING,William Wellman,A Star Is Born,FALSE,white,white
+1787,1938,1939,11,DIRECTING,Michael Curtiz,Angels with Dirty Faces,FALSE,white,white
+1788,1938,1939,11,DIRECTING,Norman Taurog,Boys Town,FALSE,white,white
+1789,1938,1939,11,DIRECTING,King Vidor,The Citadel,FALSE,white,white
+1790,1938,1939,11,DIRECTING,Michael Curtiz,Four Daughters,FALSE,white,white
+1791,1938,1939,11,DIRECTING,Frank Capra,You Can't Take It with You,TRUE,white,white
+1792,1939,1940,12,DIRECTING,Victor Fleming,Gone with the Wind,TRUE,white,white
+1793,1939,1940,12,DIRECTING,Sam Wood,"Goodbye, Mr. Chips",FALSE,white,white
+1794,1939,1940,12,DIRECTING,Frank Capra,Mr. Smith Goes to Washington,FALSE,white,white
+1795,1939,1940,12,DIRECTING,John Ford,Stagecoach,FALSE,white,white
+1796,1939,1940,12,DIRECTING,William Wyler,Wuthering Heights,FALSE,white,white
+1797,1940,1941,13,DIRECTING,John Ford,The Grapes of Wrath,TRUE,white,white
+1798,1940,1941,13,DIRECTING,Sam Wood,Kitty Foyle,FALSE,white,white
+1799,1940,1941,13,DIRECTING,William Wyler,The Letter,FALSE,white,white
+1800,1940,1941,13,DIRECTING,George Cukor,The Philadelphia Story,FALSE,white,white
+1801,1940,1941,13,DIRECTING,Alfred Hitchcock,Rebecca,FALSE,white,white
+1802,1941,1942,14,DIRECTING,Orson Welles,Citizen Kane,FALSE,white,white
+1803,1941,1942,14,DIRECTING,Alexander Hall,Here Comes Mr. Jordan,FALSE,white,white
+1804,1941,1942,14,DIRECTING,John Ford,How Green Was My Valley,TRUE,white,white
+1805,1941,1942,14,DIRECTING,William Wyler,The Little Foxes,FALSE,white,white
+1806,1941,1942,14,DIRECTING,Howard Hawks,Sergeant York,FALSE,white,white
+1807,1942,1943,15,DIRECTING,Sam Wood,Kings Row,FALSE,white,white
+1808,1942,1943,15,DIRECTING,William Wyler,Mrs. Miniver,TRUE,white,white
+1809,1942,1943,15,DIRECTING,Mervyn LeRoy,Random Harvest,FALSE,white,white
+1810,1942,1943,15,DIRECTING,John Farrow,Wake Island,FALSE,white,white
+1811,1942,1943,15,DIRECTING,Michael Curtiz,Yankee Doodle Dandy,FALSE,white,white
+1812,1943,1944,16,DIRECTING,Michael Curtiz,Casablanca,TRUE,white,white
+1813,1943,1944,16,DIRECTING,Ernst Lubitsch,Heaven Can Wait,FALSE,white,white
+1814,1943,1944,16,DIRECTING,Clarence Brown,The Human Comedy,FALSE,white,white
+1815,1943,1944,16,DIRECTING,George Stevens,The More the Merrier,FALSE,white,white
+1816,1943,1944,16,DIRECTING,Henry King,The Song of Bernadette,FALSE,white,white
+1817,1944,1945,17,DIRECTING,Billy Wilder,Double Indemnity,FALSE,white,white
+1818,1944,1945,17,DIRECTING,Leo McCarey,Going My Way,TRUE,white,white
+1819,1944,1945,17,DIRECTING,Otto Preminger,Laura,FALSE,white,white
+1820,1944,1945,17,DIRECTING,Alfred Hitchcock,Lifeboat,FALSE,white,white
+1821,1944,1945,17,DIRECTING,Henry King,Wilson,FALSE,white,white
+1822,1945,1946,18,DIRECTING,Leo McCarey,The Bells of St. Mary's,FALSE,white,white
+1823,1945,1946,18,DIRECTING,Billy Wilder,The Lost Weekend,TRUE,white,white
+1824,1945,1946,18,DIRECTING,Clarence Brown,National Velvet,FALSE,white,white
+1825,1945,1946,18,DIRECTING,Jean Renoir,The Southerner,FALSE,white,white
+1826,1945,1946,18,DIRECTING,Alfred Hitchcock,Spellbound,FALSE,white,white
+1827,1946,1947,19,DIRECTING,William Wyler,The Best Years of Our Lives,TRUE,white,white
+1828,1946,1947,19,DIRECTING,David Lean,Brief Encounter,FALSE,white,white
+1829,1946,1947,19,DIRECTING,Frank Capra,It's a Wonderful Life,FALSE,white,white
+1830,1946,1947,19,DIRECTING,Robert Siodmak,The Killers,FALSE,white,white
+1831,1946,1947,19,DIRECTING,Clarence Brown,The Yearling,FALSE,white,white
+1832,1947,1948,20,DIRECTING,Henry Koster,The Bishop's Wife,FALSE,white,white
+1833,1947,1948,20,DIRECTING,Edward Dmytryk,Crossfire,FALSE,white,white
+1834,1947,1948,20,DIRECTING,George Cukor,A Double Life,FALSE,white,white
+1835,1947,1948,20,DIRECTING,Elia Kazan,Gentleman's Agreement,TRUE,white,white
+1836,1947,1948,20,DIRECTING,David Lean,Great Expectations,FALSE,white,white
+1837,1948,1949,21,DIRECTING,Laurence Olivier,Hamlet,FALSE,white,white
+1838,1948,1949,21,DIRECTING,Jean Negulesco,Johnny Belinda,FALSE,white,white
+1839,1948,1949,21,DIRECTING,Fred Zinnemann,The Search,FALSE,white,white
+1840,1948,1949,21,DIRECTING,Anatole Litvak,The Snake Pit,FALSE,white,white
+1841,1948,1949,21,DIRECTING,John Huston,The Treasure of the Sierra Madre,TRUE,white,white
+1842,1949,1950,22,DIRECTING,Robert Rossen,All the King's Men,FALSE,white,white
+1843,1949,1950,22,DIRECTING,William A. Wellman,Battleground,FALSE,white,white
+1844,1949,1950,22,DIRECTING,Carol Reed,The Fallen Idol,FALSE,white,white
+1845,1949,1950,22,DIRECTING,William Wyler,The Heiress,FALSE,white,white
+1846,1949,1950,22,DIRECTING,Joseph L. Mankiewicz,A Letter to Three Wives,TRUE,white,white
+1847,1950,1951,23,DIRECTING,Joseph L. Mankiewicz,All about Eve,TRUE,white,white
+1848,1950,1951,23,DIRECTING,John Huston,The Asphalt Jungle,FALSE,white,white
+1849,1950,1951,23,DIRECTING,George Cukor,Born Yesterday,FALSE,white,white
+1850,1950,1951,23,DIRECTING,Billy Wilder,Sunset Blvd.,FALSE,white,white
+1851,1950,1951,23,DIRECTING,Carol Reed,The Third Man,FALSE,white,white
+1852,1951,1952,24,DIRECTING,John Huston,The African Queen,FALSE,white,white
+1853,1951,1952,24,DIRECTING,Vincente Minnelli,An American in Paris,FALSE,white,white
+1854,1951,1952,24,DIRECTING,William Wyler,Detective Story,FALSE,white,white
+1855,1951,1952,24,DIRECTING,George Stevens,A Place in the Sun,TRUE,white,white
+1856,1951,1952,24,DIRECTING,Elia Kazan,A Streetcar Named Desire,FALSE,white,white
+1857,1952,1953,25,DIRECTING,Joseph L. Mankiewicz,Five Fingers,FALSE,white,white
+1858,1952,1953,25,DIRECTING,Cecil B. DeMille,The Greatest Show on Earth,FALSE,white,white
+1859,1952,1953,25,DIRECTING,Fred Zinnemann,High Noon,FALSE,white,white
+1860,1952,1953,25,DIRECTING,John Huston,Moulin Rouge,FALSE,white,white
+1861,1952,1953,25,DIRECTING,John Ford,The Quiet Man,TRUE,white,white
+1862,1953,1954,26,DIRECTING,Fred Zinnemann,From Here to Eternity,TRUE,white,white
+1863,1953,1954,26,DIRECTING,Charles Walters,Lili,FALSE,white,white
+1864,1953,1954,26,DIRECTING,William Wyler,Roman Holiday,FALSE,white,white
+1865,1953,1954,26,DIRECTING,George Stevens,Shane,FALSE,white,white
+1866,1953,1954,26,DIRECTING,Billy Wilder,Stalag 17,FALSE,white,white
+1867,1954,1955,27,DIRECTING,George Seaton,The Country Girl,FALSE,white,white
+1868,1954,1955,27,DIRECTING,William Wellman,The High and the Mighty,FALSE,white,white
+1869,1954,1955,27,DIRECTING,Elia Kazan,On the Waterfront,TRUE,white,white
+1870,1954,1955,27,DIRECTING,Alfred Hitchcock,Rear Window,FALSE,white,white
+1871,1954,1955,27,DIRECTING,Billy Wilder,Sabrina,FALSE,white,white
+1872,1955,1956,28,DIRECTING,John Sturges,Bad Day at Black Rock,FALSE,white,white
+1873,1955,1956,28,DIRECTING,Elia Kazan,East of Eden,FALSE,white,white
+1874,1955,1956,28,DIRECTING,Delbert Mann,Marty,TRUE,white,white
+1875,1955,1956,28,DIRECTING,Joshua Logan,Picnic,FALSE,white,white
+1876,1955,1956,28,DIRECTING,David Lean,Summertime,FALSE,white,white
+1877,1956,1957,29,DIRECTING,Michael Anderson,Around the World in 80 Days,FALSE,white,white
+1878,1956,1957,29,DIRECTING,William Wyler,Friendly Persuasion,FALSE,white,white
+1879,1956,1957,29,DIRECTING,George Stevens,Giant,TRUE,white,white
+1880,1956,1957,29,DIRECTING,Walter Lang,The King and I,FALSE,white,white
+1881,1956,1957,29,DIRECTING,King Vidor,War and Peace,FALSE,white,white
+1882,1957,1958,30,DIRECTING,David Lean,The Bridge on the River Kwai,TRUE,white,white
+1883,1957,1958,30,DIRECTING,Mark Robson,Peyton Place,FALSE,white,white
+1884,1957,1958,30,DIRECTING,Joshua Logan,Sayonara,FALSE,white,white
+1885,1957,1958,30,DIRECTING,Sidney Lumet,12 Angry Men,FALSE,white,white
+1886,1957,1958,30,DIRECTING,Billy Wilder,Witness for the Prosecution,FALSE,white,white
+1887,1958,1959,31,DIRECTING,Richard Brooks,Cat on a Hot Tin Roof,FALSE,white,white
+1888,1958,1959,31,DIRECTING,Stanley Kramer,The Defiant Ones,FALSE,white,white
+1889,1958,1959,31,DIRECTING,Vincente Minnelli,Gigi,TRUE,white,white
+1890,1958,1959,31,DIRECTING,Robert Wise,I Want to Live!,FALSE,white,white
+1891,1958,1959,31,DIRECTING,Mark Robson,The Inn of the Sixth Happiness,FALSE,white,white
+1892,1959,1960,32,DIRECTING,William Wyler,Ben-Hur,TRUE,white,white
+1893,1959,1960,32,DIRECTING,George Stevens,The Diary of Anne Frank,FALSE,white,white
+1894,1959,1960,32,DIRECTING,Fred Zinnemann,The Nun's Story,FALSE,white,white
+1895,1959,1960,32,DIRECTING,Jack Clayton,Room at the Top,FALSE,white,white
+1896,1959,1960,32,DIRECTING,Billy Wilder,Some Like It Hot,FALSE,white,white
+1897,1960,1961,33,DIRECTING,Billy Wilder,The Apartment,TRUE,white,white
+1898,1960,1961,33,DIRECTING,Jules Dassin,Never on Sunday,FALSE,white,white
+1899,1960,1961,33,DIRECTING,Alfred Hitchcock,Psycho,FALSE,white,white
+1900,1960,1961,33,DIRECTING,Jack Cardiff,Sons and Lovers,FALSE,white,white
+1901,1960,1961,33,DIRECTING,Fred Zinnemann,The Sundowners,FALSE,white,white
+1902,1961,1962,34,DIRECTING,J. Lee Thompson,The Guns of Navarone,FALSE,white,white
+1903,1961,1962,34,DIRECTING,Robert Rossen,The Hustler,FALSE,white,white
+1904,1961,1962,34,DIRECTING,Stanley Kramer,Judgment at Nuremberg,FALSE,white,white
+1905,1961,1962,34,DIRECTING,Federico Fellini,La Dolce Vita,FALSE,white,white
+1906,1961,1962,34,DIRECTING,"Robert Wise, Jerome Robbins",West Side Story,TRUE,white,white
+1907,1962,1963,35,DIRECTING,Frank Perry,David and Lisa,FALSE,white,white
+1908,1962,1963,35,DIRECTING,Pietro Germi,Divorce--Italian Style,FALSE,white,white
+1909,1962,1963,35,DIRECTING,David Lean,Lawrence of Arabia,TRUE,white,white
+1910,1962,1963,35,DIRECTING,Arthur Penn,The Miracle Worker,FALSE,white,white
+1911,1962,1963,35,DIRECTING,Robert Mulligan,To Kill a Mockingbird,FALSE,white,white
+1912,1963,1964,36,DIRECTING,Elia Kazan,America America,FALSE,white,white
+1913,1963,1964,36,DIRECTING,Otto Preminger,The Cardinal,FALSE,white,white
+1914,1963,1964,36,DIRECTING,Federico Fellini,Federico Fellini's 8-1/2,FALSE,white,white
+1915,1963,1964,36,DIRECTING,Martin Ritt,Hud,FALSE,white,white
+1916,1963,1964,36,DIRECTING,Tony Richardson,Tom Jones,TRUE,white,white
+1917,1964,1965,37,DIRECTING,Peter Glenville,Becket,FALSE,white,white
+1918,1964,1965,37,DIRECTING,Stanley Kubrick,Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb,FALSE,white,white
+1919,1964,1965,37,DIRECTING,Robert Stevenson,Mary Poppins,FALSE,white,white
+1920,1964,1965,37,DIRECTING,George Cukor,My Fair Lady,TRUE,white,white
+1921,1964,1965,37,DIRECTING,Michael Cacoyannis,Zorba the Greek,FALSE,white,white
+1922,1965,1966,38,DIRECTING,William Wyler,The Collector,FALSE,white,white
+1923,1965,1966,38,DIRECTING,John Schlesinger,Darling,FALSE,white,white
+1924,1965,1966,38,DIRECTING,David Lean,Doctor Zhivago,FALSE,white,white
+1925,1965,1966,38,DIRECTING,Robert Wise,The Sound of Music,TRUE,white,white
+1926,1965,1966,38,DIRECTING,Hiroshi Teshigahara,Woman in the Dunes,FALSE,Asian,asian
+1927,1966,1967,39,DIRECTING,Michelangelo Antonioni,Blow-Up,FALSE,white,white
+1928,1966,1967,39,DIRECTING,Claude Lelouch,A Man and a Woman,FALSE,white,white
+1929,1966,1967,39,DIRECTING,Fred Zinnemann,A Man for All Seasons,TRUE,white,white
+1930,1966,1967,39,DIRECTING,Richard Brooks,The Professionals,FALSE,white,white
+1931,1966,1967,39,DIRECTING,Mike Nichols,Who's Afraid of Virginia Woolf?,FALSE,white,white
+1932,1967,1968,40,DIRECTING,Arthur Penn,Bonnie and Clyde,FALSE,white,white
+1933,1967,1968,40,DIRECTING,Mike Nichols,The Graduate,TRUE,white,white
+1934,1967,1968,40,DIRECTING,Stanley Kramer,Guess Who's Coming to Dinner,FALSE,white,white
+1935,1967,1968,40,DIRECTING,Richard Brooks,In Cold Blood,FALSE,white,white
+1936,1967,1968,40,DIRECTING,Norman Jewison,In the Heat of the Night,FALSE,white,white
+1937,1968,1969,41,DIRECTING,Gillo Pontecorvo,The Battle of Algiers,FALSE,white,white
+1938,1968,1969,41,DIRECTING,Anthony Harvey,The Lion in Winter,FALSE,white,white
+1939,1968,1969,41,DIRECTING,Carol Reed,Oliver!,TRUE,white,white
+1940,1968,1969,41,DIRECTING,Franco Zeffirelli,Romeo and Juliet,FALSE,white,white
+1941,1968,1969,41,DIRECTING,Stanley Kubrick,2001: A Space Odyssey,FALSE,white,white
+1942,1969,1970,42,DIRECTING,Arthur Penn,Alice's Restaurant,FALSE,white,white
+1943,1969,1970,42,DIRECTING,George Roy Hill,Butch Cassidy and the Sundance Kid,FALSE,white,white
+1944,1969,1970,42,DIRECTING,John Schlesinger,Midnight Cowboy,TRUE,white,white
+1945,1969,1970,42,DIRECTING,Sydney Pollack,"They Shoot Horses, Don't They?",FALSE,white,white
+1946,1969,1970,42,DIRECTING,Costa-Gavras,Z,FALSE,white,white
+1947,1970,1971,43,DIRECTING,Federico Fellini,Fellini Satyricon,FALSE,white,white
+1948,1970,1971,43,DIRECTING,Arthur Hiller,Love Story,FALSE,white,white
+1949,1970,1971,43,DIRECTING,Robert Altman,M*A*S*H,FALSE,white,white
+1950,1970,1971,43,DIRECTING,Franklin J. Schaffner,Patton,TRUE,white,white
+1951,1970,1971,43,DIRECTING,Ken Russell,Women in Love,FALSE,white,white
+1952,1971,1972,44,DIRECTING,Stanley Kubrick,A Clockwork Orange,FALSE,white,white
+1953,1971,1972,44,DIRECTING,Norman Jewison,Fiddler on the Roof,FALSE,white,white
+1954,1971,1972,44,DIRECTING,William Friedkin,The French Connection,TRUE,white,white
+1955,1971,1972,44,DIRECTING,Peter Bogdanovich,The Last Picture Show,FALSE,white,white
+1956,1971,1972,44,DIRECTING,John Schlesinger,Sunday Bloody Sunday,FALSE,white,white
+1957,1972,1973,45,DIRECTING,Bob Fosse,Cabaret,TRUE,white,white
+1958,1972,1973,45,DIRECTING,John Boorman,Deliverance,FALSE,white,white
+1959,1972,1973,45,DIRECTING,Jan Troell,The Emigrants,FALSE,white,white
+1960,1972,1973,45,DIRECTING,Francis Ford Coppola,The Godfather,FALSE,white,white
+1961,1972,1973,45,DIRECTING,Joseph L. Mankiewicz,Sleuth,FALSE,white,white
+1962,1973,1974,46,DIRECTING,George Lucas,American Graffiti,FALSE,white,white
+1963,1973,1974,46,DIRECTING,Ingmar Bergman,Cries and Whispers,FALSE,white,white
+1964,1973,1974,46,DIRECTING,William Friedkin,The Exorcist,FALSE,white,white
+1965,1973,1974,46,DIRECTING,Bernardo Bertolucci,Last Tango in Paris,FALSE,white,white
+1966,1973,1974,46,DIRECTING,George Roy Hill,The Sting,TRUE,white,white
+1967,1974,1975,47,DIRECTING,Roman Polanski,Chinatown,FALSE,white,white
+1968,1974,1975,47,DIRECTING,Francois Truffaut,Day for Night,FALSE,white,white
+1969,1974,1975,47,DIRECTING,Francis Ford Coppola,The Godfather Part II,TRUE,white,white
+1970,1974,1975,47,DIRECTING,Bob Fosse,Lenny,FALSE,white,white
+1971,1974,1975,47,DIRECTING,John Cassavetes,A Woman under the Influence,FALSE,white,white
+1972,1975,1976,48,DIRECTING,Federico Fellini,Amarcord,FALSE,white,white
+1973,1975,1976,48,DIRECTING,Stanley Kubrick,Barry Lyndon,FALSE,white,white
+1974,1975,1976,48,DIRECTING,Sidney Lumet,Dog Day Afternoon,FALSE,white,white
+1975,1975,1976,48,DIRECTING,Robert Altman,Nashville,FALSE,white,white
+1976,1975,1976,48,DIRECTING,Milos Forman,One Flew over the Cuckoo's Nest,TRUE,white,white
+1977,1976,1977,49,DIRECTING,Alan J. Pakula,All the President's Men,FALSE,white,white
+1978,1976,1977,49,DIRECTING,Ingmar Bergman,Face to Face,FALSE,white,white
+1979,1976,1977,49,DIRECTING,Sidney Lumet,Network,FALSE,white,white
+1980,1976,1977,49,DIRECTING,John G. Avildsen,Rocky,TRUE,white,white
+1981,1976,1977,49,DIRECTING,Lina Wertmüller,Seven Beauties,FALSE,white,white
+1982,1977,1978,50,DIRECTING,Woody Allen,Annie Hall,TRUE,white,white
+1983,1977,1978,50,DIRECTING,Steven Spielberg,Close Encounters of the Third Kind,FALSE,white,white
+1984,1977,1978,50,DIRECTING,Fred Zinnemann,Julia,FALSE,white,white
+1985,1977,1978,50,DIRECTING,George Lucas,Star Wars,FALSE,white,white
+1986,1977,1978,50,DIRECTING,Herbert Ross,The Turning Point,FALSE,white,white
+1987,1978,1979,51,DIRECTING,Hal Ashby,Coming Home,FALSE,white,white
+1988,1978,1979,51,DIRECTING,Michael Cimino,The Deer Hunter,TRUE,white,white
+1989,1978,1979,51,DIRECTING,"Warren Beatty, Buck Henry",Heaven Can Wait,FALSE,white,white
+1990,1978,1979,51,DIRECTING,Woody Allen,Interiors,FALSE,white,white
+1991,1978,1979,51,DIRECTING,Alan Parker,Midnight Express,FALSE,white,white
+1992,1979,1980,52,DIRECTING,Bob Fosse,All That Jazz,FALSE,white,white
+1993,1979,1980,52,DIRECTING,Francis Coppola,Apocalypse Now,FALSE,white,white
+1994,1979,1980,52,DIRECTING,Peter Yates,Breaking Away,FALSE,white,white
+1995,1979,1980,52,DIRECTING,Robert Benton,Kramer vs. Kramer,TRUE,white,white
+1996,1979,1980,52,DIRECTING,Edouard Molinaro,La Cage aux Folles,FALSE,white,white
+1997,1980,1981,53,DIRECTING,David Lynch,The Elephant Man,FALSE,white,white
+1998,1980,1981,53,DIRECTING,Robert Redford,Ordinary People,TRUE,white,white
+1999,1980,1981,53,DIRECTING,Martin Scorsese,Raging Bull,FALSE,white,white
+2000,1980,1981,53,DIRECTING,Richard Rush,The Stunt Man,FALSE,white,white
+2001,1980,1981,53,DIRECTING,Roman Polanski,Tess,FALSE,white,white
+2002,1981,1982,54,DIRECTING,Louis Malle,Atlantic City,FALSE,white,white
+2003,1981,1982,54,DIRECTING,Hugh Hudson,Chariots of Fire,FALSE,white,white
+2004,1981,1982,54,DIRECTING,Mark Rydell,On Golden Pond,FALSE,white,white
+2005,1981,1982,54,DIRECTING,Steven Spielberg,Raiders of the Lost Ark,FALSE,white,white
+2006,1981,1982,54,DIRECTING,Warren Beatty,Reds,TRUE,white,white
+2007,1982,1983,55,DIRECTING,Wolfgang Petersen,Das Boot,FALSE,white,white
+2008,1982,1983,55,DIRECTING,Steven Spielberg,E.T. The Extra-Terrestrial,FALSE,white,white
+2009,1982,1983,55,DIRECTING,Richard Attenborough,Gandhi,TRUE,white,white
+2010,1982,1983,55,DIRECTING,Sydney Pollack,Tootsie,FALSE,white,white
+2011,1982,1983,55,DIRECTING,Sidney Lumet,The Verdict,FALSE,white,white
+2012,1983,1984,56,DIRECTING,Peter Yates,The Dresser,FALSE,white,white
+2013,1983,1984,56,DIRECTING,Ingmar Bergman,Fanny & Alexander,FALSE,white,white
+2014,1983,1984,56,DIRECTING,Mike Nichols,Silkwood,FALSE,white,white
+2015,1983,1984,56,DIRECTING,Bruce Beresford,Tender Mercies,FALSE,white,white
+2016,1983,1984,56,DIRECTING,James L. Brooks,Terms of Endearment,TRUE,white,white
+2017,1984,1985,57,DIRECTING,Milos Forman,Amadeus,TRUE,white,white
+2018,1984,1985,57,DIRECTING,Woody Allen,Broadway Danny Rose,FALSE,white,white
+2019,1984,1985,57,DIRECTING,Roland Joffé,The Killing Fields,FALSE,white,white
+2020,1984,1985,57,DIRECTING,David Lean,A Passage to India,FALSE,white,white
+2021,1984,1985,57,DIRECTING,Robert Benton,Places in the Heart,FALSE,white,white
+2022,1985,1986,58,DIRECTING,Hector Babenco,Kiss of the Spider Woman,FALSE,hispanic,hispanic
+2023,1985,1986,58,DIRECTING,Sydney Pollack,Out of Africa,TRUE,white,white
+2024,1985,1986,58,DIRECTING,John Huston,Prizzi's Honor,FALSE,white,white
+2025,1985,1986,58,DIRECTING,Akira Kurosawa,Ran,FALSE,asian,asian
+2026,1985,1986,58,DIRECTING,Peter Weir,Witness,FALSE,white,white
+2027,1986,1987,59,DIRECTING,David Lynch,Blue Velvet,FALSE,white,white
+2028,1986,1987,59,DIRECTING,Woody Allen,Hannah and Her Sisters,FALSE,white,white
+2029,1986,1987,59,DIRECTING,Roland Joffé,The Mission,FALSE,white,white
+2030,1986,1987,59,DIRECTING,Oliver Stone,Platoon,TRUE,white,white
+2031,1986,1987,59,DIRECTING,James Ivory,A Room with a View,FALSE,white,white
+2032,1987,1988,60,DIRECTING,Adrian Lyne,Fatal Attraction,FALSE,white,white
+2033,1987,1988,60,DIRECTING,John Boorman,Hope and Glory,FALSE,white,white
+2034,1987,1988,60,DIRECTING,Bernardo Bertolucci,The Last Emperor,TRUE,white,white
+2035,1987,1988,60,DIRECTING,Norman Jewison,Moonstruck,FALSE,white,white
+2036,1987,1988,60,DIRECTING,Lasse Hallström,My Life as a Dog,FALSE,white,white
+2037,1988,1989,61,DIRECTING,Charles Crichton,A Fish Called Wanda,FALSE,white,white
+2038,1988,1989,61,DIRECTING,Martin Scorsese,The Last Temptation of Christ,FALSE,white,white
+2039,1988,1989,61,DIRECTING,Alan Parker,Mississippi Burning,FALSE,white,white
+2040,1988,1989,61,DIRECTING,Barry Levinson,Rain Man,TRUE,white,white
+2041,1988,1989,61,DIRECTING,Mike Nichols,Working Girl,FALSE,white,white
+2042,1989,1990,62,DIRECTING,Oliver Stone,Born on the Fourth of July,TRUE,white,white
+2043,1989,1990,62,DIRECTING,Woody Allen,Crimes and Misdemeanors,FALSE,white,white
+2044,1989,1990,62,DIRECTING,Peter Weir,Dead Poets Society,FALSE,white,white
+2045,1989,1990,62,DIRECTING,Kenneth Branagh,Henry V,FALSE,white,white
+2046,1989,1990,62,DIRECTING,Jim Sheridan,My Left Foot,FALSE,white,white
+2047,1990,1991,63,DIRECTING,Kevin Costner,Dances With Wolves,TRUE,white,white
+2048,1990,1991,63,DIRECTING,Francis Ford Coppola,"The Godfather, Part III",FALSE,white,white
+2049,1990,1991,63,DIRECTING,Martin Scorsese,Good Fellas,FALSE,white,white
+2050,1990,1991,63,DIRECTING,Stephen Frears,The Grifters,FALSE,white,white
+2051,1990,1991,63,DIRECTING,Barbet Schroeder,Reversal of Fortune,FALSE,white,white
+2052,1991,1992,64,DIRECTING,John Singleton,Boyz N the Hood,FALSE,black,black
+2053,1991,1992,64,DIRECTING,Barry Levinson,Bugsy,FALSE,white,white
+2054,1991,1992,64,DIRECTING,Oliver Stone,JFK,FALSE,white,white
+2055,1991,1992,64,DIRECTING,Jonathan Demme,The Silence of the Lambs,TRUE,white,white
+2056,1991,1992,64,DIRECTING,Ridley Scott,Thelma & Louise,FALSE,white,white
+2057,1992,1993,65,DIRECTING,Neil Jordan,The Crying Game,FALSE,white,white
+2058,1992,1993,65,DIRECTING,James Ivory,Howards End,FALSE,white,white
+2059,1992,1993,65,DIRECTING,Robert Altman,The Player,FALSE,white,white
+2060,1992,1993,65,DIRECTING,Martin Brest,Scent of a Woman,FALSE,white,white
+2061,1992,1993,65,DIRECTING,Clint Eastwood,Unforgiven,TRUE,white,white
+2062,1993,1994,66,DIRECTING,Jim Sheridan,In the Name of the Father,FALSE,white,white
+2063,1993,1994,66,DIRECTING,Jane Campion,The Piano,FALSE,white,white
+2064,1993,1994,66,DIRECTING,James Ivory,The Remains of the Day,FALSE,white,white
+2065,1993,1994,66,DIRECTING,Steven Spielberg,Schindler's List,TRUE,white,white
+2066,1993,1994,66,DIRECTING,Robert Altman,Short Cuts,FALSE,white,white
+2067,1994,1995,67,DIRECTING,Woody Allen,Bullets over Broadway,FALSE,white,white
+2068,1994,1995,67,DIRECTING,Robert Zemeckis,Forrest Gump,TRUE,white,white
+2069,1994,1995,67,DIRECTING,Quentin Tarantino,Pulp Fiction,FALSE,white,white
+2070,1994,1995,67,DIRECTING,Robert Redford,Quiz Show,FALSE,white,white
+2071,1994,1995,67,DIRECTING,Krzysztof Kieslowski,Red,FALSE,white,white
+2072,1995,1996,68,DIRECTING,Chris Noonan,Babe,FALSE,white,white
+2073,1995,1996,68,DIRECTING,Mel Gibson,Braveheart,TRUE,white,white
+2074,1995,1996,68,DIRECTING,Tim Robbins,Dead Man Walking,FALSE,white,white
+2075,1995,1996,68,DIRECTING,Mike Figgis,Leaving Las Vegas,FALSE,white,white
+2076,1995,1996,68,DIRECTING,Michael Radford,The Postman (Il Postino),FALSE,white,white
+2077,1996,1997,69,DIRECTING,Anthony Minghella,The English Patient,TRUE,white,white
+2078,1996,1997,69,DIRECTING,Joel Coen,Fargo,FALSE,white,white
+2079,1996,1997,69,DIRECTING,Milos Forman,The People vs. Larry Flynt,FALSE,white,white
+2080,1996,1997,69,DIRECTING,Mike Leigh,Secrets & Lies,FALSE,white,white
+2081,1996,1997,69,DIRECTING,Scott Hicks,Shine,FALSE,white,white
+2082,1997,1998,70,DIRECTING,Peter Cattaneo,The Full Monty,FALSE,white,white
+2083,1997,1998,70,DIRECTING,Gus Van Sant,Good Will Hunting,FALSE,white,white
+2084,1997,1998,70,DIRECTING,Curtis Hanson,L.A. Confidential,FALSE,white,white
+2085,1997,1998,70,DIRECTING,Atom Egoyan,The Sweet Hereafter,FALSE,white,white
+2086,1997,1998,70,DIRECTING,James Cameron,Titanic,TRUE,white,white
+2087,1998,1999,71,DIRECTING,Roberto Benigni,Life Is Beautiful,FALSE,white,white
+2088,1998,1999,71,DIRECTING,Steven Spielberg,Saving Private Ryan,TRUE,white,white
+2089,1998,1999,71,DIRECTING,John Madden,Shakespeare in Love,FALSE,white,white
+2090,1998,1999,71,DIRECTING,Terrence Malick,The Thin Red Line,FALSE,white,white
+2091,1998,1999,71,DIRECTING,Peter Weir,The Truman Show,FALSE,white,white
+2092,1999,2000,72,DIRECTING,Sam Mendes,American Beauty,TRUE,white,white
+2093,1999,2000,72,DIRECTING,Spike Jonze,Being John Malkovich,FALSE,white,white
+2094,1999,2000,72,DIRECTING,Lasse Hallström,The Cider House Rules,FALSE,white,white
+2095,1999,2000,72,DIRECTING,Michael Mann,The Insider,FALSE,white,white
+2096,1999,2000,72,DIRECTING,M. Night Shyamalan,The Sixth Sense,FALSE,asian,asian
+2097,2000,2001,73,DIRECTING,Stephen Daldry,Billy Elliot,FALSE,white,white
+2098,2000,2001,73,DIRECTING,Ang Lee,"Crouching Tiger, Hidden Dragon",FALSE,asian,asian
+2099,2000,2001,73,DIRECTING,Steven Soderbergh,Erin Brockovich,FALSE,white,white
+2100,2000,2001,73,DIRECTING,Ridley Scott,Gladiator,FALSE,white,white
+2101,2000,2001,73,DIRECTING,Steven Soderbergh,Traffic,TRUE,white,white
+2102,2001,2002,74,DIRECTING,Ron Howard,A Beautiful Mind,TRUE,white,white
+2103,2001,2002,74,DIRECTING,Ridley Scott,Black Hawk Down,FALSE,white,white
+2104,2001,2002,74,DIRECTING,Robert Altman,Gosford Park,FALSE,white,white
+2105,2001,2002,74,DIRECTING,Peter Jackson,The Lord of the Rings: The Fellowship of the Ring,FALSE,white,white
+2106,2001,2002,74,DIRECTING,David Lynch,Mulholland Drive,FALSE,white,white
+2107,2002,2003,75,DIRECTING,Rob Marshall,Chicago,FALSE,white,white
+2108,2002,2003,75,DIRECTING,Martin Scorsese,Gangs of New York,FALSE,white,white
+2109,2002,2003,75,DIRECTING,Stephen Daldry,The Hours,FALSE,white,white
+2110,2002,2003,75,DIRECTING,Roman Polanski,The Pianist,TRUE,white,white
+2111,2002,2003,75,DIRECTING,Pedro Almodóvar,Talk to Her,FALSE,white,white
+2112,2003,2004,76,DIRECTING,Fernando Meirelles,City of God,FALSE,hispanic,hispanic
+2113,2003,2004,76,DIRECTING,Peter Jackson,The Lord of the Rings: The Return of the King,TRUE,white,white
+2114,2003,2004,76,DIRECTING,Sofia Coppola,Lost in Translation,FALSE,white,white
+2115,2003,2004,76,DIRECTING,Peter Weir,Master and Commander: The Far Side of the World,FALSE,white,white
+2116,2003,2004,76,DIRECTING,Clint Eastwood,Mystic River,FALSE,white,white
+2117,2004,2005,77,DIRECTING,Martin Scorsese,The Aviator,FALSE,white,white
+2118,2004,2005,77,DIRECTING,Clint Eastwood,Million Dollar Baby,TRUE,white,white
+2119,2004,2005,77,DIRECTING,Taylor Hackford,Ray,FALSE,white,white
+2120,2004,2005,77,DIRECTING,Alexander Payne,Sideways,FALSE,white,white
+2121,2004,2005,77,DIRECTING,Mike Leigh,Vera Drake,FALSE,white,white
+2122,2005,2006,78,DIRECTING,Ang Lee,Brokeback Mountain,TRUE,asian,asian
+2123,2005,2006,78,DIRECTING,Bennett Miller,Capote,FALSE,white,white
+2124,2005,2006,78,DIRECTING,Paul Haggis,Crash,FALSE,white,white
+2125,2005,2006,78,DIRECTING,George Clooney,"Good Night, and Good Luck.",FALSE,white,white
+2126,2005,2006,78,DIRECTING,Steven Spielberg,Munich,FALSE,white,white
+2127,2006,2007,79,DIRECTING,Alejandro González Iñárritu,Babel,FALSE,hispanic,hispanic
+2128,2006,2007,79,DIRECTING,Martin Scorsese,The Departed,TRUE,white,white
+2129,2006,2007,79,DIRECTING,Clint Eastwood,Letters from Iwo Jima,FALSE,white,white
+2130,2006,2007,79,DIRECTING,Stephen Frears,The Queen,FALSE,white,white
+2131,2006,2007,79,DIRECTING,Paul Greengrass,United 93,FALSE,white,white
+2132,2007,2008,80,DIRECTING,Julian Schnabel,The Diving Bell and the Butterfly,FALSE,white,white
+2133,2007,2008,80,DIRECTING,Jason Reitman,Juno,FALSE,white,white
+2134,2007,2008,80,DIRECTING,Tony Gilroy,Michael Clayton,FALSE,white,white
+2135,2007,2008,80,DIRECTING,Joel Coen and Ethan Coen,No Country for Old Men,TRUE,white,white
+2136,2007,2008,80,DIRECTING,Paul Thomas Anderson,There Will Be Blood,FALSE,white,white
+2137,2008,2009,81,DIRECTING,David Fincher,The Curious Case of Benjamin Button,FALSE,white,white
+2138,2008,2009,81,DIRECTING,Ron Howard,Frost/Nixon,FALSE,white,white
+2139,2008,2009,81,DIRECTING,Gus Van Sant,Milk,FALSE,white,white
+2140,2008,2009,81,DIRECTING,Stephen Daldry,The Reader,FALSE,white,white
+2141,2008,2009,81,DIRECTING,Danny Boyle,Slumdog Millionaire,TRUE,white,white
+2142,2009,2010,82,DIRECTING,James Cameron,Avatar,FALSE,white,white
+2143,2009,2010,82,DIRECTING,Kathryn Bigelow,The Hurt Locker,TRUE,white,white
+2144,2009,2010,82,DIRECTING,Quentin Tarantino,Inglourious Basterds,FALSE,white,white
+2145,2009,2010,82,DIRECTING,Lee Daniels,Precious: Based on the Novel 'Push' by Sapphire,FALSE,black,black
+2146,2009,2010,82,DIRECTING,Jason Reitman,Up in the Air,FALSE,white,white
+2147,2010,2011,83,DIRECTING,Darren Aronofsky,Black Swan,FALSE,white,white
+2148,2010,2011,83,DIRECTING,David O. Russell,The Fighter,FALSE,white,white
+2149,2010,2011,83,DIRECTING,Tom Hooper,The King's Speech,TRUE,white,white
+2150,2010,2011,83,DIRECTING,David Fincher,The Social Network,FALSE,white,white
+2151,2010,2011,83,DIRECTING,Joel Coen and Ethan Coen,True Grit,FALSE,white,white
+2152,2011,2012,84,DIRECTING,Michel Hazanavicius,The Artist,TRUE,white,white
+2153,2011,2012,84,DIRECTING,Alexander Payne,The Descendants,FALSE,white,white
+2154,2011,2012,84,DIRECTING,Martin Scorsese,Hugo,FALSE,white,white
+2155,2011,2012,84,DIRECTING,Woody Allen,Midnight in Paris,FALSE,white,white
+2156,2011,2012,84,DIRECTING,Terrence Malick,The Tree of Life,FALSE,white,white
+2157,2012,2013,85,DIRECTING,Michael Haneke,Amour,FALSE,white,white
+2158,2012,2013,85,DIRECTING,Benh Zeitlin,Beasts of the Southern Wild,FALSE,white,white
+2159,2012,2013,85,DIRECTING,Ang Lee,Life of Pi,TRUE,asian,asian
+2160,2012,2013,85,DIRECTING,Steven Spielberg,Lincoln,FALSE,white,white
+2161,2012,2013,85,DIRECTING,David O. Russell,Silver Linings Playbook,FALSE,white,white
+2162,2013,2014,86,DIRECTING,David O. Russell,American Hustle,FALSE,white,white
+2163,2013,2014,86,DIRECTING,Alfonso Cuarón,Gravity,TRUE,hispanic,hispanic
+2164,2013,2014,86,DIRECTING,Alexander Payne,Nebraska,FALSE,white,white
+2165,2013,2014,86,DIRECTING,Steve McQueen,12 Years a Slave,FALSE,black,black
+2166,2013,2014,86,DIRECTING,Martin Scorsese,The Wolf of Wall Street,FALSE,white,white
+2167,2014,2015,87,DIRECTING,Alejandro G. Iñárritu,Birdman or (The Unexpected Virtue of Ignorance),TRUE,hispanic,hispanic
+2168,2014,2015,87,DIRECTING,Richard Linklater,Boyhood,FALSE,white,white
+2169,2014,2015,87,DIRECTING,Bennett Miller,Foxcatcher,FALSE,white,white
+2170,2014,2015,87,DIRECTING,Wes Anderson,The Grand Budapest Hotel,FALSE,white,white
+2171,2014,2015,87,DIRECTING,Morten Tyldum,The Imitation Game,FALSE,white,white
+2172,2015,2016,88,DIRECTING,Adam McKay,The Big Short,FALSE,white,white
+2173,2015,2016,88,DIRECTING,George Miller,Mad Max: Fury Road,FALSE,white,white
+2174,2015,2016,88,DIRECTING,Alejandro G. Iñárritu,The Revenant,TRUE,white,white
+2175,2015,2016,88,DIRECTING,Lenny Abrahamson,Room,FALSE,white,white
+2176,2015,2016,88,DIRECTING,Tom McCarthy,Spotlight,FALSE,white,white
+2177,2016,2017,89,DIRECTING,Denis Villeneuve,Arrival,FALSE,white,white
+2178,2016,2017,89,DIRECTING,Mel Gibson,Hacksaw Ridge,FALSE,white,white
+2179,2016,2017,89,DIRECTING,Damien Chazelle,La La Land,TRUE,white,white
+2180,2016,2017,89,DIRECTING,Kenneth Lonergan,Manchester by the Sea,FALSE,white,white
+2181,2016,2017,89,DIRECTING,Barry Jenkins,Moonlight,FALSE,black,black
+2182,2017,2018,90,DIRECTING,Christopher Nolan,Dunkirk,FALSE,white,white
+2183,2017,2018,90,DIRECTING,Jordan Peele,Get Out,FALSE,black,black
+2184,2017,2018,90,DIRECTING,Greta Gerwig,Lady Bird,FALSE,white,white
+2185,2017,2018,90,DIRECTING,Paul Thomas Anderson,Phantom Thread,FALSE,white,white
+2186,2017,2018,90,DIRECTING,Guillermo del Toro,The Shape of Water,TRUE,hispanic,hispanic
+2187,2018,2019,91,DIRECTING,Spike Lee,BlacKkKlansman,FALSE,white,white
+2188,2018,2019,91,DIRECTING,Pawel Pawlikowski,Cold War,FALSE,white,white
+2189,2018,2019,91,DIRECTING,Yorgos Lanthimos,The Favourite,FALSE,white,white
+2190,2018,2019,91,DIRECTING,Alfonso Cuarón,Roma,TRUE,white,white
+2191,2018,2019,91,DIRECTING,Adam McKay,Vice,FALSE,white,white
+2192,2019,2020,92,DIRECTING,Martin Scorsese,The Irishman,FALSE,white,white
+2193,2019,2020,92,DIRECTING,Todd Phillips,Joker,FALSE,white,white
+2194,2019,2020,92,DIRECTING,Sam Mendes,1917,FALSE,white,white
+2195,2019,2020,92,DIRECTING,Quentin Tarantino,Once upon a Time...in Hollywood,FALSE,white,white
+2196,2019,2020,92,DIRECTING,Bong Joon Ho,Parasite,TRUE,asian,asian
