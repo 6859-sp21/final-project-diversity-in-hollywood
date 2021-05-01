@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+    <script src="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    <link href="https://cdn.rawgit.com/RasmusFonseca/d3RangeSlider/master/d3RangeSlider.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+
+        .current {
+            background-color: #83c985;
+        }
+
+        ul {
+            background-color: #383838;
+            list-style-type: none;
+            display:flex;
+            justify-content: center;
+        }
+
+        ul li {
+            display: list-item;
+        }
+
+        li a {
+            display: block;
+            padding: 20px 20px;
+            color: white;
+        }
+
+        li a:hover {
+            background-color: #1a1a1a;
+        }
+
+        h1 {
+            color: 	#E6AB02;
+            font-family: 'Didact Gothic', sans-serif;
+            font-size: 3rem;
+            line-height: 1;
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-align: left;
+        }
+
+        h2 {
+            color: 	#E6AB02;
+            font-family: 'Didact Gothic', sans-serif;
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-top: 5px;
+            margin-left: 20px;
+            text-align: left;
+        }
+        body {
+            background-color: rgb(29, 28, 28);
+        }
+
+        g.cell {
+            background-color: blue;
+        }
+
+        #main {
+            display: flex;
+            margin: auto;
+            width: 1500px;
+        }
+
+        #slider-section {
+            width: 1000px;
+            margin: auto;
+            padding-top: 30px;
+        }
+
+        #slider-container {
+            position: relative;
+            height:30px;
+        }
+
+        .slider {
+            background-color: #E6AB02 !important;
+        }
+
+        .handle {
+            height: 12px !important;
+            width: 12px !important;
+            border-color: black !important;
+            background-color: black !important;
+            border-radius: 10px;
+        }
+
+        #range-label {
+            color: white;
+            text-align: center;
+            font-family: 'Didact Gothic', sans-serif;
+            font-size: 30px;
+        }
+
+        #graph {
+            /* so the graph doesn't go outside of the container on zoom */
+            overflow: hidden;
+            padding-top: 30px;
+            cursor: pointer;
+        }
+
+        .sources {
+            color: white;
+            position: absolute;
+            font-size: 12px;
+            bottom: 20px;
+        }
+
+        .caption {
+            color: white;
+            font-size: 15px;
+        }
+
+        #zoom {
+            color: white;
+            transform: translate(75px, 150px);
+        }
+
+        .stats {
+            color: white;
+            font-size: 15px;
+        }
+
+        div.tooltip {
+            position: absolute;
+            text-align: left;
+            /* width: 60px;
+            height: 28px;					 */
+            font: 18px "Didact Gothic";
+            background: lightskyblue;
+            border: 0px;
+            border-radius: 7px;
+            padding: 3px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-3 p-3 position-sticky" style="top: 0; height: 100vh; background-color: #2C251E;">
+        <div id="header" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
+            <img src="./oscars_icon_2.png" width="100" height="130">
+            <div style="display: flex; flex-direction: column;">
+                <h1 id="title">SCREEN ACTORS GUILD</h1>
+                <h2>winners & nominees by race</h2>
+            </div>
+        </div>
+        <div class="caption p-3">
+            Inspired by the <a href="https://time.com/3669143/oscars-2015-nominations-white/" style="color: #E6AB02;">#OscarsSoWhite</a> movement in 2015, this visualization explores the distribution of race and ethnicity among all Oscars winners and nominees.
+            Adjust the year and categories to see how diversity has (or has not) changed over the years.
+            <br/> <br/> <br/> <br/>
+            Based on the current selections, from <a id="year_start"></a> to <a id="year_end"></a>, the race breakdown is as follows:
+
+        </div>
+        <div class="stats" style="color:white; margin-left: 40px">
+            <a id="white_nominees" style="color: white; font-size: 28px;"></a> &emsp; white nominees (excluding winners)
+            <br/>
+            <a id="white_winners" style="color: white; font-size: 28px;"></a> &emsp; white winners
+            <br/>
+            <!-- <a id="white" style="color: white;"></a> US white population average in <a id="years" style="color: white"></a> -->
+        </div>
+        <div class="sources p-3">
+            <b>Authors: Jenning Chen, Ashwin Srinivasan, Lisa Yoo</b>
+            <br/> <br/>
+            <i>
+                Adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">D3 Circle-Packing Tutorial</a> <br>
+                Data from: <a href="https://data.world/crowdflower/academy-awards-demographics">Oscars Demographics Dataset</a>,
+                <a href="http://awardsdatabase.oscars.org/">Academy Awards Website</a>,
+                <a href="https://en.wikipedia.org/wiki/List_of_black_Academy_Award_winners_and_nominees">Wikipedia 1</a>,
+                <a href="https://en.wikipedia.org/wiki/List_of_Hispanic_Academy_Award_winners_and_nominees">2</a>,
+                <a href="https://en.wikipedia.org/wiki/List_of_Asian_Academy_Award_winners_and_nominees">3</a> <br>
+                Image from: <a href="https://www.flaticon.com/free-icon/oscar_206982">source</a>
+            </i>
+        </div>
+
+    </div>
+    <div class="col-sm-9">
+        <nav>
+            <ul>
+                <li><a href="index.html">Oscars</a></li>
+                <li><a class="current" href="screenguild.html">Screen Actors Guild</a></li>
+                <li><a href="goldenglobes.html">Golden Globes</a></li>
+            </ul>
+        </nav>
+        <br>
+        <!-- slider -->
+        <div id="slider-section">
+            <div id="range-label">1994 - 2020</div>
+            <div id="slider-container"></div>
+        </div>
+        <!-- category selection -->
+        <div class="text-center pt-3">
+            <button type="button" id="all-btn" class="mx-1 btn btn-light">all</button>
+            <button type="button" name="MALE ACTOR IN A LEADING ROLE" id="actor-btn" class="mx-1 btn btn-outline-light">best actor</button>
+            <button type="button" name="FEMALE ACTOR IN A LEADING ROLE" id="actress-btn" class="mx-1 btn btn-outline-light">best actress</button>
+            <button type="button" name="MALE ACTOR IN A SUPPORTING ROLE" id="sup-actor-btn" class="mx-1 btn btn-outline-light">best supporting actor</button>
+            <button type="button" name="FEMALE ACTOR IN A SUPPORTING ROLE" id="sup-actress-btn" class="mx-1 btn btn-outline-light">best supporting actress</button>
+        </div>
+        <!-- graph -->
+        <div id="main">
+            <div id="graph"></div>
+            <div id="legend">
+                <div id="zoom"> &#8678; Scroll to Zoom</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+    var actorCategory = "MALE ACTOR IN A LEADING ROLE"
+    var actressCategory = "FEMALE ACTOR IN A LEADING ROLE"
+    var actorSupCategory = "MALE ACTOR IN A SUPPORTING ROLE"
+    var actressSupCategory = "FEMALE ACTOR IN A SUPPORTING ROLE"
+    var svgWidth = 1200
+    var svgHeight = 800
+    var legendWidth = 400
+    var width = 1200
+    var height = 800
+
+    var graphsvg = d3.select("#graph")
+        .append("svg")
+        .attr("width", svgWidth)
+        .attr("height", svgHeight);
+
+    function zoomed(scale) {
+        graphgElem.attr("transform", d3.event.transform)
+    }
+
+    var zoom = d3.zoom().on("zoom", zoomed);
+    var graphgElem = graphsvg
+        .append("g")
+        .classed("graph-g", true)
+        .call(zoom)
+        .append("g")
+    graphgElem.append("rect")
+        .attr("x", -10000)
+        .attr("y", -10000)
+        .style("fill", "#1d1c1c")
+        .attr("height", 20000)
+        .attr("width", 20000)
+    var myimage = graphgElem.append('image')
+        .attr('xlink:href', './oscar_man.png')
+        .attr('width', 200)
+        .attr('height', 200)
+        .attr('opacity', 0.4)
+        .attr('x', width / 2 + 1010)
+        .attr('y', height / 2 + 650)
+        .attr('transform', 'scale(0.35)')
+
+    var legendsvg = d3.select("#legend")
+        .append("svg")
+        .attr("width", legendWidth)
+        .attr("height", svgHeight - 300)
+        .attr("transform", "translate(0, 200)"); // pushes viz to right + up
+    legendsvg.append("g");
+
+    // Define the div for the tooltip
+    var tooltipDiv = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    function update(data, startYear, endYear, categories) {
+        // first, filter data to year range
+        let filteredData = data.filter(d => d.year_ceremony >= startYear && d.year_ceremony <= endYear && categories.includes(d.category))
+        console.log("filteredData", filteredData)
+        var winnerDataByCategory = categories.reduce(function(map, category) {
+            map[category] = filteredData.filter(d => d.category == category && d.winner == "TRUE");
+            return map;
+        }, {})
+
+        var nomineeDataByCategory = categories.reduce(function(map, category) {
+            map[category] = filteredData.filter(d => d.category == category && d.winner == "FALSE");
+            console.log(map);
+            return map;
+        }, {})
+
+        var numWinners = categories.length * (endYear - startYear + 1)
+
+        // POPULATING STATS PANEL
+        var white_nominees = filteredData.filter(d => d.race == "white" && d.winner == "FALSE").length / filteredData.filter(d => d.winner == "FALSE").length;
+        var white_winners = filteredData.filter(d => d.race == "white" && d.winner == "TRUE").length / filteredData.filter(d => d.winner == "TRUE").length;
+        var percent_format = new Intl.NumberFormat("en-US", {
+            style: 'percent',
+            maximumFractionDigits: 0,
+        });
+
+        white_nominees_pct = d3.select("#white_nominees").text(percent_format.format(white_nominees));
+        white_winners_pct = d3.select("#white_winners").text(percent_format.format(white_winners));
+        year_start = d3.select("#year_start").text(startYear)
+        year_end = d3.select("#year_end").text(endYear)
+        // we position the nominees in a 1 layer ring, and the physics
+        // simulation will take care of repelling the overlaps
+        let nomineeRadius = Math.min(295, Math.max(Math.pow(numWinners*400, 0.51), 155))
+        let winnerRadius = Math.max(Math.sqrt(numWinners * 60), 60)
+
+        // DRAW CIRCLES AROUND NOMINEES AND WINNERS
+        var winnerCircleNode = graphgElem
+            .selectAll(".winner-circle")
+            .data([winnerRadius, nomineeRadius])
+        winnerCircleNode.join(
+            enter => enter.append("circle")
+                .classed("winner-circle", true)
+                .attr("cx", width / 2)
+                .attr("cy", height / 2)
+                .attr("r", winnerRadius * 1.3)
+                .style("fill", "#A7771C")
+                .style("stroke","#b8a22a")
+                .style("stroke-width", 8)
+                .style("opacity", .1),
+            update => update.transition()
+                .duration(300)
+                .attr("r", (d, i) => {
+                    if (i == 0) return 1.3 * d;
+                    return 1.25 * d;
+                }),
+            exit => exit.remove()
+        )
+
+        // CALCULATE POSITION OF DOTS
+
+        // separate sectors by 36 degrees
+        var sectorSeparation = 2 * Math.PI / 12.0;
+        // the arc angle of each sector
+        let arcAngle = (2 * Math.PI - categories.length * sectorSeparation) / categories.length
+        if (categories.length == 1) {
+            arcAngle = 2 * Math.PI
+        }
+        // offset angle to maintain vertical symmetry of the graph
+        var offsetAngle = sectorSeparation + arcAngle / 2 - Math.PI / 2;
+
+        var nomineeCounter = categories.reduce(function(map, category) {
+            map[category] = 0;
+            return map;
+        }, {})
+
+        var winnerCounter = categories.reduce(function(map, category) {
+            map[category] = 0;
+            return map;
+        }, {})
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].year_ceremony < startYear || data[i].year_ceremony > endYear || !categories.includes(data[i].category)) {
+                continue
+            }
+
+            // if we're looking at a nominee
+            if (data[i].winner === "FALSE") {
+                // calculate angle of the dot
+                let theta = offsetAngle + (sectorSeparation + arcAngle) * categories.indexOf(data[i].category) + arcAngle * (nomineeCounter[data[i].category] / nomineeDataByCategory[data[i].category].length) + (arcAngle / nomineeDataByCategory[data[i].category].length) / 2
+                data[i].x = nomineeRadius * Math.cos(theta) + width / 2;
+                data[i].y = nomineeRadius * Math.sin(theta) + height / 2;
+                data[i].level = "Nominee"
+                nomineeCounter[data[i].category] += 1
+            } else {
+                var theta = offsetAngle + (sectorSeparation + arcAngle) * categories.indexOf(data[i].category) + arcAngle * (winnerCounter[data[i].category] / winnerDataByCategory[data[i].category].length) + (arcAngle / winnerDataByCategory[data[i].category].length) / 2
+                if (winnerDataByCategory[data[i].category].length == 1) {
+                    theta = offsetAngle + (sectorSeparation + arcAngle) * categories.indexOf(data[i].category) + arcAngle / 2
+                }
+                data[i].x = winnerRadius * Math.cos(theta) + width / 2;
+                data[i].y = winnerRadius * Math.sin(theta) + height / 2;
+                data[i].level = "Winner"
+                console.log(data[i].x, data[i].y)
+                winnerCounter[data[i].category] += 1
+            }
+        }
+
+        // // CREATE CATEGORY LABEL ARCS
+        var arcRadius = nomineeRadius * 1.25 + 17
+        function arcGenerator(index) {
+            var startAngle = categories.length === 1 ? arcAngle / 2 : index * (arcAngle + sectorSeparation) + offsetAngle - 0.041 * Math.PI
+            var endAngle = categories.length === 1 ? arcAngle : startAngle + arcAngle + Math.PI / 11.0
+            let sweep = 1
+            let radius = arcRadius
+            if (startAngle > -0.3 && endAngle < Math.PI + 0.3) {
+                let temp = endAngle
+                endAngle = startAngle
+                startAngle = temp
+                sweep = 0
+                radius += 15
+            }
+            let startX = Math.cos(startAngle) * radius + width / 2
+            let startY = Math.sin(startAngle) * radius + height / 2
+            let endX = Math.cos(endAngle) * radius + width / 2
+            let endY = Math.sin(endAngle) * radius + height / 2
+            return "M " + startX + "," +  startY + " A " + radius + "," + radius + " 0 0," + sweep + " " + endX + "," + endY;
+        }
+        function categoryName(name) {
+            switch(name) {
+                case "MALE ACTOR IN A LEADING ROLE": return "best actor"
+                case "FEMALE ACTOR IN A LEADING ROLE": return "best actress"
+                case "MALE ACTOR IN A SUPPORTING ROLE": return "best supporting actor"
+                case "FEMALE ACTOR IN A SUPPORTING ROLE": return "best supporting actress"
+                    return ""
+            }
+        }
+        function categoryID(name) {
+            switch(name) {
+                case "MALE ACTOR IN A LEADING ROLE": return 1
+                case "FEMALE ACTOR IN A LEADING ROLE": return 2
+                case "MALE ACTOR IN A SUPPORTING ROLE": return 3
+                case "FEMALE ACTOR IN A SUPPORTING ROLE": return 4
+                    return ""
+            }
+        }
+        graphgElem.selectAll(".arc-path").remove()
+        var categoryLabels = graphgElem.selectAll(".category-arc-labels")
+            .data(categories, d=>categoryID(d))
+        categoryLabels.join(
+            enter => enter.append("path")
+                .classed("arc-path", true)
+                .attr("id", d => "arcpath-" + d) //Unique id of the path
+                .attr("d", (d,i) => arcGenerator(i)) //SVG path
+                .style("stroke", "none")
+                .style("fill", "none")
+                .each(function(d){ this._current = d; }),
+            update => update.attr("d", (d,i) => arcGenerator(i)),
+            exit => exit.remove()
+        )
+        categoryLabels.enter().append("text")
+            .style('fill', 'white')
+            .style("font-size", "20px")
+            .append("textPath") //append a textPath to the text element
+            .attr("xlink:href", d => "#arcpath-" + d) //place the ID of the path here
+            .style("text-anchor","middle") //place the text halfway on the arc
+            .attr("startOffset", "50%")
+            .text(d => categoryName(d));
+
+        // ZOOM TO FIT THE DOTS
+        var resetScale = 300 / nomineeRadius
+        d3.select('.graph-g')
+            .transition()
+            .duration(750)
+            .call(zoom.transform, d3.zoomIdentity);
+
+        // default color scale
+        // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
+        // customized color scale
+        color = d3.scaleOrdinal()
+            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
+        var node = graphgElem
+            .selectAll(".graph-circle")
+            .data(data, d => d.id);
+        node.join(
+            enter => enter.append("circle")
+                .attr("class", function(d){return "graph-circle " + d.fixed_race + " " + d.winner})
+                .attr("r", 2)
+                .attr("cx", width / 2)
+                .attr("cy", height / 2)
+                .style("fill", d => color(d.fixed_race))
+                .style("opacity", 1)
+                .attr("stroke", d => color(d.fixed_race))
+                .style("stroke-width", 0.5)
+                .on("mouseover", function(d) {
+                    d3.select(this).style("stroke", "white")
+                    tooltipDiv.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltipDiv	.html("Name: " + d.name + "<br>Film: " + d.film + "<br>Year: " + d.year_ceremony)
+                        .style("left", (d3.event.pageX + 10) + "px")
+                        .style("top", (d3.event.pageY - 28) + "px");
+                })
+                .on("mouseout", function(d) {
+                    d3.select(this).style("stroke", color(d.fixed_race))
+                    tooltipDiv.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                }),
+            update => update.attr("r", d => {
+                // if the datapoint is within range, it has a radius of 2. otherwise, we hide it with radius 0
+                if (d.year_ceremony >= startYear && d.year_ceremony <= endYear && categories.includes(d.category)) {
+                    return 2
+                }
+                return 0
+            }),
+            exit => exit.remove()
+        )
+    }
+
+    d3.csv("sag_merged.csv").then((csv_orig) => {
+        csv_data = []
+        for (var i = 0; i < csv_orig.length; i++) {
+            csv_orig[i].fixed_race = csv_orig[i].race;
+            csv_orig[i].id = i;
+            csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_ceremony.split("-")[0].trim());
+            if (csv_orig[i].winner === "True") {
+                csv_orig[i].winner = "TRUE"
+            }
+            else {
+                csv_orig[i].winner = "FALSE"
+            }
+            const category = csv_orig[i].category.trim();
+            var includedCategory = false;
+            if (category === "FEMALE LEAD ROLE" || category === "FEMALE LEAD" || category === "FEMALE LEAD IN A MOTION PICTURE" ||
+                category === "FEMALE ACTOR IN A LEADING ROLE") {
+                csv_orig[i].category = "FEMALE ACTOR IN A LEADING ROLE"
+                includedCategory = true;
+            }
+            if (category === "MALE LEAD ROLE" || category === "MALE LEAD" || category === "MALE LEAD IN A MOTION PICTURE" ||
+                category === "MALE ACTOR IN A LEADING ROLE") {
+                csv_orig[i].category = "MALE ACTOR IN A LEADING ROLE"
+                includedCategory = true;
+            }
+            if (category === "FEMALE SUPPORTING ROLE" || category === "FEMALE SUPPORT" || category === "FEMALE SUPPORT IN A MOTION PICTURE" ||
+                category === "FEMALE ACTOR IN A SUPPORTING ROLE") {
+                csv_orig[i].category = "FEMALE ACTOR IN A SUPPORTING ROLE"
+                includedCategory = true;
+            }
+            if (category === "MALE ACTOR IN A SUPPORTING ROLE" || category === "MALE SUPPORTING ROLE" || category === "MALE SUPPORT" ||
+                category === "MALE SUPPORT IN A MOTION PICTURE") {
+                csv_orig[i].category = "MALE ACTOR IN A SUPPORTING ROLE"
+                includedCategory = true;
+            }
+
+            if (includedCategory) {
+                csv_data.push(csv_orig[i]);
+            }
+
+        }
+
+        function getData(startYear, endYear) {
+            var data = []
+            for (var i = 0; i < csv_data.length; i++) {
+                // push all datapoints, both nominees and winners
+                var year = csv_data[i].year_ceremony;
+                if (year >= startYear && year <= endYear) {
+                    data.push(csv_data[i]);
+                }
+            }
+            return data;
+        }
+
+        // default color scale
+        // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
+        // customized color scale
+        color = d3.scaleOrdinal()
+            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
+        // 1: LEGEND using D3-LEGEND (https://d3-legend.susielu.com/)
+        // svg.append("g")
+        //   .attr("class", "legend")
+        //   .attr("transform", "translate(1000, 200)");
+
+        // var legendOrdinal = d3.legendColor()
+        //   .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+        //   .shapePadding(10)
+        //   .scale(color)
+
+        // svg.select(".legend")
+        //   .call(legendOrdinal);
+        // svg.selectAll(".legend")
+        //     .style("background-color", "white");
+        // });
+
+        // 2: LEGEND using manual method
+        // create list of keys
+        var keysSet = new Set(csv_data.map(d => d.fixed_race))
+        var keys = Array.from(keysSet)
+
+        // Add one dot in the legend for each name.
+        legendsvg.selectAll('legendDots')
+            .data(keys)
+            .enter()
+            .append("circle")
+            .on("mouseover", function(d) {
+                d3.select(".label-" + d).style("font-weight", 900).style("text-decoration", "underline");
+                console.log(d);
+                for (var i = 0; i < keys.length; i++) {
+                    if (keys[i] !== d) {
+                        graphsvg.selectAll("." + keys[i]).style("opacity", 0.1)
+                    }
+                }
+            })
+            .on("mouseout", function(d) {
+                d3.select(".label-" + d).style("font-weight", 300).style("text-decoration", "none");
+                for (var i = 0; i < keys.length; i++) {
+                    if (keys[i] !== d) {
+                        graphsvg.selectAll("." + keys[i]).style("opacity", 1)
+                    }
+                }
+            })
+            .attr("cx", 100)
+            .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("r", 7)
+            .style("fill", function(d){ return color(d)})
+
+
+        // Add one dot in the legend for each name.
+        legendsvg.selectAll('legendLabels')
+            .data(keys)
+            .enter()
+            .append("text")
+            .attr("class", function(d){ return "label-" + d })
+            .attr("x", 120)
+            .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            // .style("fill", function(d){ return color(d)})
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("fill", "#b8b8b8")
+            .style("font-family", "Didact Gothic")
+            .style("font-size", "18px")
+            .style("text-transform", "lowercase")
+            .on("mouseover", function(d) {
+                d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                for (var i = 0; i < keys.length; i++) {
+                    if (keys[i] !== d) {
+                        graphsvg.selectAll("." + keys[i]).style("opacity", 0.3)
+                    }
+                }
+            })
+            .on("mouseout", function(d) {
+                d3.select(this).style("font-weight", 300).style("text-decoration", "none");
+                for (var i = 0; i < keys.length; i++) {
+                    if (keys[i] !== d) {
+                        graphsvg.selectAll("." + keys[i]).style("opacity", 1)
+                    }
+                }
+            });
+        var legendCircleLabels = [{y: 300, text: "Winners"}, {y: 270, text: "Nominees"}]
+        legendsvg.selectAll('legendCircleLines')
+            .data(legendCircleLabels)
+            .enter()
+            .append('line')
+            .style("stroke", "#F8F9FA")
+            .style("stroke-width", 2)
+            .attr("x1", 120)
+            .attr("y1", d => d.y)
+            .attr("x2", 180)
+            .attr("y2", d => d.y);
+
+        legendsvg.selectAll('legendCircleLines')
+            .data(legendCircleLabels)
+            .enter()
+            .append('text')
+            .attr("x", 190)
+            .attr("y", d => d.y) // 100 is where the first dot appears. 25 is the distance between dots
+            .text(d => d.text)
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("fill", "#b8b8b8")
+            .style("font-family", "Didact Gothic")
+            .style("font-size", "18px")
+            .style("text-transform", "lowercase")
+            .attr("class", function(d){return "label-" + d.text} )
+            .on("mouseover", function(d) {
+                d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                if (d == legendCircleLabels[0]) {
+                    graphsvg.selectAll(".FALSE").style("opacity", 0.3)
+                }
+                else {
+                    graphsvg.selectAll(".TRUE").style("opacity", 0.3)
+                }
+
+            })
+            .on("mouseout", function(d) {
+                graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
+                d3.select(this).style("font-weight", 300).style("text-decoration", "none");
+            });
+
+
+        // legend for the winner / nominee circles
+        var legendCircleRadii = [50,20]
+
+        legendsvg.selectAll('legendCircles')
+            .data(legendCircleRadii)
+            .enter()
+            .append("circle")
+            .attr("cx", 120)
+            .attr("cy", 300)
+            .attr("r", d => d)
+            .attr("fill", "#b8a22a")
+            .style("stroke","#b8a22a")
+            .style("stroke-width", 8)
+            .attr("opacity", .2)
+            .on("mouseover", function(d) {
+                if (d == legendCircleRadii[0]) {
+                    graphsvg.selectAll(".TRUE").style("opacity", 0.3)
+                    d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                }
+                else {
+                    graphsvg.selectAll(".FALSE").style("opacity", 0.3)
+                    d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                }
+
+            })
+            .on("mouseout", function(d) {
+                graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
+                d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 300).style("text-decoration", "none");
+                d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 300).style("text-decoration", "none");
+            });
+        // draw the lines that label the winner and nominee legend circles
+
+
+        let categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
+        update(csv_data, 1928, 2019, categories);
+
+        var node = graphgElem.selectAll(".graph-circle")
+
+        var winnerData = csv_data.filter(d => d.winner === "TRUE");
+        var simulationCircle = d3.forceSimulation()
+            .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+            .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
+            .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
+
+        simulationCircle
+            .nodes(winnerData)
+            .on("tick", function(d){
+                node
+                    .attr("cx", function(d){ return d.x; })
+                    .attr("cy", function(d){ return d.y; })
+            });
+
+        var nomineeData = csv_data.filter(d => d.winner === "FALSE");
+        var simulationRing = d3.forceSimulation()
+            .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+            .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
+            .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
+
+        simulationRing
+            .nodes(nomineeData)
+            .on("tick", function(d){
+                node
+                    .attr("cx", function(d){ return d.x; })
+                    .attr("cy", function(d){ return d.y; })
+            });
+
+        // SLIDER LOGIC
+        var slider = createD3RangeSlider(1994, 2020, "#slider-container");
+
+        slider.onChange(function(newRange){
+            d3.select("#range-label").text(newRange.begin + " - " + newRange.end);
+            var newData = getData(newRange.begin, newRange.end);
+
+            update(csv_data, newRange.begin, newRange.end, categories)
+
+            let winners = newData.filter(d => d.winner == "TRUE");
+            let nominees = newData.filter(d => d.winner == "FALSE")
+            let alpha = Math.min(0.003, Math.max(0, 0.00045*winners.length - 0.015))
+            console.log('alpha', alpha)
+            simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
+            simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+
+        });
+
+        slider.range(1994, 2020);
+
+        // // CATEGORY BUTTON LOGIC
+        function handleCategoryChange(category) {
+            return function(e){
+                // if all categories selected, then select only the "All" button
+                if (category == "all") {
+                    // Outline all buttons except for the "All" button
+                    var els = document.getElementsByClassName("btn")
+                    for (el of els){
+                        el.classList.remove('btn-light');
+                        el.classList.add('btn-outline-light');
+                    }
+                    // fill the All button
+                    document.getElementById("all-btn").classList.remove('btn-outline-light');
+                    document.getElementById("all-btn").classList.add('btn-light');
+                    categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
+                } else if (categories.includes(category)) {
+                    if (categories.length == 4) { // if all categories were previously selected, then just select the single category
+                        document.getElementById("all-btn").classList.remove('btn-light')
+                        document.getElementById("all-btn").classList.add('btn-outline-light')
+                        document.getElementsByName(category)[0].classList.remove('btn-outline-light')
+                        document.getElementsByName(category)[0].classList.add('btn-light')
+                        categories = [category]
+                    } else { // the category was already selected, so remove it
+                        document.getElementsByName(category)[0].classList.remove('btn-light')
+                        document.getElementsByName(category)[0].classList.add('btn-outline-light')
+                        var index = categories.indexOf(category);
+                        categories.splice(index, 1);
+                    }
+                } else { // the category is not yet selected, so select it.
+                    if (categories.length == 3) { // this is the only category not yet selected. now that it is, select "All"
+                        var els = document.getElementsByClassName("btn")
+                        for (el of els){
+                            el.classList.remove('btn-light');
+                            el.classList.add('btn-outline-light');
+                        }
+                        document.getElementById("all-btn").classList.remove('btn-outline-light');
+                        document.getElementById("all-btn").classList.add('btn-light');
+                    } else {
+                        var el = document.getElementsByName(category)[0]
+                        el.classList.add('btn-light')
+                        el.classList.remove('btn-outline-light')
+                    }
+                    categories.push(category)
+                    // then, sort alphabetically so the graph is consistent in ordering
+                    categories = categories.sort()
+                }
+                update(csv_data, slider.range().begin, slider.range().end, categories)
+                var newData = getData(slider.range().begin, slider.range().end).filter(d => categories.includes(d.category))
+                var winners = newData.filter(d => d.winner == "TRUE");
+                var nominees = newData.filter(d => d.winner == "FALSE")
+                let alpha = Math.min(0.003, Math.max(0, 0.0005*winners.length - 0.01))
+                // If there are multiple categories and they include supporting categories, do not
+                // have alpha if the number of winners per category is under 18.
+                if (categories.length > 1 && winners.length < 20 && (categories.includes("ACTOR IN A SUPPORTING ROLE") || categories.includes("ACTRESS IN A SUPPORTING ROLE"))) {
+                    alpha = 0
+                }
+                console.log('alpha', alpha)
+                simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
+                simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+            }
+
+        }
+        document.getElementById("all-btn").addEventListener("click", handleCategoryChange("all"))
+        document.getElementById("actor-btn").addEventListener("click", handleCategoryChange(actorCategory))
+        document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
+        document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
+        document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
+    });
+</script>
+</body>

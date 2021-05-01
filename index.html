@@ -10,6 +10,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <style type="text/css">
+
+    .current {
+      background-color: #83c985;
+    }
+
+    ul {
+      background-color: #383838;
+      list-style-type: none;
+      display:flex;
+      justify-content: center;
+    }
+
+    ul li {
+      display: list-item;
+    }
+
+    li a {
+      display: block;
+      padding: 20px 20px;
+      color: white;
+    }
+
+    li a:hover {
+      background-color: #1a1a1a;
+    }
+
     h1 { 
       color: 	#E6AB02; 
       font-family: 'Didact Gothic', sans-serif; 
@@ -157,6 +183,14 @@
       
     </div>
     <div class="col-sm-9">
+      <nav>
+        <ul>
+          <li><a class="current" href="index.html">Oscars</a></li>
+          <li><a href="screenguild.html">Screen Actors Guild</a></li>
+          <li><a href="goldenglobes.html">Golden Globes</a></li>
+        </ul>
+      </nav>
+      <br>
       <!-- slider -->
       <div id="slider-section">
         <div id="range-label">1928 - 2019</div>
