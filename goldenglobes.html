@@ -199,9 +199,10 @@
         <!-- category selection -->
         <div class="text-center pt-3">
             <button type="button" id="all-btn" class="mx-1 btn btn-light">all</button>
-            <button type="button" name="Best Director - Motion Picture" id="director-btn" class="mx-1 btn btn-outline-light">best director</button>
-            <button type="button" name="Best Performance by an Actress in a Motion Picture - Drama" id="actor-btn" class="mx-1 btn btn-outline-light">best actor</button>
-            <button type="button" name="Best Performance by an Actor in a Motion Picture - Drama" id="actress-btn" class="mx-1 btn btn-outline-light">best actress</button>
+            <button type="button" name="Actor In A Leading Role" id="actor-btn" class="mx-1 btn btn-outline-light">best actor</button>
+            <button type="button" name="Actress In A Leading Role" id="actress-btn" class="mx-1 btn btn-outline-light">best actress</button>
+            <button type="button" name="Supporting Actor In A Leading Role" id="sup-actor-btn" class="mx-1 btn btn-outline-light">best supporting actor</button>
+            <button type="button" name="Supporting Actress In A Leading Role" id="sup-actress-btn" class="mx-1 btn btn-outline-light">best supporting actress</button>
         </div>
         <!-- graph -->
         <div id="main">
@@ -215,9 +216,10 @@
 
 <!-- JAVASCRIPT -->
 <script>
-    var actorCategory = "Best Performance by an Actor in a Motion Picture - Drama"
-    var actressCategory = "Best Performance by an Actress in a Motion Picture - Drama"
-    var directorCategory = "Best Director - Motion Picture"
+    var actorCategory = "Actor In A Leading Role"
+    var actressCategory = "Actress In A Leading Role"
+    var actorSupCategory = "Supporting Actor In A Leading Role"
+    var actressSupCategory = "Supporting Actress In A Leading Role"
     var svgWidth = 1200
     var svgHeight = 800
     var legendWidth = 400
@@ -282,8 +284,8 @@
         var numWinners = categories.length * (endYear - startYear + 1)
 
         // POPULATING STATS PANEL
-        var white_nominees = filteredData.filter(d => d.race == "white" && d.winner == "FALSE").length / filteredData.filter(d => d.winner == "FALSE").length;
-        var white_winners = filteredData.filter(d => d.race == "white" && d.winner == "TRUE").length / filteredData.filter(d => d.winner == "TRUE").length;
+        var white_nominees = filteredData.filter(d => d.fixed_race == "white" && d.winner == "FALSE").length / filteredData.filter(d => d.winner == "FALSE").length;
+        var white_winners = filteredData.filter(d => d.fixed_race == "white" && d.winner == "TRUE").length / filteredData.filter(d => d.winner == "TRUE").length;
         var percent_format = new Intl.NumberFormat("en-US", {
             style: 'percent',
             maximumFractionDigits: 0,
@@ -362,7 +364,7 @@
                     theta = offsetAngle + (sectorSeparation + arcAngle) * categories.indexOf(data[i].category) + arcAngle / 2
                 }
 
-                console.log(theta)
+                // console.log(theta)
                 data[i].x = winnerRadius * Math.cos(theta) + width / 2;
                 data[i].y = winnerRadius * Math.sin(theta) + height / 2;
                 data[i].level = "Winner"
@@ -393,17 +395,19 @@
         }
         function categoryName(name) {
             switch(name) {
-                case "Best Director - Motion Picture": return "best director"
-                case "Best Performance by an Actor in a Motion Picture - Drama": return "best actor"
-                case "Best Performance by an Actress in a Motion Picture - Drama": return "best actress"
+                case "Actress In A Leading Role": return "best actress"
+                case "Actor In A Leading Role": return "best actor"
+                case "Supporting Actress In A Leading Role": return "best supporting actress"
+                case "Supporting Actor In A Leading Role": return "best supporting actor"
                     return ""
             }
         }
         function categoryID(name) {
             switch(name) {
-                case "Best Director - Motion Picture": return 1
-                case "Best Performance by an Actor in a Motion Picture - Drama": return 2
-                case "Best Performance by an Actress in a Motion Picture - Drama": return 3
+                case "Actress In A Leading Role": return 1
+                case "Actor In A Leading Role": return 2
+                case "Supporting Actress In A Leading Role": return 3
+                case "Supporting Actor In A Leading Role": return 4
                     return ""
             }
         }
@@ -441,8 +445,8 @@
         // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
         // customized color scale
         color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
-            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
+            .domain(['white', 'black', 'hispanic', 'asian/south asian', 'multiracial', 'middle eastern', 'american aborigine', 'none'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03', "#88c8dd", "#5A7BFF", "#B0845E"])
         var node = graphgElem
             .selectAll(".graph-circle")
             .data(data, d => d.id);
@@ -461,7 +465,7 @@
                     tooltipDiv.transition()
                         .duration(200)
                         .style("opacity", .9);
-                    tooltipDiv	.html("Name: " + d.name + "<br>Film: " + d.film + "<br>Year: " + d.year_ceremony)
+                    tooltipDiv	.html("Name: " + d.nominee + "<br>Film: " + d.film + "<br>Year: " + d.year_award)
                         .style("left", (d3.event.pageX + 10) + "px")
                         .style("top", (d3.event.pageY - 28) + "px");
                 })
@@ -484,14 +488,96 @@
 
 
 
-    d3.csv("golden_globe_awards_with_race_temp.csv").then((csv_data) => {
+    d3.csv("golden_globe_merged.csv").then((csv_orig) => {
+       
+       /* ALL CATEGORIES SORTED
+       'Actress In A Leading Role', 
+       'Best Performance by an Actress in a Motion Picture - Drama',
+       'Actress In A Leading Role - Musical Or Comedy',
+       'Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television',
+       'Best Performance by an Actress In A Television Series - Drama',
+       'New Star Of The Year - Actress',
+       'Actress In A Television Series',
+       'Best Performance by an Actress in a Motion Picture - Musical or Comedy',
+       'Actress In A Television Series - Musical Or Comedy',
+       'Actress In A Television Series - Drama',
+       'Best Performance by an Actress in a Television Series - Musical or Comedy',
+       'Actress In A Leading Role - Musical Or Comedy Series Or Television Movie',
+       'Actress In A Leading Role - Drama Series Or Television Movie',
+       
+       'Actor In A Leading Role',
+       'Best Performance by an Actor in a Motion Picture - Drama',
+       'Best Performance by an Actor in a Motion Picture - Musical or Comedy',
+       'New Star Of The Year - Actor',
+       'Best Performance by an Actor In A Television Series - Drama',
+       'Actor In A Television Series - Musical Or Comedy',
+       'Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television',
+       'Actor In A Television Series - Drama',
+       'New Foreign Star Of The Year - Actor',
+       'Best Performance by an Actor in a Television Series - Musical or Comedy',
+       'Actor In A Television Series',
+       'Actor In A Leading Role - Drama Series Or Television Movie',
+       'Actor In A Leading Role - Musical Or Comedy Series Or Television Movie',
+       
+       'Best Performance by an Actress in a Supporting Role in any Motion Picture',
+       'Best Performance by an Actress in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
+       'Actress In A Supporting Role - Television Series',
+       'Actress In A Supporting Role - Series Or Television Movie',
+       
+       'Best Performance by an Actor in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
+       'Best Performance by an Actor in a Supporting Role in any Motion Picture',
+       'Actor In A Supporting Role - Television Series',
+       'Actor In A Supporting Role - Series Or Television Movie'
+       */
+
+        csv_data = []
+        for (var i = 0; i < csv_orig.length; i++) {
+            csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
+            if (csv_orig[i].fixed_race == 'white [1]') {csv_orig[i].fixed_race = 'white'}
+            else if (csv_orig[i].fixed_race == 'multiracial [1]' || csv_orig[i].fixed_race == 'multiracial [2]') {csv_orig[i].fixed_race = 'multiracial'}
+            else if (csv_orig[i].fixed_race == 'american aborigine [1]') {csv_orig[i].fixed_race = 'american aborigine'}
+            else if (csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian/south asian"}
+            else if (!csv_orig[i].fixed_race) {csv_orig[i].fixed_race = "none"}
+
+            csv_orig[i].id = i;
+            csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_award);
+            
+            if (csv_orig[i].win === "True") csv_orig[i].winner = "TRUE";
+            else csv_orig[i].winner = "FALSE";
+
+            const category = csv_orig[i].category.trim();
+            var includedCategory = false;
+            if (category === "Actress In A Leading Role" || 
+                category === "Best Performance by an Actress in a Motion Picture - Drama") {
+                csv_orig[i].category = "Actress In A Leading Role"
+                includedCategory = true;
+            }
+            if (category === "Actor In A Leading Role" 
+            || category === "Best Performance by an Actor in a Motion Picture - Drama") {
+                csv_orig[i].category = "Actor In A Leading Role"
+                includedCategory = true;
+            }
+            if (category === "Best Performance by an Actress in a Supporting Role in any Motion Picture") {
+                csv_orig[i].category = "Supporting Actress In A Leading Role"
+                includedCategory = true;
+            }
+            if (category === "Best Performance by an Actor in a Supporting Role in any Motion Picture") {
+                csv_orig[i].category = "Supporting Actor In A Leading Role"
+                includedCategory = true;
+            }
+
+            if (includedCategory) {
+                csv_data.push(csv_orig[i]);
+            }
+        }
+
         function getData(startYear, endYear) {
             var data = []
             for (var i = 0; i < csv_data.length; i++) {
                 // push all datapoints, both nominees and winners
                 var year = csv_data[i].year_ceremony;
                 csv_data[i].id = i;
-                console.log(csv_data[i]);
+                console.log(csv_data[i].race);
                 if (year >= startYear && year <= endYear) {
                     data.push(csv_data[i]);
                 }
@@ -503,8 +589,8 @@
         // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
         // customized color scale
         color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
-            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
+            .domain(['white', 'black', 'hispanic', 'asian/south asian', 'multiracial', 'middle eastern', 'american aborigine', 'none'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03', "#88c8dd", "#5A7BFF", "#B0845E"])
         // 1: LEGEND using D3-LEGEND (https://d3-legend.susielu.com/)
         // svg.append("g")
         //   .attr("class", "legend")
@@ -662,7 +748,7 @@
         // draw the lines that label the winner and nominee legend circles
 
 
-        let categories = [actorCategory, actressCategory, directorCategory]
+        let categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
         update(csv_data, 1945, 2020, categories);
 
         var node = graphgElem.selectAll(".graph-circle")
@@ -734,9 +820,9 @@
                     // fill the All button
                     document.getElementById("all-btn").classList.remove('btn-outline-light');
                     document.getElementById("all-btn").classList.add('btn-light');
-                    categories = [actorCategory, actressCategory, directorCategory]
+                    categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
                 } else if (categories.includes(category)) {
-                    if (categories.length == 5) { // if all categories were previously selected, then just select the single category
+                    if (categories.length == 4) { // if all categories were previously selected, then just select the single category
                         document.getElementById("all-btn").classList.remove('btn-light')
                         document.getElementById("all-btn").classList.add('btn-outline-light')
                         document.getElementsByName(category)[0].classList.remove('btn-outline-light')
@@ -749,7 +835,7 @@
                         categories.splice(index, 1);
                     }
                 } else { // the category is not yet selected, so select it.
-                    if (categories.length == 4) { // this is the only category not yet selected. now that it is, select "All"
+                    if (categories.length == 3) { // this is the only category not yet selected. now that it is, select "All"
                         var els = document.getElementsByClassName("btn")
                         for (el of els){
                             el.classList.remove('btn-light');
@@ -785,7 +871,8 @@
         document.getElementById("all-btn").addEventListener("click", handleCategoryChange("all"))
         document.getElementById("actor-btn").addEventListener("click", handleCategoryChange(actorCategory))
         document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
-        document.getElementById("director-btn").addEventListener("click", handleCategoryChange(directorCategory))
+        document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
+        document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
     });
 </script>
 </body>
