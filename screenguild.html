@@ -147,7 +147,7 @@
 <div class="row">
     <div class="col-sm-3 p-3 position-sticky" style="top: 0; height: 100vh; background-color: #2C251E;">
         <div id="header" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
-            <img src="./oscars_icon_2.png" width="100" height="130">
+            <img src="./images/oscars_icon_2.png" width="100" height="130">
             <div style="display: flex; flex-direction: column;">
                 <h1 id="title">SCREEN ACTORS GUILD</h1>
                 <h2>winners & nominees by race</h2>
@@ -248,7 +248,7 @@
         .attr("height", 20000)
         .attr("width", 20000)
     var myimage = graphgElem.append('image')
-        .attr('xlink:href', './oscar_man.png')
+        .attr('xlink:href', './images/oscar_man.png')
         .attr('width', 200)
         .attr('height', 200)
         .attr('opacity', 0.4)
@@ -485,7 +485,7 @@
         )
     }
 
-    d3.csv("sag_merged.csv").then((csv_orig) => {
+    d3.csv("./datasets/sag_merged.csv").then((csv_orig) => {
         csv_data = []
         for (var i = 0; i < csv_orig.length; i++) {
             csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();

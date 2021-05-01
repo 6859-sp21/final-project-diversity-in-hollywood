@@ -147,7 +147,7 @@
   <div class="row">
     <div class="col-sm-3 p-3 position-sticky" style="top: 0; height: 100vh; background-color: #2C251E;">
       <div id="header" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
-        <img src="./oscars_icon_2.png" width="100" height="130">
+        <img src="./images/oscars_icon_2.png" width="100" height="130">
         <div style="display: flex; flex-direction: column;">
           <h1 id="title">OSCARS</h1>
           <h2>winners & nominees by race</h2>
@@ -250,7 +250,7 @@
       .attr("height", 20000)
       .attr("width", 20000)
     var myimage = graphgElem.append('image')
-      .attr('xlink:href', './oscar_man.png')
+      .attr('xlink:href', './images/oscar_man.png')
       .attr('width', 200)
       .attr('height', 200)
       .attr('opacity', 0.4)
@@ -490,7 +490,7 @@
 
 
 
-    d3.csv("oscar_nominees_with_fixed_race.csv").then((csv_data) => {
+    d3.csv("./datasets/oscar_nominees_with_fixed_race.csv").then((csv_data) => {
       function getData(startYear, endYear) {
         var data = []
         for (var i = 0; i < csv_data.length; i++) {

@@ -20,7 +20,7 @@ var data = []
 // range of years to include, inclusive
 var startYear = 1950
 var endYear = 1980
-d3.csv("oscar_nominees_with_race.csv", function(csv_data) {
+d3.csv("./datasets/oscar_nominees_with_race.csv", function(csv_data) {
     for (var i = 0; i < csv_data.length; i++) {
         // push all datapoints, both nominees and winners
         var year = csv_data[i].year_ceremony;
