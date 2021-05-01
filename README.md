@@ -1,8 +1,8 @@
-# 6.859 A4: Oscars
+# 6.859 Final Project: Diversity in Hollywood
 
-Jenning Chen, Ashwin Srinivasan, Lisa Yoo
+Jenning Chen, Ashwin Srinivasan, Lisa Yoo, Cindy
 
-[Link to our visualization](https://6859-sp21.github.io/a4-oscars/)
+[Link to our visualization](https://6859-sp21.github.io/final-project-diversity-in-hollywood/)
 
 ## Background
 Our visualization is motivated by the #OscarsSoWhite hashtag, and empowers users to explore trends of diversity among the nominees and winners of the annual Academy Awards (1927-2020). 
