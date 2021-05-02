@@ -311,7 +311,7 @@
     function update(data, startYear, endYear, categories) {
         // first, filter data to year range
         let filteredData = data.filter(d => d.year_ceremony >= startYear && d.year_ceremony <= endYear && categories.includes(d.category))
-        console.log("filteredData", filteredData)
+        // console.log("filteredData", filteredData)
         var winnerDataByCategory = categories.reduce(function(map, category) {
             map[category] = filteredData.filter(d => d.category == category && d.winner == "TRUE");
             return map;
@@ -484,7 +484,7 @@
         // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
         // customized color scale
         color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian/south asian', 'middle eastern', 'multiracial'])
+            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
             .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
         var node = graphgElem
             .selectAll(".graph-circle")
@@ -785,7 +785,7 @@
         // SUMMARY GRAPH
       year_race_counts = {} // counts number per year, race, category
       
-      var races = ['white', 'black', 'hispanic', 'asian/south asian', 'middle eastern', 'multiracial']
+      var races = ['white', 'black', 'hispanic', 'asian', 'other']
       for (var i=1993; i<=2020; i++){
         year_race_counts[i] = {"all":{}}
         for (var j=0; j<races.length; j++){
@@ -801,13 +801,15 @@
         var year = +d.year_ceremony;
         var fixed_race = d.fixed_race;
         var category = d.category;
-        console.log(year)
-        
-        if (year_race_counts[year][fixed_race][category] === undefined){
-        year_race_counts[year][fixed_race][category] = 0;
-        } else {
-        year_race_counts[year][fixed_race][category] ++;
-        year_race_counts[year]["all"][category]++;
+        console.log(fixed_race)
+        console.log(year_race_counts[year])
+        if (year!=null){
+            if (year_race_counts[year][fixed_race][category] === undefined){
+            year_race_counts[year][fixed_race][category] = 0;
+            } else {
+            year_race_counts[year][fixed_race][category] ++;
+            year_race_counts[year]["all"][category]++;
+            }
         }
       });
 
