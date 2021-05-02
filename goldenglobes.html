@@ -460,8 +460,8 @@
         // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
         // customized color scale
         color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian/south asian', 'multiracial', 'middle eastern', 'american aborigine', 'none'])
-            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03', "#88c8dd", "#5A7BFF", "#B0845E"])
+            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
         var node = graphgElem
             .selectAll(".graph-circle")
             .data(data, d => d.id);
@@ -549,10 +549,13 @@
         for (var i = 0; i < csv_orig.length; i++) {
             csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
             if (csv_orig[i].fixed_race == 'white [1]') {csv_orig[i].fixed_race = 'white'}
-            else if (csv_orig[i].fixed_race == 'multiracial [1]' || csv_orig[i].fixed_race == 'multiracial [2]') {csv_orig[i].fixed_race = 'multiracial'}
-            else if (csv_orig[i].fixed_race == 'american aborigine [1]') {csv_orig[i].fixed_race = 'american aborigine'}
-            else if (csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian/south asian"}
-            else if (!csv_orig[i].fixed_race) {csv_orig[i].fixed_race = "none"}
+            else if (csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian"}
+            else if (csv_orig[i].fixed_race == 'Middle Eastern') {csv_orig[i].fixed_race = "white"}
+
+            if (!(csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'white' || csv_orig[i].fixed_race == 'black' ||
+                csv_orig[i].fixed_race == 'hispanic')) {
+                csv_orig[i].fixed_race = "other";
+            }
 
             csv_orig[i].id = i;
             csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_award);
@@ -604,8 +607,8 @@
         // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
         // customized color scale
         color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian/south asian', 'multiracial', 'middle eastern', 'american aborigine', 'none'])
-            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03', "#88c8dd", "#5A7BFF", "#B0845E"])
+            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
+            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
         // 1: LEGEND using D3-LEGEND (https://d3-legend.susielu.com/)
         // svg.append("g")
         //   .attr("class", "legend")
@@ -799,7 +802,7 @@
         // SUMMARY GRAPH
       year_race_counts = {} // counts number per year, race, category
       
-      var races = ['white', 'black', 'hispanic', 'asian/south asian', 'multiracial', 'middle eastern', 'american aborigine', 'none']
+      var races = ['white', 'black', 'hispanic', 'asian', 'other']
       for (var i=1944; i<=2020; i++){
         year_race_counts[i] = {"all":{}}
         for (var j=0; j<races.length; j++){

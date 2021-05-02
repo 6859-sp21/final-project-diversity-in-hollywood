@@ -311,6 +311,7 @@
     function update(data, startYear, endYear, categories) {
         // first, filter data to year range
         let filteredData = data.filter(d => d.year_ceremony >= startYear && d.year_ceremony <= endYear && categories.includes(d.category))
+
         // console.log("filteredData", filteredData)
         var winnerDataByCategory = categories.reduce(function(map, category) {
             map[category] = filteredData.filter(d => d.category == category && d.winner == "TRUE");
@@ -319,7 +320,6 @@
 
         var nomineeDataByCategory = categories.reduce(function(map, category) {
             map[category] = filteredData.filter(d => d.category == category && d.winner == "FALSE");
-            // console.log(map);
             return map;
         }, {})
 
@@ -328,6 +328,7 @@
         // POPULATING STATS PANEL
         var white_nominees = filteredData.filter(d => d.fixed_race == "white" && d.winner == "FALSE").length / filteredData.filter(d => d.winner == "FALSE").length;
         var white_winners = filteredData.filter(d => d.fixed_race == "white" && d.winner == "TRUE").length / filteredData.filter(d => d.winner == "TRUE").length;
+
         var percent_format = new Intl.NumberFormat("en-US", {
             style: 'percent',
             maximumFractionDigits: 0,
@@ -531,7 +532,7 @@
             csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
             if (csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian"}
 
-            else if (csv_orig[i].fixed_race == 'Middle Eastern') {csv_orig[i].fixed_race = "white"}
+            else if (csv_orig[i].fixed_race == 'middle eastern') {csv_orig[i].fixed_race = "white"}
 
             if (!(csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'white' || csv_orig[i].fixed_race == 'black' ||
             csv_orig[i].fixed_race == 'hispanic')) {
@@ -540,12 +541,7 @@
 
             csv_orig[i].id = i;
             csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_ceremony.split("-")[0].trim());
-            if (csv_orig[i].winner === "True") {
-                csv_orig[i].winner = "TRUE"
-            }
-            else {
-                csv_orig[i].winner = "FALSE"
-            }
+
             const category = csv_orig[i].category.trim();
             var includedCategory = false;
             if (category === "FEMALE LEAD ROLE" || category === "FEMALE LEAD" || category === "FEMALE LEAD IN A MOTION PICTURE" ||
