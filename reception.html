@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style type="text/css">
+
+    .current {
+      background-color: #83c985;
+    }
+
+    ul {
+      background-color: #383838;
+      list-style-type: none;
+      display:flex;
+      justify-content: center;
+    }
+
+    ul li {
+      display: list-item;
+    }
+
+    li a {
+      display: block;
+      padding: 20px 20px;
+      color: white;
+    }
+
+    li a:hover {
+      background-color: #1a1a1a;
+    }
+
+    h1 { 
+      color: 	#E6AB02; 
+      font-family: 'Didact Gothic', sans-serif; 
+      font-size: 3rem;
+      line-height: 1; 
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      text-align: left; 
+    }
+
+    body {
+      /* background-color: rgb(29, 28, 28); */
+      background-color: white;
+    }
+
+    #main {
+      display: flex;
+      margin: auto;
+      width: 1500px;
+    }
+
+    #slider-section {
+      width: 1000px;
+      margin: auto;
+      padding-top: 30px;
+    }
+
+    #slider-container {
+      position: relative;
+      height:30px;
+    }
+
+    .slider {
+      background-color: #E6AB02 !important;
+    }
+
+    .handle {
+      height: 12px !important;
+      width: 12px !important;
+      border-color: black !important;
+      background-color: black !important;
+      border-radius: 10px;
+    }
+
+    #range-label {
+      color: white;
+      text-align: center;
+      font-family: 'Didact Gothic', sans-serif;
+      font-size: 30px;
+    }
+
+    #graph {
+      /* so the graph doesn't go outside of the container on zoom */
+      overflow: hidden;
+      padding-top: 30px;
+      cursor: pointer;
+    }
+
+    .sources {
+      color: white;
+      position: absolute;
+      font-size: 12px;
+      bottom: 20px;
+    }
+
+    .caption {
+      color: white;
+      font-size: 15px;
+    }
+
+    #zoom {
+      color: white;
+      transform: translate(75px, 150px);
+    }
+    
+    .stats {
+      color: white;
+      font-size: 15px;
+    }
+
+    div.tooltip {	
+      position: absolute;			
+      text-align: left;			
+      /* width: 60px;					
+      height: 28px;					 */
+      font: 18px "Didact Gothic";		
+      background: lightskyblue;	
+      border: 0px;		
+      border-radius: 7px;
+      padding: 3px;			
+      pointer-events: none;			
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    text {
+        font-family: 'Didact Gothic', sans-serif; 
+    }
+  </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <meta charset="utf-8">
+    
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    
+    <!-- Create a div where the graph will take place -->
+    <div id="main">
+        <div id="graph"></div>
+        <div id="legend"></div>
+    </div>
+    
+  
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // sets dimensions
+    var margin = {top: 10, right: 30, bottom: 60, left: 60},
+        width = 460 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+    
+    var legendWidth = 500;
+    var legendHeight = 500;
+    
+    // defines graph svg
+    var svg = d3.select("#graph")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+    
+    // defines tooltip div
+    var tooltipDiv = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
+
+    // x-position scale
+    var x = d3.scaleLinear()
+        .domain([0, 1])
+        .range([ 0, width ]);
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x));
+
+    svg.append("text")             
+        .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                        (height + margin.top + 30) + ")")
+        .style("text-anchor", "middle")
+        .text("% cast that is white");
+
+    // y-position scale
+    var y = d3.scaleLinear()
+        .domain([0, 100])
+        .range([ height, 0 ]);
+    svg.append("g")
+        .call(d3.axisLeft(y));
+    
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("IMDB metascore");      
+
+    // radius scale
+    var rScale = d3.scaleLinear()
+        .domain([0, 2800000000]) // hardset from worldwide gross income max
+        .range([2, 25]);
+
+    // size-based legend for revenue
+    var legendSvg = d3.select("#legend")
+        .append("svg")
+            .attr("width", legendWidth)
+            .attr("height", legendHeight);
+           
+    legendSvg.append("g")
+        .attr("class", "legendSize")
+        .attr("transform", "translate(50, 100)");
+
+    var legendSize = d3.legendSize()
+        .scale(rScale)
+        .shape('circle')
+        .shapePadding(15)
+        .labelOffset(20)
+        .orient('vertical');
+
+    legendSvg.select(".legendSize")
+        .call(legendSize);
+            
+    
+    d3.csv("./datasets/movie_race_distributions_sample.csv", function(data) {
+
+        // parse the data
+        for (i = 0; i < data.length; i++) {
+            data[i].budget = parseFloat(data[i].budget.replace('$', ''));
+            data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
+            data[i].worlwide_gross_income = parseFloat(data[i].worlwide_gross_income.replace('$', ''));
+        }
+
+        // add scatterplot dots
+        svg.append('g')
+        .selectAll("dot")
+        .data(data)
+        .enter()
+        .append("circle")
+            .attr("cx", d => x(d.percent_white) )
+            .attr("cy", d => y(d.metascore) )
+            .attr("r", d => rScale(parseFloat(d.worlwide_gross_income))  )
+            .attr("opacity", 0.7)
+            .style("fill", "#69b3a2")
+            .on("mouseover", function(d) {		
+                tooltipDiv.transition()		
+                    .duration(200)		
+                    .style("opacity", .9);		
+                tooltipDiv.html(d.title + " (" + d.year + ")")	
+                    .style("left", (d3.event.pageX) + "px")		
+                    .style("top", (d3.event.pageY - 28) + "px");	
+            })					
+            .on("mouseout", function(d) {		
+                tooltipDiv.transition()		
+                    .duration(500)		
+                    .style("opacity", 0);	
+            });
+    
+    })
+    
+    </script>
+</body>
