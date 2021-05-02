@@ -319,7 +319,7 @@
 
         var nomineeDataByCategory = categories.reduce(function(map, category) {
             map[category] = filteredData.filter(d => d.category == category && d.winner == "FALSE");
-            console.log(map);
+            // console.log(map);
             return map;
         }, {})
 
@@ -407,7 +407,7 @@
                 data[i].x = winnerRadius * Math.cos(theta) + width / 2;
                 data[i].y = winnerRadius * Math.sin(theta) + height / 2;
                 data[i].level = "Winner"
-                console.log(data[i].x, data[i].y)
+                // console.log(data[i].x, data[i].y)
                 winnerCounter[data[i].category] += 1
             }
         }
@@ -621,7 +621,7 @@
             .append("circle")
             .on("mouseover", function(d) {
                 d3.select(".label-" + d).style("font-weight", 900).style("text-decoration", "underline");
-                console.log(d);
+                // console.log(d);
                 for (var i = 0; i < keys.length; i++) {
                     if (keys[i] !== d) {
                         graphsvg.selectAll("." + keys[i]).style("opacity", 0.1)
@@ -797,20 +797,18 @@
         }
       }
 
+      console.log(d3.map(csv_data, function(d){return d.fixed_race;}).keys())
+
       csv_data.forEach( function(d) {
         var year = +d.year_ceremony;
         var fixed_race = d.fixed_race;
         var category = d.category;
-        console.log(fixed_race)
-        console.log(year_race_counts[year])
-        if (year!=null){
-            if (year_race_counts[year][fixed_race][category] === undefined){
-            year_race_counts[year][fixed_race][category] = 0;
-            } else {
-            year_race_counts[year][fixed_race][category] ++;
-            year_race_counts[year]["all"][category]++;
+        if (year_race_counts[year][fixed_race][category] === undefined){
+        year_race_counts[year][fixed_race][category] = 0;
+        } else {
+        year_race_counts[year][fixed_race][category] ++;
+        year_race_counts[year]["all"][category]++;
             }
-        }
       });
 
       var race_counts = []
