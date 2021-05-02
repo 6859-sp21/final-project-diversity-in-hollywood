@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style type="text/css">
+
+    ul {
+      background-color: #383838;
+      list-style-type: none;
+      display:flex;
+      justify-content: center;
+    }
+
+    ul li {
+      display: list-item;
+    }
+
+    li a {
+      display: block;
+      padding: 20px 20px;
+      color: white;
+    }
+
+    li a:hover {
+      background-color: #1a1a1a;
+    }
+
+    h1 { 
+      color: 	#E6AB02; 
+      font-family: 'Didact Gothic', sans-serif; 
+      font-size: 3rem;
+      line-height: 1; 
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-bottom: 0px;
+      text-align: left; 
+    }
+
+    h2 {
+      color: 	#E6AB02; 
+      font-family: 'Didact Gothic', sans-serif;
+      font-size: 1rem;
+      line-height: 1; 
+      margin-top: 5px;
+      margin-left: 20px;
+      text-align: left; 
+    }
+
+    body {
+      background-color: rgb(29, 28, 28);
+    }
+
+    #main {
+      display: flex;
+      margin: auto;
+      width: 70%;
+    }
+
+    #slider-section {
+      width: 1000px;
+      margin: auto;
+      padding-top: 30px;
+    }
+
+    #slider-container {
+      position: relative;
+      height:30px;
+    }
+
+    .slider {
+      background-color: #E6AB02 !important;
+    }
+
+    .handle {
+      height: 12px !important;
+      width: 12px !important;
+      border-color: black !important;
+      background-color: black !important;
+      border-radius: 10px;
+    }
+
+    #graph {
+      /* so the graph doesn't go outside of the container on zoom */
+      overflow: hidden;
+      padding-top: 30px;
+      cursor: pointer;
+    }
+
+    .sources {
+      color: white;
+      position: absolute;
+      font-size: 12px;
+      bottom: 20px;
+    }
+
+    .caption {
+      color: white;
+      font-size: 15px;
+    }
+
+    #zoom {
+      color: white;
+      transform: translate(75px, 150px);
+    }
+
+    div.sidebar {	
+      position: absolute;
+      text-align: left;			
+      width: 20%;
+      height: 100vh;
+      color: #E6AB02;		
+      font: 18px "Didact Gothic";		
+      background: #2C251E;	
+      border: 0px;		
+      padding: 30px;			
+      pointer-events: none;			
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+
+    text {
+        font-family: 'Didact Gothic', sans-serif; 
+    }
+
+    .blurb {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .axis line{
+        stroke: white;
+    }
+
+    .axis path{
+        stroke: white;
+    }
+
+    .axis text{
+        stroke: white;
+    }
+
+  </style>
+</head>
+<body>
+    <!DOCTYPE html>
+    <meta charset="utf-8">
+    
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    
+    <!-- Create a div where the graph will take place -->
+    <div id="blurb">
+        <h1>reception</h1>
+        <h2>
+            Pulling from the top 5000 movies on IMDB, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross revenue.
+            Hover over circles to see more information about individual movies.
+        </h2>
+    </div>
+    <div id="main">
+        <div id="graph"></div>
+        <div id="legend"></div>
+    </div>
+    
+  
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // sets dimensions
+    var margin = {top: 10, right: 30, bottom: 60, left: 60},
+        width = 460 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+    
+    var legendWidth = 500;
+    var legendHeight = 500;
+
+    // sets constants
+    var goldColor = "#E6AB02"
+    
+    // defines graph svg
+    var svg = d3.select("#graph")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+    
+    // defines tooltip div
+    var metadataSidebar = d3.select("body").append("div")	
+        .attr("class", "sidebar")				
+        .style("opacity", 0);
+
+    // x-position scale
+    var x = d3.scaleLinear()
+        .domain([0, 1])
+        .range([ 0, width ]);
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .attr("class", "axis")
+        .call(d3.axisBottom(x));
+
+    svg.append("text")             
+        .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                        (height + margin.top + 30) + ")")
+        .style("text-anchor", "middle")
+        .style("stroke", "white")
+        .text("% cast that is white");
+
+    // y-position scale
+    var y = d3.scaleLinear()
+        .domain([0, 100])
+        .range([ height, 0 ]);
+    svg.append("g")
+        .attr("class", "axis")
+        .call(d3.axisLeft(y));
+    
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .style("stroke", "white")
+        .text("IMDB metascore");      
+
+    // radius scale
+    var rScale = d3.scaleLinear()
+        .domain([0, 2800000000]) // hardset from worldwide gross income max
+        .range([2, 25]);
+
+    // size-based legend for revenue
+    var legendSvg = d3.select("#legend")
+        .append("svg")
+            .attr("width", legendWidth)
+            .attr("height", legendHeight);
+           
+    legendSvg.append("g")
+        .attr("class", "legendSize")
+        .attr("transform", "translate(50, 100)");
+
+    // var dummyColor = d3.scaleOrdinal()
+    //     .domain([0, 2800000000]) // hardset from worldwide gross income max
+    //     .range([goldColor]);
+
+    var legendSize = d3.legendSize()
+        .scale(rScale)
+        // .scale(dummyColor)
+        .shape('circle')
+        .shapePadding(15)
+        .labelOffset(20)
+        .title('gross revenue')
+        .orient('vertical');
+    
+    // var legendColor = d3.legendColor()
+    //     .useClass(true)
+    //     .scale(dummyColor)
+    
+    legendSvg.select(".legendSize")
+        .call(legendSize);
+    
+    // fix color of circles in legend
+    // legendSvg.selectAll("path").each(function(d) {
+    //     d3.select(this).style("fill", goldColor)
+    // });
+    
+    
+    d3.csv("./datasets/movie_race_distributions_sample.csv", function(data) {
+        function nFormatter(num, digits) {
+          var si = [
+            { value: 1, symbol: "" },
+            { value: 1E3, symbol: "k" },
+            { value: 1E6, symbol: "M" },
+            { value: 1E9, symbol: "B" },
+            { value: 1E12, symbol: "T" },
+            { value: 1E15, symbol: "P" },
+            { value: 1E18, symbol: "E" }
+          ];
+          var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+          var i;
+          for (i = si.length - 1; i > 0; i--) {
+            if (num >= si[i].value) {
+              break;
+            }
+          }
+          return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+        }
+
+        function getHtmlForSidebar(data) {
+          // console.log(data.budget, intToString(data.worlwide_gross_income))
+          // genre, budget, metascore, gross worldwide / us, percent distribution 
+          var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
+          var genre = "<div>Genre: " + data.genre + "</div>"
+          var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
+          var metascore = "<div>IMDB metascore: " + data.metascore + "/100</div>"
+          var gross = "<div>Worldwide gross revenue: " + nFormatter(data.worlwide_gross_income, 1) + "</div>"
+          var breaks = "<br><br>"
+          var diversityText = "<div> Of the 15 most important actors in the film, the race distribution was: </div>"
+          var white = "<div>" + Math.round(data.percent_white * 1000) / 10 + "% white"
+          var black = "<div>" + Math.round(data.percent_black * 1000) / 10 + "% black"
+          var hispanic = "<div>" + Math.round(data.percent_hispanic * 1000) / 10 + "% hispanic"
+          var asian = "<div>" + Math.round(data.percent_asian * 1000) / 10 + "% asian"
+          var other = "<div>" + Math.round(data.percent_other * 1000) / 10 + "% other"
+
+          return header + genre + budget + metascore + gross + breaks + diversityText + white + black + hispanic + asian + other
+        }
+
+        // parse the data
+        for (i = 0; i < data.length; i++) {
+            data[i].budget = parseFloat(data[i].budget.replace('$', ''));
+            data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
+            data[i].worlwide_gross_income = parseFloat(data[i].worlwide_gross_income.replace('$', ''));
+        }
+
+        // add scatterplot dots
+        svg.append('g')
+        .selectAll("dot")
+        .data(data)
+        .enter()
+        .append("circle")
+            .attr("cx", d => x(d.percent_white) )
+            .attr("cy", d => y(d.metascore) )
+            .attr("r", d => rScale(parseFloat(d.worlwide_gross_income))  )
+            .attr("opacity", 0.7)
+            .style("fill", goldColor)
+            .on("mouseover", function(d) {		
+                metadataSidebar.transition()		
+                    .duration(200)		
+                    .style("opacity", .9);		
+                metadataSidebar.html(
+                  getHtmlForSidebar(d)
+                )	
+                    .style("right", "0px")		
+                    .style("top", "0px");	
+            })					
+            .on("mouseout", function(d) {		
+                metadataSidebar.transition()		
+                    .duration(500)		
+                    .style("opacity", 0);	
+            });
+    
+    })
+    
+    </script>
+</body>
