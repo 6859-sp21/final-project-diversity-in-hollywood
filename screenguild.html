@@ -109,9 +109,7 @@
 
         .sources {
             color: white;
-            position: absolute;
             font-size: 12px;
-            bottom: 20px;
         }
 
         .caption {
@@ -141,6 +139,24 @@
             padding: 3px;
             pointer-events: none;
         }
+
+      .explore-section {
+        position: absolute;
+        bottom: 20px;
+      }
+
+      .nav-option {
+        color: #7E5E29 !important;
+        font-size: 24px;
+        text-decoration: none !important;
+      }
+
+      .selected-nav-option {
+        color: #E6AB02 !important;
+        font-size: 26px;
+        font-weight: 600;
+        text-decoration: none !important;
+      }
     </style>
 </head>
 <body>
@@ -168,19 +184,21 @@
             <!-- <a id="white" style="color: white;"></a> US white population average in <a id="years" style="color: white"></a> -->
         </div>
         <div class="sources p-3">
-            <b>Authors: Jenning Chen, Ashwin Srinivasan, Lisa Yoo</b>
-            <br/> <br/>
             <i>
                 Adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">D3 Circle-Packing Tutorial</a> <br>
-                Data from: <a href="https://data.world/crowdflower/academy-awards-demographics">Oscars Demographics Dataset</a>,
-                <a href="http://awardsdatabase.oscars.org/">Academy Awards Website</a>,
-                <a href="https://en.wikipedia.org/wiki/List_of_black_Academy_Award_winners_and_nominees">Wikipedia 1</a>,
-                <a href="https://en.wikipedia.org/wiki/List_of_Hispanic_Academy_Award_winners_and_nominees">2</a>,
-                <a href="https://en.wikipedia.org/wiki/List_of_Asian_Academy_Award_winners_and_nominees">3</a> <br>
+                Data from: <br/>
                 Image from: <a href="https://www.flaticon.com/free-icon/oscar_206982">source</a>
             </i>
         </div>
-
+        <div class="p-3 explore-section">
+          <div class="nav-options">
+            <a class="selected-nav-option" href="">awards</a>
+            <br/>
+            <a class="nav-option">reception</a>
+            <br/>
+            <a href="index.html" class="nav-option">back to home</a>
+          </div>
+        </div>
     </div>
     <div class="col-sm-9">
         <nav>
@@ -248,12 +266,12 @@
         .attr("height", 20000)
         .attr("width", 20000)
     var myimage = graphgElem.append('image')
-        .attr('xlink:href', './images/oscar_man.png')
-        .attr('width', 200)
-        .attr('height', 200)
+        .attr('xlink:href', './images/trophy.png')
+        .attr('width', 150)
+        .attr('height', 150)
         .attr('opacity', 0.4)
-        .attr('x', width / 2 + 1010)
-        .attr('y', height / 2 + 650)
+        .attr('x', width / 2 + 1040)
+        .attr('y', height / 2 + 655)
         .attr('transform', 'scale(0.35)')
 
     var legendsvg = d3.select("#legend")

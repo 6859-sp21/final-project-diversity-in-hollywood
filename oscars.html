@@ -109,9 +109,7 @@
 
     .sources {
       color: white;
-      position: absolute;
       font-size: 12px;
-      bottom: 20px;
     }
 
     .caption {
@@ -141,6 +139,24 @@
       padding: 3px;			
       pointer-events: none;			
     }
+
+    .explore-section {
+      position: absolute;
+      bottom: 20px;
+    }
+
+    .nav-option {
+      color: #7E5E29 !important;
+      font-size: 24px;
+      text-decoration: none !important;
+    }
+
+    .selected-nav-option {
+      color: #E6AB02 !important;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none !important;
+    }
   </style>
 </head>
 <body>
@@ -168,8 +184,6 @@
         <!-- <a id="white" style="color: white;"></a> US white population average in <a id="years" style="color: white"></a> -->
       </div>
       <div class="sources p-3">
-        <b>Authors: Jenning Chen, Ashwin Srinivasan, Lisa Yoo</b>
-        <br/> <br/>
         <i>
           Adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">D3 Circle-Packing Tutorial</a> <br>
           Data from: <a href="https://data.world/crowdflower/academy-awards-demographics">Oscars Demographics Dataset</a>, 
@@ -180,7 +194,15 @@
           Image from: <a href="https://www.flaticon.com/free-icon/oscar_206982">source</a>
         </i>
       </div>
-      
+      <div class="p-3 explore-section">
+        <div class="nav-options">
+          <a class="selected-nav-option" href="">awards</a>
+          <br/>
+          <a class="nav-option">reception</a>
+          <br/>
+          <a href="index.html" class="nav-option">back to home</a>
+        </div>
+      </div>
     </div>
     <div class="col-sm-9">
       <nav>
