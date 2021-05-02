@@ -9,10 +9,6 @@
 
   <style type="text/css">
 
-    .current {
-      background-color: #83c985;
-    }
-
     ul {
       background-color: #383838;
       list-style-type: none;
@@ -45,15 +41,24 @@
       text-align: left; 
     }
 
+    h2 {
+      color: 	#E6AB02; 
+      font-family: 'Didact Gothic', sans-serif;
+      font-size: 1rem;
+      line-height: 1; 
+      margin-top: 5px;
+      margin-left: 20px;
+      text-align: left; 
+    }
+
     body {
-      /* background-color: rgb(29, 28, 28); */
-      background-color: white;
+      background-color: rgb(29, 28, 28);
     }
 
     #main {
       display: flex;
       margin: auto;
-      width: 1500px;
+      width: 70%;
     }
 
     #slider-section {
@@ -79,13 +84,6 @@
       border-radius: 10px;
     }
 
-    #range-label {
-      color: white;
-      text-align: center;
-      font-family: 'Didact Gothic', sans-serif;
-      font-size: 30px;
-    }
-
     #graph {
       /* so the graph doesn't go outside of the container on zoom */
       overflow: hidden;
@@ -109,11 +107,6 @@
       color: white;
       transform: translate(75px, 150px);
     }
-    
-    .stats {
-      color: white;
-      font-size: 15px;
-    }
 
     div.sidebar {	
       position: absolute;
@@ -136,6 +129,25 @@
     text {
         font-family: 'Didact Gothic', sans-serif; 
     }
+
+    .blurb {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+
+    .axis line{
+        stroke: white;
+    }
+
+    .axis path{
+        stroke: white;
+    }
+
+    .axis text{
+        stroke: white;
+    }
+
   </style>
 </head>
 <body>
@@ -146,6 +158,13 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     
     <!-- Create a div where the graph will take place -->
+    <div id="blurb">
+        <h1>reception</h1>
+        <h2>
+            Pulling from the top 5000 movies on IMDB, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross revenue.
+            Hover over circles to see more information about individual movies.
+        </h2>
+    </div>
     <div id="main">
         <div id="graph"></div>
         <div id="legend"></div>
@@ -162,6 +181,9 @@
     
     var legendWidth = 500;
     var legendHeight = 500;
+
+    // sets constants
+    var goldColor = "#E6AB02"
     
     // defines graph svg
     var svg = d3.select("#graph")
@@ -183,6 +205,7 @@
         .range([ 0, width ]);
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
+        .attr("class", "axis")
         .call(d3.axisBottom(x));
 
     svg.append("text")             
@@ -190,6 +213,7 @@
             "translate(" + (width/2) + " ," + 
                         (height + margin.top + 30) + ")")
         .style("text-anchor", "middle")
+        .style("stroke", "white")
         .text("% cast that is white");
 
     // y-position scale
@@ -197,6 +221,7 @@
         .domain([0, 100])
         .range([ height, 0 ]);
     svg.append("g")
+        .attr("class", "axis")
         .call(d3.axisLeft(y));
     
     svg.append("text")
@@ -205,6 +230,7 @@
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
+        .style("stroke", "white")
         .text("IMDB metascore");      
 
     // radius scale
@@ -222,16 +248,31 @@
         .attr("class", "legendSize")
         .attr("transform", "translate(50, 100)");
 
+    // var dummyColor = d3.scaleOrdinal()
+    //     .domain([0, 2800000000]) // hardset from worldwide gross income max
+    //     .range([goldColor]);
+
     var legendSize = d3.legendSize()
         .scale(rScale)
+        // .scale(dummyColor)
         .shape('circle')
         .shapePadding(15)
         .labelOffset(20)
+        .title('gross revenue')
         .orient('vertical');
-
+    
+    // var legendColor = d3.legendColor()
+    //     .useClass(true)
+    //     .scale(dummyColor)
+    
     legendSvg.select(".legendSize")
         .call(legendSize);
-            
+    
+    // fix color of circles in legend
+    // legendSvg.selectAll("path").each(function(d) {
+    //     d3.select(this).style("fill", goldColor)
+    // });
+    
     
     d3.csv("./datasets/movie_race_distributions_sample.csv", function(data) {
 
@@ -252,7 +293,7 @@
             .attr("cy", d => y(d.metascore) )
             .attr("r", d => rScale(parseFloat(d.worlwide_gross_income))  )
             .attr("opacity", 0.7)
-            .style("fill", "#69b3a2")
+            .style("fill", goldColor)
             .on("mouseover", function(d) {		
                 metadataSidebar.transition()		
                     .duration(200)		
