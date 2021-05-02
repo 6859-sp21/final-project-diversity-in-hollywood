@@ -141,8 +141,6 @@
         }
 
       .explore-section {
-        position: absolute;
-        bottom: 20px;
       }
 
       .nav-option {
@@ -165,7 +163,7 @@
 </head>
 <body>
 <div class="row">
-    <div class="col-sm-3 p-3 position-sticky" style="top: 0; height: 100vh; background-color: #2C251E;">
+    <div class="col-sm-3 p-3 position-sticky" style="top: 0; background-color: #2C251E;">
         <div id="header" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
             <img src="./images/sag_icon.png" width="100" height="200">
             <div style="display: flex; flex-direction: column;">
@@ -181,9 +179,11 @@
             <a id="white_nominees" style="color: white; font-size: 28px;"></a> &emsp; white nominees (excluding winners)
             <br/>
             <a id="white_winners" style="color: white; font-size: 28px;"></a> &emsp; white winners
-            <br/>
+
             <!-- <a id="white" style="color: white;"></a> US white population average in <a id="years" style="color: white"></a> -->
-            <div id="summary_graph" style="padding:30px; padding-top:100px"></div>
+        </div>
+        <div class="p-3" style="color:white">
+            <div id="summary_graph"></div>
             <div id="summary_legend"></div>
         </div>
         <div class="sources p-3">
@@ -191,7 +191,7 @@
             <br/> <br/>
             <i>
                 Adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">D3 Circle-Packing Tutorial</a> <br>
-                Data from:
+                Data from: <br>
                 Images from: <a href="https://www.flaticon.com/free-icon/trophy_708906">source 1</a>,
                 <a href="https://www.pngitem.com/middle/hxiTwTb_sag-aftra-logo-png-transparent-png/">source 2</a>
             </i>

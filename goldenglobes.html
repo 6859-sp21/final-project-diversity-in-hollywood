@@ -109,9 +109,7 @@
 
         .sources {
             color: white;
-            position: absolute;
             font-size: 12px;
-            bottom: 20px;
         }
 
         .caption {
@@ -141,11 +139,24 @@
             padding: 3px;
             pointer-events: none;
         }
+
+        .nav-option {
+            color: #7E5E29 !important;
+            font-size: 24px;
+            text-decoration: none !important;
+        }
+
+        .selected-nav-option {
+            color: #E6AB02 !important;
+            font-size: 26px;
+            font-weight: 600;
+            text-decoration: none !important;
+        }
     </style>
 </head>
 <body>
 <div class="row">
-    <div class="col-sm-3 p-3 position-sticky" style="top: 0; height: 100vh; background-color: #2C251E;">
+    <div class="col-sm-3 p-3 position-sticky" style="top: 0; background-color: #2C251E;">
         <div id="header" style="display: flex; flex-direction: row; align-items: center; margin-left: 20px;">
             <img src="./images/golden_globe_icon.png" width="100" height="130">
             <div style="display: flex; flex-direction: column;">
@@ -161,11 +172,14 @@
             <a id="white_nominees" style="color: white; font-size: 28px;"></a> &emsp; white nominees (excluding winners)
             <br/>
             <a id="white_winners" style="color: white; font-size: 28px;"></a> &emsp; white winners
-            <br/>
+
             <!-- <a id="white" style="color: white;"></a> US white population average in <a id="years" style="color: white"></a> -->
-            <div id="summary_graph" style="padding:30px; padding-top:100px"></div>
-            <div id="summary_legend"></div>
         </div>
+        <div class="p-3" style="color:white">
+        <div id="summary_graph"></div>
+        <div id="summary_legend"></div>
+        </div>
+
         <div class="sources p-3">
             <b>Authors: Jenning Chen, Ashwin Srinivasan, Lisa Yoo</b>
             <br/> <br/>
@@ -178,6 +192,16 @@
                 <a href="https://en.wikipedia.org/wiki/List_of_Asian_Academy_Award_winners_and_nominees">3</a> <br>
                 Image from: <a href="https://www.flaticon.com/free-icon/golden-globe_389977">source</a>
             </i>
+        </div>
+
+        <div class="p-3 explore-section">
+            <div class="nav-options">
+                <a class="selected-nav-option" href="">awards</a>
+                <br/>
+                <a href="reception.html" class="nav-option">reception</a>
+                <br/>
+                <a href="index.html" class="nav-option">back to home</a>
+            </div>
         </div>
 
     </div>
