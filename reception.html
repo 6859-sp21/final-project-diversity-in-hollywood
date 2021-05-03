@@ -148,6 +148,11 @@
         stroke: white;
     }
 
+    .legendSize text {
+      stroke: white;
+      opacity: 100%;
+    }
+
   </style>
 </head>
 <body>
@@ -246,11 +251,8 @@
            
     legendSvg.append("g")
         .attr("class", "legendSize")
-        .attr("transform", "translate(50, 100)");
-
-    // var dummyColor = d3.scaleOrdinal()
-    //     .domain([0, 2800000000]) // hardset from worldwide gross income max
-    //     .range([goldColor]);
+        .attr("transform", "translate(50, 100)")
+        .style("fill", goldColor);
 
     var legendSize = d3.legendSize()
         .scale(rScale)
@@ -261,18 +263,8 @@
         .title('gross revenue')
         .orient('vertical');
     
-    // var legendColor = d3.legendColor()
-    //     .useClass(true)
-    //     .scale(dummyColor)
-    
     legendSvg.select(".legendSize")
         .call(legendSize);
-    
-    // fix color of circles in legend
-    // legendSvg.selectAll("path").each(function(d) {
-    //     d3.select(this).style("fill", goldColor)
-    // });
-    
     
     d3.csv("./datasets/movie_race_distributions_sample.csv", function(data) {
         function nFormatter(num, digits) {
