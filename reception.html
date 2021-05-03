@@ -93,9 +93,7 @@
 
     .sources {
       color: white;
-      position: absolute;
       font-size: 12px;
-      bottom: 20px;
     }
 
     .caption {
@@ -164,6 +162,19 @@
       flex-direction: row;
     }
 
+    .nav-option {
+      color: #7E5E29 !important;
+      font-size: 24px;
+      text-decoration: none !important;
+    }
+
+    .selected-nav-option {
+      color: #E6AB02 !important;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none !important;
+    }
+
   </style>
 </head>
 <body>
@@ -180,15 +191,34 @@
         <div id="blurb">
           <h1>reception</h1>
           <h2>
-              Pulling from the top 5000 movies on IMDB, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross revenue.
+              Pulling from the top 5000 movies on IMDB, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross worldwide revenue.
               Hover over circles to see more information about individual movies.
           </h2>
+          <!-- <div class="sources">
+            <i>
+              Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
+              Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
+              <a href="https://www.nndb.com/">NNDB</a>,
+              Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
+            </i>
+          </div> -->
         </div>
       </div>
+
       <div id="main">
           <div id="graph"></div>
           <div id="legend"></div>
       </div>
+
+      <div class="p-3 explore-section">
+        <div class="nav-options">
+          <a class="nav-option" href="">awards</a>
+          <br/>
+          <a href="reception.html" class="selected-nav-option">reception</a>
+          <br/>
+          <a href="index.html" class="nav-option">back to home</a>
+        </div>
+      </div>   
     </div>
    
     
@@ -197,9 +227,9 @@
   <script>
 
     // sets dimensions
-    var margin = {top: 10, right: 50, bottom: 60, left: 60},
-        width = 700 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+    var margin = {top: 10, right: 100, bottom: 60, left: 60},
+        width = 900 - margin.left - margin.right,
+        height = 700 - margin.top - margin.bottom;
     
     var legendWidth = 500;
     var legendHeight = 500;
@@ -277,7 +307,7 @@
         .shape('circle')
         .shapePadding(15)
         .labelOffset(20)
-        .title('gross revenue')
+        .title('gross revenue (in USD)')
         .orient('vertical');
     
     legendSvg.select(".legendSize")
