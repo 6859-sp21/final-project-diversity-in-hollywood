@@ -157,13 +157,25 @@
       color: #7E5E29 !important;
       font-size: 24px;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+      display: block;
+    }
+
+    .nav-option:hover {
+      transform: scale(1.04) !important;
     }
 
     .selected-nav-option {
+      display: block;
       color: #E6AB02 !important;
       font-size: 26px;
       font-weight: 600;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+    }
+
+    .selected-nav-option:hover {
+      transform: scale(1.04) !important;
     }
 
     .award-nav-option {
@@ -188,9 +200,7 @@
       <div id="header" class="d-flex justify-content-between">
         <div class="nav-options">
           <a class="selected-nav-option" href="">awards</a>
-          <br/>
           <a href="reception.html" class="nav-option">reception</a>
-          <br/>
           <a href="index.html" class="nav-option">back to home</a>
         </div>
         <div id="filters" class="d-flex">
