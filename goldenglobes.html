@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
+  <title>Diversity in Hollywood</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">  
   <script src="https://d3js.org/d3.v5.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
@@ -1046,7 +1048,6 @@
                 simulationRing.nodes(nominees.filter(d => d.categoryID ==  4 || d.categoryID == 5)).alpha(0.005).alphaTarget(0).restart()
             } else {
                 let alpha = Math.min(0.003, Math.max(0, 0.00045*winners.length - 0.015))
-                console.log('alpha', alpha)
                 simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
                 simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
             }
