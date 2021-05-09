@@ -34,7 +34,6 @@
 
     h1 { 
       color: 	#E6AB02; 
-      font-family: 'Didact Gothic', sans-serif; 
       font-size: 3rem;
       line-height: 1; 
       margin-left: 20px;
@@ -44,9 +43,8 @@
     }
 
     h2 {
-      color: 	#E6AB02; 
-      font-family: 'Didact Gothic', sans-serif;
-      font-size: 1rem;
+      color: white; 
+      font-size: 1.2rem;
       line-height: 1; 
       margin-top: 5px;
       margin-left: 20px;
@@ -54,6 +52,7 @@
     }
 
     body {
+      font-family: 'Didact Gothic', sans-serif; 
       background-color: rgb(29, 28, 28);
     }
 
@@ -113,7 +112,7 @@
     div.sidebar {	
       position: absolute;
       text-align: left;			
-      width: 20%;
+      width: 25%;
       height: 100vh;
       color: #E6AB02;		
       font: 18px "Didact Gothic";		
@@ -196,40 +195,42 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     
     <!-- Create a div where the graph will take place -->
-    <div id="container">
-      <div id="heading">
-        <img src="./images/popcorn.png" width="120" height="120">
-        <div id="blurb">
-          <h1>reception</h1>
-          <h2>
-              Pulling from the top 5000 movies on IMDB, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross worldwide revenue.
-              Hover over circles to see more information about individual movies.
-          </h2>
-          <!-- <div class="sources">
-            <i>
-              Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
-              Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
-              <a href="https://www.nndb.com/">NNDB</a>,
-              Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
-            </i>
-          </div> -->
+    <div class="row">
+      <div class="col-sm-3 p-4" style="background-color: #383838;">
+        <div id="heading">
+          <img src="./images/popcorn.png" width="120" height="120">
+          <div id="blurb">
+            <h1>reception</h1>
+            <h2>
+                Pulling from the top 1000 movies by adjusted gross revenue, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross lifetime revenue.
+                Hover over circles to see more information about individual movies.
+            </h2>
+            <!-- <div class="sources">
+              <i>
+                Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
+                Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
+                <a href="https://www.nndb.com/">NNDB</a>,
+                Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
+              </i>
+            </div> -->
+          </div>
+        </div>
+        <div class="p-3 explore-section">
+          <div class="nav-options">
+            <a class="nav-option" href="oscars.html">awards</a>
+            <br/>
+            <a href="reception.html" class="selected-nav-option">reception</a>
+            <br/>
+            <a href="index.html" class="nav-option">back to home</a>
+          </div>
         </div>
       </div>
-
-      <div id="main">
-        <div id="legend"></div>
-        <div id="graph"></div>
+      <div class="col-sm-9">
+        <div id="main">
+          <div id="legend"></div>
+          <div id="graph"></div>
+        </div>   
       </div>
-
-      <div class="p-3 explore-section">
-        <div class="nav-options">
-          <a class="nav-option" href="oscars.html">awards</a>
-          <br/>
-          <a href="reception.html" class="selected-nav-option">reception</a>
-          <br/>
-          <a href="index.html" class="nav-option">back to home</a>
-        </div>
-      </div>   
     </div>
    
     
@@ -430,12 +431,12 @@
         .on("mouseover", function(d) {		
             metadataSidebar.transition()		
                 .duration(200)		
-                .style("opacity", .9);		
+                .style("opacity", 1);		
             metadataSidebar.html(
               getHtmlForSidebar(d)
-            )	
-                .style("right", "0px")		
-                .style("top", "0px");	
+            )
+              .style("left", "0px")		
+              .style("top", "0px");	
         })					
         .on("mouseout", function(d) {		
             metadataSidebar.transition()		
