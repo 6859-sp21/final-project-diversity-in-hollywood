@@ -58,7 +58,6 @@
     }
 
     #main {
-      display: flex;
       margin: auto;
       width: 70%;
     }
@@ -89,8 +88,11 @@
     #graph {
       /* so the graph doesn't go outside of the container on zoom */
       /* overflow: hidden; */
-      padding-top: 30px;
       cursor: pointer;
+    }
+
+    #legend {
+      text-align: center;
     }
 
     .sources {
@@ -215,8 +217,8 @@
       </div>
 
       <div id="main">
-          <div id="graph"></div>
-          <div id="legend"></div>
+        <div id="legend"></div>
+        <div id="graph"></div>
       </div>
 
       <div class="p-3 explore-section">
@@ -240,8 +242,8 @@
         width = 1100 - margin.left - margin.right,
         height = 900 - margin.top - margin.bottom;
     
-    var legendWidth = 500;
-    var legendHeight = 500;
+    var legendWidth = 300;
+    var legendHeight = 150;
 
     // sets constants
     var goldColor = "#E6AB02"
@@ -325,11 +327,31 @@
             .attr("y1", 0)
             .attr("x2", d => x(d))
             .attr("y2", height)
+    
+    function nFormatter(num, digits) {
+      var si = [
+        { value: 1, symbol: "" },
+        { value: 1E3, symbol: "k" },
+        { value: 1E6, symbol: "M" },
+        { value: 1E9, symbol: "B" },
+        { value: 1E12, symbol: "T" },
+        { value: 1E15, symbol: "P" },
+        { value: 1E18, symbol: "E" }
+      ];
+      var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+      var i;
+      for (i = si.length - 1; i > 0; i--) {
+        if (num >= si[i].value) {
+          break;
+        }
+      }
+      return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+    }
 
     // radius scale
     var rScale = d3.scaleLinear()
-        .domain([0, 2800000000]) // hardset from worldwide gross income max
-        .range([2, 25]);
+        .domain([0, 1900000000]) // hardset from worldwide gross income max
+        .range([2, 20]);
 
     // size-based legend for revenue
     var legendSvg = d3.select("#legend")
@@ -339,17 +361,17 @@
            
     legendSvg.append("g")
         .attr("class", "legendSize")
-        .attr("transform", "translate(300, 100)")
+        .attr("transform", "translate(0, 50)")
         .style("fill", goldColor);
 
     var legendSize = d3.legendSize()
         .scale(rScale)
-        // .scale(dummyColor)
         .shape('circle')
-        .shapePadding(15)
+        .shapePadding(60)
+        .labelFormat(d => nFormatter(d,1))
         .labelOffset(20)
-        .title('gross revenue (in USD)')
-        .orient('vertical');
+        .title('adjusted lifetime revenue ($)')
+        .orient('horizontal');
     
     legendSvg.select(".legendSize")
         .call(legendSize);
@@ -365,25 +387,7 @@
         data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
       }
       console.log('data', data, data.length)
-      function nFormatter(num, digits) {
-        var si = [
-          { value: 1, symbol: "" },
-          { value: 1E3, symbol: "k" },
-          { value: 1E6, symbol: "M" },
-          { value: 1E9, symbol: "B" },
-          { value: 1E12, symbol: "T" },
-          { value: 1E15, symbol: "P" },
-          { value: 1E18, symbol: "E" }
-        ];
-        var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-        var i;
-        for (i = si.length - 1; i > 0; i--) {
-          if (num >= si[i].value) {
-            break;
-          }
-        }
-        return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
-      }
+      
 
       function getHtmlForSidebar(data) {
         // console.log(data.budget, intToString(data.worlwide_gross_income))
@@ -445,10 +449,10 @@
           .force('x', d3.forceX().x(function(d) {
             // return xCenter[d.category];
             return x(d.percent_white);
-          }).strength(0.25))
+          }).strength(0.4))
           .force('y', d3.forceY().y(function(d) {
             return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2;
-          }).strength(0.25))
+          }).strength(0.4))
           .force('charge', d3.forceManyBody().strength(3))
           .force('collision', d3.forceCollide().radius(function(d) {
             return rScale(parseFloat(d.adjusted_lifetime_gross));
