@@ -354,8 +354,16 @@
     legendSvg.select(".legendSize")
         .call(legendSize);
     
-    d3.csv("./datasets/movie_race_distributions_all.csv", function(all_data) {
-      var data = all_data.filter(d => d.genre.split(",")[0] == "Drama")
+    d3.csv("./datasets/movie_distributions_top_1000_gross.csv", function(all_data) {
+      // filter out top 50 per decade
+      var data = []
+      for (let i = 0; i < decades.length; i++) {
+        var decadePrefix = decades[i].substring(0,3)
+        var moviesInDecade = all_data.filter(d => d.year.substring(0,3) == decadePrefix)
+        // sort movies by gross
+        moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
+        data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
+      }
       console.log('data', data, data.length)
       function nFormatter(num, digits) {
         var si = [
@@ -384,7 +392,7 @@
         var genre = "<div>Genre: " + data.genre + "</div>"
         var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
         var metascore = "<div>IMDB metascore: " + data.metascore + "/100</div>"
-        var gross = "<div>Worldwide gross revenue: " + nFormatter(data.worlwide_gross_income, 1) + "</div>"
+        var gross = "<div>Worldwide gross revenue: " + nFormatter(data.adjusted_lifetime_gross, 1) + "</div>"
         var breaks = "<br><br>"
         var diversityText = "<div> Of the 15 most important actors in the film, the race distribution was: </div>"
         var white = "<div>" + Math.round(data.percent_white * 1000) / 10 + "% white"
@@ -400,7 +408,7 @@
       for (i = 0; i < data.length; i++) {
           data[i].budget = parseFloat(data[i].budget.replace('$', ''));
           data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
-          data[i].worlwide_gross_income = parseFloat(data[i].worlwide_gross_income.replace('$', ''));
+          data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
       }
 
       // add scatterplot dots
@@ -411,7 +419,7 @@
       .append("circle")
         .attr("cx", d => x(d.percent_white))
         .attr("cy", d => {return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2})
-        .attr("r", d => rScale(parseFloat(d.worlwide_gross_income)))
+        .attr("r", d => rScale(parseFloat(d.adjusted_lifetime_gross)))
         .style("fill", goldColor)
         .style("stroke", "#383838")
         .style("stroke-width", 1.5)
@@ -443,7 +451,7 @@
           }).strength(0.25))
           .force('charge', d3.forceManyBody().strength(3))
           .force('collision', d3.forceCollide().radius(function(d) {
-            return rScale(parseFloat(d.worlwide_gross_income));
+            return rScale(parseFloat(d.adjusted_lifetime_gross));
           }))
 
       // Apply these forces to the nodes and update their positions.
