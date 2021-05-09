@@ -86,7 +86,7 @@
 
     #graph {
       /* so the graph doesn't go outside of the container on zoom */
-      overflow: hidden;
+      /* overflow: hidden; */
       padding-top: 30px;
       cursor: pointer;
     }
@@ -139,12 +139,19 @@
         stroke: white;
     }
 
+    .y-axis line{
+      stroke: white;
+      visibility: hidden;
+    }
+
     .axis path{
         stroke: white;
     }
 
     .axis text{
-        stroke: white;
+      font-size: 16px;
+      text-transform: lowercase;
+      stroke: white;
     }
 
     .legendSize text {
@@ -227,9 +234,9 @@
   <script>
 
     // sets dimensions
-    var margin = {top: 10, right: 100, bottom: 60, left: 60},
-        width = 700 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+    var margin = {top: 10, right: 60, bottom: 60, left: 60},
+        width = 1100 - margin.left - margin.right,
+        height = 900 - margin.top - margin.bottom;
     
     var legendWidth = 500;
     var legendHeight = 500;
@@ -258,7 +265,8 @@
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .attr("class", "axis")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x))
+        .call(g => g.select(".domain").remove());
 
     svg.append("text")             
         .attr("transform",
@@ -269,21 +277,50 @@
         .text("% white cast");
 
     // y-position scale
-    var y = d3.scaleLinear()
-        .domain([0, 100])
+    var y = d3.scaleBand()
+        .padding(0.4)
+        .domain(["Animation", "Horror", "Action", "Adventure", "Sci-Fi", "Family", "Fantasy", "Comedy", "Thriller", "Drama"])
         .range([ height, 0 ]);
     svg.append("g")
-        .attr("class", "axis")
-        .call(d3.axisLeft(y));
+        .attr("class", "axis y-axis")
+        .call(d3.axisLeft(y))
+        .call(g => g.select(".domain").remove());
     
-    svg.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x",0 - (height / 2))
-        .attr("dy", "1em")
-        .style("text-anchor", "middle")
-        .style("stroke", "white")
-        .text("IMDB metascore");      
+    // background bars
+    var categories = ["Animation", "Horror", "Action", "Adventure", "Sci-Fi", "Family", "Fantasy", "Comedy", "Thriller", "Drama"]
+    svg.selectAll("bar")
+      .data(categories)
+        .enter()
+          .append("rect")
+            .style("fill", "#383838")
+            .attr("x", 0)
+            .attr("width", x(1))
+            .attr("y", function(d) { return y(d); })
+            .attr("height", y.bandwidth())
+    // horizontal lines through background bars
+    svg.selectAll("bar")
+      .data(categories)
+        .enter()
+          .append('line')
+            .style("stroke", "white")
+            .style("stroke-width", 1)
+            .style("opacity", 0.15)
+            .attr("x1", 0)
+            .attr("y1", function(d) {return y(d) + y.bandwidth() / 2})
+            .attr("x2", x(1))
+            .attr("y2", function(d) {return y(d) + y.bandwidth() / 2})
+    // vertical lines through background bars
+    var percentWhiteTicks = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    svg.selectAll("bar")
+      .data(percentWhiteTicks)
+        .enter()
+          .append('line')
+            .style("stroke", "rgb(29, 28, 28)")
+            .style("stroke-width", 2.5)
+            .attr("x1", d => x(d))
+            .attr("y1", 0)
+            .attr("x2", d => x(d))
+            .attr("y2", height)
 
     // radius scale
     var rScale = d3.scaleLinear()
@@ -298,7 +335,7 @@
            
     legendSvg.append("g")
         .attr("class", "legendSize")
-        .attr("transform", "translate(50, 100)")
+        .attr("transform", "translate(300, 100)")
         .style("fill", goldColor);
 
     var legendSize = d3.legendSize()
@@ -313,81 +350,107 @@
     legendSvg.select(".legendSize")
         .call(legendSize);
     
-    d3.csv("./datasets/movie_race_distributions_sample.csv", function(data) {
-        function nFormatter(num, digits) {
-          var si = [
-            { value: 1, symbol: "" },
-            { value: 1E3, symbol: "k" },
-            { value: 1E6, symbol: "M" },
-            { value: 1E9, symbol: "B" },
-            { value: 1E12, symbol: "T" },
-            { value: 1E15, symbol: "P" },
-            { value: 1E18, symbol: "E" }
-          ];
-          var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-          var i;
-          for (i = si.length - 1; i > 0; i--) {
-            if (num >= si[i].value) {
-              break;
-            }
+    d3.csv("./datasets/movie_race_distributions_all.csv", function(all_data) {
+      var data = all_data.filter(d => d.year == "2016")
+      console.log('data', data, data.length)
+      function nFormatter(num, digits) {
+        var si = [
+          { value: 1, symbol: "" },
+          { value: 1E3, symbol: "k" },
+          { value: 1E6, symbol: "M" },
+          { value: 1E9, symbol: "B" },
+          { value: 1E12, symbol: "T" },
+          { value: 1E15, symbol: "P" },
+          { value: 1E18, symbol: "E" }
+        ];
+        var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+        var i;
+        for (i = si.length - 1; i > 0; i--) {
+          if (num >= si[i].value) {
+            break;
           }
-          return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
         }
+        return (num / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
+      }
 
-        function getHtmlForSidebar(data) {
-          // console.log(data.budget, intToString(data.worlwide_gross_income))
-          // genre, budget, metascore, gross worldwide / us, percent distribution 
-          var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
-          var genre = "<div>Genre: " + data.genre + "</div>"
-          var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
-          var metascore = "<div>IMDB metascore: " + data.metascore + "/100</div>"
-          var gross = "<div>Worldwide gross revenue: " + nFormatter(data.worlwide_gross_income, 1) + "</div>"
-          var breaks = "<br><br>"
-          var diversityText = "<div> Of the 15 most important actors in the film, the race distribution was: </div>"
-          var white = "<div>" + Math.round(data.percent_white * 1000) / 10 + "% white"
-          var black = "<div>" + Math.round(data.percent_black * 1000) / 10 + "% black"
-          var hispanic = "<div>" + Math.round(data.percent_hispanic * 1000) / 10 + "% hispanic"
-          var asian = "<div>" + Math.round(data.percent_asian * 1000) / 10 + "% asian"
-          var other = "<div>" + Math.round(data.percent_other * 1000) / 10 + "% other"
+      function getHtmlForSidebar(data) {
+        // console.log(data.budget, intToString(data.worlwide_gross_income))
+        // genre, budget, metascore, gross worldwide / us, percent distribution 
+        var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
+        var genre = "<div>Genre: " + data.genre + "</div>"
+        var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
+        var metascore = "<div>IMDB metascore: " + data.metascore + "/100</div>"
+        var gross = "<div>Worldwide gross revenue: " + nFormatter(data.worlwide_gross_income, 1) + "</div>"
+        var breaks = "<br><br>"
+        var diversityText = "<div> Of the 15 most important actors in the film, the race distribution was: </div>"
+        var white = "<div>" + Math.round(data.percent_white * 1000) / 10 + "% white"
+        var black = "<div>" + Math.round(data.percent_black * 1000) / 10 + "% black"
+        var hispanic = "<div>" + Math.round(data.percent_hispanic * 1000) / 10 + "% hispanic"
+        var asian = "<div>" + Math.round(data.percent_asian * 1000) / 10 + "% asian"
+        var other = "<div>" + Math.round(data.percent_other * 1000) / 10 + "% other"
 
-          return header + genre + budget + metascore + gross + breaks + diversityText + white + black + hispanic + asian + other
-        }
+        return header + genre + budget + metascore + gross + breaks + diversityText + white + black + hispanic + asian + other
+      }
 
-        // parse the data
-        for (i = 0; i < data.length; i++) {
-            data[i].budget = parseFloat(data[i].budget.replace('$', ''));
-            data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
-            data[i].worlwide_gross_income = parseFloat(data[i].worlwide_gross_income.replace('$', ''));
-        }
+      // parse the data
+      for (i = 0; i < data.length; i++) {
+          data[i].budget = parseFloat(data[i].budget.replace('$', ''));
+          data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
+          data[i].worlwide_gross_income = parseFloat(data[i].worlwide_gross_income.replace('$', ''));
+      }
 
-        // add scatterplot dots
-        svg.append('g')
-        .selectAll("dot")
-        .data(data)
-        .enter()
-        .append("circle")
-            .attr("cx", d => x(d.percent_white) )
-            .attr("cy", d => y(d.metascore) )
-            .attr("r", d => rScale(parseFloat(d.worlwide_gross_income))  )
-            .attr("opacity", 0.7)
-            .style("fill", goldColor)
-            .on("mouseover", function(d) {		
-                metadataSidebar.transition()		
-                    .duration(200)		
-                    .style("opacity", .9);		
-                metadataSidebar.html(
-                  getHtmlForSidebar(d)
-                )	
-                    .style("right", "0px")		
-                    .style("top", "0px");	
-            })					
-            .on("mouseout", function(d) {		
-                metadataSidebar.transition()		
-                    .duration(500)		
-                    .style("opacity", 0);	
-            });
-    
-    })
-    
+      // add scatterplot dots
+      var node = svg.append('g')
+      .selectAll("circle")
+      .data(data)
+      .enter()
+      .append("circle")
+        .attr("cx", d => x(d.percent_white))
+        .attr("cy", d => {return y(d.genre.split(",")[0]) + y.bandwidth() / 2})
+        .attr("r", d => rScale(parseFloat(d.worlwide_gross_income)))
+        .style("fill", goldColor)
+        .style("stroke", "#383838")
+        .style("stroke-width", 1.5)
+        .on("mouseover", function(d) {		
+            metadataSidebar.transition()		
+                .duration(200)		
+                .style("opacity", .9);		
+            metadataSidebar.html(
+              getHtmlForSidebar(d)
+            )	
+                .style("right", "0px")		
+                .style("top", "0px");	
+        })					
+        .on("mouseout", function(d) {		
+            metadataSidebar.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+        
+      // physics for dots along the line
+      // Features of the forces applied to the nodes:
+      var simulation = d3.forceSimulation()
+          .force('x', d3.forceX().x(function(d) {
+            // return xCenter[d.category];
+            return x(d.percent_white);
+          }).strength(0.25))
+          .force('y', d3.forceY().y(function(d) {
+            return y(d.genre.split(",")[0]) + y.bandwidth() / 2;
+          }).strength(0.25))
+          .force('charge', d3.forceManyBody().strength(3))
+          .force('collision', d3.forceCollide().radius(function(d) {
+            return rScale(parseFloat(d.worlwide_gross_income));
+          }))
+
+      // Apply these forces to the nodes and update their positions.
+      // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
+      simulation
+          .nodes(data)
+          .on("tick", function(d){
+            node
+                .attr("cx", function(d){ return d.x; })
+                .attr("cy", function(d){ return d.y; })
+          }); 
+          })
     </script>
 </body>
