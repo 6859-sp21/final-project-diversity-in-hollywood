@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <head>
+  <title>Diversity in Hollywood</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">  
   <script src="https://d3js.org/d3.v5.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.13.0/d3-legend.js"></script>
@@ -277,9 +279,10 @@
         .text("% white cast");
 
     // y-position scale
+    var decades = ["1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s"].reverse()
     var y = d3.scaleBand()
         .padding(0.4)
-        .domain(["Animation", "Horror", "Action", "Adventure", "Sci-Fi", "Family", "Fantasy", "Comedy", "Thriller", "Drama"])
+        .domain(decades)
         .range([ height, 0 ]);
     svg.append("g")
         .attr("class", "axis y-axis")
@@ -287,19 +290,20 @@
         .call(g => g.select(".domain").remove());
     
     // background bars
-    var categories = ["Animation", "Horror", "Action", "Adventure", "Sci-Fi", "Family", "Fantasy", "Comedy", "Thriller", "Drama"]
     svg.selectAll("bar")
-      .data(categories)
+      .data(decades)
         .enter()
           .append("rect")
             .style("fill", "#383838")
+            .attr("rx", 6)
+            .attr("ry", 6)
             .attr("x", 0)
             .attr("width", x(1))
             .attr("y", function(d) { return y(d); })
             .attr("height", y.bandwidth())
     // horizontal lines through background bars
     svg.selectAll("bar")
-      .data(categories)
+      .data(decades)
         .enter()
           .append('line')
             .style("stroke", "white")
@@ -351,7 +355,7 @@
         .call(legendSize);
     
     d3.csv("./datasets/movie_race_distributions_all.csv", function(all_data) {
-      var data = all_data.filter(d => d.year == "2016")
+      var data = all_data.filter(d => d.genre.split(",")[0] == "Drama")
       console.log('data', data, data.length)
       function nFormatter(num, digits) {
         var si = [
@@ -406,7 +410,7 @@
       .enter()
       .append("circle")
         .attr("cx", d => x(d.percent_white))
-        .attr("cy", d => {return y(d.genre.split(",")[0]) + y.bandwidth() / 2})
+        .attr("cy", d => {return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2})
         .attr("r", d => rScale(parseFloat(d.worlwide_gross_income)))
         .style("fill", goldColor)
         .style("stroke", "#383838")
@@ -435,7 +439,7 @@
             return x(d.percent_white);
           }).strength(0.25))
           .force('y', d3.forceY().y(function(d) {
-            return y(d.genre.split(",")[0]) + y.bandwidth() / 2;
+            return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2;
           }).strength(0.25))
           .force('charge', d3.forceManyBody().strength(3))
           .force('collision', d3.forceCollide().radius(function(d) {
