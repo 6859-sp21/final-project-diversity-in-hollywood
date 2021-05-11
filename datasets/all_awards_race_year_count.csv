@@ -1,0 +1,539 @@
+year_ceremony,fixed_race,count,award,pct_race
+1928,white,5,oscars,1.0
+1929,white,17,oscars,1.0
+1930,white,17,oscars,1.0
+1931,white,15,oscars,1.0
+1932,white,9,oscars,1.0
+1933,white,9,oscars,1.0
+1935,white,10,oscars,1.0
+1936,asian,1,oscars,0.06666666666666667
+1936,white,14,oscars,0.9333333333333333
+1937,white,25,oscars,1.0
+1938,white,25,oscars,1.0
+1939,white,25,oscars,1.0
+1940,black,1,oscars,0.04
+1940,white,24,oscars,0.96
+1941,white,25,oscars,1.0
+1942,white,25,oscars,1.0
+1943,white,25,oscars,1.0
+1944,white,25,oscars,1.0
+1945,white,25,oscars,1.0
+1946,white,25,oscars,1.0
+1947,white,25,oscars,1.0
+1948,white,25,oscars,1.0
+1949,white,25,oscars,1.0
+1950,black,1,oscars,0.04
+1950,white,24,oscars,0.96
+1951,hispanic,1,oscars,0.04
+1951,white,24,oscars,0.96
+1952,white,25,oscars,1.0
+1953,hispanic,1,oscars,0.04
+1953,white,24,oscars,0.96
+1954,white,25,oscars,1.0
+1955,black,1,oscars,0.04
+1955,hispanic,1,oscars,0.04
+1955,white,23,oscars,0.92
+1956,white,25,oscars,1.0
+1957,asian,1,oscars,0.04
+1957,white,24,oscars,0.96
+1958,asian,2,oscars,0.08
+1958,hispanic,1,oscars,0.04
+1958,white,22,oscars,0.88
+1959,black,1,oscars,0.04
+1959,white,24,oscars,0.96
+1960,black,1,oscars,0.04
+1960,white,24,oscars,0.96
+1961,white,25,oscars,1.0
+1962,hispanic,1,oscars,0.04
+1962,white,24,oscars,0.96
+1963,other,1,oscars,0.04
+1963,white,24,oscars,0.96
+1964,black,1,oscars,0.04
+1964,white,24,oscars,0.96
+1965,hispanic,1,oscars,0.04
+1965,white,24,oscars,0.96
+1966,asian,1,oscars,0.04
+1966,white,24,oscars,0.96
+1967,asian,1,oscars,0.04
+1967,black,1,oscars,0.04
+1967,other,1,oscars,0.04
+1967,white,22,oscars,0.88
+1968,black,1,oscars,0.04
+1968,white,24,oscars,0.96
+1969,white,25,oscars,1.0
+1970,black,1,oscars,0.04
+1970,white,24,oscars,0.96
+1971,black,1,oscars,0.04
+1971,other,1,oscars,0.04
+1971,white,23,oscars,0.92
+1972,white,25,oscars,1.0
+1973,black,3,oscars,0.12
+1973,white,22,oscars,0.88
+1974,white,25,oscars,1.0
+1975,black,1,oscars,0.04
+1975,white,24,oscars,0.96
+1976,white,25,oscars,1.0
+1977,white,25,oscars,1.0
+1978,white,25,oscars,1.0
+1979,white,25,oscars,1.0
+1980,white,25,oscars,1.0
+1981,white,25,oscars,1.0
+1982,white,25,oscars,1.0
+1983,asian,1,oscars,0.04
+1983,black,1,oscars,0.04
+1983,white,23,oscars,0.92
+1984,black,1,oscars,0.04
+1984,white,24,oscars,0.96
+1985,asian,2,oscars,0.08
+1985,black,1,oscars,0.04
+1985,other,1,oscars,0.04
+1985,white,21,oscars,0.84
+1986,asian,1,oscars,0.04
+1986,black,3,oscars,0.12
+1986,hispanic,1,oscars,0.04
+1986,white,20,oscars,0.8
+1987,black,1,oscars,0.04
+1987,white,24,oscars,0.96
+1988,black,2,oscars,0.08
+1988,hispanic,1,oscars,0.04
+1988,white,22,oscars,0.88
+1989,white,25,oscars,1.0
+1990,black,2,oscars,0.08
+1990,white,23,oscars,0.92
+1991,black,1,oscars,0.04
+1991,hispanic,1,oscars,0.04
+1991,other,1,oscars,0.04
+1991,white,22,oscars,0.88
+1992,asian,1,oscars,0.04
+1992,black,1,oscars,0.04
+1992,white,23,oscars,0.92
+1993,black,2,oscars,0.08
+1993,white,23,oscars,0.92
+1994,black,2,oscars,0.08
+1994,white,23,oscars,0.92
+1995,black,2,oscars,0.08
+1995,white,23,oscars,0.92
+1996,white,25,oscars,1.0
+1997,black,2,oscars,0.08
+1997,white,23,oscars,0.92
+1998,white,25,oscars,1.0
+1999,hispanic,1,oscars,0.04
+1999,white,24,oscars,0.96
+2000,asian,1,oscars,0.04
+2000,black,2,oscars,0.08
+2000,white,22,oscars,0.88
+2001,asian,1,oscars,0.04
+2001,hispanic,1,oscars,0.04
+2001,white,23,oscars,0.92
+2002,asian,1,oscars,0.04
+2002,black,3,oscars,0.12
+2002,white,21,oscars,0.84
+2003,black,1,oscars,0.04
+2003,hispanic,1,oscars,0.04
+2003,white,23,oscars,0.92
+2004,asian,2,oscars,0.08
+2004,black,1,oscars,0.04
+2004,hispanic,1,oscars,0.04
+2004,other,2,oscars,0.08
+2004,white,19,oscars,0.76
+2005,black,5,oscars,0.2
+2005,hispanic,1,oscars,0.04
+2005,white,19,oscars,0.76
+2006,asian,1,oscars,0.04
+2006,black,1,oscars,0.04
+2006,white,23,oscars,0.92
+2007,asian,1,oscars,0.04
+2007,black,5,oscars,0.2
+2007,hispanic,2,oscars,0.08
+2007,white,17,oscars,0.68
+2008,black,1,oscars,0.04
+2008,white,24,oscars,0.96
+2009,black,2,oscars,0.08
+2009,white,23,oscars,0.92
+2010,black,4,oscars,0.16
+2010,white,21,oscars,0.84
+2011,white,25,oscars,1.0
+2012,black,2,oscars,0.08
+2012,hispanic,2,oscars,0.08
+2012,white,21,oscars,0.84
+2013,asian,1,oscars,0.04
+2013,black,2,oscars,0.08
+2013,white,22,oscars,0.88
+2014,black,4,oscars,0.16
+2014,hispanic,1,oscars,0.04
+2014,white,20,oscars,0.8
+2015,hispanic,1,oscars,0.04
+2015,white,24,oscars,0.96
+2016,white,25,oscars,1.0
+2017,asian,1,oscars,0.04
+2017,black,7,oscars,0.28
+2017,white,17,oscars,0.68
+2018,black,5,oscars,0.2
+2018,hispanic,1,oscars,0.04
+2018,white,19,oscars,0.76
+2019,black,2,oscars,0.08
+2019,hispanic,1,oscars,0.04
+2019,other,1,oscars,0.04
+2019,white,21,oscars,0.84
+2020,asian,1,oscars,0.04
+2020,black,1,oscars,0.04
+2020,white,23,oscars,0.92
+1944,white,4,golden globes,1.0
+1945,white,4,golden globes,1.0
+1946,white,4,golden globes,1.0
+1947,white,4,golden globes,1.0
+1948,white,6,golden globes,1.0
+1949,white,4,golden globes,1.0
+1950,hispanic,1,golden globes,0.08333333333333333
+1950,white,11,golden globes,0.9166666666666666
+1951,hispanic,1,golden globes,0.05555555555555555
+1951,white,17,golden globes,0.9444444444444444
+1952,white,16,golden globes,1.0
+1953,hispanic,3,golden globes,0.125
+1953,white,21,golden globes,0.875
+1954,white,18,golden globes,1.0
+1955,white,12,golden globes,1.0
+1956,white,11,golden globes,1.0
+1957,asian,1,golden globes,0.02631578947368421
+1957,hispanic,2,golden globes,0.05263157894736842
+1957,white,35,golden globes,0.9210526315789473
+1958,asian,3,golden globes,0.08571428571428572
+1958,white,32,golden globes,0.9142857142857143
+1959,black,1,golden globes,0.023809523809523808
+1959,hispanic,1,golden globes,0.023809523809523808
+1959,other,1,golden globes,0.023809523809523808
+1959,white,39,golden globes,0.9285714285714286
+1960,asian,1,golden globes,0.023255813953488372
+1960,black,4,golden globes,0.09302325581395349
+1960,other,1,golden globes,0.023255813953488372
+1960,white,37,golden globes,0.8604651162790697
+1961,black,1,golden globes,0.023809523809523808
+1961,hispanic,1,golden globes,0.023809523809523808
+1961,other,2,golden globes,0.047619047619047616
+1961,white,38,golden globes,0.9047619047619048
+1962,asian,1,golden globes,0.025
+1962,black,1,golden globes,0.025
+1962,hispanic,1,golden globes,0.025
+1962,white,37,golden globes,0.925
+1963,asian,2,golden globes,0.029850746268656716
+1963,black,2,golden globes,0.029850746268656716
+1963,hispanic,2,golden globes,0.029850746268656716
+1963,white,61,golden globes,0.9104477611940298
+1964,black,4,golden globes,0.05555555555555555
+1964,white,68,golden globes,0.9444444444444444
+1965,hispanic,2,golden globes,0.043478260869565216
+1965,other,1,golden globes,0.021739130434782608
+1965,white,43,golden globes,0.9347826086956522
+1966,asian,1,golden globes,0.02040816326530612
+1966,black,1,golden globes,0.02040816326530612
+1966,white,47,golden globes,0.9591836734693877
+1967,asian,1,golden globes,0.0196078431372549
+1967,black,1,golden globes,0.0196078431372549
+1967,hispanic,2,golden globes,0.0392156862745098
+1967,white,47,golden globes,0.9215686274509803
+1968,asian,1,golden globes,0.018518518518518517
+1968,black,3,golden globes,0.05555555555555555
+1968,other,1,golden globes,0.018518518518518517
+1968,white,49,golden globes,0.9074074074074074
+1969,black,2,golden globes,0.0392156862745098
+1969,other,1,golden globes,0.0196078431372549
+1969,white,48,golden globes,0.9411764705882353
+1970,black,2,golden globes,0.03125
+1970,hispanic,2,golden globes,0.03125
+1970,white,60,golden globes,0.9375
+1971,asian,2,golden globes,0.028169014084507043
+1971,black,5,golden globes,0.07042253521126761
+1971,hispanic,1,golden globes,0.014084507042253521
+1971,other,3,golden globes,0.04225352112676056
+1971,white,60,golden globes,0.8450704225352113
+1972,black,5,golden globes,0.07042253521126761
+1972,white,66,golden globes,0.9295774647887324
+1973,black,8,golden globes,0.1038961038961039
+1973,hispanic,1,golden globes,0.012987012987012988
+1973,white,68,golden globes,0.8831168831168831
+1974,black,6,golden globes,0.08333333333333333
+1974,other,1,golden globes,0.013888888888888888
+1974,white,65,golden globes,0.9027777777777778
+1975,black,7,golden globes,0.1
+1975,white,63,golden globes,0.9
+1976,black,3,golden globes,0.041666666666666664
+1976,white,69,golden globes,0.9583333333333334
+1977,black,4,golden globes,0.05128205128205128
+1977,hispanic,2,golden globes,0.02564102564102564
+1977,white,72,golden globes,0.9230769230769231
+1978,black,2,golden globes,0.038461538461538464
+1978,white,50,golden globes,0.9615384615384616
+1979,white,74,golden globes,1.0
+1980,hispanic,1,golden globes,0.013888888888888888
+1980,white,71,golden globes,0.9861111111111112
+1981,asian,1,golden globes,0.014285714285714285
+1981,black,1,golden globes,0.014285714285714285
+1981,white,68,golden globes,0.9714285714285714
+1982,black,1,golden globes,0.0136986301369863
+1982,other,1,golden globes,0.0136986301369863
+1982,white,71,golden globes,0.9726027397260274
+1983,black,6,golden globes,0.07058823529411765
+1983,hispanic,2,golden globes,0.023529411764705882
+1983,other,2,golden globes,0.023529411764705882
+1983,white,75,golden globes,0.8823529411764706
+1984,black,5,golden globes,0.06756756756756757
+1984,hispanic,1,golden globes,0.013513513513513514
+1984,other,1,golden globes,0.013513513513513514
+1984,white,67,golden globes,0.9054054054054054
+1985,asian,3,golden globes,0.039473684210526314
+1985,black,10,golden globes,0.13157894736842105
+1985,white,63,golden globes,0.8289473684210527
+1986,asian,2,golden globes,0.02702702702702703
+1986,black,4,golden globes,0.05405405405405406
+1986,hispanic,2,golden globes,0.02702702702702703
+1986,other,3,golden globes,0.04054054054054054
+1986,white,63,golden globes,0.8513513513513513
+1987,black,3,golden globes,0.041666666666666664
+1987,white,69,golden globes,0.9583333333333334
+1988,asian,1,golden globes,0.013333333333333334
+1988,black,2,golden globes,0.02666666666666667
+1988,hispanic,1,golden globes,0.013333333333333334
+1988,white,71,golden globes,0.9466666666666667
+1989,black,2,golden globes,0.0273972602739726
+1989,hispanic,3,golden globes,0.0410958904109589
+1989,other,2,golden globes,0.0273972602739726
+1989,white,66,golden globes,0.9041095890410958
+1990,black,2,golden globes,0.028169014084507043
+1990,other,1,golden globes,0.014084507042253521
+1990,white,68,golden globes,0.9577464788732394
+1991,black,3,golden globes,0.04054054054054054
+1991,hispanic,4,golden globes,0.05405405405405406
+1991,white,67,golden globes,0.9054054054054054
+1992,black,4,golden globes,0.0547945205479452
+1992,hispanic,2,golden globes,0.0273972602739726
+1992,other,1,golden globes,0.0136986301369863
+1992,white,66,golden globes,0.9041095890410958
+1993,black,5,golden globes,0.06756756756756757
+1993,white,69,golden globes,0.9324324324324325
+1994,black,2,golden globes,0.02857142857142857
+1994,hispanic,1,golden globes,0.014285714285714285
+1994,white,67,golden globes,0.9571428571428572
+1995,black,4,golden globes,0.05333333333333334
+1995,hispanic,3,golden globes,0.04
+1995,other,2,golden globes,0.02666666666666667
+1995,white,66,golden globes,0.88
+1996,black,2,golden globes,0.028169014084507043
+1996,hispanic,2,golden globes,0.028169014084507043
+1996,white,67,golden globes,0.9436619718309859
+1997,black,4,golden globes,0.05555555555555555
+1997,hispanic,3,golden globes,0.041666666666666664
+1997,white,65,golden globes,0.9027777777777778
+1998,black,7,golden globes,0.0958904109589041
+1998,hispanic,1,golden globes,0.0136986301369863
+1998,other,1,golden globes,0.0136986301369863
+1998,white,64,golden globes,0.8767123287671232
+1999,black,1,golden globes,0.0136986301369863
+1999,hispanic,2,golden globes,0.0273972602739726
+1999,white,70,golden globes,0.958904109589041
+2000,black,2,golden globes,0.02666666666666667
+2000,other,1,golden globes,0.013333333333333334
+2000,white,72,golden globes,0.96
+2001,black,2,golden globes,0.02702702702702703
+2001,hispanic,3,golden globes,0.04054054054054054
+2001,white,69,golden globes,0.9324324324324325
+2002,black,2,golden globes,0.02702702702702703
+2002,other,3,golden globes,0.04054054054054054
+2002,white,69,golden globes,0.9324324324324325
+2003,asian,1,golden globes,0.013513513513513514
+2003,black,3,golden globes,0.04054054054054054
+2003,hispanic,1,golden globes,0.013513513513513514
+2003,white,69,golden globes,0.9324324324324325
+2004,asian,2,golden globes,0.0273972602739726
+2004,black,2,golden globes,0.0273972602739726
+2004,hispanic,1,golden globes,0.0136986301369863
+2004,other,1,golden globes,0.0136986301369863
+2004,white,67,golden globes,0.9178082191780822
+2005,asian,1,golden globes,0.014084507042253521
+2005,black,6,golden globes,0.08450704225352113
+2005,hispanic,1,golden globes,0.014084507042253521
+2005,white,63,golden globes,0.8873239436619719
+2006,asian,3,golden globes,0.04225352112676056
+2006,black,3,golden globes,0.04225352112676056
+2006,hispanic,1,golden globes,0.014084507042253521
+2006,other,2,golden globes,0.028169014084507043
+2006,white,62,golden globes,0.8732394366197183
+2007,asian,3,golden globes,0.041666666666666664
+2007,black,9,golden globes,0.125
+2007,hispanic,3,golden globes,0.041666666666666664
+2007,other,2,golden globes,0.027777777777777776
+2007,white,55,golden globes,0.7638888888888888
+2008,black,2,golden globes,0.02702702702702703
+2008,hispanic,2,golden globes,0.02702702702702703
+2008,other,1,golden globes,0.013513513513513514
+2008,white,69,golden globes,0.9324324324324325
+2009,asian,1,golden globes,0.014285714285714285
+2009,black,2,golden globes,0.02857142857142857
+2009,hispanic,3,golden globes,0.04285714285714286
+2009,white,64,golden globes,0.9142857142857143
+2010,black,4,golden globes,0.05714285714285714
+2010,hispanic,1,golden globes,0.014285714285714285
+2010,white,65,golden globes,0.9285714285714286
+2011,black,2,golden globes,0.02857142857142857
+2011,hispanic,1,golden globes,0.014285714285714285
+2011,other,1,golden globes,0.014285714285714285
+2011,white,66,golden globes,0.9428571428571428
+2012,black,4,golden globes,0.05714285714285714
+2012,hispanic,1,golden globes,0.014285714285714285
+2012,white,65,golden globes,0.9285714285714286
+2013,asian,1,golden globes,0.014285714285714285
+2013,black,2,golden globes,0.02857142857142857
+2013,hispanic,1,golden globes,0.014285714285714285
+2013,white,66,golden globes,0.9428571428571428
+2014,asian,1,golden globes,0.014285714285714285
+2014,black,8,golden globes,0.11428571428571428
+2014,hispanic,2,golden globes,0.02857142857142857
+2014,white,59,golden globes,0.8428571428571429
+2015,black,3,golden globes,0.043478260869565216
+2015,hispanic,1,golden globes,0.014492753623188406
+2015,white,65,golden globes,0.9420289855072463
+2016,asian,2,golden globes,0.028985507246376812
+2016,black,8,golden globes,0.11594202898550725
+2016,hispanic,3,golden globes,0.043478260869565216
+2016,white,56,golden globes,0.8115942028985508
+2017,asian,4,golden globes,0.056338028169014086
+2017,black,10,golden globes,0.14084507042253522
+2017,hispanic,2,golden globes,0.028169014084507043
+2017,other,3,golden globes,0.04225352112676056
+2017,white,52,golden globes,0.7323943661971831
+2018,asian,2,golden globes,0.02857142857142857
+2018,black,6,golden globes,0.08571428571428572
+2018,other,1,golden globes,0.014285714285714285
+2018,white,61,golden globes,0.8714285714285714
+2019,asian,3,golden globes,0.04285714285714286
+2019,black,5,golden globes,0.07142857142857142
+2019,hispanic,3,golden globes,0.04285714285714286
+2019,other,1,golden globes,0.014285714285714285
+2019,white,58,golden globes,0.8285714285714286
+2020,asian,2,golden globes,0.02857142857142857
+2020,black,2,golden globes,0.02857142857142857
+2020,hispanic,3,golden globes,0.04285714285714286
+2020,white,63,golden globes,0.9
+1962,white,1,sag,1.0
+1963,white,1,sag,1.0
+1965,white,1,sag,1.0
+1966,white,1,sag,1.0
+1967,white,1,sag,1.0
+1968,white,1,sag,1.0
+1969,white,1,sag,1.0
+1970,white,1,sag,1.0
+1971,white,1,sag,1.0
+1972,white,1,sag,1.0
+1973,white,1,sag,1.0
+1974,white,1,sag,1.0
+1975,white,1,sag,1.0
+1976,black,1,sag,1.0
+1977,white,1,sag,1.0
+1978,white,1,sag,1.0
+1979,white,1,sag,1.0
+1980,white,1,sag,1.0
+1982,white,1,sag,1.0
+1983,white,1,sag,1.0
+1984,black,1,sag,1.0
+1985,white,2,sag,1.0
+1986,white,1,sag,1.0
+1987,white,1,sag,1.0
+1988,white,1,sag,1.0
+1989,white,1,sag,1.0
+1990,black,1,sag,1.0
+1991,white,1,sag,1.0
+1992,white,1,sag,1.0
+1993,hispanic,1,sag,1.0
+1994,white,1,sag,1.0
+1995,black,5,sag,0.09803921568627451
+1995,hispanic,2,sag,0.0392156862745098
+1995,white,44,sag,0.8627450980392157
+1996,black,4,sag,0.0784313725490196
+1996,hispanic,1,sag,0.0196078431372549
+1996,white,46,sag,0.9019607843137255
+1997,black,2,sag,0.0392156862745098
+1997,hispanic,1,sag,0.0196078431372549
+1997,other,1,sag,0.0196078431372549
+1997,white,47,sag,0.9215686274509803
+1998,black,5,sag,0.09615384615384616
+1998,hispanic,1,sag,0.019230769230769232
+1998,other,1,sag,0.019230769230769232
+1998,white,45,sag,0.8653846153846154
+1999,black,2,sag,0.038461538461538464
+1999,hispanic,1,sag,0.019230769230769232
+1999,other,1,sag,0.019230769230769232
+1999,white,48,sag,0.9230769230769231
+2000,asian,1,sag,0.0196078431372549
+2000,black,3,sag,0.058823529411764705
+2000,other,1,sag,0.0196078431372549
+2000,white,46,sag,0.9019607843137255
+2001,black,2,sag,0.03773584905660377
+2001,hispanic,1,sag,0.018867924528301886
+2001,white,50,sag,0.9433962264150944
+2002,black,3,sag,0.057692307692307696
+2002,other,3,sag,0.057692307692307696
+2002,white,46,sag,0.8846153846153846
+2003,asian,1,sag,0.0196078431372549
+2003,black,2,sag,0.0392156862745098
+2003,hispanic,1,sag,0.0196078431372549
+2003,white,47,sag,0.9215686274509803
+2004,asian,2,sag,0.038461538461538464
+2004,black,2,sag,0.038461538461538464
+2004,hispanic,1,sag,0.019230769230769232
+2004,other,2,sag,0.038461538461538464
+2004,white,45,sag,0.8653846153846154
+2005,asian,1,sag,0.0196078431372549
+2005,black,6,sag,0.11764705882352941
+2005,other,2,sag,0.0392156862745098
+2005,white,42,sag,0.8235294117647058
+2006,asian,2,sag,0.0392156862745098
+2006,black,4,sag,0.0784313725490196
+2006,white,45,sag,0.8823529411764706
+2007,asian,2,sag,0.038461538461538464
+2007,black,6,sag,0.11538461538461539
+2007,hispanic,3,sag,0.057692307692307696
+2007,white,41,sag,0.7884615384615384
+2008,asian,1,sag,0.019230769230769232
+2008,black,3,sag,0.057692307692307696
+2008,hispanic,2,sag,0.038461538461538464
+2008,white,46,sag,0.8846153846153846
+2009,asian,2,sag,0.0392156862745098
+2009,black,4,sag,0.0784313725490196
+2009,hispanic,2,sag,0.0392156862745098
+2009,white,43,sag,0.8431372549019608
+2010,asian,1,sag,0.019230769230769232
+2010,black,5,sag,0.09615384615384616
+2010,hispanic,1,sag,0.019230769230769232
+2010,white,45,sag,0.8653846153846154
+2011,hispanic,2,sag,0.0392156862745098
+2011,white,49,sag,0.9607843137254902
+2012,black,4,sag,0.0784313725490196
+2012,hispanic,2,sag,0.0392156862745098
+2012,white,45,sag,0.8823529411764706
+2013,black,2,sag,0.0392156862745098
+2013,hispanic,2,sag,0.0392156862745098
+2013,white,47,sag,0.9215686274509803
+2014,asian,1,sag,0.0196078431372549
+2014,black,7,sag,0.13725490196078433
+2014,hispanic,1,sag,0.0196078431372549
+2014,white,42,sag,0.8235294117647058
+2015,black,2,sag,0.038461538461538464
+2015,white,50,sag,0.9615384615384616
+2016,asian,2,sag,0.03278688524590164
+2016,black,5,sag,0.08196721311475409
+2016,other,1,sag,0.01639344262295082
+2016,white,53,sag,0.8688524590163934
+2017,asian,3,sag,0.06
+2017,black,13,sag,0.26
+2017,other,1,sag,0.02
+2017,white,33,sag,0.66
+2018,asian,2,sag,0.04
+2018,black,5,sag,0.1
+2018,white,43,sag,0.86
+2019,asian,3,sag,0.06
+2019,black,3,sag,0.06
+2019,hispanic,2,sag,0.04
+2019,white,42,sag,0.84
+2020,asian,1,sag,0.02
+2020,black,5,sag,0.1
+2020,hispanic,1,sag,0.02
+2020,white,43,sag,0.86
