@@ -59,6 +59,7 @@
     #main {
       margin: auto;
       width: 70%;
+      padding-bottom: 60px;
     }
 
     #slider-section {
@@ -94,6 +95,10 @@
       text-align: center;
     }
 
+    .legendTitle {
+      font-size: 18px;
+    }
+
     .sources {
       color: white;
       font-size: 12px;
@@ -110,10 +115,11 @@
     }
 
     div.sidebar {	
-      position: absolute;
       text-align: left;			
       width: 25%;
       height: 100vh;
+      position: fixed;
+      overflow: hidden;
       color: #E6AB02;		
       font: 18px "Didact Gothic";		
       background: #2C251E;	
@@ -123,8 +129,8 @@
     }
 
     body {
-        display: flex;
-        flex-direction: row;
+      display: flex;
+      flex-direction: row;
     }
 
     text {
@@ -152,7 +158,7 @@
     }
 
     .axis text{
-      font-size: 16px;
+      font-size: 20px;
       text-transform: lowercase;
       stroke: white;
     }
@@ -170,6 +176,7 @@
     #heading {
       display: flex;
       flex-direction: row;
+      width: 25%;
     }
 
     .nav-option {
@@ -196,32 +203,34 @@
     
     <!-- Create a div where the graph will take place -->
     <div class="row">
-      <div class="col-sm-3 p-4" style="background-color: #383838;">
-        <div id="heading">
-          <img src="./images/popcorn.png" width="120" height="120">
-          <div id="blurb">
-            <h1>reception</h1>
-            <h2>
-                Pulling from the top 1000 movies by adjusted gross revenue, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross lifetime revenue.
-                Hover over circles to see more information about individual movies.
-            </h2>
-            <!-- <div class="sources">
-              <i>
-                Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
-                Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
-                <a href="https://www.nndb.com/">NNDB</a>,
-                Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
-              </i>
-            </div> -->
+      <div class="p-4 col-sm-3" style="background-color: #383838;">
+        <div style="position: fixed; ">
+          <div id="heading">
+            <img src="./images/popcorn.png" width="100" height="100">
+            <div id="blurb">
+              <h1>reception</h1>
+              <h2>
+                  Pulling from the top 1000 movies by adjusted gross revenue, we can explore the relationship between cast diversity and various metrics of reception, including IMDB metascore and gross lifetime revenue.
+                  Hover over circles to see more information about individual movies.
+              </h2>
+              <!-- <div class="sources">
+                <i>
+                  Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
+                  Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
+                  <a href="https://www.nndb.com/">NNDB</a>,
+                  Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
+                </i>
+              </div> -->
+            </div>
           </div>
-        </div>
-        <div class="p-3 explore-section">
-          <div class="nav-options">
-            <a class="nav-option" href="oscars.html">awards</a>
-            <br/>
-            <a href="reception.html" class="selected-nav-option">reception</a>
-            <br/>
-            <a href="index.html" class="nav-option">back to home</a>
+          <div class="p-3 explore-section">
+            <div class="nav-options">
+              <a class="nav-option" href="oscars.html">awards</a>
+              <br/>
+              <a href="reception.html" class="selected-nav-option">reception</a>
+              <br/>
+              <a href="index.html" class="nav-option">back to home</a>
+            </div>
           </div>
         </div>
       </div>
@@ -276,9 +285,10 @@
     svg.append("text")             
         .attr("transform",
             "translate(" + (width/2) + " ," + 
-                        (height + margin.top + 30) + ")")
+                        (height + margin.top + 50) + ")")
         .style("text-anchor", "middle")
         .style("stroke", "white")
+        .style("font-size", "20px")
         .text("% white cast");
 
     // y-position scale
@@ -440,7 +450,7 @@
         })					
         .on("mouseout", function(d) {		
             metadataSidebar.transition()		
-                .duration(500)		
+                .duration(200)		
                 .style("opacity", 0);	
         });
         
