@@ -273,13 +273,19 @@
           </div>
         </div>
       </div>
-      <h3 style="padding-left: 40px;">
-        Percentage of racial minorities over time
-      </h3>
-      <div class="p-3" style="color:white">
-        <div id="summary_graph"></div>
-        <div id="summary_legend"></div>
-      </div>
+    </div>
+  </div>
+  <h3 style="padding-left: 40px;text-align: center; margin-top: 300px;">
+    Percentage of racial minorities over time
+  </h3>
+  <div class="row" style='margin: 50px;'>
+    <div class="col-sm-6" style="color:white">
+      <div id="summary_graph"></div>
+      <div id="summary_legend"></div>
+    </div>
+    <div class="col-sm-6" style="color:white">
+      <div id="compare_graph"></div>
+      <div id="compare_legend"></div>
     </div>
   </div>
 
@@ -295,7 +301,7 @@
     var width = 1200
     var height = 800
     var summaryHeight = 200
-    var summaryWidth = 300
+    var summaryWidth = document.getElementById('summary_graph').clientWidth;
     var margins = {top: 10, right: 10, bottom: 20, left: 30};
 
     var graphsvg = d3.select("#graph")
@@ -352,6 +358,19 @@
     var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0);
+
+    var compare_svg = d3.select("#compare_graph")
+        .append("svg")
+        .attr("width", summaryWidth)
+        .attr("height", summaryHeight)        
+        .append("g")
+        .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+
+    var compare_legendsvg = d3.select("#compare_legend")
+        .append("svg")
+        .attr("width", summaryWidth)
+        .attr("height", 500)
+    compare_legendsvg.append("g");
 
     function update(data, startYear, endYear, categories) {
         // first, filter data to year range
@@ -572,6 +591,7 @@
     }
 
     d3.csv("./datasets/sag_merged.csv").then((csv_orig) => {
+      d3.csv('./datasets/all_awards_race_year_count.csv').then((all_data) => {
         csv_data = []
         for (var i = 0; i < csv_orig.length; i++) {
             csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
@@ -880,8 +900,8 @@
         }
       }
 
-      var line_height = 200 - margins.top - margins.bottom
-      var line_width = 300 - margins.left - margins.right
+      var line_height = summaryHeight - margins.top - margins.bottom
+      var line_width = summaryWidth - margins.left - margins.right
 
       var summary_x = d3.scaleLinear().range([0, line_width]).domain([1993, 2019]);
 
@@ -960,6 +980,76 @@
           .style("font-size", "18px")
           .style("text-transform", "lowercase")
 
+        // COMPARE BETWEEN AWARDS
+        var compare_x = d3.scaleLinear().range([0, line_width]).domain([1928, 2019]);
+
+        var compare_y = d3.scaleLinear()
+            .range([line_height, margins.top])
+            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return 1-d.pct_race; }))]);;
+
+        var compare_line = d3.line()
+          .x(function(d) {return compare_x(d.year_ceremony);})
+          .y(function(d) {return compare_y(1-d.pct_race);});
+
+        var line_color = d3.scaleOrdinal(d3.schemeCategory10);
+        
+        var awards = ['oscars','golden globes', 'sag']
+        for (var i=0; i<awards.length; i++){
+          compare_svg.append("path")
+            .datum(all_data.filter(d => (d.award === awards[i]) && (d.fixed_race==='white'))) 
+            .attr("class", "line") 
+            .attr("id", awards[i].concat("Line"))
+            .attr("d", compare_line)
+            .attr("active", 0)
+            .style("fill", "none")
+            .style("stroke", line_color(awards[i]))
+            .style("stroke-width", "1")  
+        }
+
+        var compare_xAxis = compare_svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + line_height + ")")
+            .call(d3.axisBottom(compare_x));
+        
+        var compare_yAxis = compare_svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0,0)")
+          .call(d3.axisLeft(compare_y));
+
+        compare_svg.append("text") // Title text
+              .attr("x", (line_width / 2))             
+              .attr("y", margins.top+2)
+              .attr("text-anchor", "middle")  
+              .style("font-size", "16px")   
+              .style("font-weight", "bold") 
+              .style("fill", "white")
+              .text("Percent Minority by Award");
+        
+        compare_legendsvg.selectAll('legendDots')
+          .data(awards)
+          .enter()
+          .append("circle")
+          .attr("cx", 40)
+            .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            .attr("r", 4)
+            .style("fill", function(d){ return line_color(d)})
+
+        compare_legendsvg.selectAll('legendLabels')
+          .data(awards)
+          .enter()
+          .append("text")
+            .attr("class", function(d){ return "label-" + d })
+            .attr("x", 50)
+            .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+            // .style("fill", function(d){ return color(d)})
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("fill", "#b8b8b8")
+            .style("font-family", "Didact Gothic")
+            .style("font-size", "18px")
+            .style("text-transform", "lowercase")
+
         // SLIDER LOGIC
         var slider = createD3RangeSlider(1994, 2020, "#slider-container");
 
@@ -990,6 +1080,31 @@
                 .style("stroke", line_color(categories[i]))
                 .style("stroke-width", "1")  
             }
+
+            // Update compare graph
+            var new_all_data = all_data.filter(d => (d.year_ceremony >= newRange.begin) && (d.year_ceremony <= newRange.end))
+            compare_x.domain([newRange.begin, newRange.end])
+            compare_xAxis.transition().duration(100)
+              .call(d3.axisBottom(compare_x))
+              .selectAll("text")
+              .attr("transform", "rotate(-15)");
+            console.log(d3.max(new_all_data, function(d) { return 1-d.pct_race; }))
+            compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return 1-d.pct_race; }))]);
+            compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
+
+            compare_svg.selectAll(".line").remove();
+            
+            for (var i=0; i<awards.length; i++){
+            compare_svg.append("path")
+              .datum(new_all_data.filter(d => (d.award == awards[i]) && (d.fixed_race=='white'))) 
+              .attr("class", "line") 
+              .attr("id", awards[i].concat("Line"))
+              .attr("d", compare_line)
+              .attr("active", 0)
+              .style("fill", "none")
+              .style("stroke", line_color(awards[i]))
+              .style("stroke-width", "1")  
+          }
 
             update(csv_data, newRange.begin, newRange.end, categories)
 
@@ -1071,6 +1186,7 @@
         document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
         document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
         document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
+      })
     });
 </script>
 </body>
