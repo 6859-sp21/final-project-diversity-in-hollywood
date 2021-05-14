@@ -155,7 +155,7 @@
     .axis text{
       font-size: 20px;
       text-transform: lowercase;
-      stroke: white;
+      /* stroke: white; */
     }
 
     .legendSize text {
@@ -302,7 +302,17 @@
         .attr("class", "axis y-axis")
         .call(d3.axisLeft(y))
         .call(g => g.select(".domain").remove());
-    
+    // style the y-axis labels to change color on hover
+    d3.select('.y-axis')
+        .selectAll('.tick')
+        .on("mouseover", function(d) {
+          d3.select(event.currentTarget).style("color", goldColor).style("stroke", goldColor)
+
+        })
+        .on("mouseout", function(d) {
+          d3.select(event.currentTarget).style("color", "white").style("stroke", "white")
+        })
+
     // background bars
     svg.selectAll("bar")
       .data(decades)
