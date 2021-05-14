@@ -25,7 +25,6 @@
     li a {
       display: block;
       padding: 20px 20px;
-      color: white;
     }
 
     li a:hover {
@@ -43,7 +42,6 @@
     }
 
     h2 {
-      color: white; 
       font-size: 1.2rem;
       line-height: 1; 
       margin-top: 5px;
@@ -58,8 +56,8 @@
 
     #main {
       margin: auto;
-      width: 70%;
-      padding-bottom: 60px;
+      padding: 60px;
+      text-align: center;
     }
 
     #slider-section {
@@ -100,7 +98,6 @@
     }
 
     .sources {
-      color: white;
       font-size: 12px;
     }
 
@@ -114,7 +111,7 @@
       transform: translate(75px, 150px);
     }
 
-    div.sidebar {	
+    .sidebar {	
       text-align: left;			
       width: 25%;
       height: 100vh;
@@ -124,13 +121,16 @@
       font: 18px "Didact Gothic";		
       background: #2C251E;	
       border: 0px;		
-      padding: 30px;			
-      pointer-events: none;			
+      padding: 30px;	
+      pointer-events: none;		
+      right: 0;
+      top: 0;		
     }
 
     body {
       display: flex;
       flex-direction: row;
+      color: white;
     }
 
     text {
@@ -140,7 +140,6 @@
     #blurb {
         display: flex;
         flex-direction: column;
-        width: 60%;
         padding: 10px;
     }
 
@@ -176,7 +175,6 @@
     #heading {
       display: flex;
       flex-direction: row;
-      width: 25%;
     }
 
     .nav-option {
@@ -202,43 +200,42 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     
     <!-- Create a div where the graph will take place -->
-    <div class="row">
+    <div class="row w-100">
       <div class="p-4 col-sm-3" style="background-color: #383838;">
-        <div style="position: fixed; ">
-          <div id="heading">
-            <img src="./images/popcorn.png" width="100" height="100">
-            <div id="blurb">
-              <h1>reception</h1>
-              <h2>
-                  By examining the top 30 grossing movies from each decade, we can explore race diversity vs. metrics of reception.
-                  Hover over circles to see more information about individual movies.
-              </h2>
-              <!-- <div class="sources">
-                <i>
-                  Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
-                  Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
-                  <a href="https://www.nndb.com/">NNDB</a>,
-                  Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
-                </i>
-              </div> -->
-            </div>
+        <div id="heading">
+          <img src="./images/popcorn.png" width="100" height="100" style="margin: auto 8px;">
+          <div id="blurb">
+            <h1>reception</h1>
           </div>
-          <div class="p-3 explore-section">
-            <div class="nav-options">
-              <a class="nav-option" href="oscars.html">awards</a>
-              <br/>
-              <a href="reception.html" class="selected-nav-option">reception</a>
-              <br/>
-              <a href="index.html" class="nav-option">back to home</a>
-            </div>
+        </div>
+        Change x-axis: 
+        <button type="button" class="btn btn-light percent-cast-race" id="white-button">white</button>
+        <button type="button" class="btn btn-outline-light percent-cast-race" id="black-button">black</button>
+        <button type="button" class="btn btn-outline-light percent-cast-race" id="hispanic-button">hispanic</button>
+        <button type="button" class="btn btn-outline-light percent-cast-race" id="asian-button">asian</button>
+        <button type="button" class="btn btn-outline-light percent-cast-race" id="other-button">other</button>
+        <div class="p-3 explore-section">
+          <div class="nav-options">
+            <a class="nav-option" href="oscars.html">awards</a>
+            <br/>
+            <a href="reception.html" class="selected-nav-option">reception</a>
+            <br/>
+            <a href="index.html" class="nav-option">back to home</a>
           </div>
         </div>
       </div>
       <div class="col-sm-9">
         <div id="main">
-          <div id="legend"></div>
+          <div class="d-flex justify-content-around text-center px-5">
+            <div style="max-width: 400px; text-align: left; margin: auto 0px;">
+              <h1 class="display-4" style="font-size: 30px; margin: 0;">How is race diversity related to a movie's box office success?</h1>
+              By examining the top 30 grossing movies from each decade, we can explore race diversity vs. metrics of reception.
+              Hover over circles to see more information about individual movies.
+            </div>
+            <div id="legend"></div>
+          </div>
           <div id="graph"></div>
-        </div>   
+        </div>
       </div>
     </div>
    
@@ -248,15 +245,18 @@
   <script>
 
     // sets dimensions
-    var margin = {top: 10, right: 60, bottom: 60, left: 60},
+    var margin = {top: 10, right: 60, bottom: 80, left: 60},
         width = 1100 - margin.left - margin.right,
-        height = 900 - margin.top - margin.bottom;
+        height = 1000 - margin.top - margin.bottom;
     
     var legendWidth = 300;
     var legendHeight = 150;
 
     // sets constants
     var goldColor = "#E6AB02"
+
+    // selected x-axis race
+    var selectedRace = "white"
     
     // defines graph svg
     var svg = d3.select("#graph")
@@ -286,10 +286,11 @@
         .attr("transform",
             "translate(" + (width/2) + " ," + 
                         (height + margin.top + 50) + ")")
+        .attr("id", "x-axis-label")
         .style("text-anchor", "middle")
         .style("stroke", "white")
         .style("font-size", "20px")
-        .text("% white cast");
+        .text("% " + selectedRace + " cast");
 
     // y-position scale
     var decades = ["1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s"].reverse()
@@ -361,7 +362,7 @@
 
     // radius scale
     var rScale = d3.scaleLinear()
-        .domain([0, 1900000000]) // hardset from worldwide gross income max
+        .domain([0, 2000000000]) // hardset from worldwide gross income max
         .range([2, 20]);
 
     // size-based legend for revenue
@@ -396,9 +397,7 @@
         // sort movies by gross
         moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
         data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
-      }
-      console.log('data', data, data.length)
-      
+      }      
 
       function getHtmlForSidebar(data) {
         // console.log(data.budget, intToString(data.worlwide_gross_income))
@@ -444,9 +443,7 @@
                 .style("opacity", 1);		
             metadataSidebar.html(
               getHtmlForSidebar(d)
-            )
-              .style("left", "0px")		
-              .style("top", "0px");	
+            );
         })					
         .on("mouseout", function(d) {		
             metadataSidebar.transition()		
@@ -458,7 +455,6 @@
       // Features of the forces applied to the nodes:
       var simulation = d3.forceSimulation()
           .force('x', d3.forceX().x(function(d) {
-            // return xCenter[d.category];
             return x(d.percent_white);
           }).strength(0.4))
           .force('y', d3.forceY().y(function(d) {
@@ -478,6 +474,43 @@
                 .attr("cx", function(d){ return d.x; })
                 .attr("cy", function(d){ return d.y; })
           }); 
-          })
+      
+      // event listeners for race button filter clicks
+      var updateSelectedRace = function(race) {
+        return function updateRace(e) {
+          // update axis
+          document.getElementById("x-axis-label").innerHTML = "% " + race + " cast";
+
+          // update button styling
+          var els = document.getElementsByClassName("percent-cast-race")
+          for (el of els){
+              el.classList.remove('btn-light');
+              el.classList.add('btn-outline-light');
+          }
+          document.getElementById(race + "-button").classList.remove('btn-outline-light')
+          document.getElementById(race + "-button").classList.add('btn-light')
+
+          // simulation
+          simulation.force('x', d3.forceX().x(function(d) {
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return x(raceToField[race]);
+          }).strength(0.4)).alpha(0.2).alphaTarget(0).restart()
+        }
+      }
+
+      var raceFilters = document.getElementsByClassName("percent-cast-race")
+      for (var i = 0; i < raceFilters.length; i++) {
+        document.getElementById(raceFilters[i].innerText+"-button").addEventListener("click", updateSelectedRace(raceFilters[i].innerText))
+      }
+      
+    })
+    
+
     </script>
 </body>
