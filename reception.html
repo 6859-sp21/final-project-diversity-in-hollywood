@@ -149,7 +149,7 @@
     }
 
     .axis path{
-        stroke: white;
+        stroke: rgba(0,0,0,0);
     }
 
     .axis text{
@@ -416,13 +416,23 @@
       return header + genre + budget + metascore + gross + breaks + diversityText + white + black + hispanic + asian + other
     }
 
-    var update = function(data) {
-      
-
+    var update = function(input_data, all_data, decadePrefix, yAxis) {
+      var data = input_data
+      if (decadePrefix !== null) {
+        // if there's a decade prefix, then we're in the expanded view and we want
+        // to filter to max 30 movies per YEAR instead of per DECADE
+        var data = []
+        for (let i = 0; i < 10; i++) {
+          var moviesInYear = all_data.filter(d => d.year == decadePrefix + i)
+          // sort movies by gross
+          moviesInYear.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
+          data.push(...moviesInYear.slice(0,30)) // take top 30 movies
+        }
+      }
       // add scatterplot dots
       var node = svg
       .selectAll(".graph-circle")
-      .data(data, d => d);
+      .data(data, d => d)
       
       node.join(
         enter => enter.append("circle")
@@ -454,12 +464,37 @@
       // Features of the forces applied to the nodes:
       var simulation = d3.forceSimulation()
           .force('x', d3.forceX().x(function(d) {
-            return x(d.percent_white);
+            console.log('selected race', selectedRace)
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return x(raceToField[selectedRace]);
           }).strength(0.4))
           .force('y', d3.forceY().y(function(d) {
-            return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2;
-          }).strength(0.4))
-          .force('charge', d3.forceManyBody().strength(3))
+            if (decadePrefix !== null) {
+              // send to individual years within the decade
+              return yAxis(d.year) + yAxis.bandwidth() / 2;
+            } else {
+              return yAxis(d.year.substring(0,3) + "0s") + yAxis.bandwidth() / 2;
+            }
+          }).strength(function(d) {
+            if (decadePrefix !== null) {
+              return 5
+            } else {
+              return 0.8
+            }
+          }))
+          .force('charge', d3.forceManyBody().strength(function(d) {
+            if (decadePrefix !== null) {
+              return 0
+            } else {
+              return 3
+            }
+          }))
           .force('collision', d3.forceCollide().radius(function(d) {
             return rScale(parseFloat(d.adjusted_lifetime_gross));
           }))
@@ -480,17 +515,28 @@
       // change the y-axis range to zoom in on a decade
       var expandDecade = function(datum) {
         // for now, just expand to 2010s
-        var decadePrefix = datum.substring(0,3)
-        var new_data = data.filter(d => d.year.substring(0,3) == decadePrefix)
+        var newDecadePrefix = datum.substring(0,3)
+        var new_data = data.filter(d => d.year.substring(0,3) == newDecadePrefix)
         // change the axis
-        // var numbers = [0,1,2,3,4,5,6,7,8,9]
-        // var newDomain = numbers.map( n => decadePrefix + n)
-        // y.domain(newDomain)
-        // svg.select(".y-axis")
-        //   .transition().duration(1000)
-        // .call(d3.axisLeft(y));
-        update(new_data)
-        simulation.nodes(new_data).alpha(0.2).alphaTarget(0).restart()
+        // remove the old axis first
+        svg.select(".y-axis").remove()
+        var numbers = [9,8,7,6,5,4,3,2,1,0]
+        var newDomain = numbers.map( n => newDecadePrefix + n)
+        var y = d3.scaleBand()
+            .padding(0.4)
+            .domain(newDomain)
+            .range([ height, 0 ]);
+        svg.append("g")
+            .attr("class", "axis y-axis")
+            .call(d3.axisLeft(y))
+            .call(g => g.select(".domain").remove());
+        y.domain(newDomain)
+        svg.select(".y-axis")
+          .transition().duration(1000)
+          // .call(g => g.select(".domain").remove())
+          .call(d3.axisLeft(y));
+        update(new_data, all_data, newDecadePrefix, y)
+        // simulation.nodes(new_data).alpha(0.2).alphaTarget(0).restart()
       }
       
       d3.select('.y-axis')
@@ -502,6 +548,7 @@
       // event listeners for race button filter clicks
       var updateSelectedRace = function(race) {
         return function updateRace(e) {
+          selectedRace = race
           // update axis
           document.getElementById("x-axis-label").innerHTML = "% " + race + " cast";
 
@@ -552,7 +599,7 @@
           data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
           data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
       }
-      update(data)
+      update(data, all_data, null, y)
 
 
     })
