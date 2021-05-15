@@ -280,11 +280,14 @@
     Percentage of racial minorities over time
   </h3>
   <div class="row" style='margin: 50px;'>
-    <div class="col-sm-6" style="color:white">
+    <div class="col-sm-12" style="color:white">
       <div id="summary_graph"></div>
       <div id="summary_legend"></div>
     </div>
-    <div class="col-sm-6" style="color:white">
+  </div>
+  <div class="row" style='margin: 50px;'>
+    
+    <div class="col-sm-12" style="color:white">
       <div id="compare_graph"></div>
       <div id="compare_legend"></div>
     </div>
@@ -341,19 +344,6 @@
         .attr("height", svgHeight - 300)
         .attr("transform", "translate(0, 200)"); // pushes viz to right + up
     legendsvg.append("g");
-
-    var summary_svg = d3.select("#summary_graph")
-        .append("svg")
-        .attr("width", summaryWidth)
-        .attr("height", summaryHeight)        
-        .append("g")
-        .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
-    
-     var summary_legendsvg = d3.select("#summary_legend")
-      .append("svg")
-        .attr("width", summaryWidth)
-        .attr("height", 500)
-    summary_legendsvg.append("g");
 
     // Define the div for the tooltip
     var tooltipDiv = d3.select("body").append("div")
@@ -901,87 +891,67 @@
         }
       }
 
-      var line_height = summaryHeight - margins.top - margins.bottom
-      var line_width = summaryWidth - margins.left - margins.right
+      var race_counts_rolling_nested = d3.nest()
+          .key(function(d) { return d.category; })
+          .entries(race_counts_rolling);
 
-      var summary_x = d3.scaleLinear().range([0, line_width]).domain([1993, 2019]);
+      var summaryWidth_subplot = Math.floor((summaryWidth-margins.left-margins.right)/categories.length); 
+      var summaryHeight_subplot = summaryHeight;
 
-      var summary_y = d3.scaleLinear()
-          .range([line_height, margins.top])
-          summary_y.domain([0, Math.min(100, 1.3*d3.max(race_counts_rolling, function(d) { return d.pct; })+0.2)]);;
+      // dimensions of each subplot, after subtracting margins
+      var summary_height = summaryHeight_subplot - margins.top - margins.bottom
+      var summary_width = summaryWidth_subplot - margins.left - margins.right
+
+      var summary_x = d3.scaleLinear().range([0, summary_width]).domain([1928, 2019]);
+
+      var summary_y = d3.scaleLinear().range([summary_height, margins.top])
+          summary_y.domain([0, Math.min(100, 1.3*d3.max(race_counts_rolling, function(d) { return d.pct; })+0.2)]);
 
       var summary_line = d3.line()
         .x(function(d) {return summary_x(d.year);})
         .y(function(d) {return summary_y(d.pct);});
 
       var line_color = d3.scaleOrdinal(d3.schemeCategory10);
-      
-      for (var i=0; i<categories.length; i++){
-        summary_svg.append("path")
-          .datum(race_counts_rolling.filter(d => d.category === categories[i])) 
-          .attr("class", "line") 
-          .attr("id", categories[i].concat("Line"))
-          .attr("d", summary_line)
-          .attr("active", 0)
-          .style("fill", "none")
-          .style("stroke", line_color(categories[i]))
-          .style("stroke-width", "1")  
-      }
 
-      var summary_xAxis = summary_svg.append("g")
-          .attr("class", "axis")
-          .attr("transform", "translate(0," + line_height + ")")
-          .call(d3.axisBottom(summary_x));
-      
-      var summary_yAxis = summary_svg.append("g")
-        .attr("class", "axis")
-        .attr("transform", "translate(0,0)")
-        .call(d3.axisLeft(summary_y));
+      var summary_svg = d3.select("#summary_graph").selectAll("svg")
+        .data(race_counts_rolling_nested)
+        .enter()
+        .append("svg")
+        .attr("class", "categoryChart")
+        .attr("height", summaryHeight_subplot)
+        .attr("width", summaryWidth_subplot)
+        .append("g")
+        .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
 
+      summary_xAxis = summary_svg.append("g")
+        .attr("class", "xaxis")
+        .attr("transform", "translate(0," + summary_height + ")")
+        .call(d3.axisBottom(summary_x).ticks(3));
+
+      summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+      summary_svg.append("path")
+                .attr("class", "line") 
+                .attr("fill", "none")
+                .attr("stroke", "#AB8D3F")
+                .attr("stroke-width", 1.9)
+                .attr("d", function(d){
+                  return summary_line(d.values)
+                })
+      
       summary_svg.append("text") // Title text
-            .attr("x", (line_width / 2))             
+            .attr("x", (summary_width / 2))             
             .attr("y", margins.top+2)
             .attr("text-anchor", "middle")  
-            .style("font-size", "16px")   
-            .style("font-weight", "bold") 
+            .style("font-size", "15px")   
             .style("fill", "white")
-            .text("Percent Minority of Nominees");
-
-      summary_svg.append("text") // Title text
-            .attr("x", (line_width / 2))             
-            .attr("y", margins.top+2)
-            .attr("dy", "1em")
-            .attr("text-anchor", "middle")  
-            .style("font-size", "11px")   
-            .style("fill", "white")
-            .text("(Rolling 5-year average)");
-      
-      summary_legendsvg.selectAll('legendDots')
-        .data(categories)
-        .enter()
-        .append("circle")
-        .attr("cx", 40)
-          .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
-          .attr("r", 4)
-          .style("fill", function(d){ return line_color(d)})
-
-      summary_legendsvg.selectAll('legendLabels')
-        .data(categories)
-        .enter()
-        .append("text")
-          .attr("class", function(d){ return "label-" + d })
-          .attr("x", 50)
-          .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
-          // .style("fill", function(d){ return color(d)})
-          .text(function(d){ return d})
-          .attr("text-anchor", "left")
-          .style("alignment-baseline", "middle")
-          .style("fill", "#b8b8b8")
-          .style("font-family", "Didact Gothic")
-          .style("font-size", "18px")
-          .style("text-transform", "lowercase")
+            .text(function(d){ return(d.key)});
 
         // COMPARE BETWEEN AWARDS
+              
+        var line_height = summaryHeight - margins.top - margins.bottom
+        var line_width = summaryWidth - margins.left - margins.right
+
         var compare_x = d3.scaleLinear().range([0, line_width]).domain([1928, 2019]);
 
         var compare_y = d3.scaleLinear()
@@ -1060,27 +1030,51 @@
 
             // Update summary graph
             var new_race_counts = race_counts_rolling.filter(d => (d.year >= newRange.begin) && (d.year <= newRange.end))
-            summary_x.domain([newRange.begin, newRange.end])
-            summary_xAxis.transition().duration(100)
-            .call(d3.axisBottom(summary_x))
-            .selectAll("text")
-            .attr("transform", "rotate(-15)");
-            summary_y.domain([0, Math.min(100, d3.max(new_race_counts, function(d) { return d.pct; })*1.3)]);
-            summary_yAxis.transition().duration(100).call(d3.axisLeft(summary_y));
+            var new_race_counts_rolling_nested = d3.nest()
+              .key(function(d) { return d.category; })
+              .entries(new_race_counts);
 
-            summary_svg.selectAll(".line").remove();
+            summary_update = d3.select("#summary_graph").selectAll("svg").data(new_race_counts_rolling_nested);
+            var new_lines = summary_update.enter()
+                        .append("svg")
+                        .attr("class", "categoryChart")
+                        .attr("height", summaryHeight_subplot)
+                        .attr("width", summaryWidth_subplot)
+                        .append("g")
+                      .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+                        
+            summary_update.exit().remove()
             
-            for (var i=0; i<categories.length; i++){
-            summary_svg.append("path")
-                .datum(new_race_counts.filter(d => d.category === categories[i])) 
-                .attr("class", "line") 
-                .attr("id", categories[i].concat("Line"))
-                .attr("d", summary_line)
-                .attr("active", 0)
-                .style("fill", "none")
-                .style("stroke", line_color(categories[i]))
-                .style("stroke-width", "1")  
-            }
+            summary_x.domain([newRange.begin, newRange.end]).range([0, summary_width])
+            summary_update.selectAll(".xaxis")
+                        .transition().duration(100)
+                        .call(d3.axisBottom(summary_x).ticks(3));
+            summary_y.domain([0, Math.min(100, d3.max(new_race_counts, function(d) { return d.pct; })*1.3)]);
+            summary_update.selectAll(".yaxis").transition().duration(100).call(d3.axisLeft(summary_y));
+
+            summary_line = d3.line()
+            .x(function(d) {return summary_x(d.year);})
+            .y(function(d) {return summary_y(d.pct);});
+          
+
+            // clips the ends of the lines to the graph width and height, otherwise the line crosses ove the axes for some reason
+            summary_update.append('defs')
+                  .append('clipPath')
+                  .attr('id', 'clip')
+                  .append('rect')
+                  .attr('width', summary_width)
+                  .attr('height', summary_height);
+
+            summary_update.selectAll(".line").transition()
+                    .attr("class", "line") 
+                    .attr('clip-path', 'url(#clip)') 
+                    .attr("fill", "none")
+                    .attr("stroke", "#AB8D3F")
+                    .attr("stroke-width", 1.9)
+                    .attr("d", function(d){
+                      return summary_line(d.values)
+                    })
+
 
             // Update compare graph
             var new_all_data = all_data.filter(d => (d.year_ceremony >= newRange.begin) && (d.year_ceremony <= newRange.end))
