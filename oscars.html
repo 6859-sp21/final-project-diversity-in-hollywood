@@ -280,9 +280,13 @@
       
     </div>
   </div>
-  <h3 style="padding-left: 40px;text-align: center; margin-top: 300px;">
-    Percentage of racial minorities over time
+  <h3 style="padding-left: 40px;text-align: center; margin-top: 300px;margin-bottom: 50px;">
+    Percentage of racial minorities by category for the Oscars.
   </h3>
+  <h4 class="main-caption p-3 text-center" style="margin: 50px;">
+    Select which individuals to include:
+    <select id="selectButton"></select>
+  </h4>
   <div class="row" style='margin: 50px;'>
     <div class="col-sm-12" style="color:white">
       <div id="summary_graph"></div>
@@ -352,10 +356,22 @@
         .attr("class", "tooltip")				
         .style("opacity", 0);
 
-    var summaryHeight = 200
-    var summaryWidth = document.getElementById('summary_graph').clientWidth;
-    var margins = {top: 10, right: 10, bottom: 20, left: 30};
+    // format dropdown button for graph 1
+    var includes = ["all", "winner", "nominee"] // button options
+    var includes_text = {"all": "all nominees", 
+                        "winner": "winners only", 
+                        "nominee": "nominees excluding winners"}
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+     	.data(includes)
+      .enter()
+    	.append('option')
+      .text(function (d) { return includes_text[d]; }) // map to the right display text
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
+    var summaryWidth = document.getElementById('summary_graph').clientWidth;
+    var summaryHeight = Math.floor(summaryWidth*0.2*0.7);
+    var margins = {top: 10, right: 10, bottom: 20, left: 30};
 
     var compare_svg = d3.select("#compare_graph")
         .append("svg")
@@ -809,8 +825,8 @@
           for (var j=0; j<races.length; j++){
             year_race_counts[i][races[j]] = {};
             for (var k=0; k<categories.length; k++){
-              year_race_counts[i]["all"][categories[k]] = 0;
-              year_race_counts[i][races[j]][categories[k]] = 0;
+              year_race_counts[i]["all"][categories[k]] = {"winner": 0, "nominee": 0, "all": 0};
+              year_race_counts[i][races[j]][categories[k]] = {"winner": 0, "nominee": 0, "all": 0};
             }
           }
         }
@@ -819,27 +835,39 @@
           var year = +d.year_ceremony;
           var fixed_race = d.fixed_race;
           var category = d.category;
+          var winner = d.winner;
           
           if (year_race_counts[year][fixed_race][category] === undefined){
-            year_race_counts[year][fixed_race][category] = 0;
+            year_race_counts[year][fixed_race][category] = {"winner": 0, "nominee": 0, "all": 0};
+          } else if (winner=="TRUE") {
+            year_race_counts[year][fixed_race][category]["all"] ++;
+            year_race_counts[year]["all"][category]["all"]++;
+            year_race_counts[year][fixed_race][category]["winner"] ++;
+            year_race_counts[year]["all"][category]["winner"]++;
           } else {
-            year_race_counts[year][fixed_race][category] ++;
-            year_race_counts[year]["all"][category]++;
+            year_race_counts[year][fixed_race][category]["all"] ++;
+            year_race_counts[year]["all"][category]["all"]++;
+            year_race_counts[year][fixed_race][category]["nominee"] ++;
+            year_race_counts[year]["all"][category]["nominee"]++;
           }
         });
 
         var race_counts = []
         for (var yr=1928; yr<=2020; yr++){
           for (var c=0; c<categories.length; c++){
-            if (year_race_counts[yr]["all"][categories[c]] == 0) {
-              var datapt = {"year":yr, "category": categories[c], "pct":0}
+            if (year_race_counts[yr]["all"][categories[c]]["all"] == 0) {
+              for (var i=0; i<includes.length; i++){
+                race_counts.push({"year":yr, "category": categories[c], "pct":0, "include": includes[i]})
+              }
             }
             else {
-              // pct_white is actually percent minority now
-              var pct_white = 1-year_race_counts[yr]["white"][categories[c]] / year_race_counts[yr]["all"][categories[c]]
-              var datapt = {"year":yr, "category": categories[c], "pct":pct_white}
+              for (var i=0; i<includes.length; i++){
+                // pct_white is actually percent minority now
+                var pct_white = 1-year_race_counts[yr]["white"][categories[c]][includes[i]] / year_race_counts[yr]["all"][categories[c]][includes[i]]
+                var datapt = {"year":yr, "category": categories[c], "pct":pct_white, "include": includes[i]}
+                race_counts.push(datapt);
+              }
             }
-            race_counts.push(datapt)
           }
         }
 
@@ -849,16 +877,20 @@
           var max_yr = Math.min(2020, yr+2)
           
           for (var c=0; c<categories.length; c++){
-            var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr))
-            var mean = d3.mean(rolling_data.map(d => d.pct))*100
-            datapt = {"year":yr, "category": categories[c], "pct":mean}
-            race_counts_rolling.push(datapt)
+            for (var i=0; i<includes.length; i++) {
+              var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr) && (d.include == includes[i]))
+              var mean = d3.mean(rolling_data.map(d => d.pct))*100
+              datapt = {"year":yr, "category": categories[c], "pct":mean, "include": includes[i]}
+              race_counts_rolling.push(datapt)
+            }
           }
         }
 
+        var current_race_counts_rolling = race_counts_rolling.filter(d => (d.include == "all") )
+
         var race_counts_rolling_nested = d3.nest()
             .key(function(d) { return d.category; })
-            .entries(race_counts_rolling);
+            .entries(current_race_counts_rolling);
 
         var summaryWidth_subplot = Math.floor((summaryWidth-margins.left-margins.right)/5); 
         var summaryHeight_subplot = summaryHeight;
@@ -877,7 +909,7 @@
           .y(function(d) {return summary_y(d.pct);});
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
-
+        
         var summary_svg = d3.select("#summary_graph").selectAll("svg")
           .data(race_counts_rolling_nested)
           .enter()
@@ -908,9 +940,56 @@
               .attr("x", (summary_width / 2))             
               .attr("y", margins.top+2)
               .attr("text-anchor", "middle")  
-              .style("font-size", "15px")   
+              .style("font-size", "20px")   
               .style("fill", "white")
               .text(function(d){ return(d.key)});
+
+          // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+          var focus = summary_svg.append("g")
+              .attr("class", "focus")
+              .style("display", "none");
+
+          focus.append("circle")
+              .attr("fill", "none")
+              .attr("stroke", "white")
+              .attr("r", 3);
+
+          focus.append("text")
+                .attr("x", 0)
+                .attr("dy", "-1.20em")
+                .style("font-size","14px")
+                .style("fill", "white")
+                .style("text-anchor", "middle");
+
+          summary_svg.append("rect")
+              .attr("class", "overlay")
+              .attr("width", summary_width)
+              .attr("height", summary_height)
+              .style("fill-opacity", 0.0)
+              .on("mouseover", function() { focus.style("display", null); })
+              .on("mouseout", function() { focus.style("display", "none"); })
+              .on("mousemove", summary_mousemove);
+
+          var bisectYear = d3.bisector(function(d) {
+            return d.year;
+          }).left;
+
+          function summary_mousemove() {
+              var year, index, index_diff;
+              year = summary_x.invert(d3.mouse(this)[0]);
+              var focus = summary_svg.selectAll(".focus");
+              focus.attr("transform", function(d) {
+
+                index = bisectYear(d.values, year, 0, d.values.length - 1);
+                var yDomain = d3.extent(d.values, function(d) { return d.pct; });
+                
+                focus.selectAll("text")
+                  .text(function (d){return (d.values[index].pct.toFixed(1) + " %")})
+                  .attr("fill", "white");
+                // adjust mouseover to use appropriate scale
+                return "translate(" + summary_x(d.values[index].year) + "," + summary_y(d.values[index].pct) + ")"
+                  });
+          };
 
         // COMPARE BETWEEN AWARDS
         
@@ -994,14 +1073,13 @@
         slider.onChange(function(newRange){
           d3.select("#range-label").text(newRange.begin + " - " + newRange.end);
           var newData = getData(newRange.begin, newRange.end);
-
           // // Update summary graph
-          var new_race_counts = race_counts_rolling.filter(d => (d.year > newRange.begin) && (d.year < newRange.end))
-          var new_race_counts_rolling_nested = d3.nest()
+          var new_race_counts = current_race_counts_rolling.filter(d => (d.year > newRange.begin) && (d.year < newRange.end))
+          race_counts_rolling_nested = d3.nest()
             .key(function(d) { return d.category; })
             .entries(new_race_counts);
 
-          summary_update = d3.select("#summary_graph").selectAll("svg").data(new_race_counts_rolling_nested);
+          var summary_update = d3.select("#summary_graph").selectAll("svg").data(race_counts_rolling_nested);
           var new_lines = summary_update.enter()
                       .append("svg")
                       .attr("class", "categoryChart")
@@ -1156,11 +1234,100 @@
         document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
         document.getElementById("director-btn").addEventListener("click", handleCategoryChange(directorCategory))
 
+        // // CATEGORY BUTTON LOGIC in LINE GRAPH
+        // A function that updates the chart
+        function updateCategoryGraph(selectedGroup) {
+
+          current_race_counts_rolling = race_counts_rolling.filter(d => (d.include == selectedGroup) )
+          //console.log(current_race_counts_rolling)
+
+          race_counts_rolling_nested = d3.nest()
+              .key(function(d) { return d.category; })
+              .entries(current_race_counts_rolling);
 
 
+          // Update the category graph. very jank.
+          // Almost got the transition to work, but can't get over a bug so I'm just removing the previous graph and redrawing it.
+
+          summary_x = d3.scaleLinear().range([0, summary_width]).domain([1928, 2019]);
+
+          summary_y = d3.scaleLinear().range([summary_height, margins.top])
+            summary_y.domain([0, Math.min(100, 1.3*d3.max(current_race_counts_rolling, function(d) { return d.pct; })+0.2)]);
 
 
-      })
+          summary_svg = d3.select("#summary_graph").selectAll("svg").remove();
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg")
+            .data(race_counts_rolling_nested)
+            .enter()
+            .append("svg")
+            .attr("class", "categoryChart")
+            .attr("height", summaryHeight_subplot)
+            .attr("width", summaryWidth_subplot)
+            .append("g")
+            .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+
+          summary_xAxis = summary_svg.append("g")
+            .attr("class", "xaxis")
+            .attr("transform", "translate(0," + summary_height + ")")
+            .call(d3.axisBottom(summary_x).ticks(3));
+
+          summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+          summary_svg.append("path")
+                    .attr("class", "line") 
+                    .attr("fill", "none")
+                    .attr("stroke", "#AB8D3F")
+                    .attr("stroke-width", 1.9)
+                    .attr("d", function(d){
+                      return summary_line(d.values)
+                    })
+          
+          summary_svg.append("text") // Title text
+                .attr("x", (summary_width / 2))             
+                .attr("y", margins.top+2)
+                .attr("text-anchor", "middle")  
+                .style("font-size", "20px")   
+                .style("fill", "white")
+                .text(function(d){ return(d.key)});
+
+            // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+            focus = summary_svg.append("g")
+                .attr("class", "focus")
+                .style("display", "none");
+
+            focus.append("circle")
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("r", 3);
+
+            focus.append("text")
+                  .attr("x", 0)
+                  .attr("dy", "-1.20em")
+                  .style("font-size","14px")
+                  .style("fill", "white")
+                  .style("text-anchor", "middle");
+
+            summary_svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", summary_width)
+                .attr("height", summary_height)
+                .style("fill-opacity", 0.0)
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", summary_mousemove);
+        }
+
+
+        // When the button is changed, run the updateChart function
+        d3.select("#selectButton").on("change", function(d) {
+          // recover the option that has been chosen
+          var selectedOption = d3.select(this).property("value")
+          // run the updateChart function with this selected option
+          updateCategoryGraph(selectedOption)
+        })
+
+      });
     });
   </script>
 </body>
