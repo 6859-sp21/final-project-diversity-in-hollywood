@@ -605,7 +605,7 @@
     }
 
     d3.csv("./datasets/oscar_nominees_with_fixed_race.csv").then((csv_data) => {
-      d3.csv('./datasets/all_awards_race_year_count.csv').then((all_data) => {
+      d3.csv('./datasets/all_awards_race_year_count_latest.csv').then((all_data) => {
         function getData(startYear, endYear) {
           var data = []
           for (var i = 0; i < csv_data.length; i++) {
@@ -1000,18 +1000,50 @@
 
         var compare_y = d3.scaleLinear()
             .range([line_height, margins.top])
-            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return 1-d.pct_race; }))]);;
+            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return d.pct_race; }))]);;
 
         var compare_line = d3.line()
           .x(function(d) {return compare_x(d.year_ceremony);})
-          .y(function(d) {return compare_y(1-d.pct_race);});
+          .y(function(d) {return compare_y(d.pct_race);});
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
         
         var awards = ['oscars','golden globes', 'sag']
+
+        var categoryMappings = {"Actor In A Leading Role": "ACTOR IN A LEADING ROLE",
+          "Actress In A Leading Role": "ACTRESS IN A LEADING ROLE", "Supporting Actor In A Leading Role":
+                  "ACTOR IN A SUPPORTING ROLE","Supporting Actress In A Leading Role": "ACTRESS IN A SUPPORTING ROLE",
+        "DIRECTING": "DIRECTING"}
+
+
+        let filteredData = all_data.filter(d => (categories.includes(categoryMappings[d.category])) && (d.fixed_race==='white'))
+        let combinedData = []
+        let element = {}
+
+        filteredData.forEach( function(d) {
+          if (d.award + "_" + d.year_ceremony in element) {
+            element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+          }
+
+          else {
+            element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+          }
+          if (d.year_ceremony === "1928") {
+            console.log(d.pct_race)
+          }
+        });
+
+        for (var key in element) {
+          let award = key.split("_")[0];
+          let year_ceremony = key.split("_")[1];
+          combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+        }
+
+        console.log(combinedData)
+
         for (var i=0; i<awards.length; i++){
           compare_svg.append("path")
-            .datum(all_data.filter(d => (d.award === awards[i]) && (d.fixed_race==='white'))) 
+            .datum(combinedData.filter(d => (d.award === awards[i]) ))
             .attr("class", "line") 
             .attr("id", awards[i].concat("Line"))
             .attr("d", compare_line)
@@ -1127,24 +1159,42 @@
             .call(d3.axisBottom(compare_x))
             .selectAll("text")
             .attr("transform", "rotate(-15)");
-          console.log(d3.max(new_all_data, function(d) { return 1-d.pct_race; }))
-          compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return 1-d.pct_race; }))]);
+          console.log(d3.max(new_all_data, function(d) { return d.pct_race; }))
+          compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return d.pct_race; }))]);
           compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
 
           compare_svg.selectAll(".line").remove();
-          
-          for (var i=0; i<awards.length; i++){
-          compare_svg.append("path")
-            .datum(new_all_data.filter(d => (d.award == awards[i]) && (d.fixed_race=='white'))) 
-            .attr("class", "line") 
-            .attr("id", awards[i].concat("Line"))
-            .attr("d", compare_line)
-            .attr("active", 0)
-            .style("fill", "none")
-            .style("stroke", line_color(awards[i]))
-            .style("stroke-width", "1")  
-        }
 
+          let filteredData = new_all_data.filter(d => (categories.includes(categoryMappings[d.category])) && (d.fixed_race==='white'))
+          let combinedData = []
+          let element = {}
+          filteredData.forEach( function(d) {
+            if (d.award + "_" + d.year_ceremony in element) {
+              element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+            }
+
+            else {
+              element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+            }
+          });
+
+          for (var key in element) {
+            let award = key.split("_")[0];
+            let year_ceremony = key.split("_")[1];
+            combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+          }
+
+          for (var i=0; i<awards.length; i++){
+            compare_svg.append("path")
+                    .datum(combinedData.filter(d => (d.award === awards[i]) ))
+                    .attr("class", "line")
+                    .attr("id", awards[i].concat("Line"))
+                    .attr("d", compare_line)
+                    .attr("active", 0)
+                    .style("fill", "none")
+                    .style("stroke", line_color(awards[i]))
+                    .style("stroke-width", "1")
+          }
 
           // Update circle graph
           update(csv_data, newRange.begin, newRange.end, categories)
@@ -1224,6 +1274,39 @@
             console.log('alpha', alpha)
             simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
             simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+
+            compare_svg.selectAll(".line").remove();
+
+            let filteredData = all_data.filter(d => (categories.includes(categoryMappings[d.category])) && (d.fixed_race==='white'))
+            let combinedData = []
+            let element = {}
+            filteredData.forEach( function(d) {
+              if (d.award + "_" + d.year_ceremony in element) {
+                element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+              }
+
+              else {
+                element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+              }
+            });
+
+            for (var key in element) {
+              let award = key.split("_")[0];
+              let year_ceremony = key.split("_")[1];
+              combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+            }
+
+            for (var i=0; i<awards.length; i++){
+              compare_svg.append("path")
+                      .datum(combinedData.filter(d => (d.award === awards[i]) ))
+                      .attr("class", "line")
+                      .attr("id", awards[i].concat("Line"))
+                      .attr("d", compare_line)
+                      .attr("active", 0)
+                      .style("fill", "none")
+                      .style("stroke", line_color(awards[i]))
+                      .style("stroke-width", "1")
+            }
           }
             
         }

@@ -603,7 +603,7 @@
 
 
     d3.csv("./datasets/golden_globe_merged.csv").then((csv_orig) => {
-      d3.csv('./datasets/all_awards_race_year_count.csv').then((all_data) => {
+      d3.csv('./datasets/all_awards_race_year_count_latest.csv').then((all_data) => {
         /* ALL CATEGORIES SORTED
         'Actress In A Leading Role', 
         'Best Performance by an Actress in a Motion Picture - Drama',
@@ -1081,18 +1081,40 @@
 
         var compare_y = d3.scaleLinear()
             .range([line_height, margins.top])
-            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return 1-d.pct_race; }))]);;
+            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return d.pct_race; }))]);;
 
         var compare_line = d3.line()
           .x(function(d) {return compare_x(d.year_ceremony);})
-          .y(function(d) {return compare_y(1-d.pct_race);});
+          .y(function(d) {return compare_y(d.pct_race);});
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
 
+
+
         var awards = ['oscars','golden globes', 'sag']
+
+        let filteredData = all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+        let combinedData = []
+        let element = {}
+        filteredData.forEach( function(d) {
+          if (d.award + "_" + d.year_ceremony in element) {
+            element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+          }
+
+          else {
+            element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+          }
+        });
+
+        for (var key in element) {
+          let award = key.split("_")[0];
+          let year_ceremony = key.split("_")[1];
+          combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+        }
+
         for (var i=0; i<awards.length; i++){
           compare_svg.append("path")
-            .datum(all_data.filter(d => (d.award === awards[i]) && (d.fixed_race==='white'))) 
+            .datum(combinedData.filter(d => (d.award === awards[i]) ))
             .attr("class", "line") 
             .attr("id", awards[i].concat("Line"))
             .attr("d", compare_line)
@@ -1254,14 +1276,33 @@
                 .call(d3.axisBottom(compare_x))
                 .selectAll("text")
                 .attr("transform", "rotate(-15)");
-              compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return 1-d.pct_race; }))]);
+              compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return d.pct_race; }))]);
               compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
 
               compare_svg.selectAll(".line").remove();
+
+              let filteredData = new_all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+              let combinedData = []
+              let element = {}
+              filteredData.forEach( function(d) {
+                if (d.award + "_" + d.year_ceremony in element) {
+                  element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+                }
+
+                else {
+                  element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+                }
+              });
+
+              for (var key in element) {
+                let award = key.split("_")[0];
+                let year_ceremony = key.split("_")[1];
+                combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+              }
               
               for (var i=0; i<awards.length; i++){
               compare_svg.append("path")
-                .datum(new_all_data.filter(d => (d.award == awards[i]) && (d.fixed_race=='white'))) 
+                .datum(combinedData.filter(d => (d.award == awards[i])))
                 .attr("class", "line") 
                 .attr("id", awards[i].concat("Line"))
                 .attr("d", compare_line)
@@ -1287,10 +1328,10 @@
           });
 
           slider.range(1945, 2020);
-
           // // CATEGORY BUTTON LOGIC
           function handleCategoryChange(category) {
               return function(e){
+                console.log("here")
                   // if all categories selected, then select only the "All" button
                   if (category == "all") {
                       // Outline all buttons except for the "All" button
@@ -1334,6 +1375,7 @@
                       // then, sort alphabetically so the graph is consistent in ordering
                       categories = categories.sort()
                   }
+
                   update(csv_data, slider.range().begin, slider.range().end, categories)
                   var newData = getData(slider.range().begin, slider.range().end).filter(d => categories.includes(d.category))
                   var winners = newData.filter(d => d.winner == "TRUE");
@@ -1347,6 +1389,39 @@
                   console.log('alpha', alpha)
                   simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
                   simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+
+                let filteredData = all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+                let combinedData = []
+                let element = {}
+                filteredData.forEach( function(d) {
+                  if (d.award + "_" + d.year_ceremony in element) {
+                    element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+                  }
+
+                  else {
+                    element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+                  }
+                });
+
+                for (var key in element) {
+                  let award = key.split("_")[0];
+                  let year_ceremony = key.split("_")[1];
+                  combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+                }
+
+                compare_svg.selectAll(".line").remove();
+                for (var i=0; i<awards.length; i++){
+                  compare_svg.append("path")
+                          .datum(combinedData.filter(d => (d.award === awards[i]) ))
+                          .attr("class", "line")
+                          .attr("id", awards[i].concat("Line"))
+                          .attr("d", compare_line)
+                          .attr("active", 0)
+                          .style("fill", "none")
+                          .style("stroke", line_color(awards[i]))
+                          .style("stroke-width", "1")
+                }
+
               }
 
           }
