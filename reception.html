@@ -403,7 +403,8 @@
         .call(legendSize);
 
     function getHtmlForSidebar(data) {
-      // genre, budget, metascore, gross worldwide / us, percent distribution 
+      // genre, budget, metascore, gross worldwide / us, percent distribution
+      var imageDiv = "<div id='movie-poster' class='pr-4 float-left'><img src='./images/movie-thumbnail.jpg' width='100'/></div>"
       var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
       var genre = "<div>Genre: " + data.genre + "</div>"
       var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
@@ -412,33 +413,13 @@
       var breaks = "<br><br>"
       var diversityText = "<div> Of the <a href='https://en.wikipedia.org/wiki/Billing_(performing_arts)#Top_and_above-title_billing' target='_blank'>top-billed</a> actors in the film, the race distribution was: </div>"
       var tooltipDiv = "<div id='summaryBars' class='pt-4'></div>"
+      return imageDiv + header + genre + budget + metascore + gross + breaks + diversityText + tooltipDiv
+    }
 
-      // bar chart
-      // var x = d3.scaleBand().domain(["white", "black", "hispanic", "asian", "other"])
-      // var y = d3.scaleLinear().range([300, 0]).domain([0,1]);
-      // var bar_svg = d3.select(".sidebar").append("svg")
-      //   .attr("width", 400)
-      //   .attr("height", 300)
-      //   .append("g");
-      //     // .attr("transform", 
-      //     //       "translate(" + margin.left + "," + margin.top + ")");
-      // var race_distribution = [
-      //   {"race": "white", "percent": data.percent_white},
-      //   {"race": "black", "percent": data.percent_black},
-      //   {"race": "hispanic", "percent": data.percent_hispanic},
-      //   {"race": "asian", "percent": data.percent_asian},
-      //   {"race": "other", "percent": data.percent_other},
-      // ]
-      // bar_svg.selectAll("bar")
-      //   .data(race_distribution)
-      //   .enter().append("rect")
-      //     .style("fill", "steelblue")
-      //     .attr("x", function(d) { return x(d.race); })
-      //     .attr("width", 20)
-      //     .attr("y", function(d) { return y(d.percent); })
-      //     .attr("height", function(d) { return 300 - y(d.percent); });
-
-      return header + genre + budget + metascore + gross + breaks + diversityText + tooltipDiv
+    async function getMoviePoster(movieTitle) {
+      let response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=75df43b925430c7c3bf191157cc3d9ea&query=' + movieTitle)
+      let json = await response.json()
+      return json.results[0].poster_path
     }
 
     var update = function(input_data, all_data, decadePrefix, yAxis) {
@@ -532,6 +513,16 @@
                 })
                 .attr("fill", "white")
                 .attr("text-anchor", "middle");
+            
+            // add movie poster
+            getMoviePoster(d.original_title).then(path => {
+              var el = d3.select("#movie-poster")
+              el.innerHTML = ""
+              const imagePath = 'https://image.tmdb.org/t/p/original' + path
+              el.select('img')
+                .attr('src', imagePath)
+                .attr('width', 100)
+            })
         })					
         .on("mouseout", function(d) {		
             // metadataSidebar.transition()		
