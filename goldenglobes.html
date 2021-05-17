@@ -1082,11 +1082,11 @@
 
         var compare_y = d3.scaleLinear()
             .range([line_height, margins.top])
-            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return d.pct_race; }))]);;
+            compare_y.domain([0, Math.min(100, d3.max(all_data, function(d) { return d.pct_race * 100; }))]);;
 
         var compare_line = d3.line()
           .x(function(d) {return compare_x(d.year_ceremony);})
-          .y(function(d) {return compare_y(d.pct_race);});
+          .y(function(d) {return compare_y(d.pct_race * 100);});
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -1293,7 +1293,7 @@
                 .call(d3.axisBottom(compare_x))
                 .selectAll("text")
                 .attr("transform", "rotate(-15)");
-              compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return d.pct_race; }))]);
+              compare_y.domain([0, Math.min(50, d3.max(new_all_data, function(d) { return d.pct_race * 100; }))]);
               compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
 
               compare_svg.selectAll(".line").remove();
