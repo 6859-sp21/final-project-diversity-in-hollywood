@@ -1107,6 +1107,22 @@
           }
         });
 
+          var increments = [-2, -1, 1, 2];
+          for (var key in element) {
+              var count = 1;
+              var sum = element[key];
+              for (const inc of increments) {
+                  var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                  var award = key.split("_")[0];
+                  var key2 = award + "_" + year_ceremony;
+                  if (key2 in element) {
+                      sum += element[key2];
+                      count += 1;
+                  }
+              }
+              element[key] = sum / count;
+          }
+
         for (var key in element) {
           let award = key.split("_")[0];
           let year_ceremony = key.split("_")[1];
@@ -1285,6 +1301,9 @@
               let filteredData = new_all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
               let combinedData = []
               let element = {}
+              // +/- 2 year rolling average: in combinedData, for each award/year ceremony, go through combinedData again
+              // and see if
+
               filteredData.forEach( function(d) {
                 if (d.award + "_" + d.year_ceremony in element) {
                   element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
@@ -1294,6 +1313,22 @@
                   element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
                 }
               });
+
+              var increments = [-2, -1, 1, 2];
+              for (var key in element) {
+                  var count = 1;
+                  var sum = element[key];
+                  for (const inc of increments) {
+                      var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                      var award = key.split("_")[0];
+                      var key2 = award + "_" + year_ceremony;
+                      if (key2 in element) {
+                          sum += element[key2];
+                          count += 1;
+                      }
+                  }
+                  element[key] = sum / count;
+              }
 
               for (var key in element) {
                 let award = key.split("_")[0];
@@ -1403,6 +1438,22 @@
                     element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
                   }
                 });
+
+                  var increments = [-2, -1, 1, 2];
+                  for (var key in element) {
+                      var count = 1;
+                      var sum = element[key];
+                      for (const inc of increments) {
+                          var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                          var award = key.split("_")[0];
+                          var key2 = award + "_" + year_ceremony;
+                          if (key2 in element) {
+                              sum += element[key2];
+                              count += 1;
+                          }
+                      }
+                      element[key] = sum / count;
+                  }
 
                 for (var key in element) {
                   let award = key.split("_")[0];
