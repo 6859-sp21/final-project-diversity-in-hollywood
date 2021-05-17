@@ -191,6 +191,10 @@
       text-decoration: none !important;
     }
 
+    .white-fill {
+      fill: white !important;
+    }
+
   </style>
 </head>
 <body>
@@ -449,7 +453,15 @@
         .style("fill", goldColor)
         .style("stroke", "#383838")
         .style("stroke-width", 1.5)
-        .on("mouseover", function(d) {		
+        .on("mouseover", function(d) {
+            // remove the stroke from the previous hovered circle
+            var el = document.getElementsByClassName("white-fill");
+            for (let i = 0; i < el.length; i++) {
+              el[i].classList.remove("white-fill")
+            }
+
+            d3.select(this).classed('white-fill', true)
+
             metadataSidebar.transition()		
                 .duration(200)		
                 .style("opacity", 1)
@@ -528,7 +540,7 @@
                 .attr('src', imagePath)
                 .attr('width', 100)
             })
-        })					
+        })
         .on("mouseout", function(d) {		
             // metadataSidebar.transition()		
             //     .duration(300)		
