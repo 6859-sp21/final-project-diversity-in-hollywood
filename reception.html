@@ -217,6 +217,9 @@
           <h1 class="display-4 px-4 pt-4" style="font-size: 30px; margin: 0;">How is race diversity related to a movie's box office success?</h1>
               <h2>By examining the top 30 grossing movies from each decade, we can explore race diversity vs. metrics of reception.
               Hover over circles to see more information about individual movies.</h2>
+          <div class="sidebar" id="sidebar-default">
+            No movie has been selected. Hover over a circle to see additional information on the movie here.
+          </div>
         </div>
         <div class="p-3 explore-section">
           <div class="nav-options">
@@ -454,6 +457,8 @@
         .style("stroke", "#383838")
         .style("stroke-width", 1.5)
         .on("mouseover", function(d) {
+            var sidebarDefault = document.getElementById('sidebar-default')
+            if (sidebarDefault) {sidebarDefault.remove()}
             // remove the stroke from the previous hovered circle
             var el = document.getElementsByClassName("white-fill");
             for (let i = 0; i < el.length; i++) {
