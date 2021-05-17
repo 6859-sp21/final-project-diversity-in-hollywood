@@ -177,6 +177,12 @@
       color: #7E5E29 !important;
       font-size: 24px;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+      display: block;
+    }
+
+    .nav-option:hover {
+      transform: scale(1.04) !important;
     }
 
     .explore-section {
@@ -185,10 +191,16 @@
     }
 
     .selected-nav-option {
+      display: block;
       color: #E6AB02 !important;
       font-size: 26px;
       font-weight: 600;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+    }
+
+    .selected-nav-option:hover {
+      transform: scale(1.04) !important;
     }
 
     .white-fill {
@@ -224,9 +236,7 @@
         <div class="p-3 explore-section">
           <div class="nav-options">
             <a class="nav-option" href="oscars.html">awards</a>
-            <br/>
             <a href="reception.html" class="selected-nav-option">reception</a>
-            <br/>
             <a href="index.html" class="nav-option">back to home</a>
           </div>
         </div>
