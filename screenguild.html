@@ -1038,7 +1038,7 @@
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
         
-        var awards = ['oscars','golden globes', 'sag']
+        var awards = ['sag', 'oscars','golden globes']
         var categoryMappings = {"Actor In A Leading Role": "MALE ACTOR IN A LEADING ROLE",
           "Actress In A Leading Role": "FEMALE ACTOR IN A LEADING ROLE", "Supporting Actor In A Leading Role":
                   "MALE ACTOR IN A SUPPORTING ROLE","Supporting Actress In A Leading Role": "FEMALE ACTOR IN A SUPPORTING ROLE"}
@@ -1094,7 +1094,7 @@
         var compare_xAxis = compare_svg.append("g")
             .attr("class", "axis")
             .attr("transform", "translate(0," + line_height + ")")
-            .call(d3.axisBottom(compare_x));
+            .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")));
         
         var compare_yAxis = compare_svg.append("g")
           .attr("class", "axis")
@@ -1186,7 +1186,7 @@
             var new_all_data = all_data.filter(d => (d.year_ceremony >= newRange.begin) && (d.year_ceremony <= newRange.end))
             compare_x.domain([newRange.begin, newRange.end])
             compare_xAxis.transition().duration(100)
-              .call(d3.axisBottom(compare_x))
+              .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")))
               .selectAll("text")
               .attr("transform", "rotate(-15)");
             compare_y.domain([0, Math.min(50, d3.max(new_all_data, function(d) { return d.pct_race * 100; }))]);
