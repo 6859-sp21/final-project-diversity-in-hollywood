@@ -1001,11 +1001,11 @@
 
         var compare_y = d3.scaleLinear()
             .range([line_height, margins.top])
-            compare_y.domain([0, Math.min(1, d3.max(all_data, function(d) { return d.pct_race; }))]);;
+            compare_y.domain([0, Math.min(100, d3.max(all_data, function(d) { return d.pct_race * 100; }))]);;
 
         var compare_line = d3.line()
           .x(function(d) {return compare_x(d.year_ceremony);})
-          .y(function(d) {return compare_y(d.pct_race);});
+          .y(function(d) {return compare_y(d.pct_race * 100);});
 
         var line_color = d3.scaleOrdinal(d3.schemeCategory10);
         
@@ -1029,10 +1029,23 @@
           else {
             element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
           }
-          if (d.year_ceremony === "1928") {
-            console.log(d.pct_race)
-          }
         });
+
+        var increments = [-2, -1, 1, 2];
+        for (var key in element) {
+          var count = 1;
+          var sum = element[key];
+          for (const inc of increments) {
+            var year_ceremony = parseInt(key.split("_")[1]) + inc;
+            var award = key.split("_")[0];
+            var key2 = award + "_" + year_ceremony;
+            if (key2 in element) {
+              sum += element[key2];
+              count += 1;
+            }
+          }
+          element[key] = sum / count;
+        }
 
         for (var key in element) {
           let award = key.split("_")[0];
@@ -1161,7 +1174,7 @@
             .selectAll("text")
             .attr("transform", "rotate(-15)");
           console.log(d3.max(new_all_data, function(d) { return d.pct_race; }))
-          compare_y.domain([0, Math.min(0.5, d3.max(new_all_data, function(d) { return d.pct_race; }))]);
+          compare_y.domain([0, Math.min(50, d3.max(new_all_data, function(d) { return d.pct_race * 100; }))]);
           compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
 
           compare_svg.selectAll(".line").remove();
@@ -1178,6 +1191,22 @@
               element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
             }
           });
+
+          var increments = [-2, -1, 1, 2];
+          for (var key in element) {
+            var count = 1;
+            var sum = element[key];
+            for (const inc of increments) {
+              var year_ceremony = parseInt(key.split("_")[1]) + inc;
+              var award = key.split("_")[0];
+              var key2 = award + "_" + year_ceremony;
+              if (key2 in element) {
+                sum += element[key2];
+                count += 1;
+              }
+            }
+            element[key] = sum / count;
+          }
 
           for (var key in element) {
             let award = key.split("_")[0];
@@ -1290,6 +1319,22 @@
                 element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
               }
             });
+
+            var increments = [-2, -1, 1, 2];
+            for (var key in element) {
+              var count = 1;
+              var sum = element[key];
+              for (const inc of increments) {
+                var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                var award = key.split("_")[0];
+                var key2 = award + "_" + year_ceremony;
+                if (key2 in element) {
+                  sum += element[key2];
+                  count += 1;
+                }
+              }
+              element[key] = sum / count;
+            }
 
             for (var key in element) {
               let award = key.split("_")[0];
