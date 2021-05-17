@@ -246,7 +246,7 @@
         <div id="main">
           <div class="d-flex justify-content-around text-center px-5">
             <div class="py-4 my-auto">
-              Change x-axis: 
+              Select race to analyze: 
               <button type="button" class="btn btn-light percent-cast-race" id="white-button">white</button>
               <button type="button" class="btn btn-outline-light percent-cast-race" id="black-button">black</button>
               <button type="button" class="btn btn-outline-light percent-cast-race" id="hispanic-button">hispanic</button>
@@ -301,7 +301,7 @@
     svg.append("g")
         .attr("transform", "translate(0," + (margin.top-70) + ")")
         .attr("class", "axis")
-        .call(d3.axisTop(x))
+        .call(d3.axisTop(x).tickFormat(d3.format(".0%")))
         .call(g => g.select(".domain").remove());
 
     svg.append("text")             
