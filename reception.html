@@ -653,8 +653,9 @@
 
       
       // event listeners for race button filter clicks
-      var updateSelectedRace = function(race) {
+      var updateSelectedRace = function(race, data) {
         return function updateRace(e) {
+          console.log('running')
           selectedRace = race
           // update axis
           document.getElementById("x-axis-label").innerHTML = "% " + race + " cast";
@@ -667,6 +668,60 @@
           }
           document.getElementById(race + "-button").classList.remove('btn-outline-light')
           document.getElementById(race + "-button").classList.add('btn-light')
+
+          // draw average line
+          var sum = d3.sum(data, function(d) { 
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return raceToField[selectedRace] 
+          }); 
+          var average = sum / data.length
+
+          var lineNode = svg
+          .append("g")
+          .selectAll(".avg-line")
+          .data([average])
+
+          if (document.getElementById("avg-line")) {
+            document.getElementById("avg-line").remove()
+          }
+          if (document.getElementById("avg-caption")) {
+            document.getElementById("avg-caption").remove()
+          }
+
+          lineNode.join(
+            enter => enter.append('line')
+              .attr("id", "avg-line")
+              .style("stroke", "white")
+              .style("stroke-width", 1)
+              .attr("x1", avg => x(avg))
+              .attr("y1", y("1920s"))
+              .attr("x2", avg => x(avg))
+              .attr("y2", y("2010s") + y.bandwidth()),
+            update => update,
+            exit => exit.remove()
+          )
+
+          lineNode.join(
+            enter => enter.append("text")
+              .attr("id", "avg-caption")
+              .attr("transform", function(d) {
+                var xTranslation = x(average) + 130
+                var yTranslation = y("2010s") + y.bandwidth() + 20
+                return "translate(" + xTranslation + "," + yTranslation + ")"})
+              .attr("text-anchor", "end")
+              .style("fill", "white")
+              .style("font-size", "18px")
+              .html("Average % " + selectedRace + " cast: " + (average * 100).toFixed(1)),
+            update => update,
+            exit => exit.remove()
+          )
+
 
           // simulation
           simulation.force('x', d3.forceX().x(function(d) {
@@ -682,9 +737,12 @@
         }
       }
 
+      var callback = updateSelectedRace(selectedRace, data)
+      callback()
+
       var raceFilters = document.getElementsByClassName("percent-cast-race")
       for (var i = 0; i < raceFilters.length; i++) {
-        document.getElementById(raceFilters[i].innerText+"-button").addEventListener("click", updateSelectedRace(raceFilters[i].innerText))
+        document.getElementById(raceFilters[i].innerText+"-button").addEventListener("click", updateSelectedRace(raceFilters[i].innerText, data))
       }
 
     }
@@ -707,8 +765,6 @@
           data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
       }
       update(data, all_data, null, y)
-
-
     })
     
 
