@@ -203,8 +203,9 @@
       transform: scale(1.04) !important;
     }
 
-    .white-fill {
-      fill: white !important;
+    .white-stroke {
+      stroke: white !important;
+      stroke-width: 4px !important;
     }
 
   </style>
@@ -472,12 +473,12 @@
             var sidebarDefault = document.getElementById('sidebar-default')
             if (sidebarDefault) {sidebarDefault.remove()}
             // remove the stroke from the previous hovered circle
-            var el = document.getElementsByClassName("white-fill");
+            var el = document.getElementsByClassName("white-stroke");
             for (let i = 0; i < el.length; i++) {
-              el[i].classList.remove("white-fill")
+              el[i].classList.remove("white-stroke")
             }
 
-            d3.select(this).classed('white-fill', true)
+            d3.select(this).classed('white-stroke', true)
 
             metadataSidebar.transition()		
                 .duration(200)		
@@ -620,42 +621,16 @@
       simulation.nodes(data).alpha(0.3).alphaTarget(0).restart()
 
       // change the y-axis range to zoom in on a decade
-      var expandDecade = function(datum) {
-        // for now, just expand to 2010s
-        var newDecadePrefix = datum.substring(0,3)
-        var new_data = data.filter(d => d.year.substring(0,3) == newDecadePrefix)
-        // change the axis
-        // remove the old axis first
-        svg.select(".y-axis").remove()
-        var numbers = [9,8,7,6,5,4,3,2,1,0]
-        var newDomain = numbers.map( n => newDecadePrefix + n)
-        var y = d3.scaleBand()
-            .padding(0.4)
-            .domain(newDomain)
-            .range([ height, 0 ]);
-        svg.append("g")
-            .attr("class", "axis y-axis")
-            .call(d3.axisLeft(y))
-            .call(g => g.select(".domain").remove());
-        y.domain(newDomain)
-        svg.select(".y-axis")
-          .transition().duration(1000)
-          // .call(g => g.select(".domain").remove())
-          .call(d3.axisLeft(y));
-        update(new_data, all_data, newDecadePrefix, y)
-        // simulation.nodes(new_data).alpha(0.2).alphaTarget(0).restart()
-      }
       
       d3.select('.y-axis')
         .selectAll('.tick')
         .attr('class', d => d)
-        .on('click', d => expandDecade(d))
+        // .on('click', d => ())
 
       
       // event listeners for race button filter clicks
       var updateSelectedRace = function(race, data) {
         return function updateRace(e) {
-          console.log('running')
           selectedRace = race
           // update axis
           document.getElementById("x-axis-label").innerHTML = "% " + race + " cast";
