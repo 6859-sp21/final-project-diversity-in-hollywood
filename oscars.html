@@ -904,8 +904,7 @@
           .x(function(d) {return summary_x(d.year);})
           .y(function(d) {return summary_y(d.pct);});
 
-        var line_color = d3.scaleOrdinal(d3.schemeCategory10);
-        
+
         var summary_svg = d3.select("#summary_graph").selectAll("svg")
           .data(race_counts_rolling_nested)
           .enter()
@@ -1002,8 +1001,8 @@
           .x(function(d) {return compare_x(d.year_ceremony);})
           .y(function(d) {return compare_y(d.pct_race * 100);});
 
-        var line_color = d3.scaleOrdinal(d3.schemeCategory10);
-        
+        var line_color = d3.scaleOrdinal(['oscars','golden globes', 'sag'], ['#1f77b4', '#ff7f0e', '#2ca02c']);
+
         var awards = ['oscars','golden globes', 'sag']
 
         var categoryMappings = {"Actor In A Leading Role": "ACTOR IN A LEADING ROLE",
@@ -1059,7 +1058,13 @@
             .attr("active", 0)
             .style("fill", "none")
             .style("stroke", line_color(awards[i]))
-            .style("stroke-width", "1")  
+            .style("stroke-width", function(d) {
+              if (awards[i] === "oscars") {
+                return "3";
+              }
+              else {
+                return "1";
+              }})
         }
 
         var compare_xAxis = compare_svg.append("g")
@@ -1209,7 +1214,14 @@
                     .attr("active", 0)
                     .style("fill", "none")
                     .style("stroke", line_color(awards[i]))
-                    .style("stroke-width", "1")
+                    .style("stroke-width", function(d) {
+                      if (awards[i] === "oscars") {
+                        return "3";
+                      }
+                      else {
+                        return "1";
+                      }})
+
           }
 
           // Update circle graph
@@ -1337,7 +1349,13 @@
                       .attr("active", 0)
                       .style("fill", "none")
                       .style("stroke", line_color(awards[i]))
-                      .style("stroke-width", "1")
+                      .style("stroke-width", function(d) {
+                        if (awards[i] === "oscars") {
+                          return "3";
+                        }
+                        else {
+                          return "1";
+                        }})
             }
           }
             
