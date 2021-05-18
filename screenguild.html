@@ -1145,6 +1145,50 @@
             .style("font-size", "18px")
             .style("text-transform", "lowercase")
 
+        var compareTooltip = compare_svg.append("g")
+                .datum(combinedData.filter(d => (d.award === "sag")))
+                .attr("class", "compare")
+                .style("display", "none");
+
+        compareTooltip.append("circle")
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("r", 3);
+
+        compareTooltip.append("text")
+                .attr("x", 0)
+                .attr("dy", "-1.20em")
+                .style("font-size","14px")
+                .style("fill", "white")
+                .style("text-anchor", "middle");
+
+        compare_svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", summaryWidth)
+                .attr("height", summaryHeight)
+                .style("fill-opacity", 0.0)
+                .on("mouseover", function() { compareTooltip.style("display", null); })
+                .on("mouseout", function() { compareTooltip.style("display", "none"); })
+                .on("mousemove", compare_mousemove);
+
+        var bisectYearCompare = d3.bisector(function(d) {
+          return d.year_ceremony;
+        }).left;
+
+        function compare_mousemove() {
+          var year, index;
+          year = compare_x.invert(d3.mouse(this)[0]);
+          var compareTooltip = compare_svg.selectAll(".compare");
+          compareTooltip.attr("transform", function(d) {
+            index = bisectYearCompare(d, year, 0, d.length - 1);
+            compareTooltip.selectAll("text")
+                    .text(function (d){return ((d[index].pct_race * 100).toFixed(1) + " %")})
+                    .attr("fill", "white");
+            // adjust mouseover to use appropriate scale
+            return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+          });
+        };
+
         // SLIDER LOGIC
         var slider = createD3RangeSlider(1994, 2020, "#slider-container");
 
@@ -1393,6 +1437,32 @@
                             return "1";
                           }})
               }
+
+              var compareTooltip = compare_svg.append("g")
+                      .datum(combinedData.filter(d => (d.award === "sag")))
+                      .attr("class", "compare")
+                      .style("display", "none");
+
+              compareTooltip.append("circle")
+                      .attr("fill", "none")
+                      .attr("stroke", "white")
+                      .attr("r", 3);
+
+              compareTooltip.append("text")
+                      .attr("x", 0)
+                      .attr("dy", "-1.20em")
+                      .style("font-size","14px")
+                      .style("fill", "white")
+                      .style("text-anchor", "middle");
+
+              compare_svg.append("rect")
+                      .attr("class", "overlay")
+                      .attr("width", summaryWidth)
+                      .attr("height", summaryHeight)
+                      .style("fill-opacity", 0.0)
+                      .on("mouseover", function() { compareTooltip.style("display", null); })
+                      .on("mouseout", function() { compareTooltip.style("display", "none"); })
+                      .on("mousemove", compare_mousemove);
 
             }
 
