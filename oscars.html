@@ -29,7 +29,7 @@
       font-size: 1.5rem;
       line-height: 1; 
       margin-top: 5px;
-      margin-left: 20px;
+      margin-left: 0px;
       text-align: left; 
     }
     body {
@@ -246,7 +246,7 @@
         </div>
        </div>
       <div class="main-caption">
-        <h3 class="font-weight-bold">Individual nominees and winners for the main categories</h3>
+        <h2 class="font-weight-bold">Individual nominees and winners for the main categories</h2>
         <h4>Explore the racial and ethnic diversity of nominees and winners for the Oscars. Adjust the filters above to change the years and categories, and hover over each datapoint to view more information about the individual.</h4> 
       </div>
       <!-- first graph -->
@@ -273,12 +273,18 @@
       
     </div>
   </div>
-  <h3 style="padding-left: 40px;text-align: center; margin-top: 300px;margin-bottom: 50px;">
-    Percentage of racial minorities by category for the Oscars.
-  </h3>
-  <h4 class="main-caption p-3 text-center" style="margin: 50px;">
-    Select which individuals to include:
-    <select id="selectButton"></select>
+  <h2 style="padding-left: 40px;text-align: left; margin-top: 300px; font-size:2.0rem">
+    Percentage of racial minorities by award category for the Oscars.
+  </h2>
+  <h4 class="main-caption p-3 text-left" style="margin: 50px;">
+    The following graphs explore minority representation across different award categories. 
+    Although people of color have remained underrepresented in every category of employment in the film industry, different roles also present unique challenges. 
+    As of 2020, 3 out of 10 lead actors in film are people of color, while only 1.5 out of 10 directors are people of color. 
+    A higher minority representation in nominees does not always translate to same representation in winners. 
+    For viewing purposes, the graphs below show the rolling 5-year average of the percentage of minorities.<br><br>
+  
+    <span style = "color: #DCBE7B; opacity: 1.0;"> Toggle the year range using the top bar. <br><br>
+    Individuals to include: <select id="selectButton"></select> </span>
   </h4>
   <div class="row" style='margin: 50px;'>
     <div class="col-sm-12" style="color:white">
@@ -286,9 +292,15 @@
       <div id="summary_legend"></div>
     </div>
   </div>
-  <h3 style="padding-left: 40px;text-align: center; margin-top: 100px;">
-    Percentage of racial minorities by award.
-  </h3>
+  <h2 style="padding-left: 40px;text-align: left; margin-top: 300px; font-size:2.0rem">
+    Percentage of racial minorities by award show.
+  </h2>
+  <h4 class="main-caption p-3 text-left" style="margin: 50px;">
+    We can also compare minority representation at the Oscars to the other two award shows. <br><br>
+    <span style = "color: #DCBE7B; opacity: 1.0;">
+      Use the top bar to adjust the date range and categories included.
+      </span>
+  </h4>
   <div class="row" style='margin: 50px;'>
     
     <div class="col-sm-12" style="color:white">
