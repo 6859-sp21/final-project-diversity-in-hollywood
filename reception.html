@@ -135,6 +135,7 @@
       top: 0; /* Stay at the top */
       left: 0;
       overflow-x: hidden; /* Disable horizontal scroll */
+      overflow-y: scroll;
       padding-top: 20px;
       background-color: "#383838";
     }
@@ -202,8 +203,8 @@
     }
 
     .explore-section {
-      position: absolute;
-      bottom: 0%;
+      /* position: absolute;
+      bottom: 0%; */
     }
 
     .selected-nav-option {
@@ -284,6 +285,10 @@
 
     #selector button:hover {
       background-color: #f2f2f2;
+    }
+
+    a {
+      color: white !important;
     }
 
   </style>
@@ -612,7 +617,7 @@
 
     function getHtmlForSidebar(data) {
       // genre, budget, metascore, gross worldwide / us, percent distribution
-      var imageDiv = "<div id='movie-poster' class='pr-4 float-left'><img src='./images/movie-thumbnail.jpg' width='100'/></div>"
+      var imageDiv = "<div id='movie-poster' class='pr-4 m-auto'><img src='./images/movie-thumbnail.jpg' width='100'/></div>"
       var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
       var genre = "<div>Genre: <span class='text-white'>" + data.genre + "</span></div>"
       var budget = "<div>Budget ($): <span class='text-white'>" + nFormatter(data.budget,1) + "</span></div>"
@@ -621,7 +626,7 @@
       var breaks = "<br>"
       var diversityText = "<div> Of the <a href='https://en.wikipedia.org/wiki/Billing_(performing_arts)#Top_and_above-title_billing' target='_blank'>top-billed</a> actors in the film, the race distribution was: </div>"
       var tooltipDiv = "<div id='summaryBars' class='text-center'></div>"
-      return imageDiv + header + genre + budget + metascore + gross + breaks + diversityText + tooltipDiv
+      return "<div class='d-flex'>" + imageDiv + "<div>"+ header + genre + budget + metascore + gross + "</div></div>" + breaks + diversityText + tooltipDiv
     }
 
     async function getMoviePoster(movieTitle) {
@@ -681,7 +686,7 @@
             var barTipSVG = d3.select("#summaryBars")
               .append("svg")
               .attr("width", 420)
-              .attr("height", 280)
+              .attr("height", 170)
               .attr("transform", "translate(-20, 0)"); 
             
             barTipSVG.append("g")
