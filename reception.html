@@ -346,9 +346,9 @@
               <div>
                 <div id="legend"></div>
                 <div class="text-left" style="font-size: 18px;">
-                  Filter by genre:
+                  Filter by genre(s):
                   <div>
-                    <select class="form-select" id="genre-select" multiple style="width: 120px;">
+                    <select class="form-select" id="genre-select" multiple style="width: 120px; height: 280px;">
                       <option selected>all</option>
                       <option value="action">action</option>
                       <option value="adventure">adventure</option>
@@ -880,7 +880,11 @@
               "other": d.percent_other
             }
             return x(raceToField[race]);
-          }).strength(0.4)).alpha(0.2).alphaTarget(0).restart()
+          }).strength(0.4))
+          .force('collision', d3.forceCollide().radius(function(d) {
+            return rScale(parseFloat(d.adjusted_lifetime_gross));
+          }))
+          .alpha(0.2).alphaTarget(0).restart()
       }
 
       updateSelectedRace(selectedRace, data)
