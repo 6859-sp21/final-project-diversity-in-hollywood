@@ -208,7 +208,7 @@
       stroke-width: 4px !important;
     }
 
-    #race-select {
+    select {
       background: rgb(29, 28, 28);
       color: white;
       border-color: #555555;
@@ -309,15 +309,6 @@
       </div>
       <div class="col-sm-9">
         <div id="main">
-          <div class="d-flex justify-content-around text-center px-5">
-            <div>
-              <div class="dropdown-menu">
-                <h6 class="dropdown-header">Dropdown header</h6>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-              </div>
-            </div>
-          </div>
           <div class="d-flex">
             <div id="graph">
               <div style="font-size: 20px;">% 
@@ -331,7 +322,34 @@
                 cast
               </div>
             </div>
-            <div id="legend"></div>
+            <div>
+              <div id="legend"></div>
+              <div class="text-left" style="font-size: 18px;">
+                Filter by genre:
+                <div>
+                  <select class="form-select" id="genre-select" multiple style="width: 120px;">
+                    <option selected>all</option>
+                    <option value="action">action</option>
+                    <option value="adventure">adventure</option>
+                    <option value="animation">animation</option>
+                    <option value="biography">biography</option>
+                    <option value="comedy">comedy</option>
+                    <option value="crime">crime</option>
+                    <option value="drama">drama</option>
+                    <option value="family">family</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="history">history</option>
+                    <option value="horror">horror</option>
+                    <option value="musical">musical</option>
+                    <option value="romance">romance</option>
+                    <option value="sci-fi">sci-fi</option>
+                    <option value="thriller">thriller</option>
+                    <option value="war">war</option>
+                    <option value="western">western</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
           <div id="comparison" style="display:flex; flex-direction: column;">
             <input id="search" type="text" placeholder="search..">
@@ -777,9 +795,6 @@
         .selectAll('.tick')
         .attr('class', d => d)
         // .on('click', d => ())
-
-      
-
       
       // event listeners for race button filter clicks
       var updateSelectedRace = function(race, data) {
@@ -860,22 +875,48 @@
     }
     
     d3.csv("./datasets/movie_distributions_top_1000_gross.csv").then((all_data) => {
-      // filter out top 50 per decade
-      var data = []
-      for (let i = 0; i < decades.length; i++) {
-        var decadePrefix = decades[i].substring(0,3)
-        var moviesInDecade = all_data.filter(d => d.year.substring(0,3) == decadePrefix)
-        // sort movies by gross
-        moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
-        data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
-      }      
-
       // parse the data
-      for (i = 0; i < data.length; i++) {
-          data[i].budget = parseFloat(data[i].budget.replace('$', ''));
-          data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
-          data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
+      for (i = 0; i < all_data.length; i++) {
+        all_data[i].budget = parseFloat(all_data[i].budget.replace('$', ''));
+        all_data[i].usa_gross_income = parseFloat(all_data[i].usa_gross_income.replace('$', ''));
+        all_data[i].adjusted_lifetime_gross = parseFloat(all_data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
       }
+
+      // filter out top 30 per decade
+      var filterTop30PerDecade = function(dataset) {
+        var data = []
+        for (let i = 0; i < decades.length; i++) {
+          var decadePrefix = decades[i].substring(0,3)
+          var moviesInDecade = dataset.filter(d => d.year.substring(0,3) == decadePrefix)
+          // sort movies by gross
+          moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
+          data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
+        } 
+        return data
+      }
+
+      var data = filterTop30PerDecade(all_data)
+      
+      const genreSelect = document.querySelector('#genre-select');
+      genreSelect.addEventListener('change', (event) => {
+        var selectedGenres =$("#genre-select").val();
+        var newData = all_data
+        if (!selectedGenres.includes("all")) {
+          var newData = all_data.filter(d => {
+          var dataGenres = d.genre.split(",");
+          for (let i = 0; i < dataGenres.length; i++) {
+            if (selectedGenres.includes(dataGenres[i].toLowerCase().trim())) {
+              return true
+            }
+          }
+          return false
+        })
+        }
+        // filter out to 30 max per decade
+        var filteredNewData = filterTop30PerDecade(newData)
+        update(filteredNewData, all_data, null, y)
+      });
+  
       update(data, all_data, null, y)
 
       function searchMovies() {
