@@ -233,6 +233,7 @@
 
     .box {
       background-color:#383838;
+      border-radius: 20px;
     }
 
     input#search {
@@ -254,13 +255,16 @@
     }
 
     #selector {
-      position: fixed;
+      /* position: fixed; */
       box-shadow: 0 0 0 2px #000000;
+      background-color: #383838;
+      color: white;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
       margin-top: 2px;
       max-height: 150px;
       overflow: auto;
+      transform: translate(0, -180);
     }
 
     #selector button {
@@ -280,10 +284,11 @@
       border-width: 0;
       width: 100%;
       text-align: left;
+      color: white;
     }
 
     #selector button:hover {
-      background-color: #f2f2f2;
+      background-color: #976f02;
     }
 
   </style>
@@ -369,12 +374,12 @@
               </div>
             </div>
             <div id="comparison" style="display:flex; flex-direction: column;">
+              <h1 class="display-4 px-4 pt-4" style="font-size: 20px; margin: 0;">Search for your favorite movie, and see how it compares to the industry-wide averages from movies that year!</h1>
+              <br>
               <input id="search" type="text" placeholder="search..">
-              <br></br>
-              <br></br>
-              <br></br>
               <div style="display:flex; flex-direction: row;">
                 <div id="first" class="box"></div>
+                <div style="width:200px;"></div>
                 <div id="second" class="box"></div> 
               </div>
             </div>
@@ -541,7 +546,7 @@
     // function to show each metric of the comparison viz
     var showMetric = function(input, valueStr, name, metric){
         const width = 500;
-        const height = 150;
+        const height = 100;
 
         //create an svg with width and height
         var id = "#";
@@ -551,17 +556,17 @@
           .attr("height", height)
         
         svg.append("text")
-          .text(metric + ": " + valueStr)
+          .text(valueStr)
           .style("stroke", "white")
           .style("fill", "white")
-          .attr("transform", "translate(0,50)");
+          .attr("transform", "translate(160, 30)");
 
         var numRows = 1;
         var numCols = 10;
 
         //x and y axis scales
         var y = d3.scaleBand()
-          .range([0,250])
+          .range([0,100])
           .domain(d3.range(numRows));
 
         var x = d3.scaleBand()
@@ -575,11 +580,13 @@
           .append("g")
           .attr("id", metric);
 
+        var finalVal = metric;
         if (metric === "metascore") { // star icon for metascore
           icon.append("path")
             .attr("d", "m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0")
             .attr("transform", "translate(0,0) scale(.05)");
         } else if (metric === "race") { // person icon for race
+          finalVal = "% minority";
           icon.append("circle")
             .attr("cx", 26.686)
             .attr("cy", 4.507)
@@ -588,7 +595,6 @@
           icon.append("path")
             .attr("d", "M28.256,11.163c-1.123-0.228-2.344-0.218-3.447,0.042c-7.493,0.878-9.926,9.551-9.239,16.164    c0.298,2.859,4.805,2.889,4.504,0c-0.25-2.41-0.143-6.047,1.138-8.632c0,3.142,0,6.284,0,9.425c0,0.111,0.011,0.215,0.016,0.322    c-0.003,0.051-0.015,0.094-0.015,0.146c0,7.479-0.013,14.955-0.322,22.428c-0.137,3.322,5.014,3.309,5.15,0    c0.242-5.857,0.303-11.717,0.317-17.578c0.244,0.016,0.488,0.016,0.732,0.002c0.015,5.861,0.074,11.721,0.314,17.576    c0.137,3.309,5.288,3.322,5.15,0c-0.309-7.473-0.32-14.949-0.32-22.428c0-0.232-0.031-0.443-0.078-0.646    c-0.007-3.247-0.131-6.497-0.093-9.742c1.534,2.597,1.674,6.558,1.408,9.125c-0.302,2.887,4.206,2.858,4.504,0    C38.678,20.617,36.128,11.719,28.256,11.163z")
             .attr("transform", "translate(0,0) scale(0.5)")
-            // .attr("fill", goldColor);
         } else { // dollar sign icon for revenue, budget
           icon.append("path")
             .attr("d", "M309.43,219.944c-19-10.5-39.2-18.5-59.2-26.8c-11.6-4.8-22.7-10.4-32.5-18.2c-19.3-15.4-15.6-40.4,7-50.3   c6.4-2.8,13.1-3.7,19.9-4.1c26.2-1.4,51.1,3.4,74.8,14.8c11.8,5.7,15.7,3.9,19.7-8.4c4.2-13,7.7-26.2,11.6-39.3   c2.6-8.8-0.6-14.6-8.9-18.3c-15.2-6.7-30.8-11.5-47.2-14.1c-21.4-3.3-21.4-3.4-21.5-24.9c-0.1-30.3-0.1-30.3-30.5-30.3   c-4.4,0-8.8-0.1-13.2,0c-14.2,0.4-16.6,2.9-17,17.2c-0.2,6.4,0,12.8-0.1,19.3c-0.1,19-0.2,18.7-18.4,25.3c-44,16-71.2,46-74.1,94   c-2.6,42.5,19.6,71.2,54.5,92.1c21.5,12.9,45.3,20.5,68.1,30.6c8.9,3.9,17.4,8.4,24.8,14.6c21.9,18.1,17.9,48.2-8.1,59.6   c-13.9,6.1-28.6,7.6-43.7,5.7c-23.3-2.9-45.6-9-66.6-19.9c-12.3-6.4-15.9-4.7-20.1,8.6c-3.6,11.5-6.8,23.1-10,34.7   c-4.3,15.6-2.7,19.3,12.2,26.6c19,9.2,39.3,13.9,60,17.2c16.2,2.6,16.7,3.3,16.9,20.1c0.1,7.6,0.1,15.3,0.2,22.9   c0.1,9.6,4.7,15.2,14.6,15.4c11.2,0.2,22.5,0.2,33.7-0.1c9.2-0.2,13.9-5.2,13.9-14.5c0-10.4,0.5-20.9,0.1-31.3   c-0.5-10.6,4.1-16,14.3-18.8c23.5-6.4,43.5-19,58.9-37.8C386.33,329.544,370.03,253.444,309.43,219.944z")
@@ -596,9 +602,17 @@
             .attr("transform", "translate(0,0) scale(0.05)");
         }
 
+        svg.append("text")
+          .text(finalVal)
+          .style("stroke", "white")
+          .style("fill", "white")
+          .style("font-weight", "bold")
+          .style("font-size", "20px")
+          .attr("transform", "translate(20,30)");
+        
         //container to hold the grid
         var container = svg.append("g")
-          .attr("transform", "translate(120,120)");
+          .attr("transform", "translate(120,50)");
 
         container.selectAll("use")
             .data(data)
@@ -941,9 +955,7 @@
 
       function searchMovies() {
         return function() {
-          console.log("inside searchMovies");
           let elem = document.getElementById("search");
-          console.log(elem.value);
           let selector = document.getElementById("selector");
           // Check if input is empty
           if (elem.value.trim() !== "") {
@@ -955,7 +967,7 @@
               elem.parentNode.appendChild(selector);
               // Position it below the input element
               selector.style.left = elem.getBoundingClientRect().left + "px";
-              selector.style.top = elem.getBoundingClientRect().bottom + "px";
+              selector.style.top = "10px";
               selector.style.width = elem.getBoundingClientRect().width + "px";
             }
             // Clear everything before new search
@@ -1002,6 +1014,24 @@
                     var moneyScale = d3.scaleQuantize()
                         .domain([0, Math.max.apply(null, moneyVals)])
                         .range([1,2,3,4,5,6,7,8,9,10]);
+
+                    d3.select("#first")
+                      .append('text')
+                      .text(all_data[i].original_title)
+                      .style("stroke", "white")
+                      .style("fill", "white")
+                      .style("font-size", "28px");
+                    
+                    d3.select("#second")
+                      .append('text')
+                      .text("Industry Average for " + all_data[i].year)
+                      .style("stroke", "white")
+                      .style("fill", "white")
+                      .style("font-size", "28px")
+                      .style("font-weight", "bold")
+                      .style("left", "0")
+                      .style("margin-bottom", "20px");
+                    
 
                     showMetric(selectedScore, selectedScoreVal, "first", "metascore");
                     showMetric(moneyScale(selectedRevenue), selectedRevenueVal, "first", "revenue");
