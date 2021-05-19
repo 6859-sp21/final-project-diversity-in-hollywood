@@ -346,9 +346,9 @@
               <div>
                 <div id="legend"></div>
                 <div class="text-left" style="font-size: 18px;">
-                  Filter by genre:
+                  Filter by genre(s):
                   <div>
-                    <select class="form-select" id="genre-select" multiple style="width: 120px;">
+                    <select class="form-select" id="genre-select" multiple style="width: 120px; height: 280px;">
                       <option selected>all</option>
                       <option value="action">action</option>
                       <option value="adventure">adventure</option>
@@ -661,15 +661,8 @@
         .style("stroke", "#383838")
         .style("stroke-width", 1.5)
         .on("mouseover", function(d) {
-            var sidebarDefault = document.getElementById('sidebar-default')
-            if (sidebarDefault) {sidebarDefault.remove()}
-            // remove the stroke from the previous hovered circle
-            var el = document.getElementsByClassName("white-stroke");
-            for (let i = 0; i < el.length; i++) {
-              el[i].classList.remove("white-stroke")
-            }
-
             d3.select(this).classed('white-stroke', true)
+            d3.select('#sidebar-default').remove()
 
             metadataSidebar.transition()		
                 .duration(200)		
@@ -751,11 +744,12 @@
                 .attr('width', 100)
             })
         })
-        .on("mouseout", function(d) {		
-            // metadataSidebar.transition()		
-            //     .duration(300)		
-            //     .style("opacity", 0)
-            //     .style("height", "0px");	
+        .on("mouseout", function(d) {
+          d3.select(this).classed('white-stroke', false)
+          metadataSidebar.html(
+                `<span style="font-size: 24px;">No movie has been selected.</span> 
+           <br/>Hover over a circle on the visualization to see information on its corresponding movie here.`
+              );
         }),
         update => update,
         exit => exit.remove()
@@ -886,7 +880,11 @@
               "other": d.percent_other
             }
             return x(raceToField[race]);
-          }).strength(0.4)).alpha(0.2).alphaTarget(0).restart()
+          }).strength(0.4))
+          .force('collision', d3.forceCollide().radius(function(d) {
+            return rScale(parseFloat(d.adjusted_lifetime_gross));
+          }))
+          .alpha(0.2).alphaTarget(0).restart()
       }
 
       updateSelectedRace(selectedRace, data)
