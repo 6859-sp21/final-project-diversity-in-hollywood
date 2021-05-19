@@ -630,7 +630,13 @@
     async function getMoviePoster(movieTitle) {
       let response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=75df43b925430c7c3bf191157cc3d9ea&query=' + movieTitle)
       let json = await response.json()
-      return json.results[0].poster_path
+      var path = null
+      let i = 0
+      while (path == null && i < json.results.length) {
+        path = json.results[i].poster_path
+        i = i + 1
+      }
+      return path
     }
 
     var update = function(input_data, all_data, decadePrefix, yAxis) {
