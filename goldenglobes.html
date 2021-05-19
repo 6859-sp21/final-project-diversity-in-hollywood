@@ -973,6 +973,9 @@
             for (var i=0; i<includes.length; i++) {
               var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr) && (d.include == includes[i]))
               var mean = d3.mean(rolling_data.map(d => d.pct))*100
+              if (isNaN(mean)) {
+                mean=0
+              }
               datapt = {"year":yr, "category": categories[c], "pct":mean, "include": includes[i]}
               race_counts_rolling.push(datapt)
             }

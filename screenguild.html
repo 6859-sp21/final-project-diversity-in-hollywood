@@ -318,10 +318,7 @@
     var legendWidth = 400
     var width = 1200
     var height = 800
-    var summaryWidth = document.getElementById('summary_graph').clientWidth;
-    var summaryHeight = Math.floor(summaryWidth*0.25*0.7);
-    var compareWidth = summaryWidth * 0.75;
-    var compareHeight = summaryHeight * 1.5;
+
     var margins = {top: 10, right: 10, bottom: 20, left: 30};
 
     var graphsvg = d3.select("#graph")
@@ -366,6 +363,25 @@
         .attr("class", "tooltip")
         .style("opacity", 0);
 
+    // format dropdown button for graph 1
+    var includes = ["all", "winner", "nominee"] // button options
+    var includes_text = {"all": "all nominees", 
+                        "winner": "winners only", 
+                        "nominee": "nominees excluding winners"}
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+     	.data(includes)
+      .enter()
+    	.append('option')
+      .text(function (d) { return includes_text[d]; }) // map to the right display text
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+    
+    var summaryWidth = document.getElementById('summary_graph').clientWidth;
+    var summaryHeight = Math.floor(summaryWidth*0.2*0.7);
+    var margins = {top: 10, right: 10, bottom: 20, left: 30};
+
+    var compareWidth = summaryWidth * 0.75;
+    var compareHeight = summaryHeight * 1.5;
     var compare_svg = d3.select("#compare_graph")
         .append("svg")
         .attr("width", compareWidth)
@@ -379,18 +395,6 @@
         .attr("height", 500)
     compare_legendsvg.append("g");
 
-        // format dropdown button for graph 1
-    var includes = ["all", "winner", "nominee"] // button options
-    var includes_text = {"all": "all nominees", 
-                        "winner": "winners only", 
-                        "nominee": "nominees excluding winners"}
-    d3.select("#selectButton")
-      .selectAll('myOptions')
-     	.data(includes)
-      .enter()
-    	.append('option')
-      .text(function (d) { return includes_text[d]; }) // map to the right display text
-      .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
     function update(data, startYear, endYear, categories) {
         // first, filter data to year range
@@ -927,6 +931,9 @@
           for (var i=0; i<includes.length; i++) {
             var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr) && (d.include == includes[i]))
             var mean = d3.mean(rolling_data.map(d => d.pct))*100
+            if (isNaN(mean)) {
+                mean=0
+            }
             datapt = {"year":yr, "category": categories[c], "pct":mean, "include": includes[i]}
             race_counts_rolling.push(datapt)
           }
@@ -1561,6 +1568,83 @@
                         });
                       });
 
+                          race_counts_rolling_nested = d3.nest()
+              .key(function(d) { return d.category; })
+              .entries(current_race_counts_rolling);
+
+
+          // Update the category graph. very jank.
+          // Almost got the transition to work, but can't get over a bug so I'm just removing the previous graph and redrawing it.
+
+          summary_x = d3.scaleLinear().range([0, summary_width]).domain([1994, 2019]);
+
+          summary_y = d3.scaleLinear().range([summary_height, margins.top])
+            summary_y.domain([0, Math.min(100, 1.3*d3.max(current_race_counts_rolling, function(d) { return d.pct; })+0.2)]);
+
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg").remove();
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg")
+            .data(race_counts_rolling_nested)
+            .enter()
+            .append("svg")
+            .attr("class", "categoryChart")
+            .attr("height", summaryHeight_subplot)
+            .attr("width", summaryWidth_subplot)
+            .append("g")
+            .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+
+          summary_xAxis = summary_svg.append("g")
+            .attr("class", "xaxis")
+            .attr("transform", "translate(0," + summary_height + ")")
+            .call(d3.axisBottom(summary_x).ticks(3).tickFormat(d3.format("d")));
+
+          summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+          summary_svg.append("path")
+                    .attr("class", "line") 
+                    .attr("fill", "none")
+                    .attr("stroke", "#AB8D3F")
+                    .attr("stroke-width", 1.9)
+                    .attr("d", function(d){
+                      return summary_line(d.values)
+                    })
+
+          summary_svg.append("text") // Title text
+                .attr("x", (summary_width / 2))             
+                .attr("y", margins.top+2)
+                .attr("text-anchor", "middle")  
+                .style("font-size", "20px")   
+                .style("fill", "white")
+                .text(function(d){ return(d.key)});
+
+            // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+            focus = summary_svg.append("g")
+                .attr("class", "focus")
+                .style("display", "none");
+
+            focus.append("circle")
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("r", 3);
+
+            focus.append("text")
+                  .attr("x", 0)
+                  .attr("dy", "-1.20em")
+                  .style("font-size","14px")
+                  .style("fill", "white")
+                  .style("text-anchor", "middle");
+
+            summary_svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", summary_width)
+                .attr("height", summary_height)
+                .style("fill-opacity", 0.0)
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", summary_mousemove);
+
+
             }
 
         }
@@ -1569,6 +1653,99 @@
         document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
         document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
         document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
+
+        // // CATEGORY BUTTON LOGIC in LINE GRAPH
+        // A function that updates the chart
+        function updateCategoryGraph(selectedGroup) {
+
+          current_race_counts_rolling = race_counts_rolling.filter(d => (d.include == selectedGroup) )
+          //console.log(current_race_counts_rolling)
+
+          race_counts_rolling_nested = d3.nest()
+              .key(function(d) { return d.category; })
+              .entries(current_race_counts_rolling);
+
+
+          // Update the category graph. very jank.
+          // Almost got the transition to work, but can't get over a bug so I'm just removing the previous graph and redrawing it.
+
+          summary_x = d3.scaleLinear().range([0, summary_width]).domain([1994, 2019]);
+
+          summary_y = d3.scaleLinear().range([summary_height, margins.top])
+            summary_y.domain([0, Math.min(100, 1.3*d3.max(current_race_counts_rolling, function(d) { return d.pct; })+0.2)]);
+
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg").remove();
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg")
+            .data(race_counts_rolling_nested)
+            .enter()
+            .append("svg")
+            .attr("class", "categoryChart")
+            .attr("height", summaryHeight_subplot)
+            .attr("width", summaryWidth_subplot)
+            .append("g")
+            .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+
+          summary_xAxis = summary_svg.append("g")
+            .attr("class", "xaxis")
+            .attr("transform", "translate(0," + summary_height + ")")
+            .call(d3.axisBottom(summary_x).ticks(3).tickFormat(d3.format("d")));
+
+          summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+          summary_svg.append("path")
+                    .attr("class", "line") 
+                    .attr("fill", "none")
+                    .attr("stroke", "#AB8D3F")
+                    .attr("stroke-width", 1.9)
+                    .attr("d", function(d){
+                      return summary_line(d.values)
+                    })
+
+          summary_svg.append("text") // Title text
+                .attr("x", (summary_width / 2))             
+                .attr("y", margins.top+2)
+                .attr("text-anchor", "middle")  
+                .style("font-size", "20px")   
+                .style("fill", "white")
+                .text(function(d){ return(d.key)});
+
+            // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+            focus = summary_svg.append("g")
+                .attr("class", "focus")
+                .style("display", "none");
+
+            focus.append("circle")
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("r", 3);
+
+            focus.append("text")
+                  .attr("x", 0)
+                  .attr("dy", "-1.20em")
+                  .style("font-size","14px")
+                  .style("fill", "white")
+                  .style("text-anchor", "middle");
+
+            summary_svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", summary_width)
+                .attr("height", summary_height)
+                .style("fill-opacity", 0.0)
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", summary_mousemove);
+          }
+
+
+            // When the button is changed, run the updateChart function
+            d3.select("#selectButton").on("change", function(d) {
+            // recover the option that has been chosen
+            var selectedOption = d3.select(this).property("value")
+              // run the updateChart function with this selected option
+              updateCategoryGraph(selectedOption)
+            })
       })
     });
 </script>
