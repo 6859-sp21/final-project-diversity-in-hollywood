@@ -1040,10 +1040,6 @@
 
         var compare_x = d3.scaleLinear().range([0, line_width]).domain([1993, 2019]);
 
-        var compare_y = d3.scaleLinear()
-            .range([line_height, margins.top])
-            compare_y.domain([0, Math.min(100, d3.max(all_data, function(d) { return d.pct_race * 100; }))]);;
-
         var compare_line = d3.line()
           .x(function(d) {return compare_x(d.year_ceremony);})
           .y(function(d) {return compare_y(d.pct_race * 100);});
@@ -1090,6 +1086,10 @@
           let year_ceremony = key.split("_")[1];
           combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
         }
+
+        var compare_y = d3.scaleLinear()
+                .range([line_height, margins.top])
+        compare_y.domain([0, Math.min(50, 1.3 * d3.max(combinedData, function(d) { return d.pct_race * 100; }))]);
 
         for (var i=0; i<awards.length; i++){
           compare_svg.append("path")
@@ -1145,6 +1145,7 @@
             .style("font-size", "18px")
             .style("text-transform", "lowercase")
 
+        // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
         var compareTooltip = compare_svg.append("g")
                 .datum(combinedData.filter(d => (d.award === "sag")))
                 .attr("class", "compare")
@@ -1246,14 +1247,6 @@
 
             // Update compare graph
             var new_all_data = all_data.filter(d => (d.year_ceremony >= newRange.begin) && (d.year_ceremony <= newRange.end))
-            compare_x.domain([newRange.begin, newRange.end])
-            compare_xAxis.transition().duration(100)
-              .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")))
-              .selectAll("text")
-              .attr("transform", "rotate(-15)");
-            compare_y.domain([0, Math.min(50, d3.max(new_all_data, function(d) { return d.pct_race * 100; }))]);
-            compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
-
             let filteredData = new_all_data.filter(d => categories.includes(categoryMappings[d.category]) && (d.fixed_race==='white'))
             let combinedData = []
             let element = {}
@@ -1290,8 +1283,31 @@
               combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
             }
 
-            compare_svg.selectAll(".line").remove();
-            
+          compare_svg = d3.select("#compare_graph").selectAll("svg").remove();
+          compare_svg = d3.select("#compare_graph")
+                  .append("svg")
+                  .attr("width", summaryWidth)
+                  .attr("height", summaryHeight)
+                  .append("g")
+                  .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+
+          var compare_y = d3.scaleLinear()
+                  .range([line_height, margins.top])
+          compare_y.domain([0, Math.min(50, 1.3 * d3.max(combinedData, function(d) { return d.pct_race * 100; }))]);
+          var compare_yAxis = compare_svg.append("g")
+                  .attr("class", "axis")
+                  .attr("transform", "translate(0,0)")
+                  .call(d3.axisLeft(compare_y));
+          compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
+          var compare_x = d3.scaleLinear().range([0, line_width]).domain([newRange.begin, newRange.end]);
+          var compare_xAxis = compare_svg.append("g")
+                  .attr("class", "axis")
+                  .attr("transform", "translate(0," + line_height + ")")
+                  .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")));
+          var compare_line = d3.line()
+                  .x(function(d) {return compare_x(d.year_ceremony);})
+                  .y(function(d) {return compare_y(d.pct_race * 100);});
+
             for (var i=0; i<awards.length; i++){
             compare_svg.append("path")
               .datum(combinedData.filter(d => (d.award == awards[i]) ))
@@ -1309,6 +1325,47 @@
                   return "1";
                 }})
           }
+
+          // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+          var compareTooltip = compare_svg.append("g")
+                  .datum(combinedData.filter(d => (d.award === "sag")))
+                  .attr("class", "compare")
+                  .style("display", "none");
+
+          compareTooltip.append("circle")
+                  .attr("fill", "none")
+                  .attr("stroke", "white")
+                  .attr("r", 3);
+
+          compareTooltip.append("text")
+                  .attr("x", 0)
+                  .attr("dy", "-1.20em")
+                  .style("font-size","14px")
+                  .style("fill", "white")
+                  .style("text-anchor", "middle");
+
+          compare_svg.append("rect")
+                  .attr("class", "overlay")
+                  .attr("width", summaryWidth)
+                  .attr("height", summaryHeight)
+                  .style("fill-opacity", 0.0)
+                  .on("mouseover", function() { compareTooltip.style("display", null); })
+                  .on("mouseout", function() { compareTooltip.style("display", "none"); })
+                  .on("mousemove", function() {
+                    var year, index;
+                    year = compare_x.invert(d3.mouse(this)[0]);
+                    var compareTooltip = compare_svg.selectAll(".compare");
+                    compareTooltip.attr("transform", function (d) {
+                      index = bisectYearCompare(d, year, 0, d.length - 1);
+                      compareTooltip.selectAll("text")
+                              .text(function (d) {
+                                return ((d[index].pct_race * 100).toFixed(1) + " %")
+                              })
+                              .attr("fill", "white");
+                      // adjust mouseover to use appropriate scale
+                      return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+                    });
+                  });
 
             update(csv_data, newRange.begin, newRange.end, categories)
 
@@ -1383,7 +1440,8 @@
                 simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
 
 
-              let filteredData = all_data.filter(d => categories.includes(categoryMappings[d.category]) && (d.fixed_race==='white'))
+              let filteredData = all_data.filter(d => (categories.includes(categoryMappings[d.category])) && (d.fixed_race==='white') &&
+                      (d.year_ceremony >= slider.range().begin) && (d.year_ceremony <= slider.range().end))
               let combinedData = []
               let element = {}
               filteredData.forEach( function(d) {
@@ -1418,8 +1476,30 @@
                 combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
               }
 
-              compare_svg.selectAll(".line").remove();
-              // aggregate all the data
+              compare_svg = d3.select("#compare_graph").selectAll("svg").remove();
+              compare_svg = d3.select("#compare_graph")
+                      .append("svg")
+                      .attr("width", summaryWidth)
+                      .attr("height", summaryHeight)
+                      .append("g")
+                      .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
+
+              var compare_y = d3.scaleLinear()
+                      .range([line_height, margins.top])
+              compare_y.domain([0, Math.min(50, 1.3 * d3.max(combinedData, function(d) { return d.pct_race * 100; }))]);
+              var compare_yAxis = compare_svg.append("g")
+                      .attr("class", "axis")
+                      .attr("transform", "translate(0,0)")
+                      .call(d3.axisLeft(compare_y));
+              compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
+              var compare_x = d3.scaleLinear().range([0, line_width]).domain([slider.range().begin, slider.range().end]);
+              var compare_xAxis = compare_svg.append("g")
+                      .attr("class", "axis")
+                      .attr("transform", "translate(0," + line_height + ")")
+                      .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")));
+              var compare_line = d3.line()
+                      .x(function(d) {return compare_x(d.year_ceremony);})
+                      .y(function(d) {return compare_y(d.pct_race * 100);});              // aggregate all the data
               for (var i=0; i<awards.length; i++){
                 compare_svg.append("path")
                         .datum(combinedData.filter(d => (d.award === awards[i]) ))
@@ -1438,6 +1518,7 @@
                           }})
               }
 
+              // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
               var compareTooltip = compare_svg.append("g")
                       .datum(combinedData.filter(d => (d.award === "sag")))
                       .attr("class", "compare")
@@ -1462,7 +1543,19 @@
                       .style("fill-opacity", 0.0)
                       .on("mouseover", function() { compareTooltip.style("display", null); })
                       .on("mouseout", function() { compareTooltip.style("display", "none"); })
-                      .on("mousemove", compare_mousemove);
+                      .on("mousemove", function() {
+                        var year, index;
+                        year = compare_x.invert(d3.mouse(this)[0]);
+                        var compareTooltip = compare_svg.selectAll(".compare");
+                        compareTooltip.attr("transform", function(d) {
+                          index = bisectYearCompare(d, year, 0, d.length - 1);
+                          compareTooltip.selectAll("text")
+                                  .text(function (d){return ((d[index].pct_race * 100).toFixed(1) + " %")})
+                                  .attr("fill", "white");
+                          // adjust mouseover to use appropriate scale
+                          return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+                        });
+                      });
 
             }
 
