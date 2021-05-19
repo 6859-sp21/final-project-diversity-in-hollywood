@@ -274,7 +274,7 @@
     </div>
   </div>
   <h2 style="padding-left: 80px; text-align: left; margin-top: 300px; font-size:2.0rem">
-    Percentage of racial minorities by award category for the Golden Globes.
+    What is the percentage of racial minorities in each main category of the Golden Globes?
   </h2>
   <h4 class="main-caption pt-3 text-left" style="padding-left: 80px;">
     The following graphs explore minority representation across different award categories.
@@ -293,7 +293,7 @@
     </div>
   </div>
   <h2 style="padding-left: 80px; text-align: left; margin-top: 300px; font-size:2.0rem">
-    Percentage of racial minorities by award show.
+    How does the percentage of minorities in the Golden Globes compare to other award events?
   </h2>
   <h4 class="main-caption pt-3 text-left" style="padding-left: 80px;">
     We can also compare minority representation at the Golden Globes to the other two award shows. <br><br>
@@ -302,8 +302,7 @@
       </span>
   </h4>
   <div class="row" style='margin: 50px;'>
-    
-    <div class="col-sm-12" style="color:white">
+    <div class="m-auto" style="color:white">
       <div id="compare_graph"></div>
       <div id="compare_legend"></div>
     </div>
@@ -391,7 +390,7 @@
 
     var compare_legendsvg = d3.select("#compare_legend")
       .append("svg")
-        .attr("width", summaryWidth)
+        .attr("width", 200)
         .attr("height", 500)
     compare_legendsvg.append("g");
 
