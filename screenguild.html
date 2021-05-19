@@ -318,6 +318,8 @@
     var height = 800
     var summaryWidth = document.getElementById('summary_graph').clientWidth;
     var summaryHeight = Math.floor(summaryWidth*0.25*0.7);
+    var compareWidth = summaryWidth * 0.75;
+    var compareHeight = summaryHeight * 1.5;
     var margins = {top: 10, right: 10, bottom: 20, left: 30};
 
     var graphsvg = d3.select("#graph")
@@ -364,14 +366,14 @@
 
     var compare_svg = d3.select("#compare_graph")
         .append("svg")
-        .attr("width", summaryWidth)
-        .attr("height", summaryHeight)        
+        .attr("width", compareWidth)
+        .attr("height", compareHeight)
         .append("g")
         .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
     var compare_legendsvg = d3.select("#compare_legend")
         .append("svg")
-        .attr("width", summaryWidth)
+        .attr("width", compareWidth)
         .attr("height", 500)
     compare_legendsvg.append("g");
 
@@ -1035,8 +1037,8 @@
 
         // COMPARE BETWEEN AWARDS
               
-        var line_height = summaryHeight - margins.top - margins.bottom
-        var line_width = summaryWidth - margins.left - margins.right
+        var line_height = compareHeight - margins.top - margins.bottom
+        var line_width = compareWidth - margins.left - margins.right
 
         var compare_x = d3.scaleLinear().range([0, line_width]).domain([1993, 2019]);
 
@@ -1165,8 +1167,8 @@
 
         compare_svg.append("rect")
                 .attr("class", "overlay")
-                .attr("width", summaryWidth)
-                .attr("height", summaryHeight)
+                .attr("width", compareWidth)
+                .attr("height", compareHeight)
                 .style("fill-opacity", 0.0)
                 .on("mouseover", function() { compareTooltip.style("display", null); })
                 .on("mouseout", function() { compareTooltip.style("display", "none"); })
@@ -1286,8 +1288,8 @@
           compare_svg = d3.select("#compare_graph").selectAll("svg").remove();
           compare_svg = d3.select("#compare_graph")
                   .append("svg")
-                  .attr("width", summaryWidth)
-                  .attr("height", summaryHeight)
+                  .attr("width", compareWidth)
+                  .attr("height", compareHeight)
                   .append("g")
                   .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
@@ -1346,8 +1348,8 @@
 
           compare_svg.append("rect")
                   .attr("class", "overlay")
-                  .attr("width", summaryWidth)
-                  .attr("height", summaryHeight)
+                  .attr("width", compareWidth)
+                  .attr("height", compareHeight)
                   .style("fill-opacity", 0.0)
                   .on("mouseover", function() { compareTooltip.style("display", null); })
                   .on("mouseout", function() { compareTooltip.style("display", "none"); })
@@ -1479,8 +1481,8 @@
               compare_svg = d3.select("#compare_graph").selectAll("svg").remove();
               compare_svg = d3.select("#compare_graph")
                       .append("svg")
-                      .attr("width", summaryWidth)
-                      .attr("height", summaryHeight)
+                      .attr("width", compareWidth)
+                      .attr("height", compareHeight)
                       .append("g")
                       .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
 
@@ -1538,8 +1540,8 @@
 
               compare_svg.append("rect")
                       .attr("class", "overlay")
-                      .attr("width", summaryWidth)
-                      .attr("height", summaryHeight)
+                      .attr("width", compareWidth)
+                      .attr("height", compareHeight)
                       .style("fill-opacity", 0.0)
                       .on("mouseover", function() { compareTooltip.style("display", null); })
                       .on("mouseout", function() { compareTooltip.style("display", "none"); })
