@@ -9,11 +9,16 @@ Jenning Chen, Ashwin Srinivasan, Cindy Yang, Lisa Yoo
 Inspired by the #OscarsSoWhite movement in 2015, our visualization experience empowers users to explore diversity in Hollywood, and how the distribution of race and ethnicity relate to different measures of success: movie reception and awards. We bring together datasets on major awards (Oscars, Golden Globes, Screen Actors' Guild) and box office statistics and create digestible visualizations to see how white Hollywood really is. 
 
 ## Running Instructions
+Clone the repository. In the terminal, run `python -m http.server`. Navigate to `http://localhost:8000/` to view the landing page.
 
 ## Project Process & Contributions
 The contributions made by each team member are listed below.
 
 ### Jenning
+- Aided in gathering datasets and scraped supplementary data for actor races
+- Worked with Lisa to brainstorm and develop the reception bubble plot 
+- Designed the home page
+- Reformatted and restyled the awards cluster graph visualization
 ### Ashwin
 ### Cindy
 ### Lisa
