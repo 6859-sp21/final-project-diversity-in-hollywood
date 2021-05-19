@@ -42,11 +42,15 @@
     }
 
     h2 {
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1.2; 
       margin-top: 5px;
       margin-left: 20px;
       text-align: left; 
+    }
+
+    h3 {
+      font-size: 1.3rem;
     }
 
     body {
@@ -123,6 +127,18 @@
       top: 0;
     }
 
+    #sidenav {
+      height: 100%; /* Full-height: remove this if you want "auto" height */
+      width: 400px; /* Set the width of the sidebar */
+      position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+      z-index: 1; /* Stay on top */
+      top: 0; /* Stay at the top */
+      left: 0;
+      overflow-x: hidden; /* Disable horizontal scroll */
+      padding-top: 20px;
+      background-color: "#383838";
+    }
+
     body {
       display: flex;
       flex-direction: row;
@@ -187,7 +203,7 @@
 
     .explore-section {
       position: absolute;
-      bottom: 10%;
+      bottom: 0%;
     }
 
     .selected-nav-option {
@@ -281,20 +297,20 @@
     
     <!-- Create a div where the graph will take place -->
     <div class="row w-100">
-      <div class="p-4 col-sm-3" style="background-color: #383838;">
+      <div id="sidenav" class="p-4 col-sm-3" style="background-color: #383838;">
         <div id="heading">
           <img src="./images/popcorn.png" width="100" height="100" style="margin: auto 8px;">
           <div id="blurb">
             <h1>reception</h1>
           </div>
         </div>
-        <div id="sidebar-tooltip" >
-          <h1 class="display-4 px-4 pt-4" style="font-size: 30px; margin: 0;">How is race diversity related to a movie's gross success?</h1>
+        <div id="sidebar-tooltip">
+          <h1 class="display-4 px-4 pt-4" style="font-size: 20px; margin: 0;">How is race diversity related to a movie's gross success?</h1>
               <h2>Explore how race diversity relates to gross revenue success across the decades. <i>For each decade, at most 30 of the highest grossing films are shown,
                 taken from the top 1000 grossing movies of all time by adjusted lifetime revenue.</i>
                 <br/>Hover over circles to examine individual movies, and use the x-axis select to examine a different race's diversity.</h2>
           <div class="sidebar" id="sidebar-default">
-           <span style="font-size: 26px;">No movie has been selected.</span> 
+           <span style="font-size: 18px;">No movie has been selected.</span> 
            <br/>Hover over a circle on the visualization to see information on its corresponding movie here.
           </div>
         </div>
@@ -307,58 +323,60 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-9">
-        <div id="main">
-          <div class="d-flex">
-            <div id="graph">
-              <div style="font-size: 20px;">% 
-                <select class="form-select" id="race-select">
-                  <option class="percent-cast-race" value="white" selected>white</option>
-                  <option value="black">black</option>
-                  <option value="hispanic">hispanic</option>
-                  <option value="asian">asian</option>
-                  <option value="other">other</option>
-                </select>
-                cast
-              </div>
-            </div>
-            <div>
-              <div id="legend"></div>
-              <div class="text-left" style="font-size: 18px;">
-                Filter by genre:
-                <div>
-                  <select class="form-select" id="genre-select" multiple style="width: 120px;">
-                    <option selected>all</option>
-                    <option value="action">action</option>
-                    <option value="adventure">adventure</option>
-                    <option value="animation">animation</option>
-                    <option value="biography">biography</option>
-                    <option value="comedy">comedy</option>
-                    <option value="crime">crime</option>
-                    <option value="drama">drama</option>
-                    <option value="family">family</option>
-                    <option value="fantasy">fantasy</option>
-                    <option value="history">history</option>
-                    <option value="horror">horror</option>
-                    <option value="musical">musical</option>
-                    <option value="romance">romance</option>
-                    <option value="sci-fi">sci-fi</option>
-                    <option value="thriller">thriller</option>
-                    <option value="war">war</option>
-                    <option value="western">western</option>
+      <div style="margin-left: 400px;">
+        <div class="col-sm-9">
+          <div id="main">
+            <div class="d-flex">
+              <div id="graph">
+                <div style="font-size: 20px;">% 
+                  <select class="form-select" id="race-select">
+                    <option class="percent-cast-race" value="white" selected>white</option>
+                    <option value="black">black</option>
+                    <option value="hispanic">hispanic</option>
+                    <option value="asian">asian</option>
+                    <option value="other">other</option>
                   </select>
+                  cast
+                </div>
+              </div>
+              <div>
+                <div id="legend"></div>
+                <div class="text-left" style="font-size: 18px;">
+                  Filter by genre:
+                  <div>
+                    <select class="form-select" id="genre-select" multiple style="width: 120px;">
+                      <option selected>all</option>
+                      <option value="action">action</option>
+                      <option value="adventure">adventure</option>
+                      <option value="animation">animation</option>
+                      <option value="biography">biography</option>
+                      <option value="comedy">comedy</option>
+                      <option value="crime">crime</option>
+                      <option value="drama">drama</option>
+                      <option value="family">family</option>
+                      <option value="fantasy">fantasy</option>
+                      <option value="history">history</option>
+                      <option value="horror">horror</option>
+                      <option value="musical">musical</option>
+                      <option value="romance">romance</option>
+                      <option value="sci-fi">sci-fi</option>
+                      <option value="thriller">thriller</option>
+                      <option value="war">war</option>
+                      <option value="western">western</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div id="comparison" style="display:flex; flex-direction: column;">
-            <input id="search" type="text" placeholder="search..">
-            <br></br>
-            <br></br>
-            <br></br>
-            <div style="display:flex; flex-direction: row;">
-              <div id="first" class="box"></div>
-              <div id="second" class="box"></div> 
+            <div id="comparison" style="display:flex; flex-direction: column;">
+              <input id="search" type="text" placeholder="search..">
+              <br></br>
+              <br></br>
+              <br></br>
+              <div style="display:flex; flex-direction: row;">
+                <div id="first" class="box"></div>
+                <div id="second" class="box"></div> 
+              </div>
             </div>
           </div>
         </div>
@@ -397,7 +415,8 @@
     var metadataSidebar = d3.select("#sidebar-tooltip").append("div")	
         .attr("class", "sidebar")				
         .style("opacity", 0)
-        .style("height", 0);
+        .style("height", 0)
+        .style("font-size", "16px");
 
     // defines comparison viz svg
     var comp = d3.select("#comparison")
@@ -599,7 +618,7 @@
       var budget = "<div>Budget ($): <span class='text-white'>" + nFormatter(data.budget,1) + "</span></div>"
       var metascore = "<div>IMDB metascore: <span class='text-white'>" + data.metascore + "/100</span></div>"
       var gross = "<div>Adjusted lifetime revenue ($): <span class='text-white'>" + nFormatter(data.adjusted_lifetime_gross, 1) + "</div>"
-      var breaks = "<br><br>"
+      var breaks = "<br>"
       var diversityText = "<div> Of the <a href='https://en.wikipedia.org/wiki/Billing_(performing_arts)#Top_and_above-title_billing' target='_blank'>top-billed</a> actors in the film, the race distribution was: </div>"
       var tooltipDiv = "<div id='summaryBars' class='text-center'></div>"
       return imageDiv + header + genre + budget + metascore + gross + breaks + diversityText + tooltipDiv
@@ -656,13 +675,14 @@
             metadataSidebar.html(
               getHtmlForSidebar(d)
             );
-            var y = d3.scaleBand().padding(0.2).domain(["white", "black", "hispanic", "asian", "other"]).range([0,280])
-            var x = d3.scaleLinear().domain([0, 1]).range([0,260]);
+            var y = d3.scaleBand().padding(0.2).domain(["white", "black", "hispanic", "asian", "other"]).range([0,180])
+            var x = d3.scaleLinear().domain([0, 1]).range([0,200]);
             
             var barTipSVG = d3.select("#summaryBars")
               .append("svg")
               .attr("width", 420)
-              .attr("height", 280); 
+              .attr("height", 280)
+              .attr("transform", "translate(-20, 0)"); 
             
             barTipSVG.append("g")
               .attr("transform", "translate(85,0)")
