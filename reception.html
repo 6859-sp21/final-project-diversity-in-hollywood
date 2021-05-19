@@ -25,7 +25,6 @@
     li a {
       display: block;
       padding: 20px 20px;
-      color: white;
     }
 
     li a:hover {
@@ -43,9 +42,8 @@
     }
 
     h2 {
-      color: white; 
       font-size: 1.2rem;
-      line-height: 1; 
+      line-height: 1.2; 
       margin-top: 5px;
       margin-left: 20px;
       text-align: left; 
@@ -58,8 +56,8 @@
 
     #main {
       margin: auto;
-      width: 70%;
-      padding-bottom: 60px;
+      padding: 60px;
+      text-align: center;
     }
 
     #slider-section {
@@ -100,7 +98,6 @@
     }
 
     .sources {
-      color: white;
       font-size: 12px;
     }
 
@@ -114,23 +111,22 @@
       transform: translate(75px, 150px);
     }
 
-    div.sidebar {	
+    .sidebar {	
       text-align: left;			
-      width: 25%;
-      height: 100vh;
-      position: fixed;
-      overflow: hidden;
       color: #E6AB02;		
       font: 18px "Didact Gothic";		
       background: #2C251E;	
-      border: 0px;		
-      padding: 30px;			
-      pointer-events: none;			
+      padding: 30px;	
+      margin-top: 30px;
+      /* pointer-events: none;		 */
+      right: 0;
+      top: 0;
     }
 
     body {
       display: flex;
       flex-direction: row;
+      color: white;
     }
 
     text {
@@ -140,7 +136,6 @@
     #blurb {
         display: flex;
         flex-direction: column;
-        width: 60%;
         padding: 10px;
     }
 
@@ -154,13 +149,13 @@
     }
 
     .axis path{
-        stroke: white;
+        stroke: rgba(0,0,0,0);
     }
 
     .axis text{
       font-size: 20px;
       text-transform: lowercase;
-      stroke: white;
+      /* stroke: white; */
     }
 
     .legendSize text {
@@ -176,20 +171,48 @@
     #heading {
       display: flex;
       flex-direction: row;
-      width: 25%;
     }
 
     .nav-option {
       color: #7E5E29 !important;
       font-size: 24px;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+      display: block;
+    }
+
+    .nav-option:hover {
+      transform: scale(1.04) !important;
+    }
+
+    .explore-section {
+      position: absolute;
+      bottom: 10%;
     }
 
     .selected-nav-option {
+      display: block;
       color: #E6AB02 !important;
       font-size: 26px;
       font-weight: 600;
       text-decoration: none !important;
+      transition: transform .2s !important; 
+    }
+
+    .selected-nav-option:hover {
+      transform: scale(1.04) !important;
+    }
+
+    .white-stroke {
+      stroke: white !important;
+      stroke-width: 4px !important;
+    }
+
+    #race-select {
+      background: rgb(29, 28, 28);
+      color: white;
+      border-color: #555555;
+      border-radius: 6px;
     }
 
     .box {
@@ -254,55 +277,71 @@
     <meta charset="utf-8">
     
     <!-- Load d3.js -->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
     
     <!-- Create a div where the graph will take place -->
-    <div class="row">
+    <div class="row w-100">
       <div class="p-4 col-sm-3" style="background-color: #383838;">
-        <div style="position: fixed; ">
-          <div id="heading">
-            <img src="./images/popcorn.png" width="100" height="100">
-            <div id="blurb">
-              <h1>reception</h1>
-              <h2>
-                  By examining the top 30 grossing movies from each decade, we can explore race diversity vs. metrics of reception.
-                  Hover over circles to see more information about individual movies.
-              </h2>
-              <!-- <div class="sources">
-                <i>
-                  Adapted from: <a href="https://www.d3-graph-gallery.com/graph/scatter_basic.html">D3 Scatterplot Tutorial</a> <br>
-                  Data from: <a href="https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset">IMDB Top 5000 Dataset</a>, 
-                  <a href="https://www.nndb.com/">NNDB</a>,
-                  Image from: <a href="https://favpng.com/png_view/popcorn-popcorn-icon-design-icon-png/UP1B5p7K">source</a>
-                </i>
-              </div> -->
-            </div>
+        <div id="heading">
+          <img src="./images/popcorn.png" width="100" height="100" style="margin: auto 8px;">
+          <div id="blurb">
+            <h1>reception</h1>
           </div>
-          <div class="p-3 explore-section">
-            <div class="nav-options">
-              <a class="nav-option" href="oscars.html">awards</a>
-              <br/>
-              <a href="reception.html" class="selected-nav-option">reception</a>
-              <br/>
-              <a href="index.html" class="nav-option">back to home</a>
-            </div>
+        </div>
+        <div id="sidebar-tooltip" >
+          <h1 class="display-4 px-4 pt-4" style="font-size: 30px; margin: 0;">How is race diversity related to a movie's gross success?</h1>
+              <h2>Explore how race diversity relates to gross revenue success across the decades. <i>For each decade, at most 30 of the highest grossing films are shown,
+                taken from the top 1000 grossing movies of all time by adjusted lifetime revenue.</i>
+                <br/>Hover over circles to examine individual movies, and use the x-axis select to examine a different race's diversity.</h2>
+          <div class="sidebar" id="sidebar-default">
+           <span style="font-size: 26px;">No movie has been selected.</span> 
+           <br/>Hover over a circle on the visualization to see information on its corresponding movie here.
+          </div>
+        </div>
+        <div class="p-3 explore-section">
+          <div class="nav-options">
+            <a class="nav-option" href="oscars.html">awards</a>
+            <a href="reception.html" class="selected-nav-option">reception</a>
+            <a href="sources.html" class="nav-option">credits</a>
+            <a href="index.html" class="nav-option">back to home</a>
           </div>
         </div>
       </div>
       <div class="col-sm-9">
         <div id="main">
-          <div id="legend"></div>
-          <div id="graph"></div>
-        </div>   
-        <div id="comparison" style="display:flex; flex-direction: column;">
-          <input id="search" type="text" placeholder="search..">
-          <br></br>
-          <br></br>
-          <br></br>
-          <div style="display:flex; flex-direction: row;">
-            <div id="first" class="box"></div>
-            <div id="second" class="box"></div> 
+          <div class="d-flex justify-content-around text-center px-5">
+            <div>
+              <div class="dropdown-menu">
+                <h6 class="dropdown-header">Dropdown header</h6>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div id="graph">
+              <div style="font-size: 20px;">% 
+                <select class="form-select" id="race-select">
+                  <option class="percent-cast-race" value="white" selected>white</option>
+                  <option value="black">black</option>
+                  <option value="hispanic">hispanic</option>
+                  <option value="asian">asian</option>
+                  <option value="other">other</option>
+                </select>
+                cast
+              </div>
+            </div>
+            <div id="legend"></div>
+          </div>
+          <div id="comparison" style="display:flex; flex-direction: column;">
+            <input id="search" type="text" placeholder="search..">
+            <br></br>
+            <br></br>
+            <br></br>
+            <div style="display:flex; flex-direction: row;">
+              <div id="first" class="box"></div>
+              <div id="second" class="box"></div> 
+            </div>
           </div>
         </div>
       </div>
@@ -314,15 +353,18 @@
   <script>
 
     // sets dimensions
-    var margin = {top: 10, right: 60, bottom: 60, left: 60},
+    var margin = {top: 70, right: 60, bottom: 80, left: 90},
         width = 1100 - margin.left - margin.right,
-        height = 900 - margin.top - margin.bottom;
+        height = 1000 - margin.top - margin.bottom;
     
     var legendWidth = 300;
-    var legendHeight = 150;
+    var legendHeight = 400;
 
     // sets constants
     var goldColor = "#E6AB02"
+
+    // selected x-axis race
+    var selectedRace = "white"
     
     // defines graph svg
     var svg = d3.select("#graph")
@@ -331,35 +373,27 @@
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+              "translate(" + margin.left + "," + (margin.top - 10) + ")");
     
     // defines tooltip div
-    var metadataSidebar = d3.select("body").append("div")	
+    var metadataSidebar = d3.select("#sidebar-tooltip").append("div")	
         .attr("class", "sidebar")				
-        .style("opacity", 0);
-    
+        .style("opacity", 0)
+        .style("height", 0);
+
     // defines comparison viz svg
     var comp = d3.select("#comparison")
-        .append("div")
+        .append("div");
 
     // x-position scale
     var x = d3.scaleLinear()
         .domain([0, 1])
         .range([ 0, width ]);
     svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + (margin.top-70) + ")")
         .attr("class", "axis")
-        .call(d3.axisBottom(x))
+        .call(d3.axisTop(x).tickFormat(d3.format(".0%")))
         .call(g => g.select(".domain").remove());
-
-    svg.append("text")             
-        .attr("transform",
-            "translate(" + (width/2) + " ," + 
-                        (height + margin.top + 50) + ")")
-        .style("text-anchor", "middle")
-        .style("stroke", "white")
-        .style("font-size", "20px")
-        .text("% white cast");
 
     // y-position scale
     var decades = ["1920s", "1930s", "1940s", "1950s", "1960s", "1970s", "1980s", "1990s", "2000s", "2010s"].reverse()
@@ -369,9 +403,19 @@
         .range([ height, 0 ]);
     svg.append("g")
         .attr("class", "axis y-axis")
-        .call(d3.axisLeft(y))
+        .call(d3.axisLeft(y).tickPadding([30]))
         .call(g => g.select(".domain").remove());
-    
+    // style the y-axis labels to change color on hover
+    d3.select('.y-axis')
+        .selectAll('.tick')
+        .on("mouseover", function(d) {
+          d3.select(event.currentTarget).style("color", goldColor).style("stroke", goldColor)
+
+        })
+        .on("mouseout", function(d) {
+          d3.select(event.currentTarget).style("color", "white").style("stroke", "white")
+        })
+
     // background bars
     svg.selectAll("bar")
       .data(decades)
@@ -431,7 +475,7 @@
 
     // radius scale
     var rScale = d3.scaleLinear()
-        .domain([0, 1900000000]) // hardset from worldwide gross income max
+        .domain([0, 2000000000]) // hardset from worldwide gross income max
         .range([2, 20]);
 
     // size-based legend for revenue
@@ -442,17 +486,17 @@
            
     legendSvg.append("g")
         .attr("class", "legendSize")
-        .attr("transform", "translate(0, 50)")
+        .attr("transform", "translate(0,50)")
         .style("fill", goldColor);
 
     var legendSize = d3.legendSize()
         .scale(rScale)
         .shape('circle')
-        .shapePadding(60)
+        .shapePadding(30)
         .labelFormat(d => nFormatter(d,1))
         .labelOffset(20)
         .title('adjusted lifetime revenue ($)')
-        .orient('horizontal');
+        .orient('vertical');
     
     legendSvg.select(".legendSize")
         .call(legendSize);
@@ -529,88 +573,191 @@
             .attr('fill', function(d){return d < input ? goldColor : "#7e5d02";});
     }
 
-    // data input for the bubble plot
-    d3.csv("./datasets/movie_distributions_top_1000_gross.csv", function(all_data) {
-      // filter out top 50 per decade
-      var data = []
-      for (let i = 0; i < decades.length; i++) {
-        var decadePrefix = decades[i].substring(0,3)
-        var moviesInDecade = all_data.filter(d => d.year.substring(0,3) == decadePrefix)
-        // sort movies by gross
-        moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
-        data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
+    function getHtmlForSidebar(data) {
+      // genre, budget, metascore, gross worldwide / us, percent distribution
+      var imageDiv = "<div id='movie-poster' class='pr-4 float-left'><img src='./images/movie-thumbnail.jpg' width='100'/></div>"
+      var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
+      var genre = "<div>Genre: <span class='text-white'>" + data.genre + "</span></div>"
+      var budget = "<div>Budget ($): <span class='text-white'>" + nFormatter(data.budget,1) + "</span></div>"
+      var metascore = "<div>IMDB metascore: <span class='text-white'>" + data.metascore + "/100</span></div>"
+      var gross = "<div>Adjusted lifetime revenue ($): <span class='text-white'>" + nFormatter(data.adjusted_lifetime_gross, 1) + "</div>"
+      var breaks = "<br><br>"
+      var diversityText = "<div> Of the <a href='https://en.wikipedia.org/wiki/Billing_(performing_arts)#Top_and_above-title_billing' target='_blank'>top-billed</a> actors in the film, the race distribution was: </div>"
+      var tooltipDiv = "<div id='summaryBars' class='text-center'></div>"
+      return imageDiv + header + genre + budget + metascore + gross + breaks + diversityText + tooltipDiv
+    }
+
+    async function getMoviePoster(movieTitle) {
+      let response = await fetch('https://api.themoviedb.org/3/search/movie?api_key=75df43b925430c7c3bf191157cc3d9ea&query=' + movieTitle)
+      let json = await response.json()
+      return json.results[0].poster_path
+    }
+
+    var update = function(input_data, all_data, decadePrefix, yAxis) {
+      var data = input_data
+      if (decadePrefix !== null) {
+        // if there's a decade prefix, then we're in the expanded view and we want
+        // to filter to max 30 movies per YEAR instead of per DECADE
+        var data = []
+        for (let i = 0; i < 10; i++) {
+          var moviesInYear = all_data.filter(d => d.year == decadePrefix + i)
+          // sort movies by gross
+          moviesInYear.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
+          data.push(...moviesInYear.slice(0,30)) // take top 30 movies
+        }
       }
-      console.log('data', data, data.length)
-      
-
-      function getHtmlForSidebar(data) {
-        // console.log(data.budget, intToString(data.worlwide_gross_income))
-        // genre, budget, metascore, gross worldwide / us, percent distribution 
-        var header = "<h3>" + data.original_title + " (" + data.year + ")" + "</h3>"
-        var genre = "<div>Genre: " + data.genre + "</div>"
-        var budget = "<div>Budget: " + nFormatter(data.budget,1) + "</div>"
-        var metascore = "<div>IMDB metascore: " + data.metascore + "/100</div>"
-        var gross = "<div>Worldwide gross revenue: " + nFormatter(data.adjusted_lifetime_gross, 1) + "</div>"
-        var breaks = "<br><br>"
-        var diversityText = "<div> Of the 15 most important actors in the film, the race distribution was: </div>"
-        var white = "<div>" + Math.round(data.percent_white * 1000) / 10 + "% white"
-        var black = "<div>" + Math.round(data.percent_black * 1000) / 10 + "% black"
-        var hispanic = "<div>" + Math.round(data.percent_hispanic * 1000) / 10 + "% hispanic"
-        var asian = "<div>" + Math.round(data.percent_asian * 1000) / 10 + "% asian"
-        var other = "<div>" + Math.round(data.percent_other * 1000) / 10 + "% other"
-
-        return header + genre + budget + metascore + gross + breaks + diversityText + white + black + hispanic + asian + other
-      }
-
-      // parse the data
-      for (i = 0; i < data.length; i++) {
-          data[i].budget = parseFloat(data[i].budget.replace('$', ''));
-          data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
-          data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
-      }
-
       // add scatterplot dots
-      var node = svg.append('g')
-      .selectAll("circle")
-      .data(data)
-      .enter()
-      .append("circle")
+      var node = svg
+      .selectAll(".graph-circle")
+      .data(data, d => d)
+      
+      node.join(
+        enter => enter.append("circle")
+        .attr("class", "graph-circle")
         .attr("cx", d => x(d.percent_white))
         .attr("cy", d => {return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2})
         .attr("r", d => rScale(parseFloat(d.adjusted_lifetime_gross)))
         .style("fill", goldColor)
         .style("stroke", "#383838")
         .style("stroke-width", 1.5)
-        .on("mouseover", function(d) {		
+        .on("mouseover", function(d) {
+            var sidebarDefault = document.getElementById('sidebar-default')
+            if (sidebarDefault) {sidebarDefault.remove()}
+            // remove the stroke from the previous hovered circle
+            var el = document.getElementsByClassName("white-stroke");
+            for (let i = 0; i < el.length; i++) {
+              el[i].classList.remove("white-stroke")
+            }
+
+            d3.select(this).classed('white-stroke', true)
+
             metadataSidebar.transition()		
                 .duration(200)		
-                .style("opacity", 1);		
+                .style("opacity", 1)
+                .style("height", "auto");		
             metadataSidebar.html(
               getHtmlForSidebar(d)
-            )
-              .style("left", "0px")		
-              .style("top", "0px");	
-        })					
+            );
+            var y = d3.scaleBand().padding(0.2).domain(["white", "black", "hispanic", "asian", "other"]).range([0,280])
+            var x = d3.scaleLinear().domain([0, 1]).range([0,260]);
+            
+            var barTipSVG = d3.select("#summaryBars")
+              .append("svg")
+              .attr("width", 420)
+              .attr("height", 280); 
+            
+            barTipSVG.append("g")
+              .attr("transform", "translate(85,0)")
+              .attr("class", "axis")
+              .attr("opacity", 0)
+              .call(d3.axisBottom(x))
+              .call(g => g.select(".domain").remove());
+            
+            barTipSVG.append("g")
+              .attr("transform", "translate(87,0)")
+              .attr("class", "axis")
+              .call(d3.axisLeft(y))
+              .call(g => g.select(".domain").remove());
+
+            var race_distribution = [
+              {"race": "white", "percent": d.percent_white},
+              {"race": "black", "percent": d.percent_black},
+              {"race": "hispanic", "percent": d.percent_hispanic},
+              {"race": "asian", "percent": d.percent_asian},
+              {"race": "other", "percent": d.percent_other},
+            ]
+
+            barTipSVG
+              .selectAll("bar")
+              .data(race_distribution, d => d.race)
+              .enter()
+              .append("rect")
+                .attr("transform", "translate(85,0)")
+                .style("fill", goldColor)
+                .attr("x", function(d) { return x(0); })
+                .attr("width", 0)
+                .attr("y", function(d) { return y(d.race); })
+                .attr("height", y.bandwidth())
+                .transition() // <---- Here is the transition
+                .duration(500)
+                .attr("width", function(d) { return x(d.percent); });
+            
+            // add labels
+            barTipSVG.selectAll(".bar-label")
+              .data(race_distribution, d => d.race)
+              .enter()
+              .append('text')
+                .attr("transform", "translate(85,0)")
+                .text(function(d) { 
+                  return (d.percent * 100).toFixed(1) + "%";
+                })
+                .attr("y", function(d){
+                  return y(d.race) + y.bandwidth() / 2 + 4;
+                })
+                .attr("x", function(d){
+                  return x(d.percent) + 27;
+                })
+                .attr("fill", "white")
+                .attr("text-anchor", "middle");
+            
+            // add movie poster
+            getMoviePoster(d.original_title).then(path => {
+              var el = d3.select("#movie-poster")
+              el.innerHTML = ""
+              const imagePath = 'https://image.tmdb.org/t/p/original' + path
+              el.select('img')
+                .attr('src', imagePath)
+                .attr('width', 100)
+            })
+        })
         .on("mouseout", function(d) {		
-            metadataSidebar.transition()		
-                .duration(200)		
-                .style("opacity", 0);	
-        });
-        
+            // metadataSidebar.transition()		
+            //     .duration(300)		
+            //     .style("opacity", 0)
+            //     .style("height", "0px");	
+        }),
+        update => update,
+        exit => exit.remove()
+      )
+
       // physics for dots along the line
       // Features of the forces applied to the nodes:
       var simulation = d3.forceSimulation()
           .force('x', d3.forceX().x(function(d) {
-            // return xCenter[d.category];
-            return x(d.percent_white);
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return x(raceToField[selectedRace]);
           }).strength(0.4))
           .force('y', d3.forceY().y(function(d) {
-            return y(d.year.substring(0,3) + "0s") + y.bandwidth() / 2;
-          }).strength(0.4))
-          .force('charge', d3.forceManyBody().strength(3))
+            if (decadePrefix !== null) {
+              // send to individual years within the decade
+              return yAxis(d.year) + yAxis.bandwidth() / 2;
+            } else {
+              return yAxis(d.year.substring(0,3) + "0s") + yAxis.bandwidth() / 2;
+            }
+          }).strength(function(d) {
+            if (decadePrefix !== null) {
+              return 5
+            } else {
+              return 0.8
+            }
+          }))
+          .force('charge', d3.forceManyBody().strength(function(d) {
+            if (decadePrefix !== null) {
+              return 0
+            } else {
+              return 3
+            }
+          }))
           .force('collision', d3.forceCollide().radius(function(d) {
             return rScale(parseFloat(d.adjusted_lifetime_gross));
           }))
+      var node = svg.selectAll('.graph-circle')
 
       // Apply these forces to the nodes and update their positions.
       // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
@@ -621,6 +768,115 @@
                 .attr("cx", function(d){ return d.x; })
                 .attr("cy", function(d){ return d.y; })
           }); 
+
+      simulation.nodes(data).alpha(0.3).alphaTarget(0).restart()
+
+      // change the y-axis range to zoom in on a decade
+      
+      d3.select('.y-axis')
+        .selectAll('.tick')
+        .attr('class', d => d)
+        // .on('click', d => ())
+
+      
+
+      
+      // event listeners for race button filter clicks
+      var updateSelectedRace = function(race, data) {
+          selectedRace = race
+          // draw average line
+          var sum = d3.sum(data, function(d) { 
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return raceToField[selectedRace] 
+          }); 
+          var average = sum / data.length
+
+          var lineNode = svg
+          .append("g")
+          .selectAll(".avg-line")
+          .data([average])
+
+          if (document.getElementById("avg-line")) {
+            document.getElementById("avg-line").remove()
+          }
+          if (document.getElementById("avg-caption")) {
+            document.getElementById("avg-caption").remove()
+          }
+
+          lineNode.join(
+            enter => enter.append('line')
+              .attr("id", "avg-line")
+              .style("stroke", "white")
+              .style("stroke-width", 1)
+              .attr("x1", avg => x(avg))
+              .attr("y1", y("1920s"))
+              .attr("x2", avg => x(avg))
+              .attr("y2", y("2010s") + y.bandwidth()),
+            update => update,
+            exit => exit.remove()
+          )
+
+          lineNode.join(
+            enter => enter.append("text")
+              .attr("id", "avg-caption")
+              .attr("transform", function(d) {
+                var xTranslation = x(average) + 130
+                var yTranslation = y("2010s") + y.bandwidth() + 20
+                return "translate(" + xTranslation + "," + yTranslation + ")"})
+              .attr("text-anchor", "end")
+              .style("fill", "white")
+              .style("font-size", "18px")
+              .html("Average % " + selectedRace + " cast: " + (average * 100).toFixed(1)),
+            update => update,
+            exit => exit.remove()
+          )
+
+
+          // simulation
+          simulation.force('x', d3.forceX().x(function(d) {
+            var raceToField = {
+              "white": d.percent_white,
+              "black": d.percent_black,
+              "asian": d.percent_asian,
+              "hispanic": d.percent_hispanic,
+              "other": d.percent_other
+            }
+            return x(raceToField[race]);
+          }).strength(0.4)).alpha(0.2).alphaTarget(0).restart()
+      }
+
+      updateSelectedRace(selectedRace, data)
+
+      const raceSelect = document.querySelector('#race-select');
+      raceSelect.addEventListener('change', (event) => {
+        updateSelectedRace(event.target.value, data)
+      });
+    }
+    
+    d3.csv("./datasets/movie_distributions_top_1000_gross.csv").then((all_data) => {
+      // filter out top 50 per decade
+      var data = []
+      for (let i = 0; i < decades.length; i++) {
+        var decadePrefix = decades[i].substring(0,3)
+        var moviesInDecade = all_data.filter(d => d.year.substring(0,3) == decadePrefix)
+        // sort movies by gross
+        moviesInDecade.sort((a,b) => (a.adjusted_lifetime_gross < b.adjusted_lifetime_gross) ? 1 : -1)
+        data.push(...moviesInDecade.slice(0,30)) // take top 30 movies
+      }      
+
+      // parse the data
+      for (i = 0; i < data.length; i++) {
+          data[i].budget = parseFloat(data[i].budget.replace('$', ''));
+          data[i].usa_gross_income = parseFloat(data[i].usa_gross_income.replace('$', ''));
+          data[i].adjusted_lifetime_gross = parseFloat(data[i].adjusted_lifetime_gross.substring(1,).replace(/,/g, ''));
+      }
+      update(data, all_data, null, y)
 
       function searchMovies() {
         return function() {
@@ -633,73 +889,73 @@
             elem.classList.add("dropdown"); // Add dropdown class (for the CSS border-radius)
             // If the selector div element does not exist, create it
             if (selector == null) {
-                selector = document.createElement("div");
-                selector.id = "selector";
-                elem.parentNode.appendChild(selector);
-                // Position it below the input element
-                selector.style.left = elem.getBoundingClientRect().left + "px";
-                selector.style.top = elem.getBoundingClientRect().bottom + "px";
-                selector.style.width = elem.getBoundingClientRect().width + "px";
+              selector = document.createElement("div");
+              selector.id = "selector";
+              elem.parentNode.appendChild(selector);
+              // Position it below the input element
+              selector.style.left = elem.getBoundingClientRect().left + "px";
+              selector.style.top = elem.getBoundingClientRect().bottom + "px";
+              selector.style.width = elem.getBoundingClientRect().width + "px";
             }
             // Clear everything before new search
             selector.innerHTML = "";
             // Variable if result is empty
             let empty = true;
             for (let i = 0; i < all_data.length; i++) {
-                  // If exists, create an item (button)
-                  let str = all_data[i].original_title.toLowerCase();
-                  if (str.indexOf(elem.value) !== -1) {
-                      let opt = document.createElement("button");
-                      opt.onclick = function() {
-                        window.search.classList.remove("dropdown");
-                        window.search.value = opt.innerHTML;
-                        opt.parentNode.parentNode.removeChild(opt.parentNode);
-                        
-                        var svg1 = d3.select("#first");
-                        var svg2 = d3.select("#second");
-                        svg1.selectAll('*').remove();
-                        svg2.selectAll('*').remove();
+              // If exists, create an item (button)
+              let str = all_data[i].original_title.toLowerCase();
+              if (str.indexOf(elem.value) !== -1) {
+                  let opt = document.createElement("button");
+                  opt.onclick = function() {
+                    window.search.classList.remove("dropdown");
+                    window.search.value = opt.innerHTML;
+                    opt.parentNode.parentNode.removeChild(opt.parentNode);
+                    
+                    var svg1 = d3.select("#first");
+                    var svg2 = d3.select("#second");
+                    svg1.selectAll('*').remove();
+                    svg2.selectAll('*').remove();
 
-                        console.log("im here with the new movie: ", all_data[i].original_title);
-                        var selectedMovie = all_data[i];
-                        selectedScore = Math.round(selectedMovie.metascore / 10.0); // score 100% ==> scale on 10 stars
-                        selectedScoreVal = nFormatter(selectedMovie.metascore, 1) + " / 100";
-                        selectedRevenue = selectedMovie.adjusted_lifetime_gross;
-                        selectedRevenueVal = "$" + nFormatter(selectedMovie.adjusted_lifetime_gross, 1);
-                        selectedBudget = selectedMovie.budget;
-                        selectedBudgetVal = "$" + nFormatter(selectedMovie.budget, 1);
-                        selectedRace = (1-selectedMovie.percent_white)*100
-                        selectedRaceVal = nFormatter((1 - selectedMovie.percent_white)*100, 1) + "%";
+                    console.log("im here with the new movie: ", all_data[i].original_title);
+                    var selectedMovie = all_data[i];
+                    selectedScore = Math.round(selectedMovie.metascore / 10.0); // score 100% ==> scale on 10 stars
+                    selectedScoreVal = nFormatter(selectedMovie.metascore, 1) + " / 100";
+                    selectedRevenue = selectedMovie.adjusted_lifetime_gross;
+                    selectedRevenueVal = "$" + nFormatter(selectedMovie.adjusted_lifetime_gross, 1);
+                    selectedBudget = selectedMovie.budget;
+                    selectedBudgetVal = "$" + nFormatter(selectedMovie.budget, 1);
+                    selectedRace = (1-selectedMovie.percent_white)*100
+                    selectedRaceVal = nFormatter((1 - selectedMovie.percent_white)*100, 1) + "%";
 
-                        var compMovies = data.filter(d => d.year == selectedMovie.year);
-                        compScore = Math.round((compMovies.reduce((total, i) => total + parseInt(i.metascore), 0) / compMovies.length) / 10.0);
-                        compScoreVal = nFormatter(compMovies.reduce((total, i) => total + parseInt(i.metascore), 0) / compMovies.length, 1) + " / 100";
-                        compRevenue = compMovies.reduce((total, i) => total + parseFloat(i.adjusted_lifetime_gross), 0) / compMovies.length;
-                        compRevenueVal = "$" + nFormatter(compMovies.reduce((total, i) => total + parseFloat(i.adjusted_lifetime_gross), 0) / compMovies.length, 1);
-                        compBudget = compMovies.reduce((total, i) => total + parseFloat(i.budget), 0) / compMovies.length;
-                        compBudgetVal = "$" + nFormatter(compMovies.reduce((total, i) => total + parseInt(i.budget), 0) / compMovies.length, 1);
-                        compRace = (1 - compMovies.reduce((total, i) => total + parseFloat(i.percent_white), 0) / compMovies.length)*100;
-                        compRaceVal = nFormatter((1-compMovies.reduce((total, i) => total + parseFloat(i.percent_white), 0) / compMovies.length) * 100, 1) + "%";
+                    var compMovies = data.filter(d => d.year == selectedMovie.year);
+                    compScore = Math.round((compMovies.reduce((total, i) => total + parseInt(i.metascore), 0) / compMovies.length) / 10.0);
+                    compScoreVal = nFormatter(compMovies.reduce((total, i) => total + parseInt(i.metascore), 0) / compMovies.length, 1) + " / 100";
+                    compRevenue = compMovies.reduce((total, i) => total + parseFloat(i.adjusted_lifetime_gross), 0) / compMovies.length;
+                    compRevenueVal = "$" + nFormatter(compMovies.reduce((total, i) => total + parseFloat(i.adjusted_lifetime_gross), 0) / compMovies.length, 1);
+                    compBudget = compMovies.reduce((total, i) => total + parseFloat(i.budget), 0) / compMovies.length;
+                    compBudgetVal = "$" + nFormatter(compMovies.reduce((total, i) => total + parseInt(i.budget), 0) / compMovies.length, 1);
+                    compRace = (1 - compMovies.reduce((total, i) => total + parseFloat(i.percent_white), 0) / compMovies.length)*100;
+                    compRaceVal = nFormatter((1-compMovies.reduce((total, i) => total + parseFloat(i.percent_white), 0) / compMovies.length) * 100, 1) + "%";
 
-                        moneyVals = [selectedBudget, compBudget, selectedRevenue, compRevenue]
-                        var moneyScale = d3.scaleQuantize()
-                            .domain([0, Math.max.apply(null, moneyVals)])
-                            .range([1,2,3,4,5,6,7,8,9,10]);
+                    moneyVals = [selectedBudget, compBudget, selectedRevenue, compRevenue]
+                    var moneyScale = d3.scaleQuantize()
+                        .domain([0, Math.max.apply(null, moneyVals)])
+                        .range([1,2,3,4,5,6,7,8,9,10]);
 
-                        showMetric(selectedScore, selectedScoreVal, "first", "metascore");
-                        showMetric(moneyScale(selectedRevenue), selectedRevenueVal, "first", "revenue");
-                        showMetric(moneyScale(selectedBudget), selectedBudgetVal, "first", "budget");
-                        showMetric(Math.round(selectedRace/10), selectedRaceVal, "first", "race")
+                    showMetric(selectedScore, selectedScoreVal, "first", "metascore");
+                    showMetric(moneyScale(selectedRevenue), selectedRevenueVal, "first", "revenue");
+                    showMetric(moneyScale(selectedBudget), selectedBudgetVal, "first", "budget");
+                    showMetric(Math.round(selectedRace/10), selectedRaceVal, "first", "race")
 
-                        showMetric(compScore, compScoreVal, "second", "metascore");
-                        showMetric(moneyScale(compRevenue), compRevenueVal, "second", "revenue");
-                        showMetric(moneyScale(compBudget), compBudgetVal,  "second", "budget");
-                        showMetric(Math.round(compRace/10), compRaceVal, "second", "race");
-                      };
-                      opt.innerHTML = all_data[i].original_title;
-                      selector.appendChild(opt);
-                      empty = false;
-                  }
+                    showMetric(compScore, compScoreVal, "second", "metascore");
+                    showMetric(moneyScale(compRevenue), compRevenueVal, "second", "revenue");
+                    showMetric(moneyScale(compBudget), compBudgetVal,  "second", "budget");
+                    showMetric(Math.round(compRace/10), compRaceVal, "second", "race");
+                  };
+                  opt.innerHTML = all_data[i].original_title;
+                  selector.appendChild(opt);
+                  empty = false;
+                }
               }
               // If result is empty, display a disabled button with text
               if (empty == true) {
@@ -721,5 +977,6 @@
     
       document.getElementById("search").onkeyup = searchMovies();
     })
+    
     </script>
 </body>

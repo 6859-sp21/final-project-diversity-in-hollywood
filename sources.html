@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Diversity in Hollywood</title>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">  
+  <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style type="text/css">
+    body {
+      padding: 20px;
+      background-color: rgb(29, 28, 28);
+      font-family: 'Didact Gothic', sans-serif; 
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    .dataset-category {
+      padding: 10px 50px;
+    }
+
+    a {
+      color: #E6AB02 !important
+    }
+
+    .nav-option {
+      color: #7E5E29 !important;
+      font-size: 24px;
+      text-decoration: none !important;
+      transition: transform .2s !important; 
+      display: block;
+    }
+
+    .nav-option:hover {
+      transform: scale(1.04) !important;
+    }
+
+    .selected-nav-option {
+      display: block;
+      color: #E6AB02 !important;
+      font-size: 26px;
+      font-weight: 600;
+      text-decoration: none !important;
+      transition: transform .2s !important; 
+    }
+
+    .selected-nav-option:hover {
+      transform: scale(1.04) !important;
+    }
+
+  </style>
+</head>
+<body class="container">
+  <h1 class="text-center pb-3">Credits</h1>
+  <h3 class="pb-2">
+    Authors: Jenning Chen, Ashwin Srinivasan, Cindy Yang, Lisa Yoo
+  </h3>
+  <div class="d-flex justify-content-around py-4">
+    <div class="dataset-category">
+      <img class="mb-4" src="./images/oscar_man.png"/ width="80px" height="80px">
+      <h2>Oscars Dataset</h2>
+      The data for all Oscars winners were retrieved from <a href="https://data.world/crowdflower/academy-awards-demographics">data.world</a>.
+      <br/>
+      The race for each individual was scraped from <a href="https://nndb.com/">nndb.com</a>.
+    </div>
+    <div class="dataset-category">
+      <img class="mb-4" src="./images/golden_globe_icon.png"/ width="80px" height="80px">
+      <h2>Golden Globes Dataset</h2>
+      The data for all Oscars winners were retrieved from <a href="https://www.kaggle.com/unanimad/golden-globe-awards">kaggle.com</a>.
+      <br/>
+      The race for each individual was scraped from <a href="https://nndb.com/">nndb.com</a>.
+    </div>
+    <div class="dataset-category">
+      <img class="mt-4 mb-4" src="./images/trophy.png"/ width="60px" height="60px">
+      <h2>Screen Actors Guild Dataset</h2>
+      The data for all Oscars winners were retrieved from <a href="https://www.kaggle.com/unanimad/screen-actors-guild-awards">kaggle.com</a>.
+      <br/>
+      The race for each individual was scraped from <a href="https://nndb.com/">nndb.com</a>.
+    </div>
+  </div>
+
+  <div class="py-4">
+    <h2>Top Grossing Movies Dataset</h2>
+    The data for the top 1000 grossing movies by adjusted gross revenue were retrieved from  <a href="https://www.boxofficemojo.com/chart/top_lifetime_gross/?area=XWW">boxofficemojo.com</a>.
+    <br/>
+    Additional columns of top-billed actors, IMDb rating, and genre were sourced from the IMDb dataset on <a href="https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset">kaggle.com</a>.
+    <br/>
+    Cast race percentages for each race (White, Black, Asian, Hispanic, Other) were calculated
+    based on the race scraped for each top-billed actor from <a href="https://nndb.com/">nndb.com</a>.
+  </div>
+  <div class="pb-4">
+    <h2>Movie Posters</h2>
+    Movie posters were retrieved using the <a href="https://www.themoviedb.org/">TMDB </a>API.
+  </div>
+  <div class="pb-4">
+    <h2>Circle Packing</h2>
+    Code was adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">d3-graph-gallery.com</a>.
+  </div>
+  <div class="pb-4">
+    <h2>Industry White Actor Percentage</h2>
+    For the metrics on the home page of industry-wide white actor percentage, the data was retrieved from <a href="https://datausa.io/profile/soc/actors">data.usa.io</a>.
+  </div>
+  <div class="d-flex justify-content-around pt-5" id="nav-bar">
+    <a class="nav-option" href="oscars.html">awards</a>
+    <a href="reception.html" class="nav-option">reception</a>
+    <a href="sources.html" class="selected-nav-option">credits</a>
+    <a href="index.html" class="nav-option">back to home</a>
+  </div>
+</body>

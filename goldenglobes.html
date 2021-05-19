@@ -60,6 +60,8 @@
       position: fixed;
       width: 100%;
       color: white;
+      height: 175px;
+      z-index: 10;
     }
 
     #filter-instructions {
@@ -78,8 +80,9 @@
     }
 
     #slider-section {
-      width: 1000px;
+      width: 750px;
       margin: auto;
+      padding-right: 10px;
     }
 
     #slider-container {
@@ -151,7 +154,7 @@
     .nav-options {
       padding-top: 20px;
       padding-left: 40px;
-      width: 20%;
+      width: 15%;
       text-align: left;
     }
 
@@ -203,6 +206,7 @@
         <div class="nav-options">
           <a class="selected-nav-option" href="">awards</a>
           <a href="reception.html" class="nav-option">reception</a>
+          <a href="sources.html" class="nav-option">credits</a>
           <a href="index.html" class="nav-option">back to home</a>
         </div>
         <div id="filters" class="d-flex">
@@ -226,28 +230,18 @@
           <!-- slider -->
           <div>
             <div id="slider-section">
-              <div id="range-label">1928 - 2019</div>
+              <div id="range-label">1945 - 2019</div>
               <div id="slider-container"></div>
             </div>
             <!-- category selection -->
             <div class="text-center pt-3">
               <button type="button" id="all-btn" class="mx-1 btn btn-light">all</button>
-              <button type="button" name="DIRECTING" id="director-btn" class="mx-1 btn btn-outline-light">best director</button>
-              <button type="button" name="ACTOR IN A LEADING ROLE" id="actor-btn" class="mx-1 btn btn-outline-light">best actor</button>
-              <button type="button" name="ACTRESS IN A LEADING ROLE" id="actress-btn" class="mx-1 btn btn-outline-light">best actress</button>
-              <button type="button" name="ACTOR IN A SUPPORTING ROLE" id="sup-actor-btn" class="mx-1 btn btn-outline-light">best supporting actor</button>
-              <button type="button" name="ACTRESS IN A SUPPORTING ROLE" id="sup-actress-btn" class="mx-1 btn btn-outline-light">best supporting actress</button>
+              <button type="button" name="Actor In A Leading Role" id="actor-btn" class="mx-1 btn btn-outline-light">best actor</button>
+              <button type="button" name="Actress In A Leading Role" id="actress-btn" class="mx-1 btn btn-outline-light">best actress</button>
+              <button type="button" name="Supporting Actor In A Leading Role" id="sup-actor-btn" class="mx-1 btn btn-outline-light">best supporting actor</button>
+              <button type="button" name="Supporting Actress In A Leading Role" id="sup-actress-btn" class="mx-1 btn btn-outline-light">best supporting actress</button>
             </div>
           </div>
-        </div>
-        <div class="sources p-3">
-          <i>
-            Authors: Jenning Chen, Ashwin Srinivasan, <br>Cindy Yang, Lisa Yoo <br>
-            Adapted from: <a href="https://www.d3-graph-gallery.com/graph/circularpacking_basic.html">D3 Circle-Packing Tutorial</a> <br>
-            Data from: <a href="https://data.world/crowdflower/academy-awards-demographics">Oscars Demographics Dataset</a>, 
-            <a href="http://nndb.com/">nndb.com</a>,<br>
-            Image from: <a href="https://www.flaticon.com/free-icon/oscar_206982">source</a>
-          </i>
         </div>
        </div>
       <div class="main-caption">
@@ -274,15 +268,32 @@
           </div>
         </div>
       </div>
-      <h3 style="padding-left: 40px;">
-        Percentage of racial minorities over time
-      </h3>
-      <div class="p-3" style="color:white">
-        <div id="summary_graph"></div>
-        <div id="summary_legend"></div>
-      </div>
     </div>
   </div>
+  <h3 style="padding-left: 40px;text-align: center; margin-top: 300px;">
+    Percentage of racial minorities over time for the Golden Globes.
+  </h3>
+  <h4 class="main-caption p-3 text-center" style="margin: 50px;">
+    Select which individuals to include:
+    <select id="selectButton"></select>
+  </h4>
+  <div class="row" style='margin: 50px;'>
+    <div class="col-sm-12" style="color:white">
+      <div id="summary_graph"></div>
+      <div id="summary_legend"></div>
+    </div>
+  </div>
+  <h3 style="padding-left: 40px;text-align: center; margin-top: 100px;">
+      Percentage of racial minorities by award.
+  </h3>
+  <div class="row" style='margin: 50px;'>
+    
+    <div class="col-sm-12" style="color:white">
+      <div id="compare_graph"></div>
+      <div id="compare_legend"></div>
+    </div>
+  </div>
+
 
 <!-- JAVASCRIPT -->
 <script>
@@ -295,8 +306,8 @@
     var legendWidth = 400
     var width = 1200
     var height = 800
-    var summaryHeight = 200
-    var summaryWidth = 300
+    var summaryWidth = document.getElementById('summary_graph').clientWidth;
+    var summaryHeight = Math.floor(summaryWidth*0.25*0.7); // 0.25 because 4 subplots, 0.7 is the chosen aspect ratio
     var margins = {top: 10, right: 10, bottom: 20, left: 30};
 
     var graphsvg = d3.select("#graph")
@@ -341,18 +352,31 @@
         .attr("class", "tooltip")
         .style("opacity", 0);
 
-    var summary_svg = d3.select("#summary_graph")
+    // format dropdown button for graph 1
+    var includes = ["all", "winner", "nominee"] // button options
+    var includes_text = {"all": "all nominees", 
+                        "winner": "winners only", 
+                        "nominee": "nominees excluding winners"}
+    d3.select("#selectButton")
+      .selectAll('myOptions')
+      .data(includes)
+      .enter()
+      .append('option')
+      .text(function (d) { return includes_text[d]; }) // map to the right display text
+      .attr("value", function (d) { return d; }) // corresponding value returned by the button
+      
+    var compare_svg = d3.select("#compare_graph")
         .append("svg")
         .attr("width", summaryWidth)
         .attr("height", summaryHeight)        
         .append("g")
         .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
-    
-     var summary_legendsvg = d3.select("#summary_legend")
+
+    var compare_legendsvg = d3.select("#compare_legend")
       .append("svg")
         .attr("width", summaryWidth)
         .attr("height", 500)
-    summary_legendsvg.append("g");
+    compare_legendsvg.append("g");
 
     function update(data, startYear, endYear, categories) {
         // first, filter data to year range
@@ -575,168 +599,572 @@
 
 
     d3.csv("./datasets/golden_globe_merged.csv").then((csv_orig) => {
-       
-       /* ALL CATEGORIES SORTED
-       'Actress In A Leading Role', 
-       'Best Performance by an Actress in a Motion Picture - Drama',
-       'Actress In A Leading Role - Musical Or Comedy',
-       'Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television',
-       'Best Performance by an Actress In A Television Series - Drama',
-       'New Star Of The Year - Actress',
-       'Actress In A Television Series',
-       'Best Performance by an Actress in a Motion Picture - Musical or Comedy',
-       'Actress In A Television Series - Musical Or Comedy',
-       'Actress In A Television Series - Drama',
-       'Best Performance by an Actress in a Television Series - Musical or Comedy',
-       'Actress In A Leading Role - Musical Or Comedy Series Or Television Movie',
-       'Actress In A Leading Role - Drama Series Or Television Movie',
-       
-       'Actor In A Leading Role',
-       'Best Performance by an Actor in a Motion Picture - Drama',
-       'Best Performance by an Actor in a Motion Picture - Musical or Comedy',
-       'New Star Of The Year - Actor',
-       'Best Performance by an Actor In A Television Series - Drama',
-       'Actor In A Television Series - Musical Or Comedy',
-       'Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television',
-       'Actor In A Television Series - Drama',
-       'New Foreign Star Of The Year - Actor',
-       'Best Performance by an Actor in a Television Series - Musical or Comedy',
-       'Actor In A Television Series',
-       'Actor In A Leading Role - Drama Series Or Television Movie',
-       'Actor In A Leading Role - Musical Or Comedy Series Or Television Movie',
-       
-       'Best Performance by an Actress in a Supporting Role in any Motion Picture',
-       'Best Performance by an Actress in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
-       'Actress In A Supporting Role - Television Series',
-       'Actress In A Supporting Role - Series Or Television Movie',
-       
-       'Best Performance by an Actor in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
-       'Best Performance by an Actor in a Supporting Role in any Motion Picture',
-       'Actor In A Supporting Role - Television Series',
-       'Actor In A Supporting Role - Series Or Television Movie'
-       */
+      d3.csv('./datasets/all_awards_race_year_count_latest.csv').then((all_data) => {
+        /* ALL CATEGORIES SORTED
+        'Actress In A Leading Role', 
+        'Best Performance by an Actress in a Motion Picture - Drama',
+        'Actress In A Leading Role - Musical Or Comedy',
+        'Best Performance by an Actress in a Limited Series or a Motion Picture Made for Television',
+        'Best Performance by an Actress In A Television Series - Drama',
+        'New Star Of The Year - Actress',
+        'Actress In A Television Series',
+        'Best Performance by an Actress in a Motion Picture - Musical or Comedy',
+        'Actress In A Television Series - Musical Or Comedy',
+        'Actress In A Television Series - Drama',
+        'Best Performance by an Actress in a Television Series - Musical or Comedy',
+        'Actress In A Leading Role - Musical Or Comedy Series Or Television Movie',
+        'Actress In A Leading Role - Drama Series Or Television Movie',
+        
+        'Actor In A Leading Role',
+        'Best Performance by an Actor in a Motion Picture - Drama',
+        'Best Performance by an Actor in a Motion Picture - Musical or Comedy',
+        'New Star Of The Year - Actor',
+        'Best Performance by an Actor In A Television Series - Drama',
+        'Actor In A Television Series - Musical Or Comedy',
+        'Best Performance by an Actor in a Limited Series or a Motion Picture Made for Television',
+        'Actor In A Television Series - Drama',
+        'New Foreign Star Of The Year - Actor',
+        'Best Performance by an Actor in a Television Series - Musical or Comedy',
+        'Actor In A Television Series',
+        'Actor In A Leading Role - Drama Series Or Television Movie',
+        'Actor In A Leading Role - Musical Or Comedy Series Or Television Movie',
+        
+        'Best Performance by an Actress in a Supporting Role in any Motion Picture',
+        'Best Performance by an Actress in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
+        'Actress In A Supporting Role - Television Series',
+        'Actress In A Supporting Role - Series Or Television Movie',
+        
+        'Best Performance by an Actor in a Supporting Role in a Series: Limited Series or Motion Picture Made for Television',
+        'Best Performance by an Actor in a Supporting Role in any Motion Picture',
+        'Actor In A Supporting Role - Television Series',
+        'Actor In A Supporting Role - Series Or Television Movie'
+        */
 
-        csv_data = []
-        for (var i = 0; i < csv_orig.length; i++) {
-            csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
-            if (csv_orig[i].fixed_race == 'white [1]') {csv_orig[i].fixed_race = 'white'}
-            else if (csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian"}
-            else if (csv_orig[i].fixed_race == 'Middle Eastern') {csv_orig[i].fixed_race = "white"}
+          csv_data = []
+          for (var i = 0; i < csv_orig.length; i++) {
+              csv_orig[i].fixed_race = csv_orig[i].race.toLowerCase();
+              if (csv_orig[i].fixed_race == 'white [1]') {csv_orig[i].fixed_race = 'white'}
+              else if (csv_orig[i].fixed_race == 'asian/indian') {csv_orig[i].fixed_race = "asian"}
+              else if (csv_orig[i].fixed_race == 'Middle Eastern') {csv_orig[i].fixed_race = "white"}
 
-            if (!(csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'white' || csv_orig[i].fixed_race == 'black' ||
-                csv_orig[i].fixed_race == 'hispanic')) {
-                csv_orig[i].fixed_race = "other";
-            }
+              if (!(csv_orig[i].fixed_race == 'asian' || csv_orig[i].fixed_race == 'white' || csv_orig[i].fixed_race == 'black' ||
+                  csv_orig[i].fixed_race == 'hispanic')) {
+                  csv_orig[i].fixed_race = "other";
+              }
 
-            csv_orig[i].id = i;
-            csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_award);
-            
-            if (csv_orig[i].win === "True") csv_orig[i].winner = "TRUE";
-            else csv_orig[i].winner = "FALSE";
+              csv_orig[i].id = i;
+              csv_orig[i].year_ceremony = parseInt(csv_orig[i].year_award);
+              
+              if (csv_orig[i].win === "True") csv_orig[i].winner = "TRUE";
+              else csv_orig[i].winner = "FALSE";
 
-            const category = csv_orig[i].category.trim();
-            var includedCategory = false;
-            if (category === "Actress In A Leading Role" || 
-                category === "Best Performance by an Actress in a Motion Picture - Drama") {
-                csv_orig[i].category = "Actress In A Leading Role"
-                includedCategory = true;
-            }
-            if (category === "Actor In A Leading Role" 
-            || category === "Best Performance by an Actor in a Motion Picture - Drama") {
-                csv_orig[i].category = "Actor In A Leading Role"
-                includedCategory = true;
-            }
-            if (category === "Best Performance by an Actress in a Supporting Role in any Motion Picture") {
-                csv_orig[i].category = "Supporting Actress In A Leading Role"
-                includedCategory = true;
-            }
-            if (category === "Best Performance by an Actor in a Supporting Role in any Motion Picture") {
-                csv_orig[i].category = "Supporting Actor In A Leading Role"
-                includedCategory = true;
-            }
+              const category = csv_orig[i].category.trim();
+              var includedCategory = false;
+              if (category === "Actress In A Leading Role" || 
+                  category === "Best Performance by an Actress in a Motion Picture - Drama") {
+                  csv_orig[i].category = "Actress In A Leading Role"
+                  includedCategory = true;
+              }
+              if (category === "Actor In A Leading Role" 
+              || category === "Best Performance by an Actor in a Motion Picture - Drama") {
+                  csv_orig[i].category = "Actor In A Leading Role"
+                  includedCategory = true;
+              }
+              if (category === "Best Performance by an Actress in a Supporting Role in any Motion Picture") {
+                  csv_orig[i].category = "Supporting Actress In A Leading Role"
+                  includedCategory = true;
+              }
+              if (category === "Best Performance by an Actor in a Supporting Role in any Motion Picture") {
+                  csv_orig[i].category = "Supporting Actor In A Leading Role"
+                  includedCategory = true;
+              }
 
-            if (includedCategory) {
-                csv_data.push(csv_orig[i]);
+              if (includedCategory) {
+                  csv_data.push(csv_orig[i]);
+              }
+          }
+
+          function getData(startYear, endYear) {
+              var data = []
+              for (var i = 0; i < csv_data.length; i++) {
+                  // push all datapoints, both nominees and winners
+                  var year = csv_data[i].year_ceremony;
+                  csv_data[i].id = i;
+                  if (year >= startYear && year <= endYear) {
+                      data.push(csv_data[i]);
+                  }
+              }
+              return data;
+          }
+
+          // default color scale
+          // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
+          // customized color scale
+          color = d3.scaleOrdinal()
+              .domain(['white', 'black', 'hispanic', 'asian', 'other'])
+              .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
+          // 1: LEGEND using D3-LEGEND (https://d3-legend.susielu.com/)
+          // svg.append("g")
+          //   .attr("class", "legend")
+          //   .attr("transform", "translate(1000, 200)");
+
+          // var legendOrdinal = d3.legendColor()
+          //   .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
+          //   .shapePadding(10)
+          //   .scale(color)
+
+          // svg.select(".legend")
+          //   .call(legendOrdinal);
+          // svg.selectAll(".legend")
+          //     .style("background-color", "white");
+          // });
+
+          // 2: LEGEND using manual method
+          // create list of keys
+          var keysSet = new Set(csv_data.map(d => d.fixed_race))
+          var keys = Array.from(keysSet)
+
+          // Add one dot in the legend for each name.
+          legendsvg.selectAll('legendDots')
+              .data(keys)
+              .enter()
+              .append("circle")
+              .on("mouseover", function(d) {
+                  d3.select(".label-" + d).style("font-weight", 900).style("text-decoration", "underline");
+                  for (var i = 0; i < keys.length; i++) {
+                      if (keys[i] !== d) {
+                          graphsvg.selectAll("." + keys[i]).style("opacity", 0.1)
+                      }
+                  }
+
+
+              })
+              .on("mouseout", function(d) {
+                  d3.select(".label-" + d).style("font-weight", 300).style("text-decoration", "none");
+                  for (var i = 0; i < keys.length; i++) {
+                      if (keys[i] !== d) {
+                          graphsvg.selectAll("." + keys[i]).style("opacity", 1)
+                      }
+                  }
+              })
+              .attr("cx", 100)
+              .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+              .attr("r", 7)
+              .style("fill", function(d){ return color(d)})
+
+
+          // Add one dot in the legend for each name.
+          legendsvg.selectAll('legendLabels')
+              .data(keys)
+              .enter()
+              .append("text")
+              .attr("class", function(d){ return "label-" + d })
+              .attr("x", 120)
+              .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
+              // .style("fill", function(d){ return color(d)})
+              .text(function(d){ return d})
+              .attr("text-anchor", "left")
+              .style("alignment-baseline", "middle")
+              .style("fill", "#b8b8b8")
+              .style("font-family", "Didact Gothic")
+              .style("font-size", "18px")
+              .style("text-transform", "lowercase")
+              .on("mouseover", function(d) {
+                  d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                  for (var i = 0; i < keys.length; i++) {
+                      if (keys[i] !== d) {
+                          graphsvg.selectAll("." + keys[i]).style("opacity", 0.3)
+                      }
+                  }
+              })
+              .on("mouseout", function(d) {
+                  d3.select(this).style("font-weight", 300).style("text-decoration", "none");
+                  for (var i = 0; i < keys.length; i++) {
+                      if (keys[i] !== d) {
+                          graphsvg.selectAll("." + keys[i]).style("opacity", 1)
+                      }
+                  }
+              });
+          var legendCircleLabels = [{y: 300, text: "Winners"}, {y: 270, text: "Nominees"}]
+          legendsvg.selectAll('legendCircleLines')
+              .data(legendCircleLabels)
+              .enter()
+              .append('line')
+              .style("stroke", "#F8F9FA")
+              .style("stroke-width", 2)
+              .attr("x1", 120)
+              .attr("y1", d => d.y)
+              .attr("x2", 180)
+              .attr("y2", d => d.y);
+
+          legendsvg.selectAll('legendCircleLines')
+              .data(legendCircleLabels)
+              .enter()
+              .append('text')
+              .attr("x", 190)
+              .attr("y", d => d.y) // 100 is where the first dot appears. 25 is the distance between dots
+              .text(d => d.text)
+              .attr("text-anchor", "left")
+              .style("alignment-baseline", "middle")
+              .style("fill", "#b8b8b8")
+              .style("font-family", "Didact Gothic")
+              .style("font-size", "18px")
+              .style("text-transform", "lowercase")
+              .attr("class", function(d){return "label-" + d.text} )
+              .on("mouseover", function(d) {
+                  d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                  if (d == legendCircleLabels[0]) {
+                      graphsvg.selectAll(".FALSE").style("opacity", 0.3)
+                  }
+                  else {
+                      graphsvg.selectAll(".TRUE").style("opacity", 0.3)
+                  }
+
+              })
+              .on("mouseout", function(d) {
+                  graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
+                  d3.select(this).style("font-weight", 300).style("text-decoration", "none");
+              });
+
+
+          // legend for the winner / nominee circles
+          var legendCircleRadii = [50,20]
+
+          legendsvg.selectAll('legendCircles')
+              .data(legendCircleRadii)
+              .enter()
+              .append("circle")
+              .attr("cx", 120)
+              .attr("cy", 300)
+              .attr("r", d => d)
+              .attr("fill", "#b8a22a")
+              .style("stroke","#b8a22a")
+              .style("stroke-width", 8)
+              .attr("opacity", .2)
+              .on("mouseover", function(d) {
+                  if (d == legendCircleRadii[0]) {
+                      graphsvg.selectAll(".TRUE").style("opacity", 0.3)
+                      d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                  }
+                  else {
+                      graphsvg.selectAll(".FALSE").style("opacity", 0.3)
+                      d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
+                  }
+
+              })
+              .on("mouseout", function(d) {
+                  graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
+                  d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 300).style("text-decoration", "none");
+                  d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 300).style("text-decoration", "none");
+              });
+          // draw the lines that label the winner and nominee legend circles
+
+
+          let categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
+          update(csv_data, 1945, 2020, categories);
+
+          var node = graphgElem.selectAll(".graph-circle")
+
+          var winnerData = csv_data.filter(d => d.winner === "TRUE");
+          var simulationCircle = d3.forceSimulation()
+              .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+              .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
+              .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
+
+          simulationCircle
+              .nodes(winnerData)
+              .on("tick", function(d){
+                  node
+                      .attr("cx", function(d){ return d.x; })
+                      .attr("cy", function(d){ return d.y; })
+              });
+
+          var nomineeData = csv_data.filter(d => d.winner === "FALSE");
+          var simulationRing = d3.forceSimulation()
+              .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+              .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
+              .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
+
+          simulationRing
+              .nodes(nomineeData)
+              .on("tick", function(d){
+                  node
+                      .attr("cx", function(d){ return d.x; })
+                      .attr("cy", function(d){ return d.y; })
+              });
+
+          // SUMMARY GRAPH
+        year_race_counts = {} // counts number per year, race, category
+        
+        var races = ['white', 'black', 'hispanic', 'asian', 'other']
+        for (var i=1944; i<=2020; i++){
+          year_race_counts[i] = {"all":{}}
+          for (var j=0; j<races.length; j++){
+            year_race_counts[i][races[j]] = {};
+            for (var k=0; k<categories.length; k++){
+              year_race_counts[i]["all"][categories[k]] = {"winner": 0, "nominee": 0, "all": 0};
+              year_race_counts[i][races[j]][categories[k]] = {"winner": 0, "nominee": 0, "all": 0};
             }
+          }
         }
 
-        function getData(startYear, endYear) {
-            var data = []
-            for (var i = 0; i < csv_data.length; i++) {
-                // push all datapoints, both nominees and winners
-                var year = csv_data[i].year_ceremony;
-                csv_data[i].id = i;
-                console.log(csv_data[i].race);
-                if (year >= startYear && year <= endYear) {
-                    data.push(csv_data[i]);
-                }
+        csv_data.forEach( function(d) {
+          var year = +d.year_ceremony;
+          var fixed_race = d.fixed_race;
+          var category = d.category;
+          var winner = d.win;
+
+          if (year_race_counts[year][fixed_race][category] === undefined){
+            year_race_counts[year][fixed_race][category] = {"winner": 0, "nominee": 0, "all": 0};
+          } else if (winner=="True") {
+            year_race_counts[year][fixed_race][category]["all"] ++;
+            year_race_counts[year]["all"][category]["all"]++;
+            year_race_counts[year][fixed_race][category]["winner"] ++;
+            year_race_counts[year]["all"][category]["winner"]++;
+          } else {
+            year_race_counts[year][fixed_race][category]["all"] ++;
+            year_race_counts[year]["all"][category]["all"]++;
+            year_race_counts[year][fixed_race][category]["nominee"] ++;
+            year_race_counts[year]["all"][category]["nominee"]++;
+          }
+        });
+
+        var race_counts = []
+        for (var yr=1944; yr<=2020; yr++){
+          for (var c=0; c<categories.length; c++){
+            if (year_race_counts[yr]["all"][categories[c]]["all"] == 0) {
+              for (var i=0; i<includes.length; i++){
+                race_counts.push({"year":yr, "category": categories[c], "pct":0, "include": includes[i]})
+              }
             }
-            return data;
+            else {
+              for (var i=0; i<includes.length; i++){
+                // pct_white is actually percent minority now
+                var pct_white = 1-year_race_counts[yr]["white"][categories[c]][includes[i]] / year_race_counts[yr]["all"][categories[c]][includes[i]]
+                var datapt = {"year":yr, "category": categories[c], "pct":pct_white, "include": includes[i]}
+                race_counts.push(datapt);
+              }
+            }
+          }
         }
 
-        // default color scale
-        // color = d3.scaleOrdinal(d3.schemeCategory10).domain(data.map(d => d.fixed_race));
-        // customized color scale
-        color = d3.scaleOrdinal()
-            .domain(['white', 'black', 'hispanic', 'asian', 'other'])
-            .range(['#E6AB02', '#67A51F', '#7570B2', '#E7298A', '#D95F03'])
-        // 1: LEGEND using D3-LEGEND (https://d3-legend.susielu.com/)
-        // svg.append("g")
-        //   .attr("class", "legend")
-        //   .attr("transform", "translate(1000, 200)");
+        var race_counts_rolling = []
+        for (var yr=1944; yr<=2020; yr++){
+          var min_yr = Math.max(1944, yr-2)
+          var max_yr = Math.min(2020, yr+2)
+          
+          for (var c=0; c<categories.length; c++){
+            for (var i=0; i<includes.length; i++) {
+              var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr) && (d.include == includes[i]))
+              var mean = d3.mean(rolling_data.map(d => d.pct))*100
+              datapt = {"year":yr, "category": categories[c], "pct":mean, "include": includes[i]}
+              race_counts_rolling.push(datapt)
+            }
+          }
+        }
 
-        // var legendOrdinal = d3.legendColor()
-        //   .shape("path", d3.symbol().type(d3.symbolCircle).size(150)())
-        //   .shapePadding(10)
-        //   .scale(color)
+        var current_race_counts_rolling = race_counts_rolling.filter(d => (d.include == "all") )
 
-        // svg.select(".legend")
-        //   .call(legendOrdinal);
-        // svg.selectAll(".legend")
-        //     .style("background-color", "white");
-        // });
+        var race_counts_rolling_nested = d3.nest()
+            .key(function(d) { return d.category; })
+            .entries(current_race_counts_rolling);
 
-        // 2: LEGEND using manual method
-        // create list of keys
-        var keysSet = new Set(csv_data.map(d => d.fixed_race))
-        var keys = Array.from(keysSet)
+        var summaryWidth_subplot = Math.floor((summaryWidth-margins.left-margins.right)/categories.length); 
+        var summaryHeight_subplot = summaryHeight;
 
-        // Add one dot in the legend for each name.
-        legendsvg.selectAll('legendDots')
-            .data(keys)
-            .enter()
-            .append("circle")
-            .on("mouseover", function(d) {
-                d3.select(".label-" + d).style("font-weight", 900).style("text-decoration", "underline");
-                for (var i = 0; i < keys.length; i++) {
-                    if (keys[i] !== d) {
-                        graphsvg.selectAll("." + keys[i]).style("opacity", 0.1)
-                    }
-                }
+        // dimensions of each subplot, after subtracting margins
+        var summary_height = summaryHeight_subplot - margins.top - margins.bottom
+        var summary_width = summaryWidth_subplot - margins.left - margins.right
+
+        var summary_x = d3.scaleLinear().range([0, summary_width]).domain([1944, 2019]);
+
+        var summary_y = d3.scaleLinear().range([summary_height, margins.top])
+            summary_y.domain([0, Math.min(100, 1.3*d3.max(race_counts_rolling, function(d) { return d.pct; })+0.2)]);
+
+        var summary_line = d3.line()
+          .x(function(d) {return summary_x(d.year);})
+          .y(function(d) {return summary_y(d.pct);});
+
+        var summary_svg = d3.select("#summary_graph").selectAll("svg")
+          .data(race_counts_rolling_nested)
+          .enter()
+          .append("svg")
+          .attr("class", "categoryChart")
+          .attr("height", summaryHeight_subplot)
+          .attr("width", summaryWidth_subplot)
+          .append("g")
+          .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+
+        summary_xAxis = summary_svg.append("g")
+          .attr("class", "xaxis")
+          .attr("transform", "translate(0," + summary_height + ")")
+          .call(d3.axisBottom(summary_x).ticks(3).tickFormat(d3.format("d")));
+
+        summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+        summary_svg.append("path")
+                  .attr("class", "line") 
+                  .attr("fill", "none")
+                  .attr("stroke", "#AB8D3F")
+                  .attr("stroke-width", 1.9)
+                  .attr("d", function(d){
+                    return summary_line(d.values)
+                  })
+        
+        summary_svg.append("text") // Title text
+              .attr("x", (summary_width / 2))             
+              .attr("y", margins.top+2)
+              .attr("text-anchor", "middle")  
+              .style("font-size", "20px")   
+              .style("fill", "white")
+              .text(function(d){ return(d.key)});
+
+        // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+        var focus = summary_svg.append("g")
+              .attr("class", "focus")
+              .style("display", "none");
+
+          focus.append("circle")
+              .attr("fill", "none")
+              .attr("stroke", "white")
+              .attr("r", 3);
+
+          focus.append("text")
+                .attr("x", 0)
+                .attr("dy", "-1.20em")
+                .style("font-size","14px")
+                .style("fill", "white")
+                .style("text-anchor", "middle");
+
+          summary_svg.append("rect")
+              .attr("class", "overlay")
+              .attr("width", summary_width)
+              .attr("height", summary_height)
+              .style("fill-opacity", 0.0)
+              .on("mouseover", function() { focus.style("display", null); })
+              .on("mouseout", function() { focus.style("display", "none"); })
+              .on("mousemove", summary_mousemove);
+
+          var bisectYear = d3.bisector(function(d) {
+            return d.year;
+          }).left;
+
+          function summary_mousemove() {
+              var year, index, index_diff;
+              year = summary_x.invert(d3.mouse(this)[0]);
+              var focus = summary_svg.selectAll(".focus");
+              focus.attr("transform", function(d) {
+
+                index = bisectYear(d.values, year, 0, d.values.length - 1);
+                var yDomain = d3.extent(d.values, function(d) { return d.pct; });
+                
+                focus.selectAll("text")
+                  .text(function (d){return (d.values[index].pct.toFixed(1) + " %")})
+                  .attr("fill", "white");
+                // adjust mouseover to use appropriate scale
+                return "translate(" + summary_x(d.values[index].year) + "," + summary_y(d.values[index].pct) + ")"
+                  });
+          };
+
+          // COMPARE BETWEEN AWARDS
+
+        var line_height = summaryHeight - margins.top - margins.bottom
+        var line_width = summaryWidth - margins.left - margins.right
+
+        var compare_x = d3.scaleLinear().range([0, line_width]).domain([1944, 2019]);
+
+        var compare_y = d3.scaleLinear()
+            .range([line_height, margins.top])
+            compare_y.domain([0, Math.min(100, d3.max(all_data, function(d) { return d.pct_race * 100; }))]);;
+
+        var compare_line = d3.line()
+          .x(function(d) {return compare_x(d.year_ceremony);})
+          .y(function(d) {return compare_y(d.pct_race * 100);});
+
+        var line_color = d3.scaleOrdinal(['oscars','golden globes', 'sag'], ['#1f77b4', '#ff7f0e', '#2ca02c']);
 
 
-            })
-            .on("mouseout", function(d) {
-                d3.select(".label-" + d).style("font-weight", 300).style("text-decoration", "none");
-                for (var i = 0; i < keys.length; i++) {
-                    if (keys[i] !== d) {
-                        graphsvg.selectAll("." + keys[i]).style("opacity", 1)
-                    }
-                }
-            })
-            .attr("cx", 100)
+
+        var awards = ['golden globes','oscars', 'sag']
+
+        let filteredData = all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+        let combinedData = []
+        let element = {}
+        filteredData.forEach( function(d) {
+          if (d.award + "_" + d.year_ceremony in element) {
+            element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+          }
+
+          else {
+            element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+          }
+        });
+
+          var increments = [-2, -1, 1, 2];
+          for (var key in element) {
+              var count = 1;
+              var sum = element[key];
+              for (const inc of increments) {
+                  var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                  var award = key.split("_")[0];
+                  var key2 = award + "_" + year_ceremony;
+                  if (key2 in element) {
+                      sum += element[key2];
+                      count += 1;
+                  }
+              }
+              element[key] = sum / count;
+          }
+
+        for (var key in element) {
+          let award = key.split("_")[0];
+          let year_ceremony = key.split("_")[1];
+          combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+        }
+
+        for (var i=0; i<awards.length; i++){
+          compare_svg.append("path")
+            .datum(combinedData.filter(d => (d.award === awards[i]) ))
+            .attr("class", "line") 
+            .attr("id", awards[i].concat("Line"))
+            .attr("d", compare_line)
+            .attr("active", 0)
+            .style("fill", "none")
+            .style("stroke", line_color(awards[i]))
+            .style("stroke-width", function(d) {
+              if (awards[i] === "golden globes") {
+                return "3";
+              }
+              else {
+                return "1";
+              }})
+        }
+
+        var compare_xAxis = compare_svg.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + line_height + ")")
+            .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")));
+
+        var compare_yAxis = compare_svg.append("g")
+          .attr("class", "axis")
+          .attr("transform", "translate(0,0)")
+          .call(d3.axisLeft(compare_y));
+
+        compare_legendsvg.selectAll('legendDots')
+          .data(awards)
+          .enter()
+          .append("circle")
+          .attr("cx", 40)
             .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
-            .attr("r", 7)
-            .style("fill", function(d){ return color(d)})
+            .attr("r", 4)
+            .style("fill", function(d){ return line_color(d)})
 
-
-        // Add one dot in the legend for each name.
-        legendsvg.selectAll('legendLabels')
-            .data(keys)
-            .enter()
-            .append("text")
+        compare_legendsvg.selectAll('legendLabels')
+          .data(awards)
+          .enter()
+          .append("text")
             .attr("class", function(d){ return "label-" + d })
-            .attr("x", 120)
+            .attr("x", 50)
             .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
             // .style("fill", function(d){ return color(d)})
             .text(function(d){ return d})
@@ -746,382 +1174,410 @@
             .style("font-family", "Didact Gothic")
             .style("font-size", "18px")
             .style("text-transform", "lowercase")
-            .on("mouseover", function(d) {
-                d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
-                for (var i = 0; i < keys.length; i++) {
-                    if (keys[i] !== d) {
-                        graphsvg.selectAll("." + keys[i]).style("opacity", 0.3)
-                    }
-                }
-            })
-            .on("mouseout", function(d) {
-                d3.select(this).style("font-weight", 300).style("text-decoration", "none");
-                for (var i = 0; i < keys.length; i++) {
-                    if (keys[i] !== d) {
-                        graphsvg.selectAll("." + keys[i]).style("opacity", 1)
-                    }
-                }
-            });
-        var legendCircleLabels = [{y: 300, text: "Winners"}, {y: 270, text: "Nominees"}]
-        legendsvg.selectAll('legendCircleLines')
-            .data(legendCircleLabels)
-            .enter()
-            .append('line')
-            .style("stroke", "#F8F9FA")
-            .style("stroke-width", 2)
-            .attr("x1", 120)
-            .attr("y1", d => d.y)
-            .attr("x2", 180)
-            .attr("y2", d => d.y);
 
-        legendsvg.selectAll('legendCircleLines')
-            .data(legendCircleLabels)
-            .enter()
-            .append('text')
-            .attr("x", 190)
-            .attr("y", d => d.y) // 100 is where the first dot appears. 25 is the distance between dots
-            .text(d => d.text)
-            .attr("text-anchor", "left")
-            .style("alignment-baseline", "middle")
-            .style("fill", "#b8b8b8")
-            .style("font-family", "Didact Gothic")
-            .style("font-size", "18px")
-            .style("text-transform", "lowercase")
-            .attr("class", function(d){return "label-" + d.text} )
-            .on("mouseover", function(d) {
-                d3.select(this).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
-                if (d == legendCircleLabels[0]) {
-                    graphsvg.selectAll(".FALSE").style("opacity", 0.3)
+          // SLIDER LOGIC
+          var slider = createD3RangeSlider(1945, 2020, "#slider-container");
+
+          slider.onChange(function(newRange){
+              d3.select("#range-label").text(newRange.begin + " - " + newRange.end);
+              var newData = getData(newRange.begin, newRange.end);
+
+              // Update summary graph
+              var new_race_counts = current_race_counts_rolling.filter(d => (d.year > newRange.begin) && (d.year < newRange.end))
+              race_counts_rolling_nested = d3.nest()
+                .key(function(d) { return d.category; })
+                .entries(new_race_counts);
+
+              summary_update = d3.select("#summary_graph").selectAll("svg").data(race_counts_rolling_nested);
+              var new_lines = summary_update.enter()
+                          .append("svg")
+                          .attr("class", "categoryChart")
+                          .attr("height", summaryHeight_subplot)
+                          .attr("width", summaryWidth_subplot)
+                          .append("g")
+                          .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+                          
+              summary_update.exit().remove()
+              
+              summary_x.domain([newRange.begin, newRange.end]).range([0, summary_width])
+              summary_update.selectAll(".xaxis")
+                          .transition().duration(100)
+                          .call(d3.axisBottom(summary_x).ticks(3).tickFormat(d3.format("d")));
+              summary_y.domain([0, Math.min(100, d3.max(new_race_counts, function(d) { return d.pct; })*1.3)]);
+              summary_update.selectAll(".yaxis").transition().duration(100).call(d3.axisLeft(summary_y));
+
+              summary_line = d3.line()
+                .x(function(d) {return summary_x(d.year);})
+                .y(function(d) {return summary_y(d.pct);});
+              
+
+              // clips the ends of the lines to the graph width and height, otherwise the line crosses ove the axes for some reason
+              summary_update.append('defs')
+                    .append('clipPath')
+                    .attr('id', 'clip')
+                    .append('rect')
+                    .attr('width', summary_width)
+                    .attr('height', summary_height);
+
+              summary_update.selectAll(".line").transition()
+                      .attr("class", "line") 
+                      .attr('clip-path', 'url(#clip)') 
+                      .attr("fill", "none")
+                      .attr("stroke", "#AB8D3F")
+                      .attr("stroke-width", 1.9)
+                      .attr("d", function(d){
+                        return summary_line(d.values)
+                      })
+              
+              // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+              var focus = summary_svg.append("g")
+                  .attr("class", "focus")
+                  .style("display", "none");
+
+              focus.append("circle")
+                  .attr("fill", "none")
+                  .attr("stroke", "white")
+                  .attr("r", 3);
+
+              focus.append("text")
+                    .attr("x", 0)
+                    .attr("dy", "-1.20em")
+                    .style("font-size","14px")
+                    .style("fill", "white")
+                    .style("text-anchor", "middle");
+
+              summary_svg.append("rect")
+                  .attr("class", "overlay")
+                  .attr("width", summary_width)
+                  .attr("height", summary_height)
+                  .style("fill-opacity", 0.0)
+                  .on("mouseover", function() { focus.style("display", null); })
+                  .on("mouseout", function() { focus.style("display", "none"); })
+                  .on("mousemove", summary_mousemove);
+
+              var bisectYear = d3.bisector(function(d) {
+                return d.year;
+              }).left;
+
+              function summary_mousemove() {
+                  var year, index, index_diff;
+                  year = summary_x.invert(d3.mouse(this)[0]);
+                  var focus = summary_svg.selectAll(".focus");
+                  focus.attr("transform", function(d) {
+
+                    index = bisectYear(d.values, year, 0, d.values.length - 1);
+                    var yDomain = d3.extent(d.values, function(d) { return d.pct; });
+                    
+                    focus.selectAll("text")
+                      .text(function (d){return (d.values[index].pct.toFixed(1) + " %")})
+                      .attr("fill", "white");
+                    // adjust mouseover to use appropriate scale
+                    return "translate(" + summary_x(d.values[index].year) + "," + summary_y(d.values[index].pct) + ")"
+                      });
+              };
+
+              // Update compare graph
+              var new_all_data = all_data.filter(d => (d.year_ceremony >= newRange.begin) && (d.year_ceremony <= newRange.end))
+              compare_x.domain([newRange.begin, newRange.end])
+              compare_xAxis.transition().duration(100)
+                .call(d3.axisBottom(compare_x).tickFormat(d3.format("d")))
+                .selectAll("text")
+                .attr("transform", "rotate(-15)");
+              compare_y.domain([0, Math.min(50, d3.max(new_all_data, function(d) { return d.pct_race * 100; }))]);
+              compare_yAxis.transition().duration(100).call(d3.axisLeft(compare_y));
+
+              compare_svg.selectAll(".line").remove();
+
+              let filteredData = new_all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+              let combinedData = []
+              let element = {}
+              // +/- 2 year rolling average: in combinedData, for each award/year ceremony, go through combinedData again
+              // and see if
+
+              filteredData.forEach( function(d) {
+                if (d.award + "_" + d.year_ceremony in element) {
+                  element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
                 }
+
                 else {
-                    graphsvg.selectAll(".TRUE").style("opacity", 0.3)
+                  element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
                 }
+              });
 
-            })
-            .on("mouseout", function(d) {
-                graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
-                d3.select(this).style("font-weight", 300).style("text-decoration", "none");
-            });
+              var increments = [-2, -1, 1, 2];
+              for (var key in element) {
+                  var count = 1;
+                  var sum = element[key];
+                  for (const inc of increments) {
+                      var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                      var award = key.split("_")[0];
+                      var key2 = award + "_" + year_ceremony;
+                      if (key2 in element) {
+                          sum += element[key2];
+                          count += 1;
+                      }
+                  }
+                  element[key] = sum / count;
+              }
 
-
-        // legend for the winner / nominee circles
-        var legendCircleRadii = [50,20]
-
-        legendsvg.selectAll('legendCircles')
-            .data(legendCircleRadii)
-            .enter()
-            .append("circle")
-            .attr("cx", 120)
-            .attr("cy", 300)
-            .attr("r", d => d)
-            .attr("fill", "#b8a22a")
-            .style("stroke","#b8a22a")
-            .style("stroke-width", 8)
-            .attr("opacity", .2)
-            .on("mouseover", function(d) {
-                if (d == legendCircleRadii[0]) {
-                    graphsvg.selectAll(".TRUE").style("opacity", 0.3)
-                    d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
-                }
-                else {
-                    graphsvg.selectAll(".FALSE").style("opacity", 0.3)
-                    d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 900).style("text-decoration", "underline").style("cursor","default");
-                }
-
-            })
-            .on("mouseout", function(d) {
-                graphsvg.selectAll(".TRUE, .FALSE").style("opacity", 1)
-                d3.select(".label-" + legendCircleLabels[0].text).style("font-weight", 300).style("text-decoration", "none");
-                d3.select(".label-" + legendCircleLabels[1].text).style("font-weight", 300).style("text-decoration", "none");
-            });
-        // draw the lines that label the winner and nominee legend circles
-
-
-        let categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
-        update(csv_data, 1945, 2020, categories);
-
-        var node = graphgElem.selectAll(".graph-circle")
-
-        var winnerData = csv_data.filter(d => d.winner === "TRUE");
-        var simulationCircle = d3.forceSimulation()
-            .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
-            .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
-            .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
-
-        simulationCircle
-            .nodes(winnerData)
-            .on("tick", function(d){
-                node
-                    .attr("cx", function(d){ return d.x; })
-                    .attr("cy", function(d){ return d.y; })
-            });
-
-        var nomineeData = csv_data.filter(d => d.winner === "FALSE");
-        var simulationRing = d3.forceSimulation()
-            .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
-            .force("charge", d3.forceManyBody().strength(0)) // Nodes are attracted one each other of value is > 0
-            .force("collide", d3.forceCollide().strength(0.2).radius(5).iterations(1)) // Force that avoids circle overlapping
-
-        simulationRing
-            .nodes(nomineeData)
-            .on("tick", function(d){
-                node
-                    .attr("cx", function(d){ return d.x; })
-                    .attr("cy", function(d){ return d.y; })
-            });
-
-        // SUMMARY GRAPH
-      year_race_counts = {} // counts number per year, race, category
-      
-      var races = ['white', 'black', 'hispanic', 'asian', 'other']
-      for (var i=1944; i<=2020; i++){
-        year_race_counts[i] = {"all":{}}
-        for (var j=0; j<races.length; j++){
-          year_race_counts[i][races[j]] = {};
-          for (var k=0; k<categories.length; k++){
-            year_race_counts[i]["all"][categories[k]] = 0;
-            year_race_counts[i][races[j]][categories[k]] = 0;
-          }
-        }
-      }
-
-      csv_data.forEach( function(d) {
-        var year = +d.year_ceremony;
-        var fixed_race = d.fixed_race;
-        var category = d.category;
-        console.log(year)
-
-        if (year_race_counts[year][fixed_race][category] === undefined){
-          year_race_counts[year][fixed_race][category] = 0;
-        } else {
-          year_race_counts[year][fixed_race][category] ++;
-          year_race_counts[year]["all"][category]++;
-        }
-      });
-
-      var race_counts = []
-      for (var yr=1944; yr<=2020; yr++){
-        for (var c=0; c<categories.length; c++){
-          if (year_race_counts[yr]["all"][categories[c]] == 0) {
-            var datapt = {"year":yr, "category": categories[c], "pct":0}
-          }
-          else {
-            var pct_white = 1-year_race_counts[yr]["white"][categories[c]] / year_race_counts[yr]["all"][categories[c]]
-            var datapt = {"year":yr, "category": categories[c], "pct":pct_white}
-          }
-          race_counts.push(datapt)
-        }
-      }
-
-      var race_counts_rolling = []
-      for (var yr=1944; yr<=2020; yr++){
-        var min_yr = Math.max(1944, yr-2)
-        var max_yr = Math.min(2020, yr+2)
-        
-        for (var c=0; c<categories.length; c++){
-
-          var rolling_data = race_counts.filter(d => (d.category == categories[c]) && (d.year >= min_yr) && (d.year <= max_yr))
-          var mean = d3.mean(rolling_data.map(d => d.pct))*100
-          datapt = {"year":yr, "category": categories[c], "pct":mean}
-          race_counts_rolling.push(datapt)
-        }
-      }
-
-      var line_height = 200 - margins.top - margins.bottom
-      var line_width = 300 - margins.left - margins.right
-
-      var summary_x = d3.scaleLinear().range([0, line_width]).domain([1945, 2019]);
-
-      var summary_y = d3.scaleLinear()
-          .range([line_height, margins.top])
-          summary_y.domain([0, Math.min(100, 1.3*d3.max(race_counts_rolling, function(d) { return d.pct; })+0.2)]);;
-
-      var summary_line = d3.line()
-        .x(function(d) {return summary_x(d.year);})
-        .y(function(d) {return summary_y(d.pct);});
-
-      var line_color = d3.scaleOrdinal(d3.schemeCategory10);
-      
-      for (var i=0; i<categories.length; i++){
-        summary_svg.append("path")
-          .datum(race_counts_rolling.filter(d => d.category === categories[i])) 
-          .attr("class", "line") 
-          .attr("id", categories[i].concat("Line"))
-          .attr("d", summary_line)
-          .attr("active", 0)
-          .style("fill", "none")
-          .style("stroke", line_color(categories[i]))
-          .style("stroke-width", "1")  
-      }
-
-      var summary_xAxis = summary_svg.append("g")
-          .attr("class", "axis")
-          .attr("transform", "translate(0," + line_height + ")")
-          .call(d3.axisBottom(summary_x));
-      
-      var summary_yAxis = summary_svg.append("g")
-        .attr("class", "axis")
-        .attr("transform", "translate(0,0)")
-        .call(d3.axisLeft(summary_y));
-
-      summary_svg.append("text") // Title text
-            .attr("x", (line_width / 2))             
-            .attr("y", margins.top+2)
-            .attr("text-anchor", "middle")  
-            .style("font-size", "16px")   
-            .style("font-weight", "bold") 
-            .style("fill", "white")
-            .text("Percent Minority of Nominees");
-
-      summary_svg.append("text") // Title text
-            .attr("x", (line_width / 2))             
-            .attr("y", margins.top+2)
-            .attr("dy", "1em")
-            .attr("text-anchor", "middle")  
-            .style("font-size", "11px")   
-            .style("fill", "white")
-            .text("(Rolling 5-year average)");
-      
-      summary_legendsvg.selectAll('legendDots')
-        .data(categories)
-        .enter()
-        .append("circle")
-        .attr("cx", 40)
-          .attr("cy", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
-          .attr("r", 4)
-          .style("fill", function(d){ return line_color(d)})
-
-      summary_legendsvg.selectAll('legendLabels')
-        .data(categories)
-        .enter()
-        .append("text")
-          .attr("class", function(d){ return "label-" + d })
-          .attr("x", 50)
-          .attr("y", function(d,i){ return (i+1)*25}) // 100 is where the first dot appears. 25 is the distance between dots
-          // .style("fill", function(d){ return color(d)})
-          .text(function(d){ return d})
-          .attr("text-anchor", "left")
-          .style("alignment-baseline", "middle")
-          .style("fill", "#b8b8b8")
-          .style("font-family", "Didact Gothic")
-          .style("font-size", "18px")
-          .style("text-transform", "lowercase")
-
-        // SLIDER LOGIC
-        var slider = createD3RangeSlider(1945, 2020, "#slider-container");
-
-        slider.onChange(function(newRange){
-            d3.select("#range-label").text(newRange.begin + " - " + newRange.end);
-            var newData = getData(newRange.begin, newRange.end);
-
-            // Update summary graph
-            var new_race_counts = race_counts_rolling.filter(d => (d.year >= newRange.begin) && (d.year <= newRange.end))
-            summary_x.domain([newRange.begin, newRange.end])
-            summary_xAxis.transition().duration(100)
-            .call(d3.axisBottom(summary_x))
-            .selectAll("text")
-            .attr("transform", "rotate(-15)");
-            summary_y.domain([0, Math.min(100, d3.max(new_race_counts, function(d) { return d.pct; })*1.3)]);
-            summary_yAxis.transition().duration(100).call(d3.axisLeft(summary_y));
-
-            summary_svg.selectAll(".line").remove();
-            
-            for (var i=0; i<categories.length; i++){
-            summary_svg.append("path")
-                .datum(new_race_counts.filter(d => d.category === categories[i])) 
+              for (var key in element) {
+                let award = key.split("_")[0];
+                let year_ceremony = key.split("_")[1];
+                combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
+              }
+              
+              for (var i=0; i<awards.length; i++){
+              compare_svg.append("path")
+                .datum(combinedData.filter(d => (d.award == awards[i])))
                 .attr("class", "line") 
-                .attr("id", categories[i].concat("Line"))
-                .attr("d", summary_line)
+                .attr("id", awards[i].concat("Line"))
+                .attr("d", compare_line)
                 .attr("active", 0)
                 .style("fill", "none")
-                .style("stroke", line_color(categories[i]))
-                .style("stroke-width", "1")  
+                .style("stroke", line_color(awards[i]))
+                .style("stroke-width", function(d) {
+                  if (awards[i] === "golden globes") {
+                    return "3";
+                  }
+                  else {
+                    return "1";
+                  }})
             }
 
-            update(csv_data, newRange.begin, newRange.end, categories)
+              update(csv_data, newRange.begin, newRange.end, categories)
 
-            let winners = newData.filter(d => d.winner == "TRUE");
-            let nominees = newData.filter(d => d.winner == "FALSE")
+              let winners = newData.filter(d => d.winner == "TRUE");
+              let nominees = newData.filter(d => d.winner == "FALSE")
 
-            if (newRange.end < 1938 && (categories.includes("ACTOR IN A SUPPORTING ROLE") || categories.includes("ACTRESS IN A SUPPORTING ROLE"))) {
-                simulationCircle.nodes(winners.filter(d => d.categoryID ==  4 || d.categoryID == 5)).alpha(0.005).alphaTarget(0).restart()
-                simulationRing.nodes(nominees.filter(d => d.categoryID ==  4 || d.categoryID == 5)).alpha(0.005).alphaTarget(0).restart()
-            } else {
-                let alpha = Math.min(0.003, Math.max(0, 0.00045*winners.length - 0.015))
-                simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
-                simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
-            }
-        });
+              if (newRange.end < 1938 && (categories.includes("ACTOR IN A SUPPORTING ROLE") || categories.includes("ACTRESS IN A SUPPORTING ROLE"))) {
+                  simulationCircle.nodes(winners.filter(d => d.categoryID ==  4 || d.categoryID == 5)).alpha(0.005).alphaTarget(0).restart()
+                  simulationRing.nodes(nominees.filter(d => d.categoryID ==  4 || d.categoryID == 5)).alpha(0.005).alphaTarget(0).restart()
+              } else {
+                  let alpha = Math.min(0.003, Math.max(0, 0.00045*winners.length - 0.015))
+                  simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
+                  simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+              }
+          });
 
-        slider.range(1945, 2020);
+          slider.range(1945, 2020);
+          // // CATEGORY BUTTON LOGIC
+          function handleCategoryChange(category) {
+              return function(e){
+                console.log("here")
+                  // if all categories selected, then select only the "All" button
+                  if (category == "all") {
+                      // Outline all buttons except for the "All" button
+                      var els = document.getElementsByClassName("btn")
+                      for (el of els){
+                          el.classList.remove('btn-light');
+                          el.classList.add('btn-outline-light');
+                      }
+                      // fill the All button
+                      document.getElementById("all-btn").classList.remove('btn-outline-light');
+                      document.getElementById("all-btn").classList.add('btn-light');
+                      categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
+                  } else if (categories.includes(category)) {
+                      if (categories.length == 4) { // if all categories were previously selected, then just select the single category
+                          document.getElementById("all-btn").classList.remove('btn-light')
+                          document.getElementById("all-btn").classList.add('btn-outline-light')
+                          document.getElementsByName(category)[0].classList.remove('btn-outline-light')
+                          document.getElementsByName(category)[0].classList.add('btn-light')
+                          categories = [category]
+                      } else { // the category was already selected, so remove it
+                          document.getElementsByName(category)[0].classList.remove('btn-light')
+                          document.getElementsByName(category)[0].classList.add('btn-outline-light')
+                          var index = categories.indexOf(category);
+                          categories.splice(index, 1);
+                      }
+                  } else { // the category is not yet selected, so select it.
+                      if (categories.length == 3) { // this is the only category not yet selected. now that it is, select "All"
+                          var els = document.getElementsByClassName("btn")
+                          for (el of els){
+                              el.classList.remove('btn-light');
+                              el.classList.add('btn-outline-light');
+                          }
+                          document.getElementById("all-btn").classList.remove('btn-outline-light');
+                          document.getElementById("all-btn").classList.add('btn-light');
+                      } else {
+                          var el = document.getElementsByName(category)[0]
+                          el.classList.add('btn-light')
+                          el.classList.remove('btn-outline-light')
+                      }
+                      categories.push(category)
+                      // then, sort alphabetically so the graph is consistent in ordering
+                      categories = categories.sort()
+                  }
 
-        // // CATEGORY BUTTON LOGIC
-        function handleCategoryChange(category) {
-            return function(e){
-                // if all categories selected, then select only the "All" button
-                if (category == "all") {
-                    // Outline all buttons except for the "All" button
-                    var els = document.getElementsByClassName("btn")
-                    for (el of els){
-                        el.classList.remove('btn-light');
-                        el.classList.add('btn-outline-light');
-                    }
-                    // fill the All button
-                    document.getElementById("all-btn").classList.remove('btn-outline-light');
-                    document.getElementById("all-btn").classList.add('btn-light');
-                    categories = [actorCategory, actressCategory, actorSupCategory, actressSupCategory]
-                } else if (categories.includes(category)) {
-                    if (categories.length == 4) { // if all categories were previously selected, then just select the single category
-                        document.getElementById("all-btn").classList.remove('btn-light')
-                        document.getElementById("all-btn").classList.add('btn-outline-light')
-                        document.getElementsByName(category)[0].classList.remove('btn-outline-light')
-                        document.getElementsByName(category)[0].classList.add('btn-light')
-                        categories = [category]
-                    } else { // the category was already selected, so remove it
-                        document.getElementsByName(category)[0].classList.remove('btn-light')
-                        document.getElementsByName(category)[0].classList.add('btn-outline-light')
-                        var index = categories.indexOf(category);
-                        categories.splice(index, 1);
-                    }
-                } else { // the category is not yet selected, so select it.
-                    if (categories.length == 3) { // this is the only category not yet selected. now that it is, select "All"
-                        var els = document.getElementsByClassName("btn")
-                        for (el of els){
-                            el.classList.remove('btn-light');
-                            el.classList.add('btn-outline-light');
-                        }
-                        document.getElementById("all-btn").classList.remove('btn-outline-light');
-                        document.getElementById("all-btn").classList.add('btn-light');
-                    } else {
-                        var el = document.getElementsByName(category)[0]
-                        el.classList.add('btn-light')
-                        el.classList.remove('btn-outline-light')
-                    }
-                    categories.push(category)
-                    // then, sort alphabetically so the graph is consistent in ordering
-                    categories = categories.sort()
+                  update(csv_data, slider.range().begin, slider.range().end, categories)
+                  var newData = getData(slider.range().begin, slider.range().end).filter(d => categories.includes(d.category))
+                  var winners = newData.filter(d => d.winner == "TRUE");
+                  var nominees = newData.filter(d => d.winner == "FALSE")
+                  let alpha = Math.min(0.003, Math.max(0, 0.0005*winners.length - 0.01))
+                  // If there are multiple categories and they include supporting categories, do not
+                  // have alpha if the number of winners per category is under 18.
+                  if (categories.length > 1 && winners.length < 20 && (categories.includes("ACTOR IN A SUPPORTING ROLE") || categories.includes("ACTRESS IN A SUPPORTING ROLE"))) {
+                      alpha = 0
+                  }
+                  console.log('alpha', alpha)
+                  simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
+                  simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
+
+                let filteredData = all_data.filter(d => categories.includes(d.category) && (d.fixed_race==='white'))
+                let combinedData = []
+                let element = {}
+                filteredData.forEach( function(d) {
+                  if (d.award + "_" + d.year_ceremony in element) {
+                    element[d.award + "_" + d.year_ceremony] += (1 - d.pct_race) / categories.length
+                  }
+
+                  else {
+                    element[d.award + "_" + d.year_ceremony] = (1 - d.pct_race) / categories.length;
+                  }
+                });
+
+                  var increments = [-2, -1, 1, 2];
+                  for (var key in element) {
+                      var count = 1;
+                      var sum = element[key];
+                      for (const inc of increments) {
+                          var year_ceremony = parseInt(key.split("_")[1]) + inc;
+                          var award = key.split("_")[0];
+                          var key2 = award + "_" + year_ceremony;
+                          if (key2 in element) {
+                              sum += element[key2];
+                              count += 1;
+                          }
+                      }
+                      element[key] = sum / count;
+                  }
+
+                for (var key in element) {
+                  let award = key.split("_")[0];
+                  let year_ceremony = key.split("_")[1];
+                  combinedData.push({"award": award, "year_ceremony": year_ceremony, "pct_race": element[key]})
                 }
-                update(csv_data, slider.range().begin, slider.range().end, categories)
-                var newData = getData(slider.range().begin, slider.range().end).filter(d => categories.includes(d.category))
-                var winners = newData.filter(d => d.winner == "TRUE");
-                var nominees = newData.filter(d => d.winner == "FALSE")
-                let alpha = Math.min(0.003, Math.max(0, 0.0005*winners.length - 0.01))
-                // If there are multiple categories and they include supporting categories, do not
-                // have alpha if the number of winners per category is under 18.
-                if (categories.length > 1 && winners.length < 20 && (categories.includes("ACTOR IN A SUPPORTING ROLE") || categories.includes("ACTRESS IN A SUPPORTING ROLE"))) {
-                    alpha = 0
-                }
-                console.log('alpha', alpha)
-                simulationCircle.nodes(winners).alpha(alpha).alphaTarget(0).restart()
-                simulationRing.nodes(nominees).alpha(alpha).alphaTarget(0).restart()
-            }
 
-        }
-        document.getElementById("all-btn").addEventListener("click", handleCategoryChange("all"))
-        document.getElementById("actor-btn").addEventListener("click", handleCategoryChange(actorCategory))
-        document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
-        document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
-        document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
+                compare_svg.selectAll(".line").remove();
+                for (var i=0; i<awards.length; i++){
+                  compare_svg.append("path")
+                          .datum(combinedData.filter(d => (d.award === awards[i]) ))
+                          .attr("class", "line")
+                          .attr("id", awards[i].concat("Line"))
+                          .attr("d", compare_line)
+                          .attr("active", 0)
+                          .style("fill", "none")
+                          .style("stroke", line_color(awards[i]))
+                          .style("stroke-width", function(d) {
+                            if (awards[i] === "golden globes") {
+                              return "3";
+                            }
+                            else {
+                              return "1";
+                            }})
+                }
+
+              }
+
+          }
+          document.getElementById("all-btn").addEventListener("click", handleCategoryChange("all"))
+          document.getElementById("actor-btn").addEventListener("click", handleCategoryChange(actorCategory))
+          document.getElementById("actress-btn").addEventListener("click", handleCategoryChange(actressCategory))
+          document.getElementById("sup-actor-btn").addEventListener("click", handleCategoryChange(actorSupCategory))
+          document.getElementById("sup-actress-btn").addEventListener("click", handleCategoryChange(actressSupCategory))
+          // // CATEGORY BUTTON LOGIC in LINE GRAPH
+          // A function that updates the chart
+          function updateCategoryGraph(selectedGroup) {
+
+          current_race_counts_rolling = race_counts_rolling.filter(d => (d.include == selectedGroup) )
+          //console.log(current_race_counts_rolling)
+
+          race_counts_rolling_nested = d3.nest()
+              .key(function(d) { return d.category; })
+              .entries(current_race_counts_rolling);
+
+
+          // Update the category graph. very jank.
+          // Almost got the transition to work, but can't get over a bug so I'm just removing the previous graph and redrawing it.
+
+          summary_x = d3.scaleLinear().range([0, summary_width]).domain([1944, 2019]);
+
+          summary_y = d3.scaleLinear().range([summary_height, margins.top])
+            summary_y.domain([0, Math.min(100, 1.3*d3.max(current_race_counts_rolling, function(d) { return d.pct; })+0.2)]);
+
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg").remove();
+
+          summary_svg = d3.select("#summary_graph").selectAll("svg")
+            .data(race_counts_rolling_nested)
+            .enter()
+            .append("svg")
+            .attr("class", "categoryChart")
+            .attr("height", summaryHeight_subplot)
+            .attr("width", summaryWidth_subplot)
+            .append("g")
+            .attr("transform", "translate(" + margins.left + "," + margins.top + ")")
+
+          summary_xAxis = summary_svg.append("g")
+            .attr("class", "xaxis")
+            .attr("transform", "translate(0," + summary_height + ")")
+            .call(d3.axisBottom(summary_x).ticks(3).tickFormat(d3.format("d")));
+
+          summary_yAxis = summary_svg.append("g").attr("class", "yaxis").call(d3.axisLeft(summary_y).ticks(5));
+
+          summary_svg.append("path")
+                    .attr("class", "line") 
+                    .attr("fill", "none")
+                    .attr("stroke", "#AB8D3F")
+                    .attr("stroke-width", 1.9)
+                    .attr("d", function(d){
+                      return summary_line(d.values)
+                    })
+
+          summary_svg.append("text") // Title text
+                .attr("x", (summary_width / 2))             
+                .attr("y", margins.top+2)
+                .attr("text-anchor", "middle")  
+                .style("font-size", "20px")   
+                .style("fill", "white")
+                .text(function(d){ return(d.key)});
+
+            // Mouseover Tooltip, based on Mike's example here: https://bl.ocks.org/mbostock/3902569
+            focus = summary_svg.append("g")
+                .attr("class", "focus")
+                .style("display", "none");
+
+            focus.append("circle")
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("r", 3);
+
+            focus.append("text")
+                  .attr("x", 0)
+                  .attr("dy", "-1.20em")
+                  .style("font-size","14px")
+                  .style("fill", "white")
+                  .style("text-anchor", "middle");
+
+            summary_svg.append("rect")
+                .attr("class", "overlay")
+                .attr("width", summary_width)
+                .attr("height", summary_height)
+                .style("fill-opacity", 0.0)
+                .on("mouseover", function() { focus.style("display", null); })
+                .on("mouseout", function() { focus.style("display", "none"); })
+                .on("mousemove", summary_mousemove);
+          }
+
+
+          // When the button is changed, run the updateChart function
+          d3.select("#selectButton").on("change", function(d) {
+          // recover the option that has been chosen
+          var selectedOption = d3.select(this).property("value")
+          // run the updateChart function with this selected option
+          updateCategoryGraph(selectedOption)
+          })
+      
+      })
     });
 </script>
 </body>
