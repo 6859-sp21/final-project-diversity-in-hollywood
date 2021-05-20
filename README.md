@@ -2,8 +2,9 @@
 
 Jenning Chen, Ashwin Srinivasan, Cindy Yang, Lisa Yoo
 
-[Link to our visualization](https://6859-sp21.github.io/final-project-diversity-in-hollywood/)
-[Link to our video](https://youtu.be/vTpfYm6oH8Y)
+[Link to our visualization](https://6859-sp21.github.io/final-project-diversity-in-hollywood/)    
+[Link to our video](https://youtu.be/vTpfYm6oH8Y)     
+[Link to our paper](final/6_859_Final_Project.pdf)  
 
 ## Abstract
 Inspired by the #OscarsSoWhite movement in 2015, our visualization experience empowers users to explore diversity in Hollywood, and how the distribution of race and ethnicity relate to different measures of success: movie reception and awards. We bring together datasets on major awards (Oscars, Golden Globes, Screen Actors' Guild) and box office statistics and create digestible visualizations to see how white Hollywood really is. 
