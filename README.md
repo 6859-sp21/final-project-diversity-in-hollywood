@@ -28,6 +28,9 @@ The contributions made by each team member are listed below.
 - Helped create the line graphs on awards pages
 - Helped style the awards cluster graph visualization
 ### Cindy
+- Added cluster graph visualization for Golden Globes   
+- Helped create the line graphs on awards pages   
+- Helped style the awards pages   
 ### Lisa
 - Created dropdown autocomplete search bar
 - Implemented and styled reception comparison visualization
