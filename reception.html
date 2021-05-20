@@ -663,7 +663,6 @@
       var node = svg
       .selectAll(".graph-circle")
       .data(data, d => d)
-      
       node.join(
         enter => enter.append("circle")
         .attr("class", "graph-circle")
@@ -767,7 +766,6 @@
         update => update,
         exit => exit.remove()
       )
-
       // physics for dots along the line
       // Features of the forces applied to the nodes:
       var simulation = d3.forceSimulation()
@@ -806,7 +804,6 @@
             return rScale(parseFloat(d.adjusted_lifetime_gross));
           }))
       var node = svg.selectAll('.graph-circle')
-
       // Apply these forces to the nodes and update their positions.
       // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
       simulation
@@ -825,7 +822,6 @@
         .selectAll('.tick')
         .attr('class', d => d)
         // .on('click', d => ())
-      
       // event listeners for race button filter clicks
       var updateSelectedRace = function(race, data) {
           selectedRace = race
@@ -841,7 +837,6 @@
             return raceToField[selectedRace] 
           }); 
           var average = sum / data.length
-
           var lineNode = svg
           .append("g")
           .selectAll(".avg-line")
@@ -881,7 +876,6 @@
             update => update,
             exit => exit.remove()
           )
-
 
           // simulation
           simulation.force('x', d3.forceX().x(function(d) {
@@ -1000,7 +994,7 @@
                     selectedRevenueVal = "$" + nFormatter(selectedMovie.adjusted_lifetime_gross, 1);
                     selectedBudget = selectedMovie.budget;
                     selectedBudgetVal = "$" + nFormatter(selectedMovie.budget, 1);
-                    selectedRace = (1-selectedMovie.percent_white)*100
+                    selectedRacePercent  = (1-selectedMovie.percent_white)*100
                     selectedRaceVal = nFormatter((1 - selectedMovie.percent_white)*100, 1) + "%";
 
                     var compMovies = data.filter(d => d.year == selectedMovie.year);
@@ -1039,7 +1033,7 @@
                     showMetric(selectedScore, selectedScoreVal, "first", "metascore");
                     showMetric(moneyScale(selectedRevenue), selectedRevenueVal, "first", "revenue");
                     showMetric(moneyScale(selectedBudget), selectedBudgetVal, "first", "budget");
-                    showMetric(Math.round(selectedRace/10), selectedRaceVal, "first", "race")
+                    showMetric(Math.round(selectedRacePercent/10), selectedRaceVal, "first", "race")
 
                     showMetric(compScore, compScoreVal, "second", "metascore");
                     showMetric(moneyScale(compRevenue), compRevenueVal, "second", "revenue");
