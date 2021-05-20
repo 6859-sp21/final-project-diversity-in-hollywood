@@ -197,6 +197,18 @@
     body {
       font-family: 'Didact Gothic', sans-serif;
     }
+
+    .xaxis text {
+      font-size: 14px;
+    }
+
+    .yaxis text {
+      font-size: 14px;
+    }
+
+    .axis text {
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -296,7 +308,7 @@
     </div>
   </div>
   <h2 style="padding-left: 80px; text-align: left; margin-top: 300px; font-size:2.0rem">
-    How does the percentage of minorities in the Oscars compare to other award events?
+    How does the percentage of minorities (nominees & winners) in the Oscars compare to other award events?
   </h2>
   <h4 class="main-caption pt-3 text-left" style="padding-left: 80px;">
     We can also compare minority representation at the Oscars to the other two award shows. <br><br>
@@ -392,7 +404,7 @@
             .attr("overflow", "visible")
         .append("g")
         .attr("transform", "translate(" + margins.left + "," + margins.top + ")");
-
+  
     var compare_legendsvg = d3.select("#compare_legend")
       .append("svg")
         .attr("width", 200)
@@ -1090,6 +1102,7 @@
           .attr("class", "axis")
           .attr("transform", "translate(0,0)")
           .call(d3.axisLeft(compare_y));
+  
         
         compare_legendsvg.selectAll('legendDots')
           .data(awards)
@@ -1257,6 +1270,7 @@
           }
 
           compare_svg = d3.select("#compare_graph").selectAll("svg").remove();
+
           compare_svg = d3.select("#compare_graph")
                   .append("svg")
                   .attr("width", compareWidth)
