@@ -1162,6 +1162,7 @@
         compareTooltip.append("circle")
                 .attr("fill", "none")
                 .attr("stroke", "white")
+                .attr("transform", "translate(" + margins.left + ",0)")
                 .attr("r", 3);
 
         compareTooltip.append("text")
@@ -1169,6 +1170,7 @@
                 .attr("dy", "-1.20em")
                 .style("font-size","14px")
                 .style("fill", "white")
+                .attr("transform", "translate(" + margins.left + ",0)")
                 .style("text-anchor", "middle");
 
         compare_svg.append("rect")
@@ -1194,7 +1196,7 @@
                     .text(function (d){return ((d[index].pct_race * 100).toFixed(1) + " %")})
                     .attr("fill", "white");
             // adjust mouseover to use appropriate scale
-            return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+            return "translate(" + compare_x(d[index].year_ceremony) + margins.left + "," + compare_y(d[index].pct_race * 100) + ")"
           });
         };
 
@@ -1364,6 +1366,7 @@
 
           compareTooltip.append("circle")
                   .attr("fill", "none")
+                  .attr("transform", "translate(" + margins.left + ",0)")
                   .attr("stroke", "white")
                   .attr("r", 3);
 
@@ -1372,6 +1375,7 @@
                   .attr("dy", "-1.20em")
                   .style("font-size","14px")
                   .style("fill", "white")
+                  .attr("transform", "translate(" + margins.left + ",0)")
                   .style("text-anchor", "middle");
 
           compare_svg.append("rect")
@@ -1394,7 +1398,7 @@
                               })
                               .attr("fill", "white");
                       // adjust mouseover to use appropriate scale
-                      return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+                      return "translate(" + compare_x(d[index].year_ceremony) + margins.left + "," + compare_y(d[index].pct_race * 100) + ")"
                     });
                   });
 
@@ -1574,6 +1578,7 @@
 
             compareTooltip.append("circle")
                     .attr("fill", "none")
+                    .attr("transform", "translate(" + margins.left + ",0)")
                     .attr("stroke", "white")
                     .attr("r", 3);
 
@@ -1582,6 +1587,7 @@
                     .attr("dy", "-1.20em")
                     .style("font-size","14px")
                     .style("fill", "white")
+                    .attr("transform", "translate(" + margins.left + ",0)")
                     .style("text-anchor", "middle");
 
             compare_svg.append("rect")
@@ -1601,7 +1607,7 @@
                                 .text(function (d){return ((d[index].pct_race * 100).toFixed(1) + " %")})
                                 .attr("fill", "white");
                         // adjust mouseover to use appropriate scale
-                        return "translate(" + compare_x(d[index].year_ceremony) + "," + compare_y(d[index].pct_race * 100) + ")"
+                        return "translate(" + compare_x(d[index].year_ceremony) + margins.left + "," + compare_y(d[index].pct_race * 100) + ")"
                       });
                     });
           }
