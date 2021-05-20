@@ -238,15 +238,18 @@
       border-width: 0;
       font-size: 20px;
       outline: none;
-      padding: 10px 100px;
+      padding: 10px 30px;
+      margin-left: 20px;
       text-align: left;
       box-shadow: 0 0 0 2px #000000;
       border-radius: 5px;
+      width: 600px;
     }
 
     input#search.dropdown {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
+      width: 600px;
     }
 
     #selector {
@@ -260,6 +263,7 @@
       max-height: 150px;
       overflow: auto;
       transform: translate(0, -180);
+      z-index: 3000;
     }
 
     #selector button {
@@ -372,14 +376,16 @@
                 </div>
               </div>
             </div>
-            <div id="comparison" style="display:flex; flex-direction: column;">
+            <div id="comparison" style="display:flex; flex-direction: column; padding-bottom: 150px;">
               <h1 class="display-4 px-4 pt-4" style="font-size: 20px; margin: 0;">Search for your favorite movie, and see how it compares to the industry-wide averages from movies that year!</h1>
               <br>
-              <input id="search" type="text" placeholder="search..">
-              <div style="display:flex; flex-direction: row;">
-                <div id="first" class="box"></div>
-                <div style="width:200px;"></div>
-                <div id="second" class="box"></div> 
+              <div style="position: relative; text-align: left;">
+                <input id="search" type="text" placeholder="search.." autocomplete="off">
+                <div class="d-flex" style="margin-top: 50px;">
+                  <div id="first" class="box" style="margin-left: 20px;"></div>
+                  <div style="width:200px;"></div>
+                  <div id="second" class="box" class="margin-left: 20px;"></div> 
+                </div>
               </div>
             </div>
           </div>
@@ -548,7 +554,8 @@
           .text(valueStr)
           .style("stroke", "white")
           .style("fill", "white")
-          .attr("transform", "translate(160, 30)");
+          .style("font-size", "20px")
+          .attr("transform", "translate(230, 30)");
 
         var numRows = 1;
         var numCols = 10;
@@ -959,9 +966,10 @@
               selector.id = "selector";
               elem.parentNode.appendChild(selector);
               // Position it below the input element
-              selector.style.left = elem.getBoundingClientRect().left + "px";
-              selector.style.top = "10px";
+              selector.style.left = (elem.getBoundingClientRect().left-460) + "px";
+              selector.style.top = "50px";
               selector.style.width = elem.getBoundingClientRect().width + "px";
+              selector.style.position = "absolute";
             }
             // Clear everything before new search
             selector.innerHTML = "";
@@ -979,10 +987,12 @@
                     
                     var svg1 = d3.select("#first");
                     var svg2 = d3.select("#second");
+                    svg1.style("padding", "20px");
+                    svg2.style("padding", "20px");
+                    svg2.style("margin-left", "20px");
                     svg1.selectAll('*').remove();
                     svg2.selectAll('*').remove();
 
-                    console.log("im here with the new movie: ", all_data[i].original_title);
                     var selectedMovie = all_data[i];
                     selectedScore = Math.round(selectedMovie.metascore / 10.0); // score 100% ==> scale on 10 stars
                     selectedScoreVal = nFormatter(selectedMovie.metascore, 1) + " / 100";
